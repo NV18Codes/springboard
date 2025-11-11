@@ -39,20 +39,20 @@ const Index = () => {
     {
       title: "Retail Enterprise",
       description:
-        "Built HQ data centers for 160+ stores with disaster recovery sites, unified communications, and managed services.",
+        "Built the HQ data center for 160+ stores with DR sites, unified communications, virtualization, backup and DR, WLAN, Exchange Server, UPS/EMS, and EDR—supported through a 5-year AMC.",
       image: "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=720&q=80",
     },
     {
-      title: "FMCG Distribution",
+      title: "Enterprise Corporation",
       description:
-        "Implemented SAP ERP and Microsoft retail solutions, supporting 16+ store networks and 100+ POS terminals.",
-      image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=720&q=80",
+        "vCISO for 2+ years covering risk assessments, VAPT, data center revamp, DR site, virtualization, networking, UPS/EMS, and ongoing AMC aligned with compliance goals.",
+      image: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=720&q=80",
     },
     {
-      title: "Food Chain",
+      title: "Security-Focused Organization",
       description:
-        "Delivered hybrid infrastructure, cybersecurity, and long-term AMC to ensure uninterrupted customer service.",
-      image: "https://images.unsplash.com/photo-1520072959219-c595dc870360?auto=format&fit=crop&w=720&q=80",
+        "Delivered privileged access management, OPSWAT sanitization, Fortinet SIEM/NAC/Analyzer, ManageEngine UEM & MDM, data center power, CCTV networking, and a 6-year AMC.",
+      image: "https://images.unsplash.com/photo-1549923746-c502d488b3ea?auto=format&fit=crop&w=720&q=80",
     },
   ];
 
@@ -72,8 +72,8 @@ const Index = () => {
                 transformation and growth.
               </p>
               <p className="text-lg text-muted-foreground">
-                We have successfully delivered enterprise-scale solutions for leading retail chains, FMCG distributors, and
-                food service brands across the UAE and GCC—enabling thousands of daily customer interactions.
+                We have successfully implemented solutions for leading retail chains, FMCG distribution companies, and food
+                chains across the UAE.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button asChild variant="hero" className="group">

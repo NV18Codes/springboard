@@ -9,19 +9,22 @@ const caseStudies = [
   {
     company: "Retail Enterprise",
     sector: "Multi-country retail chain",
-    result: "Designed unified communications and managed infrastructure across 160+ stores.",
+    result:
+      "Built HQ data centers for 160+ stores with DR sites, virtualization, backup and DR, WLAN, Exchange Server, UPS/EMS, and EDR—backed by a 5-year AMC.",
     icon: <BriefcaseBusiness className="h-6 w-6" />,
   },
   {
-    company: "Financial Institution",
-    sector: "Regional bank",
-    result: "Delivered end-to-end cybersecurity program aligned with UAE and global compliance frameworks.",
+    company: "Enterprise Corporation",
+    sector: "Regional conglomerate",
+    result:
+      "vCISO engagement for 2+ years covering VAPT, data center revamp, DR site, virtualization, networking, UPS/EMS, and compliance-driven risk assessments.",
     icon: <Building className="h-6 w-6" />,
   },
   {
-    company: "Energy Provider",
-    sector: "Oil & gas leader",
-    result: "Implemented hybrid cloud with resilient disaster recovery and 24/7 managed services.",
+    company: "Security-Focused Organization",
+    sector: "Critical services",
+    result:
+      "Delivered PAM, OPSWAT sanitization, Fortinet SIEM/NAC/Analyzer, ManageEngine UEM & MDM, data center power, CCTV networking, and a 6-year AMC.",
     icon: <Globe className="h-6 w-6" />,
   },
 ];
