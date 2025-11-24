@@ -91,8 +91,8 @@ const Index = () => {
             </AnimatedSection>
             <AnimatedSection direction="left" className="relative">
               <img
-                src="\public\Img\Index\About.png"
-                alt="Digital transformation collaboration"
+                src="/Img/Index/About.png"
+                alt="digital collaboration team working together"
                 className="w-full rounded-3xl border border-border shadow-strong object-cover"
                 loading="lazy"
               />
