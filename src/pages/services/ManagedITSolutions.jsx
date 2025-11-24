@@ -81,12 +81,14 @@ const ManagedITSolutions = () => {
                   const Icon = service.icon;
                   return (
                     <AnimatedSection key={service.title} delay={index * 0.05}>
-                      <Card className="p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-500">
-                        <div className="p-3 bg-gradient-primary rounded-lg inline-block mb-4 shadow-md">
+                      <Card className="p-6 hover:shadow-xl hover:-translate-y-1 transition-all duration-500 h-full flex flex-col">
+                        <div className="w-14 h-14 p-3 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 shadow-md flex-shrink-0">
                           <Icon className="h-8 w-8 text-primary-foreground" />
                         </div>
-                        <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                        <div className="flex-1 flex flex-col">
+                          <h3 className="text-xl font-bold text-foreground mb-3">{service.title}</h3>
+                          <p className="text-muted-foreground leading-relaxed flex-1">{service.description}</p>
+                        </div>
                       </Card>
                     </AnimatedSection>
                   );

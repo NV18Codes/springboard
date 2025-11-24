@@ -62,7 +62,7 @@ export const Navbar = () => {
           {/* Added 'shrink-0' so the logo doesn't get squished */}
           <Link to="/" className="flex items-center gap-2 shrink-0 mr-4">
             <img 
-              src="/Logo.png" 
+              src="/1000046891-removebg-preview.png" 
               alt="Octalpha Logo" 
               // RESPONSIVE SIZING: 
               // Mobile: h-8 (32px)

@@ -6,9 +6,13 @@ export const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-xl font-bold text-primary-foreground mb-4">
-              Octalpha Business Solutions
-            </h3>
+            <Link to="/" className="inline-block mb-4">
+              <img 
+                src="/1000046891-removebg-preview.png" 
+                alt="Octalpha Business Solutions" 
+                className="h-10 w-auto object-contain"
+              />
+            </Link>
             <p className="text-primary-foreground/70">
               Your trusted technology partner for end-to-end IT solutions in the UAE and GCC region.
             </p>

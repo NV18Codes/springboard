@@ -111,13 +111,13 @@ const Index = () => {
             <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
               {capabilityHighlights.map((item, index) => (
                 <AnimatedSection key={item.title} delay={index * 0.05}>
-                  <Card className="overflow-hidden bg-card hover:shadow-xl transition-all duration-500">
-                    <div className="h-48 overflow-hidden">
+                  <Card className="overflow-hidden bg-card hover:shadow-xl transition-all duration-500 h-full flex flex-col">
+                    <div className="h-48 overflow-hidden flex-shrink-0">
                       <img src={item.image} alt={item.title} className="h-full w-full object-cover" loading="lazy" />
                     </div>
-                    <div className="p-6 space-y-3">
+                    <div className="p-6 space-y-3 flex-1 flex flex-col">
                       <h3 className="text-xl font-semibold text-foreground">{item.title}</h3>
-                      <p className="text-muted-foreground">{item.description}</p>
+                      <p className="text-muted-foreground flex-1">{item.description}</p>
                     </div>
                   </Card>
                 </AnimatedSection>
@@ -137,13 +137,13 @@ const Index = () => {
             <div className="grid gap-8 md:grid-cols-3">
               {successStories.map((story, index) => (
                 <AnimatedSection key={story.title} delay={index * 0.05}>
-                  <Card className="overflow-hidden bg-card hover:shadow-xl transition-all duration-500 flex flex-col">
-                    <div className="h-48 overflow-hidden">
+                  <Card className="overflow-hidden bg-card hover:shadow-xl transition-all duration-500 h-full flex flex-col">
+                    <div className="h-48 overflow-hidden flex-shrink-0">
                       <img src={story.image} alt={story.title} className="h-full w-full object-cover" loading="lazy" />
                     </div>
-                    <div className="p-6 space-y-3 flex-1">
+                    <div className="p-6 space-y-3 flex-1 flex flex-col">
                       <h3 className="text-2xl font-semibold text-foreground">{story.title}</h3>
-                      <p className="text-muted-foreground">{story.description}</p>
+                      <p className="text-muted-foreground flex-1">{story.description}</p>
                     </div>
                   </Card>
                 </AnimatedSection>
