@@ -19,7 +19,7 @@ const Index = () => {
       title: "Personalized Service",
       description:
         "Lean, expert-driven teams dedicated to tailoring every engagement around your business outcomes.",
-      image: "/public/Img/Index/Personalised_Service.jpg",
+      image: "/Img/Index/Personalised_Service.jpg",
     },
     {
       title: "Cloud Solutions",
@@ -40,7 +40,7 @@ const Index = () => {
       title: "IT Enterprise",
       description:
         "Built the HQ data center for 160+ stores with DR sites, unified communications, virtualization, backup and DR, WLAN, Exchange Server, UPS/EMS, and EDR—supported through a 5-year AMC.",
-      image: "/public/Img/Index/Retail_Enterprise.png",
+      image: "/Img/Index/Retail_Enterprise.png",
     },
     {
       title: "Enterprise Corporation",
