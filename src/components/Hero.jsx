@@ -5,7 +5,7 @@ import { ArrowRight, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     id: 1,
-    video: "/public/Img/Hero/Hero1.mp4",
+    video: "/Img/Hero/Hero1.mp4",
     title: "Your End-to-End Technology Partner",
     subtitle: "Empowering Connections. Driving the Future.",
     description: "From Data Centers to Digital Transformation. We help enterprises scale faster with secure, intelligent IT infrastructure.",
@@ -13,7 +13,7 @@ const slides = [
   },
   {
     id: 2,
-    video: "/public/Img/Hero/Hero2.mp4",
+    video: "/Img/Hero/Hero2.mp4",
     title: "Advanced Cybersecurity & Compliance",
     subtitle: "Secure Your Assets. Protect Your Future.",
     description: "Comprehensive threat detection, GRC compliance, and network security solutions tailored for modern enterprises.",
@@ -21,7 +21,7 @@ const slides = [
   },
   {
     id: 3,
-    video: "/public/Img/Hero/Hero3.mp4",
+    video: "/Img/Hero/Hero3.mp4",
     title: "Seamless Cloud Transformation",
     subtitle: "Scalable. Flexible. Efficient.",
     description: "Migrate, modernize, and manage your workloads with our expert Azure and AWS cloud enablement services.",
@@ -29,7 +29,7 @@ const slides = [
   },
   {
     id: 4,
-    video: "/public/Img/Hero/Hero4.mp4",
+    video: "/Img/Hero/Hero4.mp4",
     title: "24/7 Managed IT Services",
     subtitle: "Reliable Support When You Need It.",
     description: "Let our dedicated team handle your IT operations so you can focus on driving your core business forward.",
