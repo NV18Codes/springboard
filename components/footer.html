@@ -1,0 +1,186 @@
+<!-- 
+  SPRINGBOARDPRO FOOTER COMPONENT
+  ================================
+  Copy this entire code block into your WordPress footer widget or theme footer.
+  
+  Required: Add the CSS below to your WordPress Customizer > Additional CSS
+  or include it in your theme's style.css
+-->
+
+<!-- FOOTER CSS - Add to WordPress Additional CSS -->
+<style>
+/* ===== FOOTER STYLES ===== */
+.spb-footer {
+    background: #45001d;
+    padding: 5rem 5% 2rem;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.spb-footer-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spb-footer-brand .spb-logo {
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.spb-footer-brand .spb-logo span {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.spb-footer-brand p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.spb-footer-social {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spb-footer-social a {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.spb-footer-social a:hover {
+    background: #ffffff;
+    color: #45001d;
+}
+
+.spb-footer-column h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.spb-footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spb-footer-column ul li {
+    margin-bottom: 0.8rem;
+}
+
+.spb-footer-column ul a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.spb-footer-column ul a:hover {
+    color: #ffffff;
+}
+
+.spb-footer-contact p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.spb-footer-contact span {
+    color: #ffffff;
+}
+
+.spb-footer-bottom {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.spb-footer-bottom p {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Mobile Responsive */
+@media (max-width: 992px) {
+    .spb-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .spb-footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<!-- FOOTER HTML -->
+<footer class="spb-footer">
+    <div class="spb-footer-grid">
+        <div class="spb-footer-brand">
+            <a href="index.html" class="spb-logo">Springboard<span>Pro</span></a>
+            <p>Your Strategic Growth Partner in PMO Excellence. We serve as your strategic partner and launchpad for success — enabling organizations to move confidently from strategy to execution.</p>
+            <div class="spb-footer-social">
+                <a href="#" aria-label="LinkedIn">in</a>
+                <a href="#" aria-label="Twitter">𝕏</a>
+                <a href="#" aria-label="Facebook">f</a>
+            </div>
+        </div>
+        <div class="spb-footer-column">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="who-we-are.html">Who We Are</a></li>
+                <li><a href="what-we-offer.html">What We Offer</a></li>
+                <li><a href="why-us.html">Why Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="spb-footer-column">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="project-management.html">PMO Consulting</a></li>
+                <li><a href="software-solutions.html">Software Solutions</a></li>
+                <li><a href="corporate-learning.html">Corporate Learning</a></li>
+            </ul>
+        </div>
+        <div class="spb-footer-column spb-footer-contact">
+            <h4>Get in Touch</h4>
+            <p><span>📞</span> +91 9148317322</p>
+            <p><span>✉️</span> reachus@springboardpro.in</p>
+            <p><span>📍</span> No.17, 2nd Floor, 7th Main Road, II Stage Indiranagar, Bangalore 560038</p>
+        </div>
+    </div>
+    <div class="spb-footer-bottom">
+        <p>© 2024 SpringboardPro. All rights reserved.</p>
+    </div>
+</footer>
+

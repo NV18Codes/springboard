@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management Consulting | SpringboardPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --burgundy: #45001d; --burgundy-light: #5c0028; --white: #ffffff; --black: #0a0a0a; --gray-50: #fafafa; --gray-100: #f4f4f5; --gray-500: #71717a; --gray-800: #27272a; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: all 0.4s; }
+        .navbar.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 0.8rem 5%; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+        .navbar.scrolled .logo { color: var(--burgundy); }
+        .navbar.scrolled .nav-links a { color: var(--gray-800); }
+        .navbar.scrolled .nav-cta { background: var(--burgundy) !important; color: var(--white) !important; }
+        .logo { font-family: 'Instrument Serif', serif; font-size: 1.75rem; color: var(--white); text-decoration: none; }
+        .logo span { font-style: italic; }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s; }
+        .dropdown { position: relative; }
+        .dropdown-content { position: absolute; top: calc(100% + 10px); left: -20px; background: var(--white); min-width: 280px; padding: 0.75rem 0; border-radius: 12px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s; box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .dropdown:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-content a { display: block; padding: 0.9rem 1.5rem; color: var(--gray-800) !important; font-size: 0.9rem; }
+        .dropdown-content a:hover { background: var(--gray-50); color: var(--burgundy) !important; }
+        .nav-cta { background: var(--white) !important; color: var(--burgundy) !important; padding: 0.75rem 1.75rem !important; border-radius: 100px; font-weight: 600 !important; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+        .navbar.scrolled .mobile-toggle span { background: var(--gray-800); }
+
+        /* HERO */
+        .page-hero { min-height: 80vh; background: var(--burgundy); position: relative; display: flex; align-items: center; padding: 8rem 5% 5rem; }
+        .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%); z-index: 1; }
+        .hero-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+        .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+        .hero-content { max-width: 1400px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 10; }
+        .hero-text h1 { font-family: 'Instrument Serif', serif; font-size: 4rem; color: var(--white); line-height: 1.1; margin-bottom: 1rem; font-weight: 400; }
+        .hero-text .tagline { font-size: 1.25rem; color: rgba(255,255,255,0.7); font-style: italic; margin-bottom: 2rem; }
+        .hero-text p { color: rgba(255,255,255,0.75); font-size: 1.1rem; line-height: 1.8; }
+
+        /* Services Grid in Hero */
+        .hero-services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+        .hero-service-item {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .hero-service-item:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.3); transform: translateY(-5px); }
+        .hero-service-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-service-icon svg { width: 100%; height: 100%; stroke: rgba(255,255,255,0.6); fill: none; stroke-width: 1.5; }
+        .hero-service-item h3 { color: var(--white); font-size: 1rem; font-weight: 500; line-height: 1.4; }
+
+        /* DETAILS SECTION */
+        .details-section { padding: 6rem 5%; background: var(--white); }
+        .details-container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 4rem; }
+        .section-header .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(69, 0, 29, 0.08); color: var(--burgundy); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; }
+        .section-header h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--black); font-weight: 400; margin-bottom: 1rem; }
+        .section-header p { color: var(--gray-500); font-size: 1.1rem; line-height: 1.8; }
+
+        .detail-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+        .detail-card {
+            background: var(--gray-50);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+        .detail-card:hover { background: var(--white); border-color: var(--gray-100); box-shadow: 0 20px 50px rgba(0,0,0,0.08); transform: translateY(-5px); }
+        .detail-card-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--burgundy);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+        .detail-card h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; color: var(--black); margin-bottom: 1rem; font-weight: 400; }
+        .detail-card p { color: var(--gray-500); font-size: 1rem; line-height: 1.8; margin-bottom: 1.25rem; }
+        .detail-card ul { list-style: none; }
+        .detail-card ul li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--gray-800); font-size: 0.95rem; margin-bottom: 0.75rem; }
+        .detail-card ul li i { color: var(--burgundy); margin-top: 4px; font-size: 0.7rem; }
+
+        /* CTA */
+        .cta-section { padding: 6rem 5%; background: var(--black); position: relative; overflow: hidden; }
+        .cta-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(69, 0, 29, 0.4) 0%, transparent 50%); }
+        .cta-content { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
+        .cta-content h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; }
+        .cta-content p { color: rgba(255, 255, 255, 0.6); font-size: 1.15rem; margin-bottom: 2rem; }
+        .btn-primary { background: var(--white); color: var(--burgundy); padding: 1rem 2rem; border: none; border-radius: 100px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.3s; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+
+        /* FOOTER */
+        .footer { background: var(--burgundy); padding: 5rem 5% 2rem; }
+        .footer-container { max-width: 1400px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-brand .logo { margin-bottom: 1.5rem; display: inline-block; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .social-links { display: flex; gap: 0.75rem; }
+        .social-links a { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all 0.3s; }
+        .social-links a:hover { background: var(--white); color: var(--burgundy); }
+        .footer-column h4 { color: var(--white); font-size: 1rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 0.75rem; }
+        .footer-column ul a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+        .footer-column ul a:hover { color: var(--white); }
+        .footer-contact p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .footer-contact i { color: var(--white); margin-top: 4px; width: 16px; }
+        .footer-bottom { padding-top: 2rem; text-align: center; }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.4); font-size: 0.9rem; }
+
+        @media (max-width: 992px) { .hero-content { grid-template-columns: 1fr; } .hero-services { max-width: 500px; } .detail-cards { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 768px) { .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--white); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s; } .nav-links.active { right: 0; } .nav-links a { color: var(--gray-800) !important; padding: 1.25rem 0; display: block; } .nav-links .nav-cta { margin-top: 1rem; background: var(--burgundy) !important; color: var(--white) !important; } .mobile-toggle { display: flex; } .hero-text h1 { font-size: 2.75rem; } .hero-services { grid-template-columns: 1fr; } .section-header h2 { font-size: 2.25rem; } .footer-grid { grid-template-columns: 1fr; } .dropdown-content { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; padding: 0 0 0 1rem; background: transparent; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="who-we-are.html">Who We Are</a></li>
+            <li class="dropdown">
+                <a href="what-we-offer.html">What We Offer</a>
+                <div class="dropdown-content">
+                    <a href="project-management.html">Project Management Consulting</a>
+                    <a href="enterprise-automation.html">Enterprise Automation</a>
+                    <a href="delivery-recovery.html">Delivery & Recovery</a>
+                    <a href="process-consulting.html">Process Consulting</a>
+                </div>
+            </li>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <div class="mobile-toggle"><span></span><span></span><span></span></div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-bg-image">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&q=80" alt="Team collaboration">
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Project Management Consulting</h1>
+                <p class="tagline">A strong PMO is where strategy becomes execution</p>
+                <p>We help organizations establish, optimize, and scale their Project Management capabilities. From PMO setup to complex program delivery, we bring the discipline and expertise needed to drive project success.</p>
+            </div>
+            <div class="hero-services">
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <svg viewBox="0 0 64 64"><path d="M32 8L8 20v24l24 12 24-12V20L32 8z"/><path d="M32 8v48M8 20l24 12 24-12"/></svg>
+                    </div>
+                    <h3>PMO Design, Setup, Roadmap & Implementation</h3>
+                </div>
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="12"/><path d="M32 32v24M20 44h24"/></svg>
+                    </div>
+                    <h3>Governance Framework & Operating Cadence Design</h3>
+                </div>
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <svg viewBox="0 0 64 64"><path d="M16 48V16l16 16 16-16v32"/><path d="M16 32h32"/></svg>
+                    </div>
+                    <h3>Transformation & Operating Model Enhancement</h3>
+                </div>
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <svg viewBox="0 0 64 64"><path d="M32 8L8 32l24 24 24-24L32 8z"/><path d="M20 32h24M32 20v24"/></svg>
+                    </div>
+                    <h3>PM as a Service (PMaaS)</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="details-section">
+        <div class="details-container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-cube"></i> Our Services</span>
+                <h2>How We Help</h2>
+                <p>Comprehensive PMO services tailored to your organization's maturity and strategic objectives.</p>
+            </div>
+            <div class="detail-cards">
+                <div class="detail-card">
+                    <div class="detail-card-icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>PMO Design, Setup, Roadmap & Implementation</h3>
+                    <p>Establish a PMO that fits your organization's culture and drives real value.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> PMO maturity assessment & gap analysis</li>
+                        <li><i class="fas fa-check"></i> Operating model & structure design</li>
+                        <li><i class="fas fa-check"></i> Roadmap development & phased implementation</li>
+                        <li><i class="fas fa-check"></i> Tool selection & configuration</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h3>Governance Framework & Operating Cadence Design</h3>
+                    <p>Implement robust governance that provides visibility and control.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Governance structure & decision rights</li>
+                        <li><i class="fas fa-check"></i> Stage-gate & approval processes</li>
+                        <li><i class="fas fa-check"></i> Reporting cadence & dashboards</li>
+                        <li><i class="fas fa-check"></i> Escalation & issue management</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon"><i class="fas fa-sync-alt"></i></div>
+                    <h3>Transformation & Operating Model Enhancement</h3>
+                    <p>Evolve your PMO to meet changing business needs and industry best practices.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Current state assessment & benchmarking</li>
+                        <li><i class="fas fa-check"></i> Target operating model design</li>
+                        <li><i class="fas fa-check"></i> Agile & hybrid methodology adoption</li>
+                        <li><i class="fas fa-check"></i> Change management & capability building</li>
+                    </ul>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon"><i class="fas fa-handshake"></i></div>
+                    <h3>PM as a Service (PMaaS)</h3>
+                    <p>On-demand project management expertise when you need it most.</p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Dedicated project managers</li>
+                        <li><i class="fas fa-check"></i> Program & portfolio oversight</li>
+                        <li><i class="fas fa-check"></i> Flexible engagement models</li>
+                        <li><i class="fas fa-check"></i> Knowledge transfer & mentoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-content">
+            <h2>Ready to Elevate Your PMO?</h2>
+            <p>Let's discuss how we can help you transform your project delivery capabilities.</p>
+            <a href="contact.html" class="btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+                    <p>Your Strategic Growth Partner. Launchpad to success.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="who-we-are.html">Who We Are</a></li><li><a href="what-we-offer.html">What We Offer</a></li><li><a href="why-us.html">Why Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-column"><h4>Services</h4><ul><li><a href="project-management.html">PM Consulting</a></li><li><a href="enterprise-automation.html">Enterprise Automation</a></li><li><a href="delivery-recovery.html">Delivery & Recovery</a></li><li><a href="process-consulting.html">Process Consulting</a></li></ul></div>
+                <div class="footer-column footer-contact"><h4>Get in Touch</h4><p><i class="fas fa-phone"></i> +91 9148317322</p><p><i class="fas fa-envelope"></i> reachus@springboardpro.in</p><p><i class="fas fa-map-marker-alt"></i> Indiranagar, Bangalore 560038</p></div>
+            </div>
+            <div class="footer-bottom"><p>© 2024 SpringboardPro. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() { 
+            const navbar = document.querySelector('.navbar'); 
+            if (window.scrollY > 50) navbar.classList.add('scrolled'); 
+            else navbar.classList.remove('scrolled'); 
+            
+            // Parallax on hero
+            const scroll = window.scrollY;
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent && scroll < window.innerHeight) {
+                heroContent.style.transform = `translateY(${scroll * 0.2}px)`;
+                heroContent.style.opacity = 1 - (scroll / window.innerHeight) * 0.5;
+            }
+        });
+        document.querySelector('.mobile-toggle').addEventListener('click', function() { 
+            document.querySelector('.nav-links').classList.toggle('active'); 
+        });
+        
+        const observer = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) { 
+                    entry.target.style.opacity = '1'; 
+                    entry.target.style.transform = 'translateY(0)'; 
+                } 
+            }); 
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.hero-service-item, .detail-card').forEach((el, i) => { 
+            el.style.opacity = '0'; 
+            el.style.transform = 'translateY(30px)'; 
+            el.style.transition = `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.12}s`; 
+            observer.observe(el); 
+        });
+        
+        // 3D tilt effect
+        document.querySelectorAll('.hero-service-item, .detail-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                this.style.transform = `translateY(-5px) rotateX(${y * -5}deg) rotateY(${x * 5}deg) scale(1.02)`;
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>

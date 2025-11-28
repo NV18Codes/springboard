@@ -1,0 +1,235 @@
+<!--
+=====================================================
+SPRINGBOARDPRO - ELEMENTOR HTML BLOCKS
+=====================================================
+Use these HTML blocks in Elementor's "HTML" widget
+Copy and paste as needed
+=====================================================
+-->
+
+
+<!-- ========== ANIMATED PARTICLES (for Hero) ========== -->
+<!-- Add this in an HTML widget inside your hero section -->
+<style>
+.spb-particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+.spb-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 50%;
+    opacity: 0.2;
+    animation: spbFloat 20s infinite;
+}
+@keyframes spbFloat {
+    0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.2; }
+    90% { opacity: 0.2; }
+    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+</style>
+<div class="spb-particles-container" id="spb-particles"></div>
+<script>
+(function() {
+    var container = document.getElementById('spb-particles');
+    if (container) {
+        for (var i = 0; i < 25; i++) {
+            var particle = document.createElement('div');
+            particle.className = 'spb-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            container.appendChild(particle);
+        }
+    }
+})();
+</script>
+
+
+<!-- ========== ANIMATED COUNTER SECTION ========== -->
+<!-- Use Elementor's Counter widget, then add this for animation on scroll -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.spb-fade-in').forEach(function(el) {
+        observer.observe(el);
+    });
+});
+</script>
+
+
+<!-- ========== ORBIT ANIMATION (for Hero Visual) ========== -->
+<!-- Add this in an HTML widget for animated orbital graphic -->
+<style>
+.spb-orbit-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+.spb-orbit {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    animation: spbRotate 30s linear infinite;
+}
+.spb-orbit-1 { width: 100%; height: 100%; top: 0; left: 0; }
+.spb-orbit-2 { width: 70%; height: 70%; top: 15%; left: 15%; animation-direction: reverse; animation-duration: 25s; }
+.spb-orbit-3 { width: 40%; height: 40%; top: 30%; left: 30%; animation-duration: 20s; }
+@keyframes spbRotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.spb-center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: #45001d;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+.spb-floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 15px 20px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    animation: spbFloatCard 6s ease-in-out infinite;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.spb-card-1 { top: 10%; right: 0; animation-delay: 0s; }
+.spb-card-2 { bottom: 25%; left: -10%; animation-delay: 2s; }
+.spb-card-3 { bottom: 5%; right: -5%; animation-delay: 4s; }
+@keyframes spbFloatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+</style>
+<div class="spb-orbit-container">
+    <div class="spb-orbit spb-orbit-1"></div>
+    <div class="spb-orbit spb-orbit-2"></div>
+    <div class="spb-orbit spb-orbit-3"></div>
+    <div class="spb-center-icon">🚀</div>
+    <div class="spb-floating-card spb-card-1">✓ Strategic Excellence</div>
+    <div class="spb-floating-card spb-card-2">✓ Governance & Control</div>
+    <div class="spb-floating-card spb-card-3">✓ Measurable Results</div>
+</div>
+
+
+<!-- ========== FOCUS CARD NUMBER BADGE ========== -->
+<!-- Add inside each focus card section for the large number -->
+<div class="spb-focus-number">01</div>
+<!-- Change to 02, 03 for other cards -->
+
+
+<!-- ========== SCROLL REVEAL ANIMATION ========== -->
+<!-- Add this once to enable scroll animations site-wide -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var animatedElements = document.querySelectorAll('.elementor-widget');
+    
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    
+    animatedElements.forEach(function(el) {
+        if (el.closest('.spb-service-card, .spb-vmv-card, .spb-focus-card')) {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        }
+    });
+});
+</script>
+
+
+<!-- ========== STICKY HEADER SCRIPT ========== -->
+<!-- Add this for header background change on scroll -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var header = document.querySelector('.spb-header');
+    if (header) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky-header');
+            } else {
+                header.classList.remove('sticky-header');
+            }
+        });
+    }
+});
+</script>
+
+
+<!-- ========== CONTACT FORM SUCCESS MESSAGE ========== -->
+<!-- If using Contact Form 7 or similar, add this for success styling -->
+<style>
+.wpcf7-response-output {
+    border-color: #45001d !important;
+    background: #f5f7fa;
+    border-radius: 12px;
+    padding: 15px 20px;
+}
+.wpcf7-mail-sent-ok {
+    background: #d4edda !important;
+    border-color: #c3e6cb !important;
+    color: #155724 !important;
+}
+</style>
+
+
+<!-- ========== VMV ICON BOXES ========== -->
+<!-- Use these emoji icons in your Elementor Icon widgets or text -->
+<!--
+Vision: 🔭
+Mission: 🎯
+Values: 💎
+
+Services:
+PMO Setup: 🏗️
+Governance: 🛡️
+Execution: 📈
+Software: 💻
+Learning: 🎓
+
+Features:
+Strategy: 🎯
+Expert Team: 👥
+Results: 📈
+Partnership: 🤝
+Agile: ⚡
+Support: 🔄
+-->
+

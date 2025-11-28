@@ -1,0 +1,238 @@
+/*
+  SPRINGBOARDPRO GLOBAL STYLES
+  =============================
+  Add this CSS to your WordPress Customizer > Additional CSS
+  or include it in your theme's style.css
+  
+  This contains the base styles and color variables used across all pages.
+*/
+
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+/* ===== CSS VARIABLES ===== */
+:root {
+    --spb-burgundy: #45001d;
+    --spb-burgundy-light: #6b0030;
+    --spb-burgundy-dark: #2d0013;
+    --spb-white: #ffffff;
+    --spb-black: #000000;
+    --spb-gray-light: #f5f7fa;
+    --spb-gray: #6b7280;
+    --spb-text-dark: #1a1a1a;
+}
+
+/* ===== BASE RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--spb-text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+    background: var(--spb-white);
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.3;
+}
+
+/* ===== COMMON COMPONENTS ===== */
+
+/* Section Header */
+.spb-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.spb-section-header h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--spb-black);
+    margin-bottom: 1rem;
+}
+
+.spb-section-header p {
+    color: var(--spb-gray);
+    font-size: 1.1rem;
+}
+
+/* Primary Button */
+.spb-btn-primary {
+    background: var(--spb-burgundy);
+    color: var(--spb-white);
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(69, 0, 29, 0.3);
+}
+
+.spb-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(69, 0, 29, 0.4);
+    background: var(--spb-burgundy-light);
+}
+
+/* Secondary Button */
+.spb-btn-secondary {
+    background: transparent;
+    color: var(--spb-white);
+    padding: 1rem 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.spb-btn-secondary:hover {
+    border-color: var(--spb-white);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Page Hero (for inner pages) */
+.spb-page-hero {
+    padding: 10rem 5% 5rem;
+    background: var(--spb-burgundy);
+    position: relative;
+    overflow: hidden;
+}
+
+.spb-page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.spb-page-hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.spb-breadcrumb {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+.spb-breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+}
+
+.spb-breadcrumb a:hover {
+    color: var(--spb-white);
+}
+
+.spb-breadcrumb span {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.spb-page-hero h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3.5rem;
+    color: var(--spb-white);
+    margin-bottom: 1rem;
+}
+
+.spb-page-hero .spb-subtitle {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+}
+
+/* CTA Section */
+.spb-cta-section {
+    padding: 6rem 5%;
+    background: var(--spb-burgundy);
+    position: relative;
+    overflow: hidden;
+}
+
+.spb-cta-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.spb-cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.spb-cta-content h2 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2.5rem;
+    color: var(--spb-white);
+    margin-bottom: 1rem;
+}
+
+.spb-cta-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+.spb-cta-section .spb-btn-primary {
+    background: var(--spb-white);
+    color: var(--spb-burgundy);
+}
+
+.spb-cta-section .spb-btn-primary:hover {
+    background: #f0f0f0;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    .spb-page-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .spb-section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .spb-cta-content h2 {
+        font-size: 2rem;
+    }
+}
+

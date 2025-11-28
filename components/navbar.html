@@ -1,0 +1,239 @@
+<!-- 
+  SPRINGBOARDPRO NAVBAR COMPONENT
+  ================================
+  Copy this entire code block into your WordPress header widget or theme header.
+  
+  Required: Add the CSS below to your WordPress Customizer > Additional CSS
+  or include it in your theme's style.css
+-->
+
+<!-- NAVBAR CSS - Add to WordPress Additional CSS -->
+<style>
+/* ===== NAVBAR STYLES ===== */
+.spb-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(69, 0, 29, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.spb-logo {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.spb-logo span {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.spb-nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.spb-nav-links li {
+    margin: 0;
+    padding: 0;
+}
+
+.spb-nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease;
+}
+
+.spb-nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffffff;
+    transition: width 0.3s ease;
+}
+
+.spb-nav-links a:hover::after {
+    width: 100%;
+}
+
+.spb-nav-links a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.spb-dropdown {
+    position: relative;
+}
+
+.spb-dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    background: rgba(69, 0, 29, 0.98);
+    backdrop-filter: blur(20px);
+    min-width: 250px;
+    padding: 1rem 0;
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.spb-dropdown:hover .spb-dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.spb-dropdown-content a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.spb-dropdown-content a::after {
+    display: none;
+}
+
+.spb-dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.spb-nav-cta {
+    background: #ffffff !important;
+    color: #45001d !important;
+    padding: 0.8rem 1.8rem !important;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.spb-nav-cta::after {
+    display: none !important;
+}
+
+.spb-nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    background: #f0f0f0 !important;
+}
+
+.spb-mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+    background: none;
+    border: none;
+}
+
+.spb-mobile-toggle span {
+    width: 25px;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .spb-nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 350px;
+        height: 100vh;
+        background: #45001d;
+        flex-direction: column;
+        padding: 5rem 2rem;
+        gap: 1.5rem;
+        transition: right 0.4s ease;
+    }
+
+    .spb-nav-links.active {
+        right: 0;
+    }
+
+    .spb-mobile-toggle {
+        display: flex;
+        z-index: 1001;
+    }
+
+    .spb-dropdown-content {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        padding: 0.5rem 0 0 1rem;
+        min-width: auto;
+    }
+}
+</style>
+
+<!-- NAVBAR HTML -->
+<nav class="spb-navbar">
+    <a href="index.html" class="spb-logo">Springboard<span>Pro</span></a>
+    <ul class="spb-nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="who-we-are.html">Who We Are</a></li>
+        <li class="spb-dropdown">
+            <a href="what-we-offer.html">What We Offer</a>
+            <div class="spb-dropdown-content">
+                <a href="project-management.html">Project Management Consulting</a>
+                <a href="software-solutions.html">Intelligent Software Solutions</a>
+                <a href="corporate-learning.html">Corporate & Academic Learning</a>
+            </div>
+        </li>
+        <li><a href="why-us.html">Why Us</a></li>
+        <li><a href="contact.html" class="spb-nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="spb-mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<!-- NAVBAR JAVASCRIPT - Add to WordPress footer or use a code snippet plugin -->
+<script>
+(function() {
+    const mobileToggle = document.querySelector('.spb-mobile-toggle');
+    const navLinks = document.querySelector('.spb-nav-links');
+    
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+})();
+</script>
+

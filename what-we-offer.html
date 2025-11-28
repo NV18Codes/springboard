@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What We Offer | SpringboardPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --burgundy: #45001d; --burgundy-light: #5c0028; --white: #ffffff; --black: #0a0a0a; --gray-50: #fafafa; --gray-100: #f4f4f5; --gray-200: #e4e4e7; --gray-500: #71717a; --gray-800: #27272a; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+        
+        /* Animations */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+        .animate-in { animation: fadeInUp 0.8s ease forwards; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .navbar.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 0.8rem 5%; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+        .navbar.scrolled .logo { color: var(--burgundy); }
+        .navbar.scrolled .nav-links a { color: var(--gray-800); }
+        .navbar.scrolled .nav-cta { background: var(--burgundy) !important; color: var(--white) !important; }
+        .logo { font-family: 'Instrument Serif', serif; font-size: 1.75rem; font-weight: 400; color: var(--white); text-decoration: none; }
+        .logo span { font-style: italic; }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
+        .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; }
+        .dropdown { position: relative; }
+        .dropdown-content { position: absolute; top: calc(100% + 10px); left: -20px; background: var(--white); min-width: 280px; padding: 0.75rem 0; border-radius: 12px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); border: 1px solid var(--gray-100); }
+        .dropdown:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-content a { display: block; padding: 0.9rem 1.5rem; color: var(--gray-800) !important; font-size: 0.9rem; }
+        .dropdown-content a:hover { background: var(--gray-50); color: var(--burgundy) !important; }
+        .nav-cta { background: var(--white) !important; color: var(--burgundy) !important; padding: 0.75rem 1.75rem !important; border-radius: 100px; font-weight: 600 !important; }
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+        .navbar.scrolled .mobile-toggle span { background: var(--gray-800); }
+
+        .page-hero { padding: 10rem 5% 6rem; background: var(--burgundy); position: relative; overflow: hidden; }
+        .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%); z-index: 1; }
+        .hero-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
+        .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
+        .page-hero-content { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
+        .page-hero .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1.25rem; }
+        .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: 4rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; letter-spacing: -1px; }
+        .page-hero p { color: rgba(255, 255, 255, 0.75); font-size: 1.2rem; line-height: 1.8; }
+
+        /* SERVICE CARDS */
+        .services-section { padding: 6rem 5%; background: var(--white); }
+        .services-container { max-width: 1400px; margin: 0 auto; }
+        .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+        
+        .service-card {
+            background: var(--burgundy);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+        }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .service-card:hover::before { opacity: 1; }
+        .service-card:hover { transform: translateY(-12px) scale(1.01); box-shadow: 0 40px 80px rgba(69, 0, 29, 0.4); }
+        
+        .service-card-header {
+            padding: 3rem 2.5rem 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .service-card-header h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.25rem;
+            color: var(--white);
+            font-weight: 400;
+            margin-bottom: 0.75rem;
+            line-height: 1.2;
+        }
+        .service-card-header p {
+            color: rgba(255,255,255,0.7);
+            font-size: 1.05rem;
+            font-style: italic;
+        }
+        
+        .service-card-body { padding: 2rem 2.5rem 2.5rem; }
+        
+        .service-items { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1200px) {
+            .services-grid { grid-template-columns: 1fr; max-width: 700px; margin: 0 auto; }
+        }
+        @media (max-width: 768px) {
+            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--white); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+            .nav-links.active { right: 0; }
+            .nav-links li { width: 100%; border-bottom: 1px solid var(--gray-100); }
+            .nav-links a { color: var(--gray-800) !important; padding: 1.25rem 0; display: block; }
+            .nav-links .nav-cta { margin-top: 1rem; background: var(--burgundy) !important; color: var(--white) !important; }
+            .mobile-toggle { display: flex; }
+            .page-hero h1 { font-size: 2.5rem; }
+            .page-hero p { font-size: 1rem; }
+            .service-card-header h2 { font-size: 1.75rem; }
+            .service-items { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 480px) {
+            .page-hero { padding: 8rem 5% 4rem; }
+            .service-card-header { padding: 2rem 1.5rem 1.5rem; }
+            .service-card-body { padding: 1.5rem; }
+        }
+        .service-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-item:hover { 
+            background: rgba(255,255,255,0.08); 
+            border-color: rgba(255,255,255,0.3); 
+            transform: translateY(-5px) scale(1.02);
+        }
+        .service-item:hover .service-item-icon svg {
+            stroke: rgba(255,255,255,0.9);
+            transform: scale(1.1);
+        }
+        .service-item-icon svg {
+            transition: all 0.4s ease;
+        }
+        .service-item-icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .service-item-icon svg { width: 100%; height: 100%; stroke: rgba(255,255,255,0.6); fill: none; stroke-width: 1; }
+        .service-item span { color: var(--white); font-size: 0.95rem; line-height: 1.4; }
+
+        /* Checklist style for Delivery & Recovery */
+        .service-checklist { list-style: none; }
+        .service-checklist li {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: var(--white);
+            font-size: 1rem;
+        }
+        .service-checklist li:last-child { border-bottom: none; }
+        .service-checklist .check-icon {
+            width: 28px;
+            height: 28px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .service-checklist .check-icon i { font-size: 0.7rem; color: rgba(255,255,255,0.6); }
+
+        /* Grid style for Enterprise Automation */
+        .service-grid-table {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+        }
+        .service-grid-cell {
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+            font-size: 0.95rem;
+            line-height: 1.4;
+            border-right: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .service-grid-cell:nth-child(3n) { border-right: none; }
+        .service-grid-cell:nth-child(n+4) { border-bottom: none; }
+
+        /* Parallelogram style for Process Consulting */
+        .service-parallelograms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+        .parallelogram {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--white);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            transform: skewX(-5deg);
+            transition: all 0.3s ease;
+        }
+        .parallelogram:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.5); }
+        .parallelogram span { display: block; transform: skewX(5deg); }
+
+        .service-card-footer {
+            padding: 0 2.5rem 2.5rem;
+        }
+        .btn-service {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--white);
+            color: var(--burgundy);
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn-service:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+        .btn-service i { transition: transform 0.3s ease; }
+        .btn-service:hover i { transform: translateX(4px); }
+
+        /* CTA */
+        .cta-section { padding: 6rem 5%; background: var(--black); position: relative; overflow: hidden; }
+        .cta-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(69, 0, 29, 0.4) 0%, transparent 50%); }
+        .cta-content { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
+        .cta-content h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; }
+        .cta-content p { color: rgba(255, 255, 255, 0.6); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
+        .btn-primary { background: var(--white); color: var(--burgundy); padding: 1rem 2rem; border: none; border-radius: 100px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
+
+        /* FOOTER */
+        .footer { background: var(--burgundy); padding: 5rem 5% 2rem; }
+        .footer-container { max-width: 1400px; margin: 0 auto; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .footer-brand .logo { margin-bottom: 1.5rem; display: inline-block; }
+        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .social-links { display: flex; gap: 0.75rem; }
+        .social-links a { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all 0.3s ease; }
+        .social-links a:hover { background: var(--white); color: var(--burgundy); }
+        .footer-column h4 { color: var(--white); font-size: 1rem; margin-bottom: 1.5rem; font-weight: 600; }
+        .footer-column ul { list-style: none; }
+        .footer-column ul li { margin-bottom: 0.75rem; }
+        .footer-column ul a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease; }
+        .footer-column ul a:hover { color: var(--white); }
+        .footer-contact p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .footer-contact i { color: var(--white); margin-top: 4px; width: 16px; }
+        .footer-bottom { padding-top: 2rem; text-align: center; }
+        .footer-bottom p { color: rgba(255, 255, 255, 0.4); font-size: 0.9rem; }
+
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) {
+            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--white); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; }
+            .nav-links.active { right: 0; }
+            .nav-links a { color: var(--gray-800) !important; padding: 1.25rem 0; display: block; }
+            .nav-links .nav-cta { margin-top: 1rem; background: var(--burgundy) !important; color: var(--white) !important; }
+            .mobile-toggle { display: flex; }
+            .page-hero h1 { font-size: 2.5rem; }
+            .service-card-header h2 { font-size: 1.75rem; }
+            .service-items { grid-template-columns: 1fr 1fr; }
+            .service-grid-table { grid-template-columns: 1fr; }
+            .service-grid-cell { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+            .service-grid-cell:last-child { border-bottom: none; }
+            .service-parallelograms { grid-template-columns: 1fr 1fr; }
+            .parallelogram { transform: none; }
+            .parallelogram span { transform: none; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .dropdown-content { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; padding: 0 0 0 1rem; background: transparent; border: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="who-we-are.html">Who We Are</a></li>
+            <li class="dropdown">
+                <a href="what-we-offer.html">What We Offer</a>
+                <div class="dropdown-content">
+                    <a href="project-management.html">Project Management Consulting</a>
+                    <a href="enterprise-automation.html">Enterprise Automation</a>
+                    <a href="delivery-recovery.html">Delivery & Recovery</a>
+                    <a href="process-consulting.html">Process Consulting</a>
+                </div>
+            </li>
+            <li><a href="why-us.html">Why Us</a></li>
+            <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+        </ul>
+        <div class="mobile-toggle"><span></span><span></span><span></span></div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-bg-image">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=80" alt="Modern office">
+        </div>
+        <div class="page-hero-content">
+            <span class="section-label"><i class="fas fa-cube"></i> Our Services</span>
+            <h1>What We Offer</h1>
+            <p>Comprehensive consulting solutions designed to transform your organization and drive measurable results.</p>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="services-container">
+            <div class="services-grid">
+                <!-- Project Management Consulting -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h2>Project Management Consulting</h2>
+                        <p>A strong PMO is where strategy becomes execution</p>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-items">
+                            <div class="service-item">
+                                <div class="service-item-icon">
+                                    <svg viewBox="0 0 64 64"><path d="M32 8L8 20v24l24 12 24-12V20L32 8z"/><path d="M32 8v48M8 20l24 12 24-12"/></svg>
+                                </div>
+                                <span>PMO Design, Setup, Roadmap & Implementation</span>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-item-icon">
+                                    <svg viewBox="0 0 64 64"><circle cx="32" cy="20" r="12"/><path d="M32 32v24M20 44h24"/></svg>
+                                </div>
+                                <span>Governance Framework & Operating Cadence Design</span>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-item-icon">
+                                    <svg viewBox="0 0 64 64"><path d="M16 48V16l16 16 16-16v32"/><path d="M16 32h32"/></svg>
+                                </div>
+                                <span>Transformation & Operating Model Enhancement</span>
+                            </div>
+                            <div class="service-item">
+                                <div class="service-item-icon">
+                                    <svg viewBox="0 0 64 64"><path d="M32 8L8 32l24 24 24-24L32 8z"/><path d="M20 32h24M32 20v24"/></svg>
+                                </div>
+                                <span>PM as a Service (PMaaS)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="project-management.html" class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Enterprise Automation -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h2>Enterprise Automation</h2>
+                        <p>Eliminate bottlenecks. Elevate performance.</p>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-grid-table">
+                            <div class="service-grid-cell">System Integration<br>(ERP, CRM, HRMS & legacy systems)</div>
+                            <div class="service-grid-cell">No-code / Low-code Solutions</div>
+                            <div class="service-grid-cell">Business Process Re-engineering</div>
+                            <div class="service-grid-cell">Robotic Process Automation (RPA)</div>
+                            <div class="service-grid-cell">Change Control Management</div>
+                            <div class="service-grid-cell">Governance Delivery Enablement</div>
+                        </div>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="enterprise-automation.html" class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Delivery & Recovery -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h2>Delivery & Recovery</h2>
+                        <p>Deliver at speed. Perform at scale.</p>
+                    </div>
+                    <div class="service-card-body">
+                        <ul class="service-checklist">
+                            <li><span class="check-icon"><i class="fas fa-check"></i></span> Project Delivery Acceleration & Assurance</li>
+                            <li><span class="check-icon"><i class="fas fa-check"></i></span> Project health-checks & diagnostics</li>
+                            <li><span class="check-icon"><i class="fas fa-check"></i></span> Risk stabilization & escalation management</li>
+                            <li><span class="check-icon"><i class="fas fa-check"></i></span> Execution dashboards & real-time reporting</li>
+                            <li><span class="check-icon"><i class="fas fa-check"></i></span> Transition & transformation management</li>
+                            <li><span class="check-icon"><i class="fas fa-check"></i></span> Post-implementation reviews & lessons learned</li>
+                        </ul>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="delivery-recovery.html" class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Process Consulting -->
+                <div class="service-card">
+                    <div class="service-card-header">
+                        <h2>Process Consulting</h2>
+                        <p>Bring Order. Build Confidence.</p>
+                    </div>
+                    <div class="service-card-body">
+                        <div class="service-parallelograms">
+                            <div class="parallelogram"><span>Process Standardisation & Optimisation</span></div>
+                            <div class="parallelogram"><span>SOP Development & Documentation</span></div>
+                            <div class="parallelogram"><span>Compliance Checks & Process Audits</span></div>
+                            <div class="parallelogram"><span>Policy Design & Implementation</span></div>
+                            <div class="parallelogram"><span>Operational Audits & Quality Reviews</span></div>
+                            <div class="parallelogram"><span>Best Practice Templates & Checklists</span></div>
+                        </div>
+                    </div>
+                    <div class="service-card-footer">
+                        <a href="process-consulting.html" class="btn-service">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-bg"></div>
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Let's discuss how our solutions can transform your organization.</p>
+            <a href="contact.html" class="btn-primary">Contact Us <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+                    <p>Your Strategic Growth Partner. Launchpad to success.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="who-we-are.html">Who We Are</a></li>
+                        <li><a href="what-we-offer.html">What We Offer</a></li>
+                        <li><a href="why-us.html">Why Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="project-management.html">PM Consulting</a></li>
+                        <li><a href="enterprise-automation.html">Enterprise Automation</a></li>
+                        <li><a href="delivery-recovery.html">Delivery & Recovery</a></li>
+                        <li><a href="process-consulting.html">Process Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h4>Get in Touch</h4>
+                    <p><i class="fas fa-phone"></i> +91 9148317322</p>
+                    <p><i class="fas fa-envelope"></i> reachus@springboardpro.in</p>
+                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, II Stage Indiranagar, Bangalore 560038</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 SpringboardPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() { 
+            const navbar = document.querySelector('.navbar'); 
+            if (window.scrollY > 50) navbar.classList.add('scrolled'); 
+            else navbar.classList.remove('scrolled'); 
+        });
+        document.querySelector('.mobile-toggle').addEventListener('click', function() { 
+            document.querySelector('.nav-links').classList.toggle('active'); 
+        });
+        
+        const observer = new IntersectionObserver((entries) => { 
+            entries.forEach(entry => { 
+                if (entry.isIntersecting) { 
+                    entry.target.style.opacity = '1'; 
+                    entry.target.style.transform = 'translateY(0)'; 
+                } 
+            }); 
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.service-card').forEach((el, i) => { 
+            el.style.opacity = '0'; 
+            el.style.transform = 'translateY(40px)'; 
+            el.style.transition = `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.2}s`; 
+            observer.observe(el); 
+        });
+        
+        // 3D tilt effect on cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = (e.clientX - rect.left) / rect.width - 0.5;
+                const y = (e.clientY - rect.top) / rect.height - 0.5;
+                this.style.transform = `translateY(-12px) scale(1.01) rotateX(${y * -3}deg) rotateY(${x * 3}deg)`;
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+        
+        // Animate service items on hover
+        document.querySelectorAll('.service-item').forEach((item, i) => {
+            item.style.transitionDelay = `${i * 0.05}s`;
+        });
+    </script>
+</body>
+</html>
