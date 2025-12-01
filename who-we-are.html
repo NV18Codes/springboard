@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who We Are | SpringboardPro</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -22,17 +22,23 @@
             --gray-800: #27272a;
         }
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
+        body { font-family: 'Space Grotesk', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
 
         /* NAVBAR */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .navbar.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 0.8rem 5%; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
-        .navbar.scrolled .logo { color: var(--burgundy); }
-        .navbar.scrolled .nav-links a { color: var(--gray-800); }
-        .navbar.scrolled .nav-links a:hover { color: var(--burgundy); }
-        .navbar.scrolled .nav-cta { background: var(--burgundy) !important; color: var(--white) !important; }
-        .logo { font-family: 'Instrument Serif', serif; font-size: 1.75rem; font-weight: 400; color: var(--white); text-decoration: none; }
-        .logo span { font-style: italic; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(69,0,29,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .navbar.scrolled { padding: 0.85rem 5%; box-shadow: 0 8px 35px rgba(69,0,29,0.45); }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
         .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
         .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; }
         .dropdown { position: relative; }
@@ -43,7 +49,7 @@
         .nav-cta { background: var(--white) !important; color: var(--burgundy) !important; padding: 0.75rem 1.75rem !important; border-radius: 100px; font-weight: 600 !important; }
         .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
         .mobile-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s ease; border-radius: 2px; }
-        .navbar.scrolled .mobile-toggle span { background: var(--gray-800); }
+        .navbar.scrolled .mobile-toggle span { background: var(--white); }
 
         /* PAGE HERO */
         .page-hero { 
@@ -57,12 +63,21 @@
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 30%, rgba(255,255,255,0.05) 0%, transparent 40%);
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,0.03) 0%, transparent 40%);
             z-index: 1;
         }
-        .hero-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
-        .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
+        .hero-bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+        }
         .page-hero-content { 
             max-width: 800px; 
             margin: 0 auto; 
@@ -84,11 +99,11 @@
             margin-bottom: 1.25rem;
         }
         .page-hero h1 { 
-            font-family: 'Instrument Serif', serif; 
+            font-family: 'Space Grotesk', sans-serif; 
             font-size: 4rem; 
             color: var(--white); 
             margin-bottom: 1.25rem; 
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: -1px;
         }
         .page-hero p { color: rgba(255, 255, 255, 0.75); font-size: 1.2rem; line-height: 1.8; }
@@ -123,7 +138,7 @@
             z-index: 10;
         }
         .about-image-content h3 {
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
             color: var(--white);
             font-weight: 400;
@@ -148,7 +163,7 @@
             letter-spacing: 0.5px;
         }
         .about-text h2 { 
-            font-family: 'Instrument Serif', serif; 
+            font-family: 'Space Grotesk', sans-serif; 
             font-size: 3rem; 
             color: var(--black); 
             margin-bottom: 1.5rem; 
@@ -176,7 +191,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .section-header h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--black); font-weight: 400; margin-bottom: 1rem; }
+        .section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: var(--black); font-weight: 600; margin-bottom: 1rem; }
         .section-header p { color: var(--gray-500); font-size: 1.1rem; line-height: 1.8; }
         .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
         .value-card {
@@ -204,13 +219,13 @@
             font-size: 1.5rem;
             color: var(--white);
         }
-        .value-card h3 { font-family: 'Instrument Serif', serif; font-size: 1.35rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 400; }
+        .value-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 600; }
         .value-card p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
 
         /* TEAM SECTION */
         .team-section { padding: 6rem 5%; background: var(--white); }
         .team-container { max-width: 1200px; margin: 0 auto; }
-        .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
         .team-card {
             background: var(--gray-50);
             border-radius: 24px;
@@ -225,20 +240,21 @@
             border-color: var(--gray-100);
         }
         .team-photo {
-            height: 280px;
             background: var(--burgundy);
             position: relative;
             overflow: hidden;
+            aspect-ratio: 3 / 4;
         }
         .team-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: top center;
             transition: transform 0.5s ease;
         }
         .team-card:hover .team-photo img { transform: scale(1.05); }
         .team-info { padding: 1.75rem; text-align: center; }
-        .team-info h3 { font-family: 'Instrument Serif', serif; font-size: 1.35rem; color: var(--black); margin-bottom: 0.35rem; font-weight: 400; }
+        .team-info h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; color: var(--black); margin-bottom: 0.35rem; font-weight: 600; }
         .team-info .role { color: var(--burgundy); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; }
         .team-info p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
 
@@ -246,7 +262,7 @@
         .cta-section { padding: 6rem 5%; background: var(--black); position: relative; overflow: hidden; }
         .cta-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(69, 0, 29, 0.4) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(69, 0, 29, 0.3) 0%, transparent 50%); }
         .cta-content { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
-        .cta-content h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; }
+        .cta-content h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 600; }
         .cta-content p { color: rgba(255, 255, 255, 0.6); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
         .btn-primary { background: var(--white); color: var(--burgundy); padding: 1rem 2rem; border: none; border-radius: 100px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.3s ease; }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
@@ -283,11 +299,14 @@
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--white); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+            .logo img {
+                height: 40px;
+            }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: rgba(69,0,29,0.97); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(69,0,29,0.35); }
             .nav-links.active { right: 0; }
-            .nav-links li { width: 100%; border-bottom: 1px solid var(--gray-100); }
-            .nav-links a { color: var(--gray-800) !important; padding: 1.25rem 0; display: block; }
-            .nav-links .nav-cta { margin-top: 1rem; text-align: center; background: var(--burgundy) !important; color: var(--white) !important; }
+            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.18); }
+            .nav-links a { color: var(--white) !important; padding: 1.25rem 0; display: block; }
+            .nav-links .nav-cta { margin-top: 1rem; text-align: center; background: var(--white) !important; color: var(--burgundy) !important; }
             .mobile-toggle { display: flex; }
             .page-hero h1 { font-size: 2.5rem; }
             .about-text h2, .section-header h2 { font-size: 2.25rem; }
@@ -300,7 +319,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+        <a href="index.html" class="logo" aria-label="SpringboardPro home">
+            <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="who-we-are.html">Who We Are</a></li>
@@ -320,9 +341,9 @@
     </nav>
 
     <section class="page-hero">
-        <div class="hero-bg-image">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80" alt="Team collaboration">
-        </div>
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80">
+            <source src="videos/v-2.mp4" type="video/mp4">
+        </video>
         <div class="page-hero-content">
             <span class="section-label"><i class="fas fa-users"></i> About Us</span>
             <h1>Who We Are</h1>
@@ -436,7 +457,9 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+                    <a href="index.html" class="logo" aria-label="SpringboardPro home">
+                        <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
+                    </a>
                     <p>Your Strategic Growth Partner in PMO Excellence. Enabling organizations to move confidently from strategy to execution.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>

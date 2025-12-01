@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Us | SpringboardPro</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,16 +20,23 @@
             --gray-800: #27272a;
         }
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
+        body { font-family: 'Space Grotesk', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
 
         /* NAVBAR */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .navbar.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 0.8rem 5%; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
-        .navbar.scrolled .logo { color: var(--burgundy); }
-        .navbar.scrolled .nav-links a { color: var(--gray-800); }
-        .navbar.scrolled .nav-cta { background: var(--burgundy) !important; color: var(--white) !important; }
-        .logo { font-family: 'Instrument Serif', serif; font-size: 1.75rem; font-weight: 400; color: var(--white); text-decoration: none; }
-        .logo span { font-style: italic; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(69,0,29,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .navbar.scrolled { padding: 0.85rem 5%; box-shadow: 0 8px 35px rgba(69,0,29,0.45); }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
         .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
         .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; }
         .dropdown { position: relative; }
@@ -40,146 +47,253 @@
         .nav-cta { background: var(--white) !important; color: var(--burgundy) !important; padding: 0.75rem 1.75rem !important; border-radius: 100px; font-weight: 600 !important; }
         .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
         .mobile-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
-        .navbar.scrolled .mobile-toggle span { background: var(--gray-800); }
+        .navbar.scrolled .mobile-toggle span { background: var(--white); }
 
         /* PAGE HERO */
         .page-hero { padding: 10rem 5% 6rem; background: var(--burgundy); position: relative; overflow: hidden; }
-        .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%); z-index: 1; }
-        .hero-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
-        .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
-        .page-hero-content { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
-        .page-hero .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1.25rem; }
-        .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: 4rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; letter-spacing: -1px; }
-        .page-hero p { color: rgba(255, 255, 255, 0.75); font-size: 1.2rem; line-height: 1.8; }
-
-        /* DIFFERENTIATORS */
-        .diff-section { padding: 6rem 5%; background: var(--white); }
-        .diff-container { max-width: 1400px; margin: 0 auto; }
-        .section-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
-        .section-header .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(69, 0, 29, 0.08); color: var(--burgundy); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .section-header h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--black); font-weight: 400; margin-bottom: 1rem; }
-        .section-header p { color: var(--gray-500); font-size: 1.1rem; line-height: 1.8; }
-
-        .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-        .diff-card {
-            background: var(--gray-50);
-            padding: 2.5rem;
-            border-radius: 24px;
-            text-align: center;
-            border: 1px solid transparent;
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        .diff-card:hover {
-            background: var(--white);
-            border-color: var(--gray-200);
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
-        }
-        .diff-icon {
-            width: 72px;
-            height: 72px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.75rem;
-            color: var(--white);
-        }
-        .diff-card h3 { font-family: 'Instrument Serif', serif; font-size: 1.5rem; color: var(--black); margin-bottom: 1rem; font-weight: 400; }
-        .diff-card p { color: var(--gray-500); font-size: 1rem; line-height: 1.8; }
-
-        /* STATS */
-        .stats-section { padding: 6rem 5%; background: var(--burgundy); position: relative; overflow: hidden; }
-        .stats-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 80% 50%, rgba(255,255,255,0.05) 0%, transparent 50%); z-index: 1; }
-        .stats-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
-        .stats-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
-        .stats-container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 10; }
-        .stats-header { text-align: center; margin-bottom: 4rem; }
-        .stats-header h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--white); font-weight: 400; margin-bottom: 1rem; }
-        .stats-header p { color: rgba(255,255,255,0.7); font-size: 1.15rem; }
-        .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-        .stat-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        .stat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-        .stat-card:hover::before { left: 100%; }
-        .stat-card:hover { background: rgba(255,255,255,0.18); transform: translateY(-8px) scale(1.02); }
-        .stat-number { font-family: 'Instrument Serif', serif; font-size: 3.5rem; color: var(--white); font-weight: 400; margin-bottom: 0.5rem; }
-        .stat-number .counter { display: inline-block; min-width: 60px; }
-        .stat-label { color: rgba(255,255,255,0.7); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* APPROACH */
-        .approach-section { padding: 6rem 5%; background: var(--gray-50); }
-        .approach-container { max-width: 1200px; margin: 0 auto; }
-        .approach-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
-        .approach-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            border: 1px solid var(--gray-100);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-        .approach-card::before {
-            content: '';
+        .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%); z-index: 1; }
+        .hero-bg-video {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: var(--burgundy);
-            border-radius: 20px 20px 0 0;
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
         }
-        .approach-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
-            border-color: transparent;
+        .page-hero-content { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
+        .page-hero .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1.25rem; }
+        .page-hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 600; letter-spacing: -1px; }
+        .page-hero p { color: rgba(255, 255, 255, 0.75); font-size: 1.2rem; line-height: 1.8; }
+
+        /* WHY SECTION */
+        .why-section {
+            padding: 6rem 5%;
+            background: var(--white);
         }
-        .approach-card:hover::before { transform: scaleX(1); }
-        .approach-step {
-            width: 48px;
-            height: 48px;
-            margin: 0 auto 1.25rem;
+        .why-container { max-width: 1400px; margin: 0 auto; }
+        .section-intro {
+            max-width: 760px;
+            margin-bottom: 2.5rem;
+        }
+        .intro-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(69,0,29,0.08);
+            border: 1px solid rgba(69,0,29,0.2);
+            color: var(--burgundy);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        .section-intro h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin: 1rem 0;
+        }
+        .section-intro p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .why-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 3rem;
+            align-items: stretch;
+        }
+        .why-text {
+            background: var(--gray-50);
+            border-radius: 28px;
+            padding: 3rem;
+            border: 1px solid var(--gray-100);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+        }
+        .why-text h3 {
+            font-size: 2.25rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+        .why-text p {
+            color: var(--gray-500);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .why-image {
+            margin-top: 2rem;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+        .why-image img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        .why-points {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 1rem;
+        }
+        .why-points li {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            color: var(--gray-700);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+        .why-points li i {
+            color: var(--burgundy);
+            margin-top: 0.2rem;
+        }
+        .why-card-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+        .why-card {
+            padding: 2rem;
+            border-radius: 24px;
+            border: 1px solid rgba(69,0,29,0.15);
+            background: linear-gradient(135deg, rgba(69,0,29,0.08), rgba(69,0,29,0.02));
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .why-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 60px rgba(69,0,29,0.2);
+        }
+        .why-card small {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--burgundy);
+        }
+        .why-card h4 {
+            font-size: 1.4rem;
+            margin: 0.8rem 0;
+            color: var(--black);
+        }
+        .why-card p { color: var(--gray-600); font-size: 0.95rem; line-height: 1.7; }
+
+        /* IMPACT SECTION */
+        .impact-section {
+            padding: 5rem 5%;
             background: var(--burgundy);
-            border-radius: 14px;
+            color: var(--white);
+        }
+        .impact-container { max-width: 1400px; margin: 0 auto; }
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+        .impact-card {
+            background: rgba(255,255,255,0.08);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .impact-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top, rgba(255,255,255,0.3), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .impact-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(255,255,255,0.5);
+        }
+        .impact-card:hover::after { opacity: 1; }
+        .impact-card h3 {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+        }
+        .impact-card p {
+            color: rgba(255,255,255,0.75);
+            margin: 0;
+        }
+        .impact-card .label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.7);
+        }
+        .impact-card.highlight {
+            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05));
+        }
+
+        /* VALUE SECTION */
+        .value-section {
+            padding: 6rem 5%;
+            background: var(--gray-50);
+        }
+        .value-container { max-width: 1200px; margin: 0 auto; }
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+        .value-card {
+            background: var(--white);
+            border-radius: 22px;
+            padding: 2.25rem;
+            border: 1px solid var(--gray-100);
+            box-shadow: 0 20px 55px rgba(0,0,0,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .value-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 70px rgba(69,0,29,0.15);
+        }
+        .value-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 16px;
+            background: rgba(69,0,29,0.08);
+            color: var(--burgundy);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Instrument Serif', serif;
-            font-size: 1.25rem;
-            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
         }
-        .approach-card h3 { font-family: 'Instrument Serif', serif; font-size: 1.25rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 400; }
-        .approach-card p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
+        .value-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--black);
+        }
+        .value-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
 
         /* CTA */
         .cta-section { padding: 6rem 5%; background: var(--black); position: relative; overflow: hidden; }
         .cta-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 30% 50%, rgba(69, 0, 29, 0.4) 0%, transparent 50%); }
         .cta-content { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
-        .cta-content h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; }
+        .cta-content h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 600; }
         .cta-content p { color: rgba(255, 255, 255, 0.6); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
         .btn-primary { background: var(--white); color: var(--burgundy); padding: 1rem 2rem; border: none; border-radius: 100px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.3s ease; }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
@@ -205,20 +319,24 @@
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .diff-grid { grid-template-columns: repeat(2, 1fr); }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .approach-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-grid { grid-template-columns: 1fr; }
+            .impact-grid { grid-template-columns: repeat(2, 1fr); }
+            .value-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
-            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--white); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+            .logo img {
+                height: 40px;
+            }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: rgba(69,0,29,0.97); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(69,0,29,0.35); }
             .nav-links.active { right: 0; }
-            .nav-links li { width: 100%; border-bottom: 1px solid var(--gray-100); }
-            .nav-links a { color: var(--gray-800) !important; padding: 1.25rem 0; display: block; }
-            .nav-links .nav-cta { margin-top: 1rem; text-align: center; background: var(--burgundy) !important; color: var(--white) !important; }
+            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.18); }
+            .nav-links a { color: var(--white) !important; padding: 1.25rem 0; display: block; }
+            .nav-links .nav-cta { margin-top: 1rem; text-align: center; background: var(--white) !important; color: var(--burgundy) !important; }
             .mobile-toggle { display: flex; }
             .page-hero h1 { font-size: 2.5rem; }
-            .section-header h2, .stats-header h2 { font-size: 2.25rem; }
-            .diff-grid, .stats-grid, .approach-grid { grid-template-columns: 1fr; }
+            .section-intro h2 { font-size: 2.25rem; }
+            .impact-grid, .value-grid { grid-template-columns: 1fr; }
+            .impact-card.highlight { grid-column: span 1; }
             .footer-grid { grid-template-columns: 1fr; }
             .dropdown-content { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 0 0 0 1rem; background: transparent; }
         }
@@ -226,7 +344,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+        <a href="index.html" class="logo" aria-label="SpringboardPro home">
+            <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="who-we-are.html">Who We Are</a></li>
@@ -246,9 +366,9 @@
     </nav>
 
     <section class="page-hero">
-        <div class="hero-bg-image">
-            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80" alt="Success meeting">
-        </div>
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1600&q=80">
+            <source src="videos/v-4.mp4" type="video/mp4">
+        </video>
         <div class="page-hero-content">
             <span class="section-label"><i class="fas fa-star"></i> Why Choose Us</span>
             <h1>Why Us</h1>
@@ -256,105 +376,97 @@
         </div>
     </section>
 
-    <section class="diff-section">
-        <div class="diff-container">
-            <div class="section-header">
-                <span class="section-label"><i class="fas fa-gem"></i> Our Differentiators</span>
-                <h2>What Sets Us Apart</h2>
-                <p>We bring a unique combination of expertise, methodology, and commitment to every engagement.</p>
+    <section class="why-section">
+        <div class="why-container">
+            <div class="section-intro">
+                <span class="intro-label"><i class="fas fa-gem"></i> Our Differentiators</span>
+                <h2>What sets SpringboardPro apart</h2>
+                <p>We partner with you across strategy, operations, and technology so PMO ambition turns into measurable impact.</p>
             </div>
-            <div class="diff-grid">
-                <div class="diff-card">
-                    <div class="diff-icon"><i class="fas fa-award"></i></div>
-                    <h3>Proven Expertise</h3>
-                    <p>Decades of combined experience across industries, with certified professionals who understand your unique challenges.</p>
+            <div class="why-grid">
+                <div class="why-text">
+                    <h3>Your launchpad for success</h3>
+                    <p>Engagements are run with the same urgency and discipline as your internal leadership teams—clear governance, decisive communication, and shared accountability.</p>
+                    <ul class="why-points">
+                        <li><i class="fas fa-circle"></i><span>Committed partnership with transparency, cadence, and integrity.</span></li>
+                        <li><i class="fas fa-circle"></i><span>Leadership-grade expertise spanning PMO, digital innovation, and insight-led decisions.</span></li>
+                        <li><i class="fas fa-circle"></i><span>Business, technology, and people practitioners who align automation with human adoption.</span></li>
+                        <li><i class="fas fa-circle"></i><span>Global perspective with local execution—world-class standards adapted to local realities.</span></li>
+                    </ul>
+                    <div class="why-image">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=1400&q=80" alt="SpringboardPro team discussion">
+                    </div>
                 </div>
-                <div class="diff-card">
-                    <div class="diff-icon"><i class="fas fa-cogs"></i></div>
-                    <h3>Tailored Solutions</h3>
-                    <p>No cookie-cutter approaches. We design solutions that fit your organization's specific needs and culture.</p>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Partnership Approach</h3>
-                    <p>We work alongside your team, transferring knowledge and building lasting capabilities within your organization.</p>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Results-Driven</h3>
-                    <p>Focused on measurable outcomes that directly impact your business performance and bottom line.</p>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>Innovation Focus</h3>
-                    <p>Continuously evolving our methods to incorporate the latest best practices and technologies.</p>
-                </div>
-                <div class="diff-card">
-                    <div class="diff-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Risk Mitigation</h3>
-                    <p>Proactive approach to identifying and addressing risks before they impact your projects.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats-section">
-        <div class="stats-bg-image">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&q=80" alt="Office background">
-        </div>
-        <div class="stats-container">
-            <div class="stats-header">
-                <h2>Our Track Record</h2>
-                <p>Numbers that speak to our commitment and success</p>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-count="150" data-suffix="+">0</span></div>
-                    <div class="stat-label">Projects Delivered</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-count="50" data-suffix="+">0</span></div>
-                    <div class="stat-label">Happy Clients</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-count="98" data-suffix="%">0</span></div>
-                    <div class="stat-label">Success Rate</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number"><span class="counter" data-count="10" data-suffix="+">0</span></div>
-                    <div class="stat-label">Years Experience</div>
+                <div class="why-card-stack">
+                    <article class="why-card">
+                        <small><i class="fas fa-user-tie"></i> Leadership</small>
+                        <h4>Deep leadership experience</h4>
+                        <p>Program directors and PMO heads who have scaled portfolios across regions and industries.</p>
+                    </article>
+                    <article class="why-card">
+                        <small><i class="fas fa-layer-group"></i> Solutions</small>
+                        <h4>Integrated &amp; scalable models</h4>
+                        <p>Modular playbooks for PMO setup, governance, and automation that flex with growth.</p>
+                    </article>
+                    <article class="why-card">
+                        <small><i class="fas fa-bullseye"></i> Outcomes</small>
+                        <h4>Outcome-oriented, value-focused</h4>
+                        <p>Every initiative is tied to ROI, risk reduction, and decisive executive reporting.</p>
+                    </article>
+                    <article class="why-card">
+                        <small><i class="fas fa-shield-alt"></i> Governance</small>
+                        <h4>Risk-ready execution</h4>
+                        <p>Embedded assurance, playbooks for escalations, and continuous health checks keep delivery predictable.</p>
+                    </article>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="approach-section">
-        <div class="approach-container">
-            <div class="section-header">
-                <span class="section-label"><i class="fas fa-route"></i> Our Approach</span>
-                <h2>How We Work</h2>
-                <p>A structured yet flexible methodology that ensures success at every stage.</p>
+    <section class="impact-section">
+        <div class="impact-container">
+            <div class="impact-grid">
+                <div class="impact-card highlight">
+                    <span class="label">Projects Delivered</span>
+                    <h3><span class="counter" data-count="3000" data-suffix="+" data-format="compact">0</span></h3>
+                    <p>Programmes completed across industries</p>
+                </div>
+                <div class="impact-card highlight">
+                    <span class="label">Happy Clients</span>
+                    <h3><span class="counter" data-count="2000" data-suffix="+" data-format="compact">0</span></h3>
+                    <p>Leaders who trust our PMO partnership</p>
+                </div>
+                <div class="impact-card">
+                    <span class="label">Success Rate</span>
+                    <h3><span class="counter" data-count="98" data-suffix="%">0</span></h3>
+                    <p>Initiatives delivered with measurable value</p>
+                </div>
+                <div class="impact-card">
+                    <span class="label">Years in Practice</span>
+                    <h3><span class="counter" data-count="10" data-suffix="+">0</span></h3>
+                    <p>Driving PMO governance &amp; change</p>
+                </div>
             </div>
-            <div class="approach-grid">
-                <div class="approach-card">
-                    <div class="approach-step">01</div>
-                    <h3>Discover</h3>
-                    <p>Deep dive into your organization to understand challenges, goals, and opportunities.</p>
+        </div>
+    </section>
+
+    <section class="value-section">
+        <div class="value-container">
+            <div class="value-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-compass"></i></div>
+                    <h4>Discover</h4>
+                    <p>Immersive diagnostics to understand context, ambition, and constraints before we prescribe.</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-step">02</div>
-                    <h3>Design</h3>
-                    <p>Create tailored solutions aligned with your strategic objectives and culture.</p>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-pencil-ruler"></i></div>
+                    <h4>Design</h4>
+                    <p>Tailored PMO, automation, and governance frameworks aligned to culture and operating models.</p>
                 </div>
-                <div class="approach-card">
-                    <div class="approach-step">03</div>
-                    <h3>Deliver</h3>
-                    <p>Execute with precision, transparency, and continuous communication.</p>
-                </div>
-                <div class="approach-card">
-                    <div class="approach-step">04</div>
-                    <h3>Sustain</h3>
-                    <p>Transfer knowledge and build capabilities for long-term success.</p>
+                    <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-rocket"></i></div>
+                    <h4>Deliver &amp; Sustain</h4>
+                    <p>Hands-on execution, transparent reporting, and capability transfer that keeps value compounding.</p>
                 </div>
             </div>
         </div>
@@ -373,7 +485,9 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+                    <a href="index.html" class="logo" aria-label="SpringboardPro home">
+                        <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
+                    </a>
                     <p>Your Strategic Growth Partner in PMO Excellence.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -424,17 +538,25 @@
         });
         
         // Counter animation
-        function animateCounter(el, target, suffix = '') {
+        function animateCounter(el, target, suffix = '', format = 'standard') {
             let current = 0;
-            const increment = target / 40;
+            const steps = 50;
+            const increment = target / steps;
+            const compactFormatter = format === 'compact'
+                ? new Intl.NumberFormat('en', { notation: 'compact', maximumFractionDigits: 1 })
+                : null;
             const timer = setInterval(() => {
                 current += increment;
                 if (current >= target) {
                     current = target;
                     clearInterval(timer);
                 }
-                el.textContent = Math.floor(current) + suffix;
-            }, 40);
+                if (format === 'compact' && compactFormatter) {
+                    el.textContent = `${compactFormatter.format(current)}${suffix}`;
+                } else {
+                    el.textContent = Math.floor(current) + suffix;
+                }
+            }, 30);
         }
         
         const observer = new IntersectionObserver((entries) => {
@@ -450,14 +572,15 @@
                             counter.classList.add('counted');
                             const target = parseInt(counter.getAttribute('data-count'));
                             const suffix = counter.getAttribute('data-suffix') || '';
-                            animateCounter(counter, target, suffix);
+                            const format = counter.getAttribute('data-format') || 'standard';
+                            animateCounter(counter, target, suffix, format);
                         }
                     });
                 }
             });
         }, { threshold: 0.2 });
         
-        document.querySelectorAll('.diff-card, .stat-card, .approach-card').forEach((el, i) => {
+        document.querySelectorAll('.why-card, .impact-card, .value-card').forEach((el, i) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(40px)';
             el.style.transition = `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.1}s`;
@@ -465,7 +588,7 @@
         });
         
         // 3D tilt effect
-        document.querySelectorAll('.diff-card, .approach-card').forEach(card => {
+        document.querySelectorAll('.why-card, .value-card').forEach(card => {
             card.addEventListener('mousemove', function(e) {
                 const rect = this.getBoundingClientRect();
                 const x = (e.clientX - rect.left) / rect.width - 0.5;

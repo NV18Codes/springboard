@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What We Offer | SpringboardPro</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root { --burgundy: #45001d; --burgundy-light: #5c0028; --white: #ffffff; --black: #0a0a0a; --gray-50: #fafafa; --gray-100: #f4f4f5; --gray-200: #e4e4e7; --gray-500: #71717a; --gray-800: #27272a; }
         html { scroll-behavior: smooth; }
-        body { font-family: 'DM Sans', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+        body { font-family: 'Space Grotesk', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); overflow-x: hidden; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
 
         /* NAVBAR */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .navbar.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 0.8rem 5%; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
-        .navbar.scrolled .logo { color: var(--burgundy); }
-        .navbar.scrolled .nav-links a { color: var(--gray-800); }
-        .navbar.scrolled .nav-cta { background: var(--burgundy) !important; color: var(--white) !important; }
-        .logo { font-family: 'Instrument Serif', serif; font-size: 1.75rem; font-weight: 400; color: var(--white); text-decoration: none; }
-        .logo span { font-style: italic; }
+        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(69,0,29,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .navbar.scrolled { padding: 0.85rem 5%; box-shadow: 0 8px 35px rgba(69,0,29,0.45); }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+        .logo img {
+            height: 48px;
+            width: auto;
+            display: block;
+        }
         .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
         .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; }
         .dropdown { position: relative; }
@@ -30,15 +37,24 @@
         .nav-cta { background: var(--white) !important; color: var(--burgundy) !important; padding: 0.75rem 1.75rem !important; border-radius: 100px; font-weight: 600 !important; }
         .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
         .mobile-toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
-        .navbar.scrolled .mobile-toggle span { background: var(--gray-800); }
+        .navbar.scrolled .mobile-toggle span { background: var(--white); }
 
         /* HERO */
         .page-hero { padding: 10rem 5% 6rem; background: var(--burgundy); position: relative; overflow: hidden; }
-        .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.08) 0%, transparent 50%); z-index: 1; }
-        .hero-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
-        .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
+        .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%); z-index: 1; }
+        .hero-bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+        }
         .page-hero-content { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
-        .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: 4rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; letter-spacing: -1px; }
+        .page-hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 600; letter-spacing: -1px; }
         .page-hero p { color: rgba(255, 255, 255, 0.75); font-size: 1.2rem; line-height: 1.8; }
 
         /* SERVICES SECTION */
@@ -90,9 +106,9 @@
             position: absolute;
             top: 2rem;
             left: 2rem;
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 5rem;
-            font-weight: 400;
+            font-weight: 600;
             color: var(--white);
             opacity: 0.3;
             line-height: 1;
@@ -119,10 +135,10 @@
             color: var(--white);
         }
         .service-content h2 {
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Space Grotesk', sans-serif;
             font-size: 2rem;
             color: var(--black);
-            font-weight: 400;
+            font-weight: 600;
             margin-bottom: 0.5rem;
         }
         .service-tagline {
@@ -199,7 +215,7 @@
             background-size: 40px 40px;
         }
         .cta-content { max-width: 700px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
-        .cta-content h2 { font-family: 'Instrument Serif', serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 400; }
+        .cta-content h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 600; }
         .cta-content p { color: rgba(255, 255, 255, 0.7); font-size: 1.15rem; margin-bottom: 2rem; line-height: 1.8; }
         .btn-primary { background: var(--white); color: var(--burgundy); padding: 1rem 2rem; border: none; border-radius: 100px; font-size: 0.95rem; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 0.75rem; transition: all 0.3s ease; }
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
@@ -231,11 +247,14 @@
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
         @media (max-width: 768px) {
-            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: var(--white); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(0,0,0,0.1); }
+            .logo img {
+                height: 40px;
+            }
+            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: rgba(69,0,29,0.97); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(69,0,29,0.35); }
             .nav-links.active { right: 0; }
-            .nav-links li { width: 100%; border-bottom: 1px solid var(--gray-100); }
-            .nav-links a { color: var(--gray-800) !important; padding: 1.25rem 0; display: block; }
-            .nav-links .nav-cta { margin-top: 1rem; background: var(--burgundy) !important; color: var(--white) !important; text-align: center; }
+            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.18); }
+            .nav-links a { color: var(--white) !important; padding: 1.25rem 0; display: block; }
+            .nav-links .nav-cta { margin-top: 1rem; background: var(--white) !important; color: var(--burgundy) !important; text-align: center; }
             .mobile-toggle { display: flex; }
             .page-hero h1 { font-size: 2.5rem; }
             .service-content { padding: 2rem; }
@@ -254,7 +273,9 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+        <a href="index.html" class="logo" aria-label="SpringboardPro home">
+            <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
+        </a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="who-we-are.html">Who We Are</a></li>
@@ -274,9 +295,9 @@
     </nav>
 
     <section class="page-hero">
-        <div class="hero-bg-image">
-            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=80" alt="Modern office">
-        </div>
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1600&q=80">
+            <source src="videos/v-3.mp4" type="video/mp4">
+        </video>
         <div class="page-hero-content">
             <h1>What We Offer</h1>
             <p>Comprehensive consulting solutions designed to transform your organization and drive measurable results.</p>
@@ -390,7 +411,9 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+                    <a href="index.html" class="logo" aria-label="SpringboardPro home">
+                        <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
+                    </a>
                     <p>Your Strategic Growth Partner. Launchpad to success.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>

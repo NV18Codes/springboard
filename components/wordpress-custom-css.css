@@ -16,7 +16,7 @@
  */
 
 /* ===== GOOGLE FONTS ===== */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 /* ===== CSS VARIABLES ===== */
 :root {
@@ -32,12 +32,12 @@
 
 /* ===== GLOBAL OVERRIDES ===== */
 body {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6,
 .elementor-heading-title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
 }
 
 /* ===== OVERRIDE THEME ACCENT COLORS ===== */
@@ -108,7 +108,7 @@ a:hover {
 
 .spb-header .elementor-heading-title {
     color: var(--spb-white) !important;
-    font-family: 'Playfair Display', Georgia, serif !important;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif !important;
     font-size: 1.8rem !important;
 }
 
@@ -503,7 +503,7 @@ body.spb-has-fixed-header {
 
 .spb-stats .elementor-counter-number-wrapper {
     color: var(--spb-burgundy) !important;
-    font-family: 'Playfair Display', Georgia, serif !important;
+    font-family: 'Space Grotesk', 'Segoe UI', sans-serif !important;
     font-size: 3rem !important;
     font-weight: 700 !important;
 }
