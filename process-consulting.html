@@ -12,10 +12,10 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Space Grotesk', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
         .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1.25rem 5%; display: flex; justify-content: space-between; align-items: center; background: transparent; transition: all 0.4s; }
-        .navbar.scrolled { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px); padding: 0.8rem 5%; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+        .navbar.scrolled { background: rgba(69, 0, 29, 0.98); backdrop-filter: blur(20px); padding: 0.8rem 5%; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
         .navbar.scrolled .logo { color: var(--burgundy); }
-        .navbar.scrolled .nav-links a { color: var(--gray-800); }
-        .navbar.scrolled .nav-cta { background: var(--burgundy) !important; color: var(--white) !important; }
+        .navbar.scrolled .nav-links a {  color: var(--white) }
+        .navbar.scrolled .nav-cta { background: var(--white) !important; color: var(--burgundy) !important; }
         .logo { font-family: 'Space Grotesk', sans-serif; font-size: 1.75rem; color: var(--white); text-decoration: none; font-weight: 600; }
         .logo span { font-style: italic; }
         .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
@@ -34,7 +34,7 @@
         .page-hero { min-height: 100vh; background: var(--burgundy); position: relative; display: flex; flex-direction: column; }
         .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 50%); z-index: 1; }
         .hero-bg-image { position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
-        .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; }
+        .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.3; object-position: top center; }
         .hero-top { padding: 10rem 5% 3rem; position: relative; z-index: 10; }
         .hero-top h1 { font-family: 'Space Grotesk', sans-serif; font-size: 4.5rem; color: var(--white); line-height: 1.1; margin-bottom: 1rem; font-weight: 600; max-width: 500px; }
         .hero-top .tagline { font-size: 1.35rem; color: rgba(255,255,255,0.7); font-style: italic; }
@@ -109,7 +109,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+        <a href="index.html" class="logo"><img src="springboardlogo-removebg-preview.png" alt="" style="width: auto; height: 48px; display: block;"></span></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="who-we-are.html">Who We Are</a></li>
@@ -130,7 +130,7 @@
 
     <section class="page-hero">
         <div class="hero-bg-image">
-            <img src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=1600&q=80" alt="Process documentation">
+            <img src="./images/process consulting.jpg" alt="Process documentation">
         </div>
         <div class="hero-top">
             <h1>Process Consulting</h1>
@@ -203,7 +203,7 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo">Springboard<span>Pro</span></a>
+                    <a href="index.html" class="logo"><img src="springboardlogo-removebg-preview.png" alt="logo" style="width: auto; height: 48px; display: block"></span></a>
                     <p>Your Strategic Growth Partner. Launchpad to success.</p>
                     <div class="social-links"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-facebook-f"></i></a></div>
                 </div>
