@@ -33,14 +33,19 @@
         }
 
         body {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             color: var(--gray-800);
             line-height: 1.6;
             background: var(--white);
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Nunito', sans-serif;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
@@ -52,18 +57,20 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 1.15rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(69, 0, 29, 0.95);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: transparent;
+            border-bottom: 1px solid transparent;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .navbar.scrolled {
             padding: 0.85rem 5%;
+            background: rgba(69, 0, 29, 0.95);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 8px 35px rgba(69, 0, 29, 0.45);
         }
 
@@ -75,7 +82,7 @@
         }
 
         .logo img {
-            height: 72px;
+            height: 90px;
             width: auto;
             display: block;
         }
@@ -164,7 +171,7 @@
 
         /* PAGE HERO */
         .page-hero {
-            padding: 10rem 5% 6rem;
+            padding: 12rem 5% 6rem;
             background: var(--burgundy);
             position: relative;
             overflow: hidden;
@@ -181,7 +188,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%), radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 55%), radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.015) 0%, transparent 45%);
             z-index: 1;
         }
 
@@ -194,7 +201,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.45;
+            opacity: 0.5;
             object-position: top center;
         }
 
@@ -215,9 +222,9 @@
         }
 
         .page-hero p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 1.2rem;
-            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.5rem;
+            line-height: 1.9;
         }
 
         /* ABOUT SECTION */
@@ -233,6 +240,31 @@
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: start;
+        }
+
+        .about-image {
+            position: relative;
+            height: 700px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--burgundy);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(69, 0, 29, 0.15) 0%, rgba(69, 0, 29, 0.4) 100%);
+            z-index: 1;
         }
 
         .about-image {
@@ -310,8 +342,8 @@
         /* FOUNDER'S MESSAGE */
         .founder-message-section {
             padding: 6rem 5%;
-            background: #8a1c42;
-            color: var(--white);
+            background: #e8e8ef;
+            color: var(--burgundy);
         }
 
         .founder-container {
@@ -327,7 +359,7 @@
             position: relative;
             border-radius: 20px;
             overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            /* border: 2px solid rgba(255, 255, 255, 0.1); */
         }
 
         .founder-img-box img {
@@ -337,13 +369,22 @@
         }
 
         .founder-content h3 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
+            font-size: 2.6rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .founder-quote {
+            font-size: 1.2rem;
+            color: var(--burgundy);
+            line-height: 1.7;
+            padding-left: 1.25rem;
+            border-left: 4px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 1.75rem;
         }
 
         .founder-content p {
-            color: rgba(255, 255, 255, 0.85);
+            color: var(--black);
             font-size: 1.15rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
@@ -359,7 +400,7 @@
         }
 
         .founder-content .signature span {
-            color: rgba(255, 255, 255, 0.6);
+            color: var(--burgundy);
         }
 
         /* VALUES SECTION */
@@ -401,31 +442,33 @@
 
         .value-card {
             background: var(--white);
-            padding: 2rem;
-            border-radius: 20px;
+            padding: 2.25rem;
+            border-radius: 24px;
             text-align: center;
-            border: 1px solid var(--gray-200);
+            border: 1px solid rgba(69, 0, 29, 0.08);
             transition: all 0.4s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
         }
 
         .value-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
             border-color: transparent;
         }
 
         .value-icon {
-            width: 64px;
-            height: 64px;
+            width: 70px;
+            height: 70px;
             margin: 0 auto 1.25rem;
-            background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
-            border-radius: 16px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: var(--white);
+            font-size: 1.6rem;
+            color: var(--burgundy);
+            border: 1px solid rgba(69, 0, 29, 0.25);
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(69, 0, 29, 0.08));
+            box-shadow: inset 0 0 12px rgba(69, 0, 29, 0.08);
         }
 
         .value-card h3 {
@@ -450,180 +493,231 @@
         }
 
         .team-container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
         .team-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Two persons besides */
-            gap: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
         }
 
-        /* The Professional Card Design */
-        .pro-team-card {
-            background: var(--white);
-            border-radius: 20px;
-            padding: 2.5rem;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
-            /* Top accent border */
-            border-top: 5px solid var(--burgundy);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pro-team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(69, 0, 29, 0.1);
-        }
-
-        /* Header part of the card: Photo + Name/Role */
-        .pro-team-header {
+        .team-card {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--gray-200);
+            gap: 1.75rem;
+            padding: 2rem;
+            border-radius: 28px;
+            background: linear-gradient(135deg, rgba(69, 0, 29, 0.08), rgba(69, 0, 29, 0.02));
+            border: 1px solid rgba(69, 0, 29, 0.12);
+            box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
         }
 
-        .pro-team-img-wrapper {
-            width: 120px;
-            height: 120px;
-            flex-shrink: 0;
-            border-radius: 24px;
+        .team-card:nth-child(even) {
+            background: var(--white);
+        }
+
+        .team-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
             overflow: hidden;
-            background: var(--gray-200);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 8px solid var(--white);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            flex-shrink: 0;
         }
 
-        .pro-team-img-wrapper img {
+        .team-photo img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            object-position: top center;
+            object-fit: contain;
+            background: var(--gray-100);
         }
 
-        .pro-team-identity {
+        .team-card-body {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
         }
 
-        .pro-team-identity h3 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.75rem;
+        .team-card-body h3 {
+            font-size: 1.85rem;
             color: var(--black);
-            line-height: 1.2;
-            margin-bottom: 0.5rem;
         }
 
-        .pro-team-identity .role {
-            font-size: 0.95rem;
+        .team-card-body .role {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
             color: var(--burgundy);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: block;
-            margin-bottom: 0.5rem;
         }
 
-        .pro-team-links {
-            display: flex;
-            gap: 10px;
+        .team-card-body .role::before {
+            content: '';
+            display: inline-block;
+            width: 26px;
+            height: 2px;
+            background: rgba(69, 0, 29, 0.4);
+            margin-right: 0.5rem;
+            vertical-align: middle;
         }
 
-        .pro-team-links a {
-            color: var(--gray-400);
-            font-size: 1.1rem;
-            transition: color 0.2s;
-        }
-
-        .pro-team-links a:hover {
-            color: var(--burgundy);
-        }
-
-        /* Bio Text Styling */
-        .pro-team-bio {
+        .team-card-body p {
             color: var(--gray-600);
             font-size: 1rem;
-            line-height: 1.75;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .team-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .team-links a {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(69, 0, 29, 0.1);
+            color: var(--burgundy);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .team-links a:hover {
+            background: var(--burgundy);
+            color: var(--white);
         }
 
         .pro-team-bio p {
             margin-bottom: 1rem;
         }
-        
+
         .pro-team-bio p:last-child {
             margin-bottom: 0;
         }
 
         /* CTA SECTION */
         .cta-section {
-            padding: 4rem 5% 6rem;
-            background: var(--white);
-            position: relative;
+            padding: 7rem 5%;
+            background: var(--gray-50);
         }
 
-        .cta-card {
-            background: var(--gray-100);
-            border-radius: 30px;
-            padding: 5rem 2rem;
+        .cta-container {
             max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
-            position: relative;
+            border-radius: 36px;
+            padding: 3.5rem;
+            background: linear-gradient(135deg, rgba(69, 0, 29, 0.05), rgba(69, 0, 29, 0.15));
+            box-shadow: 0 25px 90px rgba(0, 0, 0, 0.12);
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 3rem;
             overflow: hidden;
-        }
-
-        .cta-content {
-            max-width: 680px;
-            margin: 0 auto;
             position: relative;
-            z-index: 10;
         }
 
-        .cta-content h2 {
-            font-size: 3rem;
-            color: var(--black);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            letter-spacing: -1px;
-            line-height: 1.2;
+        .cta-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.35), transparent 45%);
+            pointer-events: none;
         }
 
-        .cta-content p {
-            color: var(--gray-600);
-            font-size: 1.1rem;
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
+        .cta-text {
+            position: relative;
+            z-index: 1;
         }
 
-        .btn-cta-card {
-            background: var(--white);
+        .cta-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            background: rgba(69, 0, 29, 0.1);
             color: var(--burgundy);
-            padding: 1rem 2.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-text h2 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 3.2rem;
+            color: var(--black);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-text p {
+            color: var(--gray-600);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            line-height: 1.95;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--burgundy);
+            padding: 1rem 2rem;
+            border: 1.5px solid rgba(69, 0, 29, 0.4);
             border-radius: 100px;
-            font-size: 1rem;
-            font-weight: 700;
+            font-size: 0.95rem;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 0.75rem;
+            gap: 0.5rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
-        .btn-cta-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        .btn-outline:hover {
+            background: rgba(69, 0, 29, 0.06);
+            border-color: rgba(69, 0, 29, 0.7);
         }
 
-        .btn-cta-card:hover i {
-            transform: translateX(4px);
+        .cta-visual {
+            position: relative;
+            z-index: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            min-height: 360px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
         }
 
-        /* FOOTER */
+        .cta-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cta-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
+        }
+
+        /* ===== FOOTER ===== */
         .footer {
             background: #101322;
             padding: 5rem 5% 2rem;
@@ -648,7 +742,7 @@
         }
 
         .footer-brand p {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
@@ -662,21 +756,37 @@
         .social-links a {
             width: 42px;
             height: 42px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+            background: var(--white);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: var(--black);
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .social-links a.linkedin {
+            color: #0a66c2;
+        }
+
+        .social-links a.twitter {
+            color: #1da1f2;
+        }
+
+        .social-links a.facebook {
+            color: #1877f2;
+        }
+
+        .social-links a.instagram {
+            color: #e4405f;
         }
 
         .social-links a:hover {
-            background: var(--white);
-            color: var(--burgundy);
             transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
         }
 
         .footer-column h4 {
@@ -695,18 +805,22 @@
         }
 
         .footer-column ul a {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.65);
             text-decoration: none;
             font-size: 0.95rem;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .footer-column ul a:hover {
             color: var(--white);
+            transform: translateX(4px);
         }
 
         .footer-contact p {
-            color: rgba(255, 255, 255, 0.6);
+            color: rgba(255, 255, 255, 0.75);
             font-size: 0.95rem;
             margin-bottom: 1rem;
             display: flex;
@@ -730,8 +844,24 @@
         }
 
         .footer-bottom p {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
         }
 
         /* RESPONSIVE */
@@ -749,6 +879,12 @@
 
             .about-image {
                 height: 350px;
+            }
+
+            .about-callout {
+                top: 25px;
+                right: 25px;
+                max-width: 200px;
             }
 
             .founder-container {
@@ -769,14 +905,21 @@
             .team-grid {
                 grid-template-columns: 1fr;
             }
-            
-            .pro-team-header {
+
+            .pro-team-links {
+                justify-content: center;
+            }
+
+            .team-card {
                 flex-direction: column;
                 text-align: center;
-                gap: 1rem;
             }
-            
-            .pro-team-links {
+
+            .team-card-body .role::before {
+                display: none;
+            }
+
+            .team-links {
                 justify-content: center;
             }
         }
@@ -863,6 +1006,19 @@
             .cta-content h2 {
                 font-size: 2.25rem;
             }
+
+            .about-callout {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: -40px auto 0;
+                max-width: 100%;
+            }
+
+            .about-callout::after,
+            .about-callout::before {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -902,6 +1058,8 @@
         </div>
     </section>
 
+
+
     <section class="about-section">
         <div class="about-container">
             <div class="about-image">
@@ -912,16 +1070,23 @@
             <div class="about-text">
                 <h2 style="font-size: 40px; font-family: Nunito;">From Strategy to Execution</h2>
                 <p>At SpringboardPro, we serve as your strategic growth partner in execution excellence — a launchpad
-                    for success that helps organizations move with clarity and confidence from strategy to execution.
+                    for success that helps organizations move with clarity and confidence from strategy to
+                    execution.<br>
+                    Much like a springboard, we provide the momentum to transform complex challenges into opportunities,
+                    paving the way for innovation, efficiency, and long-term value.
                 </p>
-                <p>Much like a springboard, we provide the momentum to transform complex challenges into opportunities,
-                    paving the way for innovation, efficiency, and long-term value.</p>
 
                 <p><strong>What defines us is not just what we do, but how we do it:</strong></p>
                 <ul class="about-points">
                     <li>
                         <i class="fas fa-check-circle"></i>
-                        <span><strong>Structure & Discipline</strong> — ensuring every initiative stays on track.</span>
+                        <span><strong>Structure & Discipline</strong> — bringing order, clarity, and consistency so
+                            every initiative stays on track.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span><strong>Performance & Accountability</strong> — enabling visibility, ownership, and smart
+                            decision making.</span>
                     </li>
                     <li>
                         <i class="fas fa-check-circle"></i>
@@ -929,13 +1094,14 @@
                     </li>
                     <li>
                         <i class="fas fa-check-circle"></i>
-                        <span><strong>Collaboration & Innovation</strong> — working with clients to deliver sustainable
-                            growth.</span>
+                        <span><strong>Collaboration & Innovation</strong> — partnering with clients to deliver
+                            sustainable, scalable outcomes.</span>
                     </li>
                 </ul>
                 <p class="about-stats">
                     Backed by two decades of leadership and 3,000+ projects delivered, we bring together project
-                    management expertise, intelligent automation, and business insights.
+                    management expertise, enterprise automation, delivery acceleration, and process excellence to create
+                    measurable impact - for every client, at every step, in every project.
                 </p>
 
             </div>
@@ -943,13 +1109,49 @@
         </div>
     </section>
 
+    <section class="values-section">
+        <div class="values-container">
+            <div class="section-header">
+                <h2 style="font-family: nunito;">What We Stand For</h2>
+                <p style="font-size: larger;">Our core values guide every decision we make and every engagement we
+                    undertake.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-medal"></i></div>
+                    <h3 style="font-family: nunito;">Excellence</h3>
+                    <p>We pursue the highest standards in everything we do, delivering quality that exceeds
+                        expectations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3 style="font-family: nunito;">Innovation</h3>
+                    <p>We embrace new ideas and technologies to create forward-thinking solutions for complex
+                        challenges.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-shield-halved"></i></div>
+                    <h3 style="font-family: nunito;">Integrity</h3>
+                    <p>We build trust through transparency, honesty, and ethical practices in all our interactions.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon"><i class="fas fa-people-group"></i></div>
+                    <h3 style="font-family: nunito;">Collaboration</h3>
+                    <p>We work as partners with our clients, fostering teamwork to achieve shared success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="founder-message-section">
         <div class="founder-container">
             <div class="founder-img-box">
-                <img src="Founder&Ceo.jpg" alt="Cecilia D'Silva">
+                <img src="founder-ceo.jpg" alt="Cecilia D'Silva">
             </div>
             <div class="founder-content">
-                <h3 style="font-family: nunito;">"Strategies, though strong, often stumbled in execution."</h3>
+                <h3 style="font-family: nunito;">Founder's Story</h3>
+                <p class="founder-quote">“Strategies, though strong, often stumbled in execution — so we built a partner
+                    that shepherds both ambition and delivery.”</p>
                 <p>After two decades in leadership roles at Oracle, HSBC, DHL, and Kinara Capital—where I drove business
                     transformation, managed large-scale operations, and led 3,000+ projects — I identified a common
                     challenge.</p>
@@ -966,40 +1168,6 @@
         </div>
     </section>
 
-    <section class="values-section">
-        <div class="values-container">
-            <div class="section-header">
-                <h2 style="font-family: nunito;">What We Stand For</h2>
-                <p style="font-size: larger;">Our core values guide every decision we make and every engagement we
-                    undertake.</p>
-            </div>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-award"></i></div>
-                    <h3 style="font-family: nunito;">Excellence</h3>
-                    <p>We pursue the highest standards in everything we do, delivering quality that exceeds
-                        expectations.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3 style="font-family: nunito;">Innovation</h3>
-                    <p>We embrace new ideas and technologies to create forward-thinking solutions for complex
-                        challenges.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                    <h3 style="font-family: nunito;">Integrity</h3>
-                    <p>We build trust through transparency, honesty, and ethical practices in all our interactions.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-users"></i></div>
-                    <h3 style="font-family: nunito;">Collaboration</h3>
-                    <p>We work as partners with our clients, fostering teamwork to achieve shared success.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- PROFESSIONAL TEAM SECTION (2 COLUMNS) -->
     <section class="team-section">
         <div class="team-container">
@@ -1008,88 +1176,92 @@
                 <p style="font-weight: bold;">Our leadership team brings decades of experience in PMO consulting,
                     technology, and organizational transformation.</p>
             </div>
-            
+
             <div class="team-grid">
-                
-                <!-- Card 1 -->
-                <div class="pro-team-card">
-                    <div class="pro-team-header">
-                        <div class="pro-team-img-wrapper">
-                            <img src="./images/Cecilia D'Silva.jpg" alt="Cecilia D'Silva">
-                        </div>
-                        <div class="pro-team-identity">
-                            <span class="role">Founder & CEO</span>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="./images/Cecilia D'Silva.jpg" alt="Cecilia D'Silva">
+                    </div>
+                    <div class="team-card-body">
+                        <div>
                             <h3 style="font-family: nunito;">Cecilia D'Silva</h3>
-                            <div class="pro-team-links">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            <span class="role">Founder & CEO</span>
                         </div>
-                    </div>
-                    <div class="pro-team-bio">
-                        <p>Cecilia D’Silva, former Senior Vice President of PMO at Kinara Capital, is a visionary leader with over 25 years of expertise in strategic portfolio management and business transformation. She drives business impact through PMO excellence, innovation, and integrity.</p>
-                        <p>Recognized as the “India PMO Leader of the Year 2022” by the PMO Global Alliance, she brings extensive global leadership experience from HSBC, Oracle, and DHL Worldwide Express.</p>
+                        <p>Cecilia D’Silva, former Senior Vice President of PMO at Kinara Capital, is a visionary leader
+                            with over 25 years of expertise in strategic portfolio management and business
+                            transformation. She drives business impact through PMO excellence, innovation, and
+                            integrity.</p>
+                        <p>Recognized as the “India PMO Leader of the Year 2022” by the PMO Global Alliance, she brings
+                            extensive global leadership experience from HSBC, Oracle, and DHL Worldwide Express.</p>
+                        <div class="team-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="pro-team-card">
-                    <div class="pro-team-header">
-                        <div class="pro-team-img-wrapper">
-                            <img src="./images/Amulya Fernandes.jpg" alt="Amulya Fernandes">
-                        </div>
-                        <div class="pro-team-identity">
-                            <span class="role">Managing Partner</span>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="./images/Amulya Fernandes.jpg" alt="Amulya Fernandes">
+                    </div>
+                    <div class="team-card-body">
+                        <div>
                             <h3 style="font-family: nunito;">Amulya Fernandes</h3>
-                            <div class="pro-team-links">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                                <a href="#"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            <span class="role">Managing Partner</span>
                         </div>
-                    </div>
-                    <div class="pro-team-bio">
-                        <p>Amulya Fernandes brings over 15 years of leadership in Finance, Administration, and Marketing. She blends strategic discipline with operational excellence to strengthen governance and client partnerships.</p>
-                        <p>At SpringboardPro, she plays a pivotal role in advancing our mission as a launchpad for success. Her inclusive leadership style fosters a collaborative team environment, driving innovation while maintaining core ethical values.</p>
+                        <p>Amulya Fernandes brings over 15 years of leadership in Finance, Administration, and
+                            Marketing. She blends strategic discipline with operational excellence to strengthen
+                            governance and client partnerships.</p>
+                        <p>At SpringboardPro, she plays a pivotal role in advancing our mission as a launchpad for
+                            success. Her inclusive leadership style fosters a collaborative team environment, driving
+                            innovation while maintaining core ethical values.</p>
+                        <div class="team-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="pro-team-card">
-                    <div class="pro-team-header">
-                        <div class="pro-team-img-wrapper">
-                            <img src="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg" alt="Greg Leman">
-                        </div>
-                        <div class="pro-team-identity">
-                            <span class="role">Advisor - Emerging Tech</span>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg" alt="Greg Leman">
+                    </div>
+                    <div class="team-card-body">
+                        <div>
                             <h3 style="font-family: nunito;">Greg Leman</h3>
-                            <div class="pro-team-links">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </div>
+                            <span class="role">Advisor - Emerging Tech</span>
                         </div>
-                    </div>
-                    <div class="pro-team-bio">
-                        <p>Greg is a seasoned technology and security expert with over 30 years of leadership experience spanning software development and data management. Previously a Senior Director at Oracle for nearly 20 years, he led large teams building enterprise applications supporting $2B in business.</p>
-                        <p>An entrepreneur at heart, Greg founded multiple successful startups, including Metagenix. He is known for driving process transformation, agile adoption, and system security.</p>
+                        <p>Greg is a seasoned technology and security expert with over 30 years of leadership experience
+                            spanning software development and data management. Previously a Senior Director at Oracle
+                            for nearly 20 years, he led large teams building enterprise applications supporting $2B in
+                            business.</p>
+                        <p>An entrepreneur at heart, Greg founded multiple successful startups, including Metagenix. He
+                            is known for driving process transformation, agile adoption, and system security.</p>
+                        <div class="team-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="pro-team-card">
-                    <div class="pro-team-header">
-                        <div class="pro-team-img-wrapper">
-                            <img src="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg" alt="Manoj Kumar Agarwal">
-                        </div>
-                        <div class="pro-team-identity">
-                            <span class="role">Advisor - Strategy</span>
+                <div class="team-card">
+                    <div class="team-photo">
+                        <img src="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg"
+                            alt="Manoj Kumar Agarwal">
+                    </div>
+                    <div class="team-card-body">
+                        <div>
                             <h3 style="font-family: nunito;">Manoj Kumar Agarwal</h3>
-                            <div class="pro-team-links">
-                                <a href="#"><i class="fab fa-linkedin"></i></a>
-                            </div>
+                            <span class="role">Advisor - Strategy</span>
                         </div>
-                    </div>
-                    <div class="pro-team-bio">
-                        <p>Manoj Kumar Agarwal, with over 25 years of experience in business setup, M&A, and fundraising, co-founded Sea Fund, an early-stage venture fund currently raising $35 million. He mentors multiple startups and advises data management companies.</p>
-                        <p>A frequent speaker at industry conferences, Manoj shares insights on emerging trends. At SpringboardPro, he guides clients through the intricacies of business growth and innovation.</p>
+                        <p>Manoj Kumar Agarwal, with over 25 years of experience in business setup, M&A, and
+                            fundraising, co-founded Sea Fund, an early-stage venture fund currently raising $35 million.
+                            He mentors multiple startups and advises data management companies.</p>
+                        <p>A frequent speaker at industry conferences, Manoj shares insights on emerging trends. At
+                            SpringboardPro, he guides clients through the intricacies of business growth and innovation.
+                        </p>
+                        <div class="team-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
                 </div>
 
@@ -1097,17 +1269,28 @@
         </div>
     </section>
 
+    <!-- CTA SECTION -->
     <section class="cta-section">
-        <div class="cta-card">
-            <div class="cta-content">
-                <h2 style="font-family: nunito;">Ready to Transform with Confidence?</h2>
-                <p>Let’s co-create a launch plan that unlocks momentum in the first 90 days—fuelled by clear priorities,
-                    empowered teams, and dashboards that keep every stakeholder aligned.</p>
-                <a href="contact.html" class="btn-cta-card">Start Your Journey <i class="fas fa-arrow-right"></i></a>
+        <div class="cta-container">
+            <div class="cta-text">
+                <h2> Ready to Transform</h2>
+                <h3>Bring in a PMO partner that turns strategic intent into confident execution.</h2><br>
+                    <p>We orchestrate launch plans, mobilise governance, and embed recovery rituals so your programmes
+                        keep
+                        momentum. Plug us in when you need clarity, cadence, and a team that sweats the details with
+                        you.</p>
+                    <div class="cta-actions">
+                        <a href="contact.html" class="btn-outline">Contact Us</a>
+                    </div>
+            </div>
+            <div class="cta-visual">
+                <img src="transorm.jpg" alt="Leaders collaborating during transformation workshop">
             </div>
         </div>
     </section>
 
+
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -1115,12 +1298,13 @@
                     <a href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <p>Your Strategic Growth Partner in PMO Excellence. Enabling organizations to move confidently from
-                        strategy to execution.</p>
+                    <p>Your Strategic Growth Partner in PMO Excellence. We serve as your launchpad for success —
+                        enabling organizations to move confidently from strategy to execution.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="twitter" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1152,9 +1336,14 @@
             </div>
             <div class="footer-bottom">
                 <p>© 2024 SpringboardPro. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
+
 
     <script>
         window.addEventListener('scroll', function () {
