@@ -312,18 +312,20 @@
             left: 0;
             right: 0;
             z-index: 1000;
-            padding: 1rem 5%;
+            padding: 1.15rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(69, 0, 29, 0.95);
-            backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            background: transparent;
+            border-bottom: 1px solid transparent;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .navbar.scrolled {
             padding: 0.85rem 5%;
+            background: rgba(69, 0, 29, 0.95);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 8px 35px rgba(69, 0, 29, 0.45);
         }
 
@@ -335,7 +337,7 @@
         }
 
         .logo img {
-            height: 72px;
+            height: 90px;
             width: auto;
             display: block;
         }
@@ -818,10 +820,18 @@
             letter-spacing: -0.5px;
         }
 
+        .pain-section .section-header h2 {
+            white-space: nowrap;
+        }
+
         .section-header p {
             color: var(--gray-500);
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1.15rem;
+            line-height: 1.85;
+        }
+
+        .showcase-section .section-header p {
+            font-size: 1.3rem;
         }
 
         /* ===== IMAGE SHOWCASE ===== */
@@ -1003,12 +1013,14 @@
             margin-bottom: 2rem;
             border-radius: 28px;
             overflow: hidden;
+            background: var(--white);
         }
 
         .pain-image img {
             width: 100%;
-            height: 320px;
+            height: 420px;
             object-fit: cover;
+            display: block;
         }
 
         .pain-grid {
@@ -1025,15 +1037,15 @@
         }
 
         .pain-card h4 {
-            font-size: 0.95rem;
+            font-size: 1.15rem;
             color: var(--black);
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.5rem;
         }
 
         .pain-card p {
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             color: var(--gray-600);
-            line-height: 1.5;
+            line-height: 1.65;
         }
 
         /* ===== SERVICES PREVIEW ===== */
@@ -1123,8 +1135,8 @@
 
         .service-card p {
             color: var(--gray-500);
-            font-size: 0.95rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
@@ -1145,56 +1157,117 @@
 
         /* ===== CTA SECTION ===== */
         .cta-section {
-            padding: 5rem 5%;
+            padding: 7rem 5%;
             background: var(--gray-50);
         }
 
-        .cta-bg {
-            display: none;
-        }
-
-        .cta-content {
-            max-width: 900px;
+        .cta-container {
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
-            border-radius: 32px;
+            border-radius: 36px;
             padding: 3.5rem;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
-            background-image: url('transorm.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
+            background: linear-gradient(135deg, rgba(69, 0, 29, 0.05), rgba(69, 0, 29, 0.15));
+            box-shadow: 0 25px 90px rgba(0, 0, 0, 0.12);
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 3rem;
             overflow: hidden;
-            color: var(--black);
+            position: relative;
         }
 
-        .cta-content::before {
+        .cta-container::after {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.7));
-            z-index: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.35), transparent 45%);
+            pointer-events: none;
         }
 
-        .cta-content>* {
+        .cta-text {
             position: relative;
             z-index: 1;
         }
 
-        .cta-content h2 {
+        .cta-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            background: rgba(69, 0, 29, 0.1);
+            color: var(--burgundy);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-text h2 {
             font-family: 'Nunito', sans-serif;
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: var(--black);
-            margin-bottom: 1rem;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
             font-weight: 500;
             letter-spacing: -0.5px;
         }
 
-        .cta-content p {
+        .cta-text p {
             color: var(--gray-600);
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             margin-bottom: 2rem;
-            line-height: 1.8;
+            line-height: 1.95;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--burgundy);
+            padding: 1rem 2rem;
+            border: 1.5px solid rgba(69, 0, 29, 0.4);
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(69, 0, 29, 0.06);
+            border-color: rgba(69, 0, 29, 0.7);
+        }
+
+        .cta-visual {
+            position: relative;
+            z-index: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            min-height: 360px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+        }
+
+        .cta-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cta-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
         }
 
         /* ===== PILLARS SECTION ===== */
@@ -1227,10 +1300,10 @@
         }
 
         .pillars-text .lead {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: var(--gray-500);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
+            margin-bottom: 2.75rem;
+            line-height: 1.9;
         }
 
         .pillar-item {
@@ -1272,9 +1345,9 @@
         }
 
         .pillar-content p {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.75;
         }
 
         .pillars-visual {
@@ -1336,49 +1409,6 @@
             font-style: italic;
         }
 
-        .pillars-stats {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            right: 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 1rem;
-            z-index: 2;
-        }
-
-        .stat-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1.25rem;
-            border-radius: 16px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-        }
-
-        .stat-item:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
-        }
-
-        .stat-item h4 {
-            font-family: 'Nunito', sans-serif;
-            font-size: 2rem;
-            color: var(--white);
-            font-weight: 400;
-        }
-
-        .stat-item h4 .counter {
-            display: inline-block;
-        }
-
-        .stat-item p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
 
         /* ===== FOOTER ===== */
         .footer {
@@ -1475,6 +1505,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            white-space: nowrap;
         }
 
         .footer-column ul a:hover {
@@ -1597,11 +1628,20 @@
                 min-height: 260px;
                 order: -1;
             }
+
+            .cta-container {
+                grid-template-columns: 1fr;
+                padding: 3rem;
+            }
+
+            .cta-visual {
+                min-height: 280px;
+            }
         }
 
         @media (max-width: 768px) {
             .logo img {
-                height: 40px;
+                height: 52px;
             }
 
             .nav-links {
@@ -1660,8 +1700,12 @@
             }
 
             .section-header h2,
-            .cta-content h2 {
+            .cta-text h2 {
                 font-size: 2rem;
+            }
+
+            .pain-section .section-header h2 {
+                white-space: normal;
             }
 
             .pillars-text h2 {
@@ -1685,22 +1729,13 @@
                 padding: 1.5rem;
             }
 
-            .pillars-stats {
-                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-                gap: 0.5rem;
-            }
-
-            .stat-item {
-                padding: 0.75rem;
-            }
-
-            .stat-item h4 {
-                font-size: 1.5rem;
-            }
-
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .footer-column ul a {
+                white-space: normal;
             }
 
             .footer-bottom {
@@ -1735,8 +1770,22 @@
                 gap: 1.5rem;
             }
 
-            .cta-content h2 {
+            .cta-container {
+                padding: 2.25rem;
+                gap: 2rem;
+            }
+
+            .cta-text h2 {
                 font-size: 1.75rem;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-visual {
+                min-height: 220px;
             }
 
             .pillars-image {
@@ -1878,7 +1927,7 @@
                 <p class="lead">We don’t just consult — we co-create success. At SpringboardPro, we help organizations
                     move from strategy to execution through structured PMO Consulting.</p>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-lightbulb"></i></div>
+                    <div class="pillar-icon"><i class="fas fa-chart-line"></i></div>
                     <div class="pillar-content">
                         <h4>Vision</h4>
                         <p>Be the trusted strategic transformation partner enabling future-ready organizations with
@@ -1886,7 +1935,7 @@
                     </div>
                 </div>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="pillar-icon"><i class="fas fa-diagram-project"></i></div>
                     <div class="pillar-content">
                         <h4>Mission</h4>
                         <p>Empower businesses to thrive through innovation, operational excellence, and smart cost
@@ -1894,7 +1943,7 @@
                     </div>
                 </div>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <div class="pillar-icon"><i class="fas fa-scale-balanced"></i></div>
                     <div class="pillar-content">
                         <h4>Values</h4>
                         <p>Lead with excellence, integrity, collaboration, and growth so change feels transparent and
@@ -1909,20 +1958,6 @@
                     <div class="pillars-image-content">
                         <h3>Your Vision.<br>Our Mission.<br>Shared Success.</h3>
                         <p>Let's redefine success, together</p>
-                    </div>
-                    <div class="pillars-stats">
-                        <div class="stat-item">
-                            <h4><span data-count="150" data-suffix="+">0</span></h4>
-                            <p>Projects</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4><span data-count="50" data-suffix="+">0</span></h4>
-                            <p>Clients</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4><span data-count="98" data-suffix="%">0</span></h4>
-                            <p>Success</p>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -1953,7 +1988,7 @@
                     </div>
                 </div>
                 <div class="showcase-item">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80"
                         alt="Success celebration">
                     <div class="showcase-overlay">
                         <span>Proven Results</span>
@@ -2023,7 +2058,7 @@
         <div class="pain-container">
             <div class="section-header">
                 <span class="section-label"><i class="fas fa-crosshairs"></i> Our Focus</span>
-                <h2>Client Pain Points</h2>
+                <h2>Struggling With These Challenges?</h2>
                 <p>Across PMOs of every size, teams wrestle with the same blockers: unclear roadmaps, limited
                     visibility,
                     and no recovery muscle when critical initiatives stall. We map these patterns to design solutions
@@ -2035,35 +2070,35 @@
             </div>
             <div class="pain-grid">
                 <div class="pain-card">
-                    <h4>No clear start</h4>
+                    <h4>No Clear Start</h4>
                     <p>Projects kick off without clarity, structure, or a roadmap everyone understands.</p>
                 </div>
                 <div class="pain-card">
-                    <h4>Manual slowdowns</h4>
+                    <h4>Manual Slowdowns</h4>
                     <p>Manual workflows and approvals slow down decisions that should take minutes.</p>
                 </div>
                 <div class="pain-card">
-                    <h4>Missing governance</h4>
+                    <h4>Missing Governance</h4>
                     <p>No consistent governance or operating cadence to keep teams aligned.</p>
                 </div>
                 <div class="pain-card">
-                    <h4>Unmanaged risk</h4>
+                    <h4>Unmanaged Risk</h4>
                     <p>Risks and issues escalate without timely action or a shared playbook.</p>
                 </div>
                 <div class="pain-card">
-                    <h4>Low visibility</h4>
+                    <h4>Low Visibility</h4>
                     <p>Leaders lack real-time visibility into project health, KPIs, and burn.</p>
                 </div>
                 <div class="pain-card">
-                    <h4>Priority drift</h4>
+                    <h4>Priority Drift</h4>
                     <p>Priorities drift across departments, creating duplicate work and friction.</p>
                 </div>
                 <div class="pain-card">
-                    <h4>Delivery slippage</h4>
+                    <h4>Delivery Slippage</h4>
                     <p>Execution slows down, milestones slip, and confidence erodes.</p>
                 </div>
                 <div class="pain-card">
-                    <h4>No recovery path</h4>
+                    <h4>No Recovery Path</h4>
                     <p>There’s no fast mechanism to recover troubled projects or accelerate wins.</p>
                 </div>
             </div>
@@ -2075,7 +2110,7 @@
         <div class="services-container">
             <div class="section-header">
                 <span class="section-label"><i class="fas fa-cube"></i> What We Offer</span>
-                <h2>Our Services</h2>
+                <h2>Our Solutions</h2>
                 <p>Comprehensive solutions tailored to your organization's unique needs.</p>
             </div>
             <div class="services-grid">
@@ -2085,8 +2120,8 @@
                         <i class="fas fa-project-diagram"></i>
                     </div>
                     <div class="service-card-content">
-                        <h3>PM Consulting</h3>
-                        <p>Establish and scale your Project Management Office with proven frameworks.</p>
+                        <h3>PMO Consulting</h3>
+                        <p><b>Establish and scale your Project Management Office with proven frameworks.</b></p>
                         <a href="project-management.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
@@ -2098,7 +2133,7 @@
                     </div>
                     <div class="service-card-content">
                         <h3>Enterprise Automation</h3>
-                        <p>Eliminate bottlenecks and elevate performance with intelligent automation.</p>
+                        <p><b>Eliminate bottlenecks and elevate performance with intelligent automation.</b></p>
                         <a href="enterprise-automation.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
@@ -2110,7 +2145,7 @@
                     </div>
                     <div class="service-card-content">
                         <h3>Delivery & Recovery</h3>
-                        <p>Deliver at speed and scale with proven delivery methodologies.</p>
+                        <p><b>Deliver at speed and scale with proven delivery methodologies.</b></p>
                         <a href="delivery-recovery.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
@@ -2122,7 +2157,7 @@
                     </div>
                     <div class="service-card-content">
                         <h3>Process Consulting</h3>
-                        <p>Optimize workflows and enhance productivity with expert process design.</p>
+                        <p><b>Optimize workflows and enhance productivity with expert process design.</b></p>
                         <a href="process-consulting.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
@@ -2135,13 +2170,21 @@
 
     <!-- CTA SECTION -->
     <section class="cta-section">
-        <div class="cta-bg"></div>
-        <div class="cta-content">
-            <h3>Ready to Transform with Confidence?</h2>
-                <p><b>Let’s co-create a launch plan that builds early momentum—fuelled by clear priorities, empowered
-                    teams,
-                    and dashboards that keep every stakeholder aligned.</b></p>
-                <a href="contact.html" class="btn-primary">Start Your Journey <i class="fas fa-arrow-right"></i></a>
+        <div class="cta-container">
+            <div class="cta-text">
+                <h2> Ready to Transform</h2>
+                <h3>Bring in a PMO partner that turns strategic intent into confident execution.</h2><br>
+                    <p>We orchestrate launch plans, mobilise governance, and embed recovery rituals so your programmes
+                        keep
+                    momentum. Plug us in when you need clarity, cadence, and a team that sweats the details with
+                        you.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-outline">Contact Us</a>
+                </div>
+            </div>
+            <div class="cta-visual">
+                <img src="transorm.jpg" alt="Leaders collaborating during transformation workshop">
+            </div>
         </div>
     </section>
 
@@ -2289,7 +2332,7 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.vmv-card, .focus-card, .service-card, .pain-card, .pillar-item, .stat-item, .pillars-image, section').forEach((el, i) => {
+        document.querySelectorAll('.vmv-card, .focus-card, .service-card, .pain-card, .pillar-item, .pillars-image, section').forEach((el, i) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${(i % 6) * 0.1}s`;
