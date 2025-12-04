@@ -50,7 +50,16 @@
         .navbar.scrolled .mobile-toggle span { background: var(--white); }
 
         /* PAGE HERO */
-        .page-hero { padding: 10rem 5% 6rem; background: var(--burgundy); position: relative; overflow: hidden; }
+        .page-hero {
+            min-height: 100vh;
+            padding: 8rem 5% 5rem;
+            background: var(--burgundy);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%); z-index: 1; }
         .hero-bg-video {
             position: absolute;
