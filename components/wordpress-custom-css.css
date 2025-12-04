@@ -32,12 +32,12 @@
 
 /* ===== GLOBAL OVERRIDES ===== */
 body {
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6,
 .elementor-heading-title {
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+   	font-family: 'Nunito', sans-serif;
 }
 
 /* ===== OVERRIDE THEME ACCENT COLORS ===== */
@@ -108,7 +108,7 @@ a:hover {
 
 .spb-header .elementor-heading-title {
     color: var(--spb-white) !important;
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif !important;
+    font-family: 'Nunito', sans-serif !important;
     font-size: 1.8rem !important;
 }
 
@@ -503,7 +503,7 @@ body.spb-has-fixed-header {
 
 .spb-stats .elementor-counter-number-wrapper {
     color: var(--spb-burgundy) !important;
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif !important;
+    font-family: 'Nunito', sans-serif !important;
     font-size: 3rem !important;
     font-weight: 700 !important;
 }

@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpringboardPro | Turning Strategy Into Action</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --burgundy: #45001d;
             --burgundy-light: #5c0028;
@@ -22,45 +29,204 @@
             --gray-600: #52525b;
             --gray-800: #27272a;
         }
-        html { scroll-behavior: smooth; }
-        body { 
-            font-family: 'Space Grotesk', sans-serif; 
-            color: var(--gray-800); 
-            line-height: 1.6; 
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
             background: var(--white);
             overflow-x: hidden;
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Nunito', sans-serif;
             font-weight: 600;
             letter-spacing: -0.02em;
         }
 
         /* GLOBAL ANIMATIONS */
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes fadeInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-        @keyframes slideInUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
-        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
-        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes countUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        
-        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-        .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-        .animate-delay-1 { transition-delay: 0.1s; }
-        .animate-delay-2 { transition-delay: 0.2s; }
-        .animate-delay-3 { transition-delay: 0.3s; }
-        .animate-delay-4 { transition-delay: 0.4s; }
-        .animate-delay-5 { transition-delay: 0.5s; }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(100%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .animate-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .animate-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .animate-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        .animate-delay-5 {
+            transition-delay: 0.5s;
+        }
 
         /* Parallax effect */
-        .parallax { transform: translateZ(0); will-change: transform; }
-        
+        .parallax {
+            transform: translateZ(0);
+            will-change: transform;
+        }
+
         /* Page loader */
         .page-loader {
             position: fixed;
@@ -75,13 +241,16 @@
             z-index: 9999;
             transition: opacity 0.5s ease, visibility 0.5s ease;
         }
+
         .page-loader.hidden {
             opacity: 0;
             visibility: hidden;
         }
+
         .loader-content {
             text-align: center;
         }
+
         .loader-logo {
             display: inline-flex;
             align-items: center;
@@ -89,19 +258,22 @@
             margin-bottom: 2rem;
             animation: pulse 1.5s ease-in-out infinite;
         }
+
         .loader-logo img {
             height: 64px;
             width: auto;
             display: block;
         }
+
         .loader-bar {
             width: 200px;
             height: 3px;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 3px;
             overflow: hidden;
             margin: 0 auto;
         }
+
         .loader-progress {
             height: 100%;
             width: 0;
@@ -109,22 +281,29 @@
             border-radius: 3px;
             animation: loadProgress 1.5s ease forwards;
         }
+
         @keyframes loadProgress {
-            0% { width: 0; }
-            100% { width: 100%; }
+            0% {
+                width: 0;
+            }
+
+            100% {
+                width: 100%;
+            }
         }
-        
+
         /* Smooth scroll reveal */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
 
         /* ===== NAVBAR ===== */
         .navbar {
@@ -142,29 +321,32 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .navbar.scrolled {
             padding: 0.85rem 5%;
             box-shadow: 0 8px 35px rgba(69, 0, 29, 0.45);
         }
-        
+
         .logo {
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
         }
+
         .logo img {
-            height: 48px;
+            height: 72px;
             width: auto;
             display: block;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
             gap: 2.5rem;
             align-items: center;
         }
+
         .nav-links a {
             color: var(--white);
             text-decoration: none;
@@ -173,9 +355,15 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        .nav-links a:not(.nav-cta):hover { opacity: 0.8; }
-        
-        .dropdown { position: relative; }
+
+        .nav-links a:not(.nav-cta):hover {
+            opacity: 0.8;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
         .dropdown-content {
             position: absolute;
             top: calc(100% + 10px);
@@ -191,7 +379,13 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
             border: 1px solid var(--gray-100);
         }
-        .dropdown:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
         .dropdown-content a {
             display: block;
             padding: 0.9rem 1.5rem;
@@ -200,12 +394,13 @@
             border-left: 3px solid transparent;
             transition: all 0.2s ease;
         }
-        .dropdown-content a:hover { 
-            background: var(--gray-50); 
+
+        .dropdown-content a:hover {
+            background: var(--gray-50);
             border-left-color: var(--burgundy);
             color: var(--burgundy) !important;
         }
-        
+
         .nav-cta {
             background: var(--white) !important;
             color: var(--burgundy) !important;
@@ -214,11 +409,32 @@
             font-weight: 600 !important;
             transition: all 0.3s ease !important;
         }
-        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        
-        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
-        .mobile-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s ease; border-radius: 2px; }
-        .navbar.scrolled .mobile-toggle span { background: var(--white); }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .navbar.scrolled .mobile-toggle span {
+            background: var(--white);
+        }
 
         /* ===== HERO ===== */
         .hero {
@@ -231,6 +447,7 @@
             overflow: hidden;
             padding: 8rem 0 5rem;
         }
+
         .hero-video-bg {
             position: absolute;
             top: 0;
@@ -241,15 +458,17 @@
             opacity: 0.5;
             z-index: 0;
         }
+
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(69,0,29,0.65) 0%, rgba(69,0,29,0.5) 100%);
+            background: linear-gradient(135deg, rgba(69, 0, 29, 0.65) 0%, rgba(69, 0, 29, 0.5) 100%);
             z-index: 1;
         }
+
         .hero-bg-pattern {
             position: absolute;
             top: 0;
@@ -257,23 +476,25 @@
             right: 0;
             bottom: 0;
             opacity: 0.1;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
-                radial-gradient(circle at 60% 80%, rgba(255,255,255,0.06) 0%, transparent 40%);
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 60% 80%, rgba(255, 255, 255, 0.06) 0%, transparent 40%);
             z-index: 2;
         }
+
         .hero-grid {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
             background-size: 60px 60px;
             z-index: 2;
         }
+
         /* Animated particles */
         .hero-particles {
             position: absolute;
@@ -284,22 +505,68 @@
             z-index: 2;
             overflow: hidden;
         }
+
         .particle {
             position: absolute;
             width: 6px;
             height: 6px;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
         }
-        .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 1s; animation-duration: 10s; }
-        .particle:nth-child(3) { left: 60%; top: 30%; animation-delay: 2s; }
-        .particle:nth-child(4) { left: 80%; top: 70%; animation-delay: 3s; animation-duration: 12s; }
-        .particle:nth-child(5) { left: 40%; top: 60%; animation-delay: 4s; }
-        .particle:nth-child(6) { left: 90%; top: 40%; animation-delay: 5s; animation-duration: 9s; }
-        .particle:nth-child(7) { left: 30%; top: 10%; animation-delay: 1.5s; }
-        .particle:nth-child(8) { left: 70%; top: 90%; animation-delay: 2.5s; animation-duration: 11s; }
+
+        .particle:nth-child(1) {
+            left: 10%;
+            top: 20%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            left: 20%;
+            top: 80%;
+            animation-delay: 1s;
+            animation-duration: 10s;
+        }
+
+        .particle:nth-child(3) {
+            left: 60%;
+            top: 30%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(4) {
+            left: 80%;
+            top: 70%;
+            animation-delay: 3s;
+            animation-duration: 12s;
+        }
+
+        .particle:nth-child(5) {
+            left: 40%;
+            top: 60%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(6) {
+            left: 90%;
+            top: 40%;
+            animation-delay: 5s;
+            animation-duration: 9s;
+        }
+
+        .particle:nth-child(7) {
+            left: 30%;
+            top: 10%;
+            animation-delay: 1.5s;
+        }
+
+        .particle:nth-child(8) {
+            left: 70%;
+            top: 90%;
+            animation-delay: 2.5s;
+            animation-duration: 11s;
+        }
+
         .hero-content {
             position: relative;
             z-index: 10;
@@ -312,27 +579,51 @@
             text-align: center;
             gap: 1.5rem;
         }
-        .hero-text { animation: fadeInLeft 1s ease; max-width: 720px; }
+
+        .hero-text {
+            animation: fadeInLeft 1s ease;
+            max-width: 720px;
+        }
+
         .hero-kicker {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
             padding: 0.4rem 1rem;
             border-radius: 999px;
-            border: 1px solid rgba(255,255,255,0.3);
-            color: rgba(255,255,255,0.85);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: rgba(255, 255, 255, 0.85);
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.25em;
         }
-        .hero-text > * { animation: fadeInUp 0.8s ease backwards; }
-        .hero-text .hero-kicker { animation-delay: 0.2s; }
-        .hero-text h1 { animation-delay: 0.4s; }
-        .hero-text p { animation-delay: 0.6s; }
-        .hero-text .hero-buttons { animation-delay: 0.8s; }
-        .hero-kicker i { font-size: 0.75rem; }
+
+        .hero-text>* {
+            animation: fadeInUp 0.8s ease backwards;
+        }
+
+        .hero-text .hero-kicker {
+            animation-delay: 0.2s;
+        }
+
         .hero-text h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            animation-delay: 0.4s;
+        }
+
+        .hero-text p {
+            animation-delay: 0.6s;
+        }
+
+        .hero-text .hero-buttons {
+            animation-delay: 0.8s;
+        }
+
+        .hero-kicker i {
+            font-size: 0.75rem;
+        }
+
+        .hero-text h1 {
+            font-family: 'Nunito', sans-serif;
             font-size: 4.5rem;
             color: var(--white);
             line-height: 1.1;
@@ -340,6 +631,7 @@
             font-weight: 400;
             letter-spacing: -1px;
         }
+
         .hero-text p {
             color: rgba(255, 255, 255, 0.75);
             font-size: 1.15rem;
@@ -347,8 +639,14 @@
             max-width: 640px;
             line-height: 1.8;
         }
-        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
-        
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .btn-primary {
             background: var(--white);
             color: var(--burgundy);
@@ -366,6 +664,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -373,15 +672,32 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             transition: left 0.5s ease;
         }
-        .btn-primary:hover::before { left: 100%; }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 40px rgba(0,0,0,0.2); }
-        .btn-primary i { font-size: 0.8rem; transition: transform 0.3s ease; }
-        .btn-primary:hover i { transform: translateX(4px); }
-        .btn-primary:active { transform: translateY(-1px); }
-        
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover i {
+            transform: translateX(4px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px);
+        }
+
         .btn-secondary {
             background: transparent;
             color: var(--white);
@@ -397,11 +713,45 @@
             gap: 0.5rem;
             transition: all 0.3s ease;
         }
-        .btn-secondary:hover { border-color: var(--white); background: rgba(255, 255, 255, 0.1); }
-        
-        @keyframes floatCard { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .btn-secondary:hover {
+            border-color: var(--white);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes floatCard {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
 
         /* ===== CLIENTS/TRUST BAR ===== */
         .trust-bar {
@@ -410,6 +760,7 @@
             border-bottom: 1px solid var(--gray-100);
             overflow: hidden;
         }
+
         .trust-bar-content {
             max-width: 1400px;
             margin: 0 auto;
@@ -418,11 +769,13 @@
             justify-content: space-between;
             gap: 3rem;
         }
+
         .trust-bar-text {
             font-size: 0.9rem;
             color: var(--gray-500);
             white-space: nowrap;
         }
+
         .trust-logos {
             display: flex;
             align-items: center;
@@ -430,6 +783,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .trust-logo {
             font-size: 1.5rem;
             font-weight: 700;
@@ -438,8 +792,9 @@
             transition: all 0.4s ease;
             cursor: default;
         }
-        .trust-logo:hover { 
-            opacity: 1; 
+
+        .trust-logo:hover {
+            opacity: 1;
             color: var(--burgundy);
             transform: scale(1.1);
         }
@@ -449,152 +804,24 @@
             max-width: 640px;
             margin: 0 auto 4rem;
         }
+
         .section-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(69, 0, 29, 0.08);
-            color: var(--burgundy);
-            padding: 0.5rem 1rem;
-            border-radius: 100px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            display: none;
         }
+
         .section-header h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 3rem;
             color: var(--black);
             font-weight: 400;
             margin-bottom: 1rem;
             letter-spacing: -0.5px;
         }
+
         .section-header p {
             color: var(--gray-500);
             font-size: 1.1rem;
             line-height: 1.8;
-        }
-
-        /* ===== VMV SECTION ===== */
-        .vmv-section {
-            padding: 7rem 5%;
-            background: var(--gray-50);
-            color: var(--black);
-        }
-        .vmv-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .vmv-section .section-label {
-            background: rgba(69, 0, 29, 0.08);
-            color: var(--burgundy);
-            border: 1px solid rgba(69,0,29,0.2);
-        }
-        .vmv-heading {
-            max-width: 760px;
-            margin: 0 auto 3.5rem;
-        }
-        .vmv-heading h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.25rem;
-            color: var(--black);
-            font-weight: 500;
-            margin-bottom: 1rem;
-            letter-spacing: -0.03em;
-        }
-        .vmv-heading p {
-            color: var(--gray-600);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-        .vmv-cards {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1.75rem;
-        }
-        .vmv-card {
-            background: var(--white);
-            border-radius: 24px;
-            border: 1px solid var(--gray-100);
-            box-shadow: 0 25px 70px rgba(0,0,0,0.08);
-            overflow: hidden;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.4s ease;
-        }
-        .vmv-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 35px 80px rgba(0,0,0,0.15);
-        }
-        .vmv-media {
-            position: relative;
-            height: 200px;
-            overflow: hidden;
-            padding: 0.75rem;
-            background: var(--gray-50);
-            border-bottom: 1px solid var(--gray-100);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .vmv-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            transition: transform 0.6s ease;
-        }
-        .vmv-card:hover .vmv-media img { transform: scale(1.03); }
-        .vmv-label {
-            position: absolute;
-            bottom: 1rem;
-            left: 1rem;
-            padding: 0.35rem 1rem;
-            border-radius: 999px;
-            background: rgba(0,0,0,0.6);
-            color: var(--white);
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-        }
-        .vmv-card-body {
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .vmv-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            border: 1px solid rgba(69,0,29,0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--burgundy);
-            background: rgba(69,0,29,0.08);
-        }
-        .vmv-card-body h3 {
-            font-size: 1.8rem;
-            color: var(--black);
-            margin-bottom: 0.35rem;
-        }
-        .vmv-card-body p {
-            color: var(--gray-600);
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        .vmv-tagline {
-            margin-top: 3rem;
-            font-size: 1.2rem;
-            font-weight: 500;
-            letter-spacing: 0.04em;
-            color: var(--burgundy);
         }
 
         /* ===== IMAGE SHOWCASE ===== */
@@ -602,60 +829,87 @@
             padding: 5rem 5%;
             background: var(--gray-50);
         }
+
         .showcase-container {
             max-width: 1400px;
             margin: 0 auto;
         }
+
         .showcase-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: repeat(2, 200px);
             gap: 1rem;
         }
+
         .showcase-item {
             position: relative;
             border-radius: 16px;
             overflow: hidden;
             cursor: pointer;
         }
+
         .showcase-item.showcase-large {
             grid-column: span 2;
             grid-row: span 2;
         }
+
         .showcase-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
+
         .showcase-item:hover img {
             transform: scale(1.1);
         }
+
         .showcase-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
             padding: 1.5rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
             opacity: 0;
             transition: opacity 0.4s ease;
         }
+
         .showcase-item:hover .showcase-overlay {
             opacity: 1;
         }
+
         .showcase-overlay span {
             color: var(--white);
             font-size: 1rem;
             font-weight: 600;
         }
+
         @media (max-width: 992px) {
-            .showcase-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 180px); }
-            .showcase-item.showcase-large { grid-column: span 2; grid-row: span 1; }
+            .showcase-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 180px);
+            }
+
+            .showcase-item.showcase-large {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
         }
+
         @media (max-width: 480px) {
-            .showcase-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .showcase-item, .showcase-item.showcase-large { grid-column: span 1; grid-row: span 1; height: 200px; }
+            .showcase-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .showcase-item,
+            .showcase-item.showcase-large {
+                grid-column: span 1;
+                grid-row: span 1;
+                height: 200px;
+            }
         }
 
         /* ===== FOCUS SECTION ===== */
@@ -663,6 +917,7 @@
             padding: 8rem 5%;
             background: var(--white);
         }
+
         .focus-grid {
             max-width: 1400px;
             margin: 0 auto;
@@ -670,69 +925,63 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
         }
+
         .focus-card {
             background: var(--white);
             border-radius: 28px;
             border: 1px solid var(--gray-100);
             overflow: hidden;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
             transition: transform 0.45s ease, box-shadow 0.45s ease;
             display: flex;
             flex-direction: column;
         }
+
         .focus-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.12);
         }
+
         .focus-card-media {
             position: relative;
             height: 210px;
             overflow: hidden;
         }
+
         .focus-card-media.fit {
-            background: rgba(0,0,0,0.05);
+            background: rgba(0, 0, 0, 0.05);
             padding: 0.75rem;
         }
+
         .focus-card-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
         }
+
         .focus-card-media.fit img {
             object-fit: contain;
             background: #f8f8f8;
         }
-        .focus-card:hover .focus-card-media img { transform: scale(1.08); }
-        .focus-number {
-            position: absolute;
-            top: 1.25rem;
-            left: 1.25rem;
-            background: rgba(255,255,255,0.95);
-            color: var(--burgundy);
-            padding: 0.25rem 0.85rem;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
+
+        .focus-card:hover .focus-card-media img {
+            transform: scale(1.08);
         }
+
         .focus-card-content {
             padding: 2.25rem;
         }
+
         .focus-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 1.5rem;
             color: var(--black);
             margin-bottom: 0.75rem;
             font-weight: 500;
         }
-        .focus-card .subtitle {
-            color: var(--gray-500);
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
+
+
         .focus-card p {
             color: var(--gray-600);
             font-size: 0.95rem;
@@ -741,122 +990,50 @@
 
         /* ===== CLIENT PAIN POINTS ===== */
         .pain-section {
-            position: relative;
-            padding: 7rem 5%;
-            background: var(--burgundy);
-            color: var(--white);
-            overflow: hidden;
+            padding: 6rem 5%;
+            background: var(--white);
         }
-        .pain-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top left, rgba(255,255,255,0.08), transparent 55%),
-                        radial-gradient(circle at bottom right, rgba(255,255,255,0.05), transparent 45%);
-            opacity: 0.7;
-        }
+
         .pain-container {
-            position: relative;
-            z-index: 2;
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-            gap: 4rem;
-            align-items: center;
         }
-        .pain-intro h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 3.25rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.03em;
-        }
-        .pain-intro p {
-            color: rgba(255,255,255,0.78);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 2.5rem;
-        }
+
         .pain-image {
-            position: relative;
-            border-radius: 32px;
+            margin-bottom: 2rem;
+            border-radius: 28px;
             overflow: hidden;
-            min-height: 360px;
-            box-shadow: 0 30px 100px rgba(0,0,0,0.45);
         }
+
         .pain-image img {
-            position: absolute;
-            inset: 0;
             width: 100%;
-            height: 100%;
+            height: 320px;
             object-fit: cover;
-            opacity: 0.45;
         }
-        .pain-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(54,0,20,0.95), rgba(144,27,72,0.6));
-        }
-        .pain-image-content {
-            position: relative;
-            z-index: 2;
-            padding: 3rem;
-        }
-        .pain-image-content span {
-            display: inline-block;
-            font-size: 0.85rem;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-            color: rgba(255,255,255,0.65);
-        }
-        .pain-image-content h3 {
-            font-size: 2.1rem;
-            line-height: 1.4;
-        }
+
         .pain-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 1rem;
         }
+
         .pain-card {
-            display: flex;
-            gap: 1.25rem;
-            align-items: flex-start;
-            padding: 1.5rem 1.75rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.04);
-            transition: transform 0.35s ease, border-color 0.35s ease, background 0.35s ease;
-        }
-        .pain-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255,255,255,0.5);
-            background: rgba(255,255,255,0.08);
-        }
-        .pain-count {
-            width: 48px;
-            height: 48px;
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
             border-radius: 16px;
-            background: rgba(255,255,255,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: var(--white);
-            font-size: 0.95rem;
-            border: 1px solid rgba(255,255,255,0.25);
+            padding: 1.2rem;
         }
+
         .pain-card h4 {
-            font-size: 1.05rem;
-            color: var(--white);
+            font-size: 0.95rem;
+            color: var(--black);
             margin-bottom: 0.35rem;
         }
+
         .pain-card p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            line-height: 1.5;
         }
 
         /* ===== SERVICES PREVIEW ===== */
@@ -864,15 +1041,18 @@
             padding: 8rem 5%;
             background: var(--gray-50);
         }
+
         .services-container {
             max-width: 1400px;
             margin: 0 auto;
         }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 1.5rem;
         }
+
         .service-card {
             background: var(--white);
             border-radius: 24px;
@@ -880,11 +1060,13 @@
             border: 1px solid var(--gray-100);
             transition: all 0.4s ease;
         }
+
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
             border-color: transparent;
         }
+
         .service-card-image {
             height: 220px;
             background: var(--white);
@@ -896,15 +1078,18 @@
             justify-content: center;
             border-bottom: 1px solid var(--gray-100);
         }
+
         .service-card-image img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             transition: transform 0.5s ease;
         }
+
         .service-card:hover .service-card-image img {
             transform: scale(1.05);
         }
+
         .service-card-image::after {
             content: '';
             position: absolute;
@@ -912,8 +1097,9 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, transparent 30%, rgba(69,0,29,0.5) 100%);
+            background: linear-gradient(180deg, transparent 30%, rgba(69, 0, 29, 0.5) 100%);
         }
+
         .service-card-image i {
             position: absolute;
             bottom: 1rem;
@@ -922,22 +1108,26 @@
             color: var(--white);
             z-index: 10;
         }
+
         .service-card-content {
             padding: 2rem;
         }
+
         .service-card h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 1.35rem;
             color: var(--black);
             margin-bottom: 0.75rem;
             font-weight: 400;
         }
+
         .service-card p {
             color: var(--gray-500);
             font-size: 0.95rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
         }
+
         .service-link {
             display: inline-flex;
             align-items: center;
@@ -948,32 +1138,58 @@
             text-decoration: none;
             transition: gap 0.3s ease;
         }
-        .service-link:hover { gap: 0.75rem; }
+
+        .service-link:hover {
+            gap: 0.75rem;
+        }
 
         /* ===== CTA SECTION ===== */
         .cta-section {
             padding: 5rem 5%;
             background: var(--gray-50);
         }
-        .cta-bg { display: none; }
+
+        .cta-bg {
+            display: none;
+        }
+
         .cta-content {
             max-width: 900px;
             margin: 0 auto;
             text-align: center;
-            background: linear-gradient(135deg, rgba(69,0,29,0.08), rgba(69,0,29,0.01));
             border-radius: 32px;
-            border: 1px solid var(--gray-100);
             padding: 3.5rem;
-            box-shadow: 0 25px 70px rgba(0,0,0,0.08);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+            background-image: url('transorm.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            color: var(--black);
         }
+
+        .cta-content::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.7));
+            z-index: 0;
+        }
+
+        .cta-content>* {
+            position: relative;
+            z-index: 1;
+        }
+
         .cta-content h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 3rem;
             color: var(--black);
             margin-bottom: 1rem;
             font-weight: 500;
             letter-spacing: -0.5px;
         }
+
         .cta-content p {
             color: var(--gray-600);
             font-size: 1.05rem;
@@ -986,6 +1202,7 @@
             padding: 8rem 5%;
             background: var(--white);
         }
+
         .pillars-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -994,21 +1211,28 @@
             gap: 5rem;
             align-items: center;
         }
+
         .pillars-text h2 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 3rem;
             color: var(--black);
             margin-bottom: 1rem;
             font-weight: 400;
             letter-spacing: -0.5px;
         }
-        .pillars-text h2 span { color: var(--burgundy); font-style: italic; }
+
+        .pillars-text h2 span {
+            color: var(--burgundy);
+            font-style: italic;
+        }
+
         .pillars-text .lead {
             font-size: 1.1rem;
             color: var(--gray-500);
             margin-bottom: 2.5rem;
             line-height: 1.8;
         }
+
         .pillar-item {
             display: flex;
             gap: 1.25rem;
@@ -1019,12 +1243,14 @@
             transition: all 0.3s ease;
             border: 1px solid transparent;
         }
+
         .pillar-item:hover {
             background: var(--white);
             border-color: var(--gray-200);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
             transform: translateX(8px);
         }
+
         .pillar-icon {
             width: 52px;
             height: 52px;
@@ -1037,21 +1263,25 @@
             font-size: 1.25rem;
             color: var(--white);
         }
+
         .pillar-content h4 {
             font-size: 1.1rem;
             color: var(--black);
             margin-bottom: 0.35rem;
             font-weight: 600;
         }
+
         .pillar-content p {
             color: var(--gray-500);
             font-size: 0.95rem;
             line-height: 1.6;
         }
+
         .pillars-visual {
             position: relative;
             height: 100%;
         }
+
         .pillars-image {
             width: 100%;
             height: 100%;
@@ -1064,6 +1294,7 @@
             align-items: center;
             justify-content: center;
         }
+
         .pillars-image img {
             position: absolute;
             width: 100%;
@@ -1071,6 +1302,7 @@
             object-fit: cover;
             opacity: 0.5;
         }
+
         .pillars-image::before {
             content: '';
             position: absolute;
@@ -1078,28 +1310,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(69,0,29,0.6) 0%, rgba(69,0,29,0.75) 100%);
+            background: linear-gradient(135deg, rgba(69, 0, 29, 0.6) 0%, rgba(69, 0, 29, 0.75) 100%);
             z-index: 1;
         }
+
         .pillars-image-content {
             position: relative;
             z-index: 2;
             text-align: center;
             padding: 3rem;
         }
+
         .pillars-image-content h3 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 2.5rem;
             color: var(--white);
             margin-bottom: 0.75rem;
             font-weight: 400;
             line-height: 1.3;
         }
+
         .pillars-image-content p {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 1.15rem;
             font-style: italic;
         }
+
         .pillars-stats {
             position: absolute;
             bottom: 2rem;
@@ -1110,25 +1346,35 @@
             gap: 1rem;
             z-index: 2;
         }
+
         .stat-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 1.25rem;
             border-radius: 16px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.4s ease;
         }
-        .stat-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
         .stat-item h4 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Nunito', sans-serif;
             font-size: 2rem;
             color: var(--white);
             font-weight: 400;
         }
-        .stat-item h4 .counter { display: inline-block; }
+
+        .stat-item h4 .counter {
+            display: inline-block;
+        }
+
         .stat-item p {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -1139,10 +1385,12 @@
             background: #101322;
             padding: 5rem 5% 2rem;
         }
+
         .footer-container {
             max-width: 1400px;
             margin: 0 auto;
         }
+
         .footer-grid {
             display: grid;
             grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
@@ -1150,14 +1398,24 @@
             padding-bottom: 3rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .footer-brand .logo { margin-bottom: 1.5rem; display: inline-block; }
+
+        .footer-brand .logo {
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
         .footer-brand p {
             color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
-        .social-links { display: flex; gap: 0.75rem; }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
         .social-links a {
             width: 42px;
             height: 42px;
@@ -1170,24 +1428,45 @@
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 1rem;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .social-links a.linkedin { color: #0a66c2; }
-        .social-links a.twitter { color: #1da1f2; }
-        .social-links a.facebook { color: #1877f2; }
-        .social-links a.instagram { color: #e4405f; }
+
+        .social-links a.linkedin {
+            color: #0a66c2;
+        }
+
+        .social-links a.twitter {
+            color: #1da1f2;
+        }
+
+        .social-links a.facebook {
+            color: #1877f2;
+        }
+
+        .social-links a.instagram {
+            color: #e4405f;
+        }
+
         .social-links a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
         }
+
         .footer-column h4 {
             color: var(--white);
             font-size: 1rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
         }
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 0.75rem; }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
         .footer-column ul a {
             color: rgba(255, 255, 255, 0.65);
             text-decoration: none;
@@ -1197,7 +1476,12 @@
             align-items: center;
             gap: 0.5rem;
         }
-        .footer-column ul a:hover { color: var(--white); transform: translateX(4px); }
+
+        .footer-column ul a:hover {
+            color: var(--white);
+            transform: translateX(4px);
+        }
+
         .footer-contact p {
             color: rgba(255, 255, 255, 0.75);
             font-size: 0.95rem;
@@ -1206,7 +1490,13 @@
             align-items: flex-start;
             gap: 0.75rem;
         }
-        .footer-contact i { color: var(--white); margin-top: 4px; width: 16px; }
+
+        .footer-contact i {
+            color: var(--white);
+            margin-top: 4px;
+            width: 16px;
+        }
+
         .footer-bottom {
             padding-top: 2rem;
             display: flex;
@@ -1215,48 +1505,105 @@
             flex-wrap: wrap;
             gap: 1rem;
         }
+
         .footer-bottom p {
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
         }
+
         .footer-bottom-links {
             display: flex;
             gap: 2rem;
         }
+
         .footer-bottom-links a {
             color: rgba(255, 255, 255, 0.5);
             text-decoration: none;
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
-        .footer-bottom-links a:hover { color: var(--white); }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
 
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1400px) {
-            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
         }
+
         @media (max-width: 1200px) {
-            .hero-text h1 { font-size: 3.5rem; }
-            .hero-content { gap: 2rem; }
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero-content {
+                gap: 2rem;
+            }
         }
+
         @media (max-width: 992px) {
-            .hero-content { padding: 0 5%; }
-            .hero-text { max-width: 100%; }
-            .vmv-cards { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-            .focus-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-            .services-grid { grid-template-columns: repeat(2, 1fr); max-width: 700px; margin-left: auto; margin-right: auto; }
-            .pillars-container { grid-template-columns: 1fr; }
-            .pillars-visual { order: -1; }
-            .pillars-image { height: 400px; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .trust-logos { animation: none; }
-            .pain-container { grid-template-columns: 1fr; }
-            .pain-image { min-height: 260px; order: -1; }
+            .hero-content {
+                padding: 0 5%;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .vmv-cards {
+                grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            }
+
+            .focus-grid {
+                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 700px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .pillars-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pillars-visual {
+                order: -1;
+            }
+
+            .pillars-image {
+                height: 400px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-logos {
+                animation: none;
+            }
+
+            .pain-container {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-image {
+                min-height: 260px;
+                order: -1;
+            }
         }
+
         @media (max-width: 768px) {
             .logo img {
                 height: 40px;
             }
+
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -1269,68 +1616,191 @@
                 padding: 6rem 2rem 2rem;
                 gap: 0;
                 transition: right 0.4s ease;
-                box-shadow: -10px 0 30px rgba(69,0,29,0.35);
+                box-shadow: -10px 0 30px rgba(69, 0, 29, 0.35);
             }
-            .nav-links.active { right: 0; }
-            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.18); }
-            .nav-links a { 
-                color: var(--white) !important; 
-                padding: 1.25rem 0; 
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            .nav-links a {
+                color: var(--white) !important;
+                padding: 1.25rem 0;
                 display: block;
                 width: 100%;
             }
-            .nav-links .nav-cta { 
+
+            .nav-links .nav-cta {
                 margin-top: 1rem;
                 text-align: center;
                 background: var(--white) !important;
                 color: var(--burgundy) !important;
             }
-            .mobile-toggle { display: flex; }
-            .hero { min-height: auto; padding: 10rem 0 5rem; }
-            .hero-text h1 { font-size: 2.5rem; }
-            .hero-text p { font-size: 1rem; }
-            .section-header h2, .cta-content h2 { font-size: 2rem; }
-            .pillars-text h2 { font-size: 2rem; }
-            .vmv-cards, .focus-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
-            .services-grid { grid-template-columns: 1fr; max-width: 400px; }
-            .service-card-content { padding: 1.5rem; }
-            .pillars-stats { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.5rem; }
-            .stat-item { padding: 0.75rem; }
-            .stat-item h4 { font-size: 1.5rem; }
-            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .footer-bottom { flex-direction: column; text-align: center; }
-            .dropdown-content { 
-                position: static; 
-                opacity: 1; 
-                visibility: visible; 
-                transform: none; 
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 10rem 0 5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .section-header h2,
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .pillars-text h2 {
+                font-size: 2rem;
+            }
+
+            .vmv-cards,
+            .focus-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .service-card-content {
+                padding: 1.5rem;
+            }
+
+            .pillars-stats {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 0.5rem;
+            }
+
+            .stat-item {
+                padding: 0.75rem;
+            }
+
+            .stat-item h4 {
+                font-size: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
                 box-shadow: none;
                 border: none;
                 padding: 0 0 0 1rem;
                 background: transparent;
             }
-            .dropdown-content a { padding: 0.75rem 0; border-left: none; }
-            .trust-bar-content { flex-direction: column; gap: 1rem; text-align: center; }
-            .trust-logos { flex-wrap: wrap; gap: 1.5rem; }
-            .cta-content h2 { font-size: 1.75rem; }
-            .pillars-image { height: 300px; }
-            .pillars-image-content h3 { font-size: 1.75rem; }
-            .pain-grid { grid-template-columns: 1fr; }
+
+            .dropdown-content a {
+                padding: 0.75rem 0;
+                border-left: none;
+            }
+
+            .trust-bar-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .trust-logos {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+
+            .cta-content h2 {
+                font-size: 1.75rem;
+            }
+
+            .pillars-image {
+                height: 300px;
+            }
+
+            .pillars-image-content h3 {
+                font-size: 1.75rem;
+            }
+
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
         }
+
         @media (max-width: 480px) {
-            .hero-text h1 { font-size: 2rem; }
-            .hero-buttons { flex-direction: column; align-items: center; }
-            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
-            .vmv-card-body, .focus-card-content { padding: 2rem 1.5rem; }
-            .service-card-image { height: 140px; }
-            .pillars-stats { grid-template-columns: 1fr; }
-            .pillar-item { flex-direction: column; text-align: center; }
-            .pillar-icon { margin: 0 auto; }
-            .pain-image-content { padding: 2rem; }
-            .pain-intro h2 { font-size: 2.4rem; }
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .vmv-card-body,
+            .focus-card-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .service-card-image {
+                height: 140px;
+            }
+
+            .pillars-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .pillar-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .pillar-icon {
+                margin: 0 auto;
+            }
+
+            .pain-image-content {
+                padding: 2rem;
+            }
+
+            .pain-intro h2 {
+                font-size: 2.4rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- PAGE LOADER -->
     <div class="page-loader">
@@ -1338,7 +1808,9 @@
             <div class="loader-logo">
                 <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
             </div>
-            <div class="loader-bar"><div class="loader-progress"></div></div>
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
         </div>
     </div>
 
@@ -1367,10 +1839,11 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <video class="hero-video-bg" id="heroVideo" autoplay muted playsinline preload="auto" poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80">
+        <video class="hero-video-bg" id="heroVideo" autoplay muted playsinline preload="auto"
+            poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80">
             <source src="videos/v-1.mp4" type="video/mp4">
         </video>
-        <div class="hero-overlay"></div>
+        <!-- <div class="hero-overlay"></div> -->
         <div class="hero-bg-pattern"></div>
         <div class="hero-grid"></div>
         <div class="hero-particles">
@@ -1385,279 +1858,13 @@
         </div>
         <div class="hero-content">
             <div class="hero-text">
-                <span class="hero-kicker"><i class="fa-solid fa-sparkles"></i> SpringboardPro</span>
                 <h1>Turning Strategy Into Action.<br>Turning Action Into Results.</h1>
-                <p>We orchestrate the people, processes, and technology that bridge bold ideas to measurable business outcomes. Every engagement is designed to move faster, stay focused, and deliver with confidence.</p>
+                <p>We orchestrate the people, processes, and technology that bridge bold ideas to measurable business
+                    outcomes. Every engagement is designed to move faster, stay focused, and deliver with confidence.
+                </p>
                 <div class="hero-buttons">
                     <a href="contact.html" class="btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
                     <a href="what-we-offer.html" class="btn-secondary">Explore Services</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- VMV SECTION -->
-    <section class="vmv-section">
-        <div class="vmv-container">
-            <div class="vmv-heading">
-                <span class="section-label"><i class="fas fa-gem"></i> Our Foundation</span>
-                <h2>Vision, Mission & Values</h2>
-                <p>Clarity of purpose keeps every engagement grounded. These guiding statements ensure we stay deliberate, disciplined, and people-first.</p>
-            </div>
-            <div class="vmv-cards">
-                <article class="vmv-card">
-                    <div class="vmv-media">
-                        <img src="vision.png" alt="Vision workshop">
-                        <span class="vmv-label">Vision</span>
-                    </div>
-                    <div class="vmv-card-body">
-                        <div class="vmv-icon"><i class="fas fa-lightbulb"></i></div>
-                        <h3>Vision</h3>
-                        <p>To be the trusted strategic transformational partner enabling future-ready organizations with purpose and precision.</p>
-                    </div>
-                </article>
-                <article class="vmv-card">
-                    <div class="vmv-media">
-                        <img src="mission.png" alt="Mission planning">
-                        <span class="vmv-label">Mission</span>
-                    </div>
-                    <div class="vmv-card-body">
-                        <div class="vmv-icon"><i class="fas fa-bullseye"></i></div>
-                        <h3>Mission</h3>
-                        <p>To empower businesses to thrive through innovation, operational excellence, and smart cost strategies.</p>
-                    </div>
-                </article>
-                <article class="vmv-card">
-                    <div class="vmv-media">
-                        <img src="values.png" alt="Values conversation">
-                        <span class="vmv-label">Values</span>
-                    </div>
-                    <div class="vmv-card-body">
-                        <div class="vmv-icon"><i class="fas fa-hand-holding-heart"></i></div>
-                        <h3>Values</h3>
-                        <p>Rooted in a commitment to excellence, innovation, integrity, collaboration, and growth — at every step, for every client.</p>
-                    </div>
-                </article>
-            </div>
-            <p class="vmv-tagline">Your Vision. Our Mission. Shared Success.</p>
-        </div>
-    </section>
-
-    <!-- IMAGE SHOWCASE -->
-    <section class="showcase-section">
-        <div class="showcase-container">
-            <div class="section-header">
-                <span class="section-label"><i class="fas fa-image"></i> Success Combination</span>
-                <h2>Collage of Collaboration</h2>
-                <p>A peek into the workshops, whiteboards, and wins that shape our delivery culture.</p>
-            </div>
-            <div class="showcase-grid">
-                <div class="showcase-item showcase-large">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80" alt="Team strategy meeting">
-                    <div class="showcase-overlay">
-                        <span>Strategy Sessions</span>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80" alt="Professional consulting">
-                    <div class="showcase-overlay">
-                        <span>Expert Guidance</span>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="Success celebration">
-                    <div class="showcase-overlay">
-                        <span>Proven Results</span>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80" alt="Business presentation">
-                    <div class="showcase-overlay">
-                        <span>Clear Vision</span>
-                    </div>
-                </div>
-                <div class="showcase-item">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80" alt="Team collaboration">
-                    <div class="showcase-overlay">
-                        <span>Team Work</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOCUS SECTION -->
-    <section class="focus-section">
-        <div class="section-header">
-            <span class="section-label"><i class="fas fa-crosshairs"></i> Our Focus</span>
-            <h2>Our Core Pillars of Excellence</h2>
-            <p>Each pillar blends strategy, structure, and stewardship so your programmes gain momentum and keep it.</p>
-        </div>
-        <div class="focus-grid">
-                <div class="focus-card">
-                <div class="focus-card-media fit">
-                    <span class="focus-number">01</span>
-                    <img src="stractegic.jpg" alt="Strategy lab">
-                </div>
-                <div class="focus-card-content">
-                    <p class="subtitle">Strategy Lab</p>
-                    <h3>Strategic Orchestration</h3>
-                    <p>Translate executive ambition into actionable roadmaps with value cases, prioritisation models, and investment guardrails.</p>
-                </div>
-            </div>
-                <div class="focus-card">
-                <div class="focus-card-media fit">
-                    <span class="focus-number">02</span>
-                    <img src="governance.jpg" alt="Change leadership">
-                </div>
-                <div class="focus-card-content">
-                    <p class="subtitle">Control Tower</p>
-                    <h3>Governance & Assurance</h3>
-                    <p>Embed assurance rituals, risk intelligence, and stakeholder rhythms that provide transparency without slowing delivery.</p>
-                </div>
-            </div>
-                <div class="focus-card">
-                <div class="focus-card-media fit">
-                    <span class="focus-number">03</span>
-                    <img src="execution-execllance.jpg" alt="Execution huddle">
-                </div>
-                <div class="focus-card-content">
-                    <p class="subtitle">Launch Pods</p>
-                    <h3>Execution Enablement</h3>
-                    <p>Coach delivery teams with playbooks, tooling, and recovery squads so every milestone hits the finish line with confidence.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CLIENT PAIN POINTS -->
-    <section class="pain-section">
-        <div class="pain-container">
-            <div class="pain-intro">
-                <h2>Client Pain Points</h2>
-                <p>Across PMOs of every size, teams wrestle with the same blockers: unclear roadmaps, limited visibility, and no recovery muscle when critical initiatives stall. We map these patterns to design solutions that restore control.</p>
-                <div class="pain-image">
-                    <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=1100&q=80" alt="Client challenges">
-                    <div class="pain-image-content">
-                        <span>Inside every PMO</span>
-                        <h3>Diagnose the friction before prescribing the fix.</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="pain-grid">
-                <div class="pain-card">
-                    <div class="pain-count">01</div>
-                    <div>
-                        <h4>No clear start</h4>
-                        <p>Projects kick off without clarity, structure, or a roadmap everyone understands.</p>
-                    </div>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-count">02</div>
-                    <div>
-                        <h4>Manual slowdowns</h4>
-                        <p>Manual workflows and approvals slow down decisions that should take minutes.</p>
-                    </div>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-count">03</div>
-                    <div>
-                        <h4>Missing governance</h4>
-                        <p>No consistent governance or operating cadence to keep teams aligned.</p>
-                    </div>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-count">04</div>
-                    <div>
-                        <h4>Unmanaged risk</h4>
-                        <p>Risks and issues escalate without timely action or a shared playbook.</p>
-                    </div>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-count">05</div>
-                    <div>
-                        <h4>Low visibility</h4>
-                        <p>Leaders lack real-time visibility into project health, KPIs, and burn.</p>
-                    </div>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-count">06</div>
-                    <div>
-                        <h4>Priority drift</h4>
-                        <p>Priorities drift across departments, creating duplicate work and friction.</p>
-                    </div>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-count">07</div>
-                    <div>
-                        <h4>Delivery slippage</h4>
-                        <p>Execution slows down, milestones slip, and confidence erodes.</p>
-                    </div>
-                </div>
-                <div class="pain-card">
-                    <div class="pain-count">08</div>
-                    <div>
-                        <h4>No recovery path</h4>
-                        <p>There’s no fast mechanism to recover troubled projects or accelerate wins.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES PREVIEW -->
-    <section class="services-section">
-        <div class="services-container">
-            <div class="section-header">
-                <span class="section-label"><i class="fas fa-cube"></i> What We Offer</span>
-                <h2>Our Services</h2>
-                <p>Comprehensive solutions tailored to your organization's unique needs.</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="pmo-consult.jpg" alt="PMO Consulting">
-                        <i class="fas fa-project-diagram"></i>
-                    </div>
-                    <div class="service-card-content">
-                        <h3>PM Consulting</h3>
-                        <p>Establish and scale your Project Management Office with proven frameworks.</p>
-                        <a href="project-management.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="enterprises-automation.jpg" alt="Enterprise Automation">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <div class="service-card-content">
-                        <h3>Enterprise Automation</h3>
-                        <p>Eliminate bottlenecks and elevate performance with intelligent automation.</p>
-                        <a href="enterprise-automation.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="delivery and recovery.jpg" alt="Delivery & Recovery">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <div class="service-card-content">
-                        <h3>Delivery & Recovery</h3>
-                        <p>Deliver at speed and scale with proven delivery methodologies.</p>
-                        <a href="delivery-recovery.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-card-image">
-                        <img src="process-consult.jpg" alt="Process Consulting">
-                        <i class="fas fa-sitemap"></i>
-                    </div>
-                    <div class="service-card-content">
-                        <h3>Process Consulting</h3>
-                        <p>Optimize workflows and enhance productivity with expert process design.</p>
-                        <a href="process-consulting.html" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1667,40 +1874,38 @@
     <section class="pillars-section">
         <div class="pillars-container">
             <div class="pillars-text">
-                <h2>Your Launchpad to <span>Success</span></h2>
-                <p class="lead">We don’t just consult — we co-create success. At SpringboardPro, we help organizations move from strategy to execution through structured PMO Consulting.</p>
+                <h2>Your Launchpad to Success</h2>
+                <p class="lead">We don’t just consult — we co-create success. At SpringboardPro, we help organizations
+                    move from strategy to execution through structured PMO Consulting.</p>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-building"></i></div>
+                    <div class="pillar-icon"><i class="fas fa-lightbulb"></i></div>
                     <div class="pillar-content">
-                        <h4>PM Consulting</h4>
-                        <p>Launch and scale PMOs with frameworks that bring clarity and consistency.</p>
+                        <h4>Vision</h4>
+                        <p>Be the trusted strategic transformation partner enabling future-ready organizations with
+                            purpose and precision.</p>
                     </div>
                 </div>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-robot"></i></div>
+                    <div class="pillar-icon"><i class="fas fa-bullseye"></i></div>
                     <div class="pillar-content">
-                        <h4>Enterprise Automation</h4>
-                        <p>Digitise workflows and decisions so programmes move faster with fewer bottlenecks.</p>
+                        <h4>Mission</h4>
+                        <p>Empower businesses to thrive through innovation, operational excellence, and smart cost
+                            strategies.</p>
                     </div>
                 </div>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-rocket"></i></div>
+                    <div class="pillar-icon"><i class="fas fa-hand-holding-heart"></i></div>
                     <div class="pillar-content">
-                        <h4>Delivery & Recovery</h4>
-                        <p>Course-correct at-risk initiatives and drive outcomes with recovery squads.</p>
-                    </div>
-                </div>
-                <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-sitemap"></i></div>
-                    <div class="pillar-content">
-                        <h4>Process Consulting</h4>
-                        <p>Design lean processes and controls that keep teams accountable and aligned.</p>
+                        <h4>Values</h4>
+                        <p>Lead with excellence, integrity, collaboration, and growth so change feels transparent and
+                            trusted.</p>
                     </div>
                 </div>
             </div>
             <div class="pillars-visual">
                 <div class="pillars-image">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=90" alt="Team collaboration">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1000&q=90"
+                        alt="Team collaboration">
                     <div class="pillars-image-content">
                         <h3>Your Vision.<br>Our Mission.<br>Shared Success.</h3>
                         <p>Let's redefine success, together</p>
@@ -1724,13 +1929,219 @@
         </div>
     </section>
 
+    <!-- IMAGE SHOWCASE -->
+    <section class="showcase-section">
+        <div class="showcase-container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-image"></i> Success Combination</span>
+                <h2>Guiding you from strategy to Succe</h2>
+                <p>A peek into the workshops, whiteboards, and wins that shape our delivery culture.</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-item showcase-large">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80"
+                        alt="Team strategy meeting">
+                    <div class="showcase-overlay">
+                        <span>Strategy Sessions</span>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=80"
+                        alt="Professional consulting">
+                    <div class="showcase-overlay">
+                        <span>Expert Guidance</span>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80"
+                        alt="Success celebration">
+                    <div class="showcase-overlay">
+                        <span>Proven Results</span>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&q=80"
+                        alt="Business presentation">
+                    <div class="showcase-overlay">
+                        <span>Clear Vision</span>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=600&q=80"
+                        alt="Team collaboration">
+                    <div class="showcase-overlay">
+                        <span>Team Work</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOCUS SECTION -->
+    <section class="focus-section">
+        <div class="section-header">
+            <span class="section-label"><i class="fas fa-crosshairs"></i> Our Focus</span>
+            <h2>Our Core Pillars of Excellence</h2>
+            <p>Each pillar blends strategy, structure, and stewardship so your programmes gain momentum and keep it.</p>
+        </div>
+        <div class="focus-grid">
+            <div class="focus-card">
+                <div class="focus-card-media fit">
+                    <img src="Strategic-excellence.jpg" alt="Strategic excellence">
+                </div>
+                <div class="focus-card-content">
+                    <h3>Strategic Excellence</h3>
+                    <p>Translate executive ambition into actionable roadmaps with value cases, prioritisation models,
+                        and investment guardrails.</p>
+                </div>
+            </div>
+            <div class="focus-card">
+                <div class="focus-card-media fit">
+                    <img src="governance-excellence.jpg" alt="Governance excellence">
+                </div>
+                <div class="focus-card-content">
+                    <h3>Governance Excellence</h3>
+                    <p>Embed assurance rituals, risk intelligence, and stakeholder rhythms that provide transparency
+                        without slowing delivery.</p>
+                </div>
+            </div>
+            <div class="focus-card">
+                <div class="focus-card-media fit">
+                    <img src="excution excellence.jpg" alt="Execution excellence">
+                </div>
+                <div class="focus-card-content">
+                    <h3>Execution Excellence</h3>
+                    <p>Coach delivery teams with playbooks, tooling, and recovery squads so every milestone hits the
+                        finish line with confidence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLIENT PAIN POINTS -->
+    <section class="pain-section">
+        <div class="pain-container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-crosshairs"></i> Our Focus</span>
+                <h2>Client Pain Points</h2>
+                <p>Across PMOs of every size, teams wrestle with the same blockers: unclear roadmaps, limited
+                    visibility,
+                    and no recovery muscle when critical initiatives stall. We map these patterns to design solutions
+                    that
+                    restore control.</p>
+            </div>
+            <div class="pain-image">
+                <img src="pain-poins.jpg" alt="Client collaboration">
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card">
+                    <h4>No clear start</h4>
+                    <p>Projects kick off without clarity, structure, or a roadmap everyone understands.</p>
+                </div>
+                <div class="pain-card">
+                    <h4>Manual slowdowns</h4>
+                    <p>Manual workflows and approvals slow down decisions that should take minutes.</p>
+                </div>
+                <div class="pain-card">
+                    <h4>Missing governance</h4>
+                    <p>No consistent governance or operating cadence to keep teams aligned.</p>
+                </div>
+                <div class="pain-card">
+                    <h4>Unmanaged risk</h4>
+                    <p>Risks and issues escalate without timely action or a shared playbook.</p>
+                </div>
+                <div class="pain-card">
+                    <h4>Low visibility</h4>
+                    <p>Leaders lack real-time visibility into project health, KPIs, and burn.</p>
+                </div>
+                <div class="pain-card">
+                    <h4>Priority drift</h4>
+                    <p>Priorities drift across departments, creating duplicate work and friction.</p>
+                </div>
+                <div class="pain-card">
+                    <h4>Delivery slippage</h4>
+                    <p>Execution slows down, milestones slip, and confidence erodes.</p>
+                </div>
+                <div class="pain-card">
+                    <h4>No recovery path</h4>
+                    <p>There’s no fast mechanism to recover troubled projects or accelerate wins.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES PREVIEW -->
+    <section class="services-section">
+        <div class="services-container">
+            <div class="section-header">
+                <span class="section-label"><i class="fas fa-cube"></i> What We Offer</span>
+                <h2>Our Services</h2>
+                <p>Comprehensive solutions tailored to your organization's unique needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="pmo-consult.jpg" alt="PMO Consulting">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>PM Consulting</h3>
+                        <p>Establish and scale your Project Management Office with proven frameworks.</p>
+                        <a href="project-management.html" class="service-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="enterprise-automation.jpg" alt="Enterprise Automation">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Enterprise Automation</h3>
+                        <p>Eliminate bottlenecks and elevate performance with intelligent automation.</p>
+                        <a href="enterprise-automation.html" class="service-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="delivery and recovery.jpg" alt="Delivery & Recovery">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Delivery & Recovery</h3>
+                        <p>Deliver at speed and scale with proven delivery methodologies.</p>
+                        <a href="delivery-recovery.html" class="service-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-image">
+                        <img src="process-consult.jpg" alt="Process Consulting">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Process Consulting</h3>
+                        <p>Optimize workflows and enhance productivity with expert process design.</p>
+                        <a href="process-consulting.html" class="service-link">Learn More <i
+                                class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="cta-bg"></div>
         <div class="cta-content">
-            <h2>Ready to Transform with Confidence?</h2>
-            <p>Let’s co-create a launch plan that unlocks momentum in the first 90 days—fuelled by clear priorities, empowered teams, and dashboards that keep every stakeholder aligned.</p>
-            <a href="contact.html" class="btn-primary">Start Your Journey <i class="fas fa-arrow-right"></i></a>
+            <h3>Ready to Transform with Confidence?</h2>
+                <p><b>Let’s co-create a launch plan that builds early momentum—fuelled by clear priorities, empowered
+                    teams,
+                    and dashboards that keep every stakeholder aligned.</b></p>
+                <a href="contact.html" class="btn-primary">Start Your Journey <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
@@ -1742,7 +2153,8 @@
                     <a href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <p>Your Strategic Growth Partner in PMO Excellence. We serve as your launchpad for success — enabling organizations to move confidently from strategy to execution.</p>
+                    <p>Your Strategic Growth Partner in PMO Excellence. We serve as your launchpad for success —
+                        enabling organizations to move confidently from strategy to execution.</p>
                     <div class="social-links">
                         <a href="#" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="twitter" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
@@ -1773,7 +2185,8 @@
                     <h4>Get in Touch</h4>
                     <p><i class="fas fa-phone"></i> +91 9148317322</p>
                     <p><i class="fas fa-envelope"></i> reachus@springboardpro.in</p>
-                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, II Stage Indiranagar, Bangalore 560038</p>
+                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, II Stage Indiranagar,
+                        Bangalore 560038</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1807,7 +2220,7 @@
                     heroVideoEl.setAttribute('src', heroPlaylist[index]);
                 }
                 heroVideoEl.load();
-                heroVideoEl.play().catch(() => {});
+                heroVideoEl.play().catch(() => { });
             };
             setHeroVideo(heroVideoIndex);
             heroVideoEl.addEventListener('ended', () => {
@@ -1816,29 +2229,29 @@
             });
         }
 
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             const scroll = window.scrollY;
-            
+
             if (scroll > 50) navbar.classList.add('scrolled');
             else navbar.classList.remove('scrolled');
-            
+
             // Parallax effect on hero
             const hero = document.querySelector('.hero-content');
             if (hero && scroll < window.innerHeight) {
                 hero.style.transform = `translateY(${scroll * 0.3}px)`;
                 hero.style.opacity = 1 - (scroll / window.innerHeight) * 0.5;
             }
-            
+
             lastScroll = scroll;
         });
-        
+
         // Mobile menu toggle
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+        document.querySelector('.mobile-toggle').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
             this.classList.toggle('active');
         });
-        
+
         // Counter animation
         function animateCounter(el, target, suffix = '') {
             let current = 0;
@@ -1852,7 +2265,7 @@
                 el.textContent = Math.floor(current) + suffix;
             }, 30);
         }
-        
+
         // Scroll animations with stagger
         const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
         const observer = new IntersectionObserver((entries) => {
@@ -1861,7 +2274,7 @@
                     entry.target.classList.add('visible');
                     entry.target.style.opacity = '1';
                     entry.target.style.transform = 'translateY(0)';
-                    
+
                     // Trigger counter animation for stats
                     const counters = entry.target.querySelectorAll('[data-count]');
                     counters.forEach(counter => {
@@ -1875,61 +2288,61 @@
                 }
             });
         }, observerOptions);
-        
+
         document.querySelectorAll('.vmv-card, .focus-card, .service-card, .pain-card, .pillar-item, .stat-item, .pillars-image, section').forEach((el, i) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
             el.style.transition = `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${(i % 6) * 0.1}s`;
             observer.observe(el);
         });
-        
+
         // Smooth reveal for sections
         document.querySelectorAll('section').forEach(section => {
             section.style.opacity = '1';
             section.style.transform = 'none';
         });
-        
+
         // Image lazy loading with fade
         document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('load', function() {
+            img.addEventListener('load', function () {
                 this.style.opacity = '1';
             });
             if (img.complete) img.style.opacity = '1';
         });
-        
+
         // Magnetic button effect
         document.querySelectorAll('.btn-primary, .nav-cta').forEach(btn => {
-            btn.addEventListener('mousemove', function(e) {
+            btn.addEventListener('mousemove', function (e) {
                 const rect = this.getBoundingClientRect();
                 const x = e.clientX - rect.left - rect.width / 2;
                 const y = e.clientY - rect.top - rect.height / 2;
                 this.style.transform = `translateY(-3px) translate(${x * 0.1}px, ${y * 0.1}px)`;
             });
-            btn.addEventListener('mouseleave', function() {
+            btn.addEventListener('mouseleave', function () {
                 this.style.transform = '';
             });
         });
-        
+
         // Tilt effect on cards
         document.querySelectorAll('.vmv-card, .service-card, .focus-card, .pain-card').forEach(card => {
-            card.addEventListener('mousemove', function(e) {
+            card.addEventListener('mousemove', function (e) {
                 const rect = this.getBoundingClientRect();
                 const x = (e.clientX - rect.left) / rect.width - 0.5;
                 const y = (e.clientY - rect.top) / rect.height - 0.5;
                 this.style.transform = `translateY(-12px) scale(1.02) rotateX(${y * -5}deg) rotateY(${x * 5}deg)`;
             });
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = '';
             });
         });
-        
+
         // Page loader - hide after content loads
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             setTimeout(() => {
                 document.querySelector('.page-loader').classList.add('hidden');
             }, 800);
         });
-        
+
         // Smooth reveal on scroll
         const revealElements = document.querySelectorAll('section');
         const revealOnScroll = () => {
@@ -1942,11 +2355,12 @@
         };
         window.addEventListener('scroll', revealOnScroll);
         revealOnScroll();
-        
+
         // Section reveal on scroll
         document.querySelectorAll('section').forEach(section => {
             observer.observe(section);
         });
     </script>
 </body>
+
 </html>
