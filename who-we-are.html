@@ -1,269 +1,872 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Who We Are | SpringboardPro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         :root {
             --burgundy: #45001d;
             --burgundy-light: #5c0028;
             --white: #ffffff;
+            --off-white: #f8f9fa;
             --black: #0a0a0a;
-            --gray-50: #fafafa;
-            --gray-100: #f4f4f5; /* The specific grey for the card */
+            --gray-100: #f4f4f5;
             --gray-200: #e4e4e7;
-            --gray-400: #a1a1aa;
-            --gray-500: #71717a;
             --gray-600: #52525b;
             --gray-800: #27272a;
             --gold: #d4af37;
         }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Space Grotesk', sans-serif; color: var(--gray-800); line-height: 1.6; background: var(--white); }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--gray-800);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
 
         /* NAVBAR */
-        .navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; background: rgba(69,0,29,0.95); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,0.08); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .navbar.scrolled { padding: 0.85rem 5%; box-shadow: 0 8px 35px rgba(69,0,29,0.45); }
-        .logo { display: inline-flex; align-items: center; gap: 0.75rem; text-decoration: none; }
-        .logo img { height: 48px; width: auto; display: block; }
-        .nav-links { display: flex; list-style: none; gap: 2.5rem; align-items: center; }
-        .nav-links a { color: var(--white); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.3s ease; }
-        .dropdown { position: relative; }
-        .dropdown-content { position: absolute; top: calc(100% + 10px); left: -20px; background: var(--white); min-width: 280px; padding: 0.75rem 0; border-radius: 12px; opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); border: 1px solid var(--gray-100); }
-        .dropdown:hover .dropdown-content { opacity: 1; visibility: visible; transform: translateY(0); }
-        .dropdown-content a { display: block; padding: 0.9rem 1.5rem; color: var(--gray-800) !important; font-size: 0.9rem; }
-        .dropdown-content a:hover { background: var(--gray-50); color: var(--burgundy) !important; }
-        .nav-cta { background: var(--white) !important; color: var(--burgundy) !important; padding: 0.75rem 1.75rem !important; border-radius: 100px; font-weight: 600 !important; }
-        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; z-index: 1001; }
-        .mobile-toggle span { width: 24px; height: 2px; background: var(--white); transition: all 0.3s ease; border-radius: 2px; }
-        .navbar.scrolled .mobile-toggle span { background: var(--white); }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(69, 0, 29, 0.95);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            padding: 0.85rem 5%;
+            box-shadow: 0 8px 35px rgba(69, 0, 29, 0.45);
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 72px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: calc(100% + 10px);
+            left: -20px;
+            background: var(--white);
+            min-width: 280px;
+            padding: 0.75rem 0;
+            border-radius: 12px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid var(--gray-100);
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 0.9rem 1.5rem;
+            color: var(--gray-800) !important;
+            font-size: 0.9rem;
+        }
+
+        .dropdown-content a:hover {
+            background: var(--gray-50);
+            color: var(--burgundy) !important;
+        }
+
+        .nav-cta {
+            background: var(--white) !important;
+            color: var(--burgundy) !important;
+            padding: 0.75rem 1.75rem !important;
+            border-radius: 100px;
+            font-weight: 600 !important;
+        }
+
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .mobile-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .navbar.scrolled .mobile-toggle span {
+            background: var(--white);
+        }
 
         /* PAGE HERO */
-        .page-hero { padding: 10rem 5% 6rem; background: var(--burgundy); position: relative; overflow: hidden; min-height: 100vh;  display: flex;  align-items: center;  justify-content: center; }
-        .page-hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.04) 0%, transparent 50%), radial-gradient(circle at 80% 30%, rgba(255,255,255,0.03) 0%, transparent 40%); z-index: 1; }
-        .hero-bg-video { position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.45;    object-position: top center; }
-        .page-hero-content { max-width: 800px; margin: 0 auto; text-align: center; position: relative; z-index: 10; }
-        .page-hero .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; margin-bottom: 1.25rem; }
-        .page-hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; color: var(--white); margin-bottom: 1.25rem; font-weight: 600; letter-spacing: -1px; }
-        .page-hero p { color: rgba(255, 255, 255, 0.75); font-size: 1.2rem; line-height: 1.8; }
+        .page-hero {
+            padding: 10rem 5% 6rem;
+            background: var(--burgundy);
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.04) 0%, transparent 50%), radial-gradient(circle at 80% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 40%);
+            z-index: 1;
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.45;
+            object-position: top center;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .page-hero h1 {
+            font-size: 4rem;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .page-hero p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
 
         /* ABOUT SECTION */
-        .about-section { padding: 5rem 5%; background: var(--white); }
-        .about-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-        .about-image { position: relative; height: 480px; border-radius: 24px; overflow: hidden; background: var(--burgundy); }
-        .about-image img { width: 100%; height: 100%; object-fit: cover; }
-        .about-image::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, rgba(69,0,29,0.15) 0%, rgba(69,0,29,0.4) 100%); z-index: 1; }
-        
-        .about-text .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(69, 0, 29, 0.08); color: var(--burgundy); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .about-text h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: var(--black); margin-bottom: 1.5rem; font-weight: 400; letter-spacing: -0.5px; }
-        .about-text h2 span { color: var(--burgundy); font-style: italic; }
-        .about-text p { color: var(--gray-600); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem; }
-        
-        .about-points { margin-top: 1.5rem; list-style: none; }
-        .about-points li { margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 1rem; color: var(--gray-800); font-size: 1.05rem; }
-        .about-points li i { color: var(--burgundy); margin-top: 5px; font-size: 0.9rem; }
-        .about-points strong { color: var(--burgundy); font-weight: 700; }
-        
-        .about-stats { 
-            grid-column: 1 / -1; 
+        .about-section {
+            padding: 5rem 5%;
+            background: var(--white);
+        }
+
+        .about-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-image {
+            position: relative;
+            height: 700px;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--burgundy);
+        }
+
+        .about-image img {
             width: 100%;
-            text-align: center; 
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(69, 0, 29, 0.15) 0%, rgba(69, 0, 29, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        .about-text p {
+            color: var(--gray-600);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-points {
+            margin-top: 1.5rem;
+            list-style: none;
+        }
+
+        .about-points li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            color: var(--gray-800);
+            font-size: 1.05rem;
+        }
+
+        .about-points li i {
+            color: var(--burgundy);
+            margin-top: 5px;
+            font-size: 0.9rem;
+        }
+
+        .about-stats {
+            grid-column: 1 / -1;
+            width: 100%;
+            text-align: center;
             margin-top: 1rem;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--gray-200); 
-            font-style: italic; 
-            color: var(--gray-600); 
-            font-size: 1.15rem; 
+            border-top: 1px solid var(--gray-200);
+            font-style: italic;
+            color: var(--gray-600);
+            font-size: 1.15rem;
         }
 
-        /* FOUNDER'S MESSAGE SECTION */
-        .founder-message-section { padding: 6rem 5%; background: var(--burgundy); color: var(--white); }
-        .founder-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 350px 1fr; gap: 4rem; align-items: center; }
-        .founder-img-box { position: relative; border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,255,255,0.1); }
-        .founder-img-box img { width: 100%; height: auto; display: block; }
-        .founder-content h3 { font-size: 2.5rem; margin-bottom: 2rem; font-weight: 400; }
-        .founder-content p { color: rgba(255,255,255,0.85); font-size: 1.15rem; line-height: 1.8; margin-bottom: 1.5rem; }
-        .founder-content .signature { margin-top: 2rem; }
-        .founder-content .signature h4 { font-size: 1.5rem; margin-bottom: 0.2rem; }
-        .founder-content .signature span { color: rgba(255,255,255,0.6); }
+        /* FOUNDER'S MESSAGE */
+        .founder-message-section {
+            padding: 6rem 5%;
+            background: #8a1c42;
+            color: var(--white);
+        }
 
-        /* FOUNDER'S JOURNEY SECTION */
-        .journey-section { padding: 6rem 5%; background: var(--gray-50); }
-        .journey-header { text-align: center; margin-bottom: 4rem; }
-        .journey-header h2 { font-size: 3rem; color: var(--black); }
-        
-        .timeline-container { max-width: 1200px; margin: 0 auto; position: relative; padding: 2rem 0; }
-        
-        .timeline-steps { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; margin-bottom: 4rem; position: relative; }
-        .step-card { background: var(--white); padding: 2rem; border-radius: 12px; border: 1px solid var(--gray-200); box-shadow: 0 10px 30px rgba(0,0,0,0.05); position: relative; transition: transform 0.3s; z-index: 2; }
-        .step-card:hover { transform: translateY(-5px); border-color: var(--burgundy); }
-        .step-card h4 { color: var(--burgundy); font-size: 1.4rem; margin-bottom: 0.5rem; }
-        .step-card h5 { color: var(--black); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 700; }
-        .step-card p { color: var(--gray-600); font-size: 0.95rem; }
-        
-        .step-card:nth-child(1) { margin-top: 150px; }
-        .step-card:nth-child(2) { margin-top: 75px; }
-        .step-card:nth-child(3) { margin-top: 0px; background: var(--burgundy); border: none; }
-        .step-card:nth-child(3) h4, .step-card:nth-child(3) h5, .step-card:nth-child(3) p { color: var(--white) !important; }
+        .founder-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
 
-        .accolades-box { background: #e4e4e7; border-radius: 20px; padding: 3rem; margin-top: 4rem; position: relative; }
-        .accolades-header { text-align: center; margin-bottom: 2rem; color: var(--burgundy); font-size: 1.5rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-        .accolades-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-        .accolade-item { display: flex; gap: 1rem; align-items: flex-start; }
-        .accolade-item i { color: var(--burgundy); font-size: 1.2rem; margin-top: 5px; }
-        .accolade-item h5 { font-size: 1.1rem; color: var(--black); margin-bottom: 0.25rem; }
-        .accolade-item p { font-size: 0.9rem; color: var(--gray-600); }
+        .founder-img-box {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .founder-img-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .founder-content h3 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .founder-content p {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-content .signature {
+            margin-top: 2rem;
+        }
+
+        .founder-content .signature h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .founder-content .signature span {
+            color: rgba(255, 255, 255, 0.6);
+        }
 
         /* VALUES SECTION */
-        .values-section { padding: 6rem 5%; background: var(--white); border-top: 1px solid var(--gray-100); }
-        .values-container { max-width: 1400px; margin: 0 auto; }
-        .section-header { text-align: center; max-width: 600px; margin: 0 auto 4rem; }
-        .section-header .section-label { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(69, 0, 29, 0.08); color: var(--burgundy); padding: 0.5rem 1rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.5px; }
-        .section-header h2 { font-family: 'Space Grotesk', sans-serif; font-size: 3rem; color: var(--black); font-weight: 600; margin-bottom: 1rem; }
-        .section-header p { color: var(--gray-500); font-size: 1.1rem; line-height: 1.8; }
-        .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-        .value-card { background: var(--white); padding: 2rem; border-radius: 20px; text-align: center; border: 1px solid var(--gray-200); transition: all 0.4s ease; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .value-card:hover { transform: translateY(-8px); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08); border-color: transparent; }
-        .value-icon { width: 64px; height: 64px; margin: 0 auto 1.25rem; background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light)); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--white); }
-        .value-card h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 600; }
-        .value-card p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
+        .values-section {
+            padding: 6rem 5%;
+            background: var(--white);
+            border-top: 1px solid var(--gray-100);
+        }
 
-        /* TEAM SECTION */
-        .team-section { padding: 6rem 5%; background: var(--gray-50); }
-        .team-container { max-width: 1200px; margin: 0 auto; }
-        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-        .team-card { background: var(--white); border-radius: 24px; overflow: hidden; transition: all 0.4s ease; border: 1px solid var(--gray-200); }
-        .team-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1); border-color: var(--gray-100); }
-        .team-photo { background: var(--burgundy); position: relative; overflow: hidden; aspect-ratio: 3 / 4; }
-        .team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 0.5s ease; }
-        .team-card:hover .team-photo img { transform: scale(1.05); }
-        .team-info { padding: 1.75rem; text-align: center; }
-        .team-info h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.35rem; color: var(--black); margin-bottom: 0.35rem; font-weight: 600; }
-        .team-info .role { color: var(--burgundy); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.75rem; }
-        .team-info p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
+        .values-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-        /* CTA SECTION - Updated to Exact Screenshot Size */
-        .cta-section { 
-            padding: 4rem 5% 6rem; /* Top padding reduced slightly so it sits closer to section above */
-            background: var(--white); 
-            position: relative; 
+        .section-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 4rem;
         }
-        .cta-card { 
-            background: var(--gray-100); /* Matches the light grey in screenshot */
-            border-radius: 30px; 
-            padding: 5rem 2rem;      /* Tall vertical padding for spacious look */
-            max-width: 1200px;       /* Matches the visual width in the image (not too wide, not too narrow) */
-            margin: 0 auto; 
-            text-align: center; 
-            position: relative; 
-            overflow: hidden; 
-            /* Subtle border/shadow optional, but image looks very clean/flat */
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--black);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
-        .cta-content { 
-            max-width: 680px;  /* Constrains text so it wraps nicely in the center */
-            margin: 0 auto; 
-            position: relative; 
-            z-index: 10; 
+
+        .section-header p {
+            color: var(--gray-500);
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
-        .cta-content h2 { 
-            font-family: 'Space Grotesk', sans-serif; 
-            font-size: 3rem; 
-            color: var(--black); 
-            margin-bottom: 1.5rem; 
-            font-weight: 600; 
-            letter-spacing: -1px; 
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .value-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            border-color: transparent;
+        }
+
+        .value-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1.25rem;
+            background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .value-card h3 {
+            font-size: 1.35rem;
+            color: var(--black);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: var(--gray-500);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* =========================================
+           NEW PROFESSIONAL 2-COLUMN TEAM SECTION
+           ========================================= */
+        .team-section {
+            padding: 6rem 5%;
+            background: var(--gray-50);
+        }
+
+        .team-container {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two persons besides */
+            gap: 2.5rem;
+        }
+
+        /* The Professional Card Design */
+        .pro-team-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            /* Top accent border */
+            border-top: 5px solid var(--burgundy);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pro-team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(69, 0, 29, 0.1);
+        }
+
+        /* Header part of the card: Photo + Name/Role */
+        .pro-team-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .pro-team-img-wrapper {
+            width: 120px;
+            height: 120px;
+            flex-shrink: 0;
+            border-radius: 24px;
+            overflow: hidden;
+            background: var(--gray-200);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .pro-team-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+        }
+
+        .pro-team-identity {
+            flex: 1;
+        }
+
+        .pro-team-identity h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.75rem;
+            color: var(--black);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .pro-team-identity .role {
+            font-size: 0.95rem;
+            color: var(--burgundy);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .pro-team-links {
+            display: flex;
+            gap: 10px;
+        }
+
+        .pro-team-links a {
+            color: var(--gray-400);
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+
+        .pro-team-links a:hover {
+            color: var(--burgundy);
+        }
+
+        /* Bio Text Styling */
+        .pro-team-bio {
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.75;
+        }
+
+        .pro-team-bio p {
+            margin-bottom: 1rem;
+        }
+        
+        .pro-team-bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 4rem 5% 6rem;
+            background: var(--white);
+            position: relative;
+        }
+
+        .cta-card {
+            background: var(--gray-100);
+            border-radius: 30px;
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            max-width: 680px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-content h2 {
+            font-size: 3rem;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -1px;
             line-height: 1.2;
         }
-        .cta-content p { 
-            color: var(--gray-600); 
-            font-size: 1.1rem; 
-            margin-bottom: 2.5rem; 
-            line-height: 1.7; 
+
+        .cta-content p {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
         }
-        .btn-cta-card { 
-            background: var(--white); 
-            color: var(--burgundy); 
-            padding: 1rem 2.2rem; 
-            border-radius: 100px; 
-            font-size: 1rem; 
-            font-weight: 700; 
-            cursor: pointer; 
-            text-decoration: none; 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 0.75rem; 
-            transition: all 0.3s ease; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+
+        .btn-cta-card {
+            background: var(--white);
+            color: var(--burgundy);
+            padding: 1rem 2.2rem;
+            border-radius: 100px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
-        .btn-cta-card:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1); 
+
+        .btn-cta-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        .btn-cta-card i { 
-            transition: transform 0.3s ease; 
-        }
-        .btn-cta-card:hover i { 
-            transform: translateX(4px); 
+
+        .btn-cta-card:hover i {
+            transform: translateX(4px);
         }
 
         /* FOOTER */
-        .footer { background: #101322; padding: 5rem 5% 2rem; }
-        .footer-container { max-width: 1400px; margin: 0 auto; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-        .footer-brand .logo { margin-bottom: 1.5rem; display: inline-block; }
-        .footer-brand p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem; }
-        .social-links { display: flex; gap: 0.75rem; }
-        .social-links a { width: 42px; height: 42px; background: rgba(255, 255, 255, 0.1); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--white); text-decoration: none; transition: all 0.3s ease; font-size: 1rem; }
-        .social-links a:hover { background: var(--white); color: var(--burgundy); transform: translateY(-3px); }
-        .footer-column h4 { color: var(--white); font-size: 1rem; margin-bottom: 1.5rem; font-weight: 600; }
-        .footer-column ul { list-style: none; }
-        .footer-column ul li { margin-bottom: 0.75rem; }
-        .footer-column ul a { color: rgba(255, 255, 255, 0.6); text-decoration: none; font-size: 0.95rem; transition: all 0.3s ease; }
-        .footer-column ul a:hover { color: var(--white); }
-        .footer-contact p { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; margin-bottom: 1rem; display: flex; align-items: flex-start; gap: 0.75rem; }
-        .footer-contact i { color: var(--white); margin-top: 4px; width: 16px; }
-        .footer-bottom { padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        .footer-bottom p { color: rgba(255, 255, 255, 0.4); font-size: 0.9rem; }
+        .footer {
+            background: #101322;
+            padding: 5rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            gap: 3rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--white);
+            color: var(--burgundy);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column ul a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-column ul a:hover {
+            color: var(--white);
+        }
+
+        .footer-contact p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .footer-contact i {
+            color: var(--white);
+            margin-top: 4px;
+            width: 16px;
+        }
+
+        .footer-bottom {
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+        }
 
         /* RESPONSIVE */
         @media (max-width: 1024px) {
-            .values-grid { grid-template-columns: repeat(2, 1fr); }
-            .timeline-steps { grid-template-columns: 1fr; gap: 1rem; }
-            .step-card:nth-child(n) { margin-top: 0; }
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 992px) {
-            .about-container { grid-template-columns: 1fr; gap: 3rem; }
-            .about-image { height: 350px; }
-            .founder-container { grid-template-columns: 1fr; text-align: center; }
-            .founder-img-box { width: 200px; margin: 0 auto; }
-            .team-grid { grid-template-columns: 1fr 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
-            .accolades-grid { grid-template-columns: 1fr; }
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                height: 350px;
+            }
+
+            .founder-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .founder-img-box {
+                width: 200px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            /* Stack the 2-column team grid on tablet/mobile */
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pro-team-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+            
+            .pro-team-links {
+                justify-content: center;
+            }
         }
+
         @media (max-width: 768px) {
-            .logo img { height: 40px; }
-            .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: rgba(69,0,29,0.97); flex-direction: column; padding: 6rem 2rem 2rem; gap: 0; transition: right 0.4s ease; box-shadow: -10px 0 30px rgba(69,0,29,0.35); }
-            .nav-links.active { right: 0; }
-            .nav-links li { width: 100%; border-bottom: 1px solid rgba(255,255,255,0.18); }
-            .nav-links a { color: var(--white) !important; padding: 1.25rem 0; display: block; }
-            .nav-links .nav-cta { margin-top: 1rem; text-align: center; background: var(--white) !important; color: var(--burgundy) !important; }
-            .mobile-toggle { display: flex; }
-            .page-hero h1 { font-size: 2.5rem; }
-            .about-text h2, .section-header h2 { font-size: 2.25rem; }
-            .values-grid { grid-template-columns: 1fr; }
-            .team-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .dropdown-content { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 0 0 0 1rem; background: transparent; }
-            .cta-card { padding: 4rem 1.5rem; border-radius: 24px; }
-            .cta-content h2 { font-size: 2.25rem; }
+            .logo img {
+                height: 40px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: rgba(69, 0, 29, 0.97);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 0;
+                transition: right 0.4s ease;
+                box-shadow: -10px 0 30px rgba(69, 0, 29, 0.35);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+            }
+
+            .nav-links a {
+                color: var(--white) !important;
+                padding: 1.25rem 0;
+                display: block;
+            }
+
+            .nav-links .nav-cta {
+                margin-top: 1rem;
+                text-align: center;
+                background: var(--white) !important;
+                color: var(--burgundy) !important;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-text h2,
+            .section-header h2 {
+                font-size: 2.25rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 1rem;
+                background: transparent;
+            }
+
+            .cta-card {
+                padding: 4rem 1.5rem;
+                border-radius: 24px;
+            }
+
+            .cta-content h2 {
+                font-size: 2.25rem;
+            }
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <a href="index.html" class="logo" aria-label="SpringboardPro home">
@@ -287,29 +890,33 @@
         <div class="mobile-toggle"><span></span><span></span><span></span></div>
     </nav>
 
-            <section class="page-hero" margit>
-                <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80">
-                    <source src="videos/v-2.mp4" type="video/mp4">
-                </video>
-                <div class="page-hero-content">
-                    <h1>Who We Are</h1>
-                    <p style="font-weight: bold;">Your strategic growth partner, dedicated to transforming organizations through PMO excellence and innovative solutions.</p>
-                </div>
-            </section>
+    <section class="page-hero" margit>
+        <video class="hero-bg-video" autoplay muted loop playsinline preload="auto"
+            poster="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80">
+            <source src="videos/v-2.mp4" type="video/mp4">
+        </video>
+        <div class="page-hero-content">
+            <h1 style="font-family: nunito;">Who We Are</h1>
+            <p style="font-weight: bold;">Your strategic growth partner, dedicated to transforming organizations through
+                PMO excellence and innovative solutions.</p>
+        </div>
+    </section>
 
-    <!-- UPDATED: ABOUT SECTION WITH SCREENSHOT CONTENT -->
     <section class="about-section">
         <div class="about-container">
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80" alt="Professional team meeting">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                    alt="Professional team meeting">
             </div>
-            
+
             <div class="about-text">
-                <span class="section-label"><i class="fas fa-rocket"></i> Execution Excellence</span>
-                <h2>From Strategy to <span>Execution</span></h2>
-                <p>At SpringboardPro, we serve as your strategic growth partner in execution excellence — a launchpad for success that helps organizations move with clarity and confidence from strategy to execution.</p>
-                <p>Much like a springboard, we provide the momentum to transform complex challenges into opportunities, paving the way for innovation, efficiency, and long-term value.</p>
-                
+                <h2 style="font-size: 40px; font-family: Nunito;">From Strategy to Execution</h2>
+                <p>At SpringboardPro, we serve as your strategic growth partner in execution excellence — a launchpad
+                    for success that helps organizations move with clarity and confidence from strategy to execution.
+                </p>
+                <p>Much like a springboard, we provide the momentum to transform complex challenges into opportunities,
+                    paving the way for innovation, efficiency, and long-term value.</p>
+
                 <p><strong>What defines us is not just what we do, but how we do it:</strong></p>
                 <ul class="about-points">
                     <li>
@@ -322,30 +929,35 @@
                     </li>
                     <li>
                         <i class="fas fa-check-circle"></i>
-                        <span><strong>Collaboration & Innovation</strong> — working with clients to deliver sustainable growth.</span>
+                        <span><strong>Collaboration & Innovation</strong> — working with clients to deliver sustainable
+                            growth.</span>
                     </li>
                 </ul>
+                <p class="about-stats">
+                    Backed by two decades of leadership and 3,000+ projects delivered, we bring together project
+                    management expertise, intelligent automation, and business insights.
+                </p>
+
             </div>
-            
-            <!-- Centered stats section -->
-            <p class="about-stats" >
-                Backed by two decades of leadership and 3,000+ projects delivered, we bring together project management expertise, intelligent automation, and business insights.
-            </p>
 
         </div>
     </section>
 
-    <!-- NEW: FOUNDER'S MESSAGE SECTION -->
     <section class="founder-message-section">
         <div class="founder-container">
             <div class="founder-img-box">
                 <img src="Founder&Ceo.jpg" alt="Cecilia D'Silva">
             </div>
             <div class="founder-content">
-                <h3>"Strategies, though strong, often stumbled in execution."</h3>
-                <p>After two decades in leadership roles at Oracle, HSBC, DHL, and Kinara Capital—where I drove business transformation, managed large-scale operations, and led 3,000+ projects — I identified a common challenge.</p>
-                <p>I founded SpringboardPro to bridge that gap. My vision is to enable organizations to confidently transition from strategy to execution, powered by governance, automation, and data-driven insights.</p>
-                <p>For me, SpringboardPro is more than a consulting firm; it is a launchpad for sustainable growth, collaboration, and success.</p>
+                <h3 style="font-family: nunito;">"Strategies, though strong, often stumbled in execution."</h3>
+                <p>After two decades in leadership roles at Oracle, HSBC, DHL, and Kinara Capital—where I drove business
+                    transformation, managed large-scale operations, and led 3,000+ projects — I identified a common
+                    challenge.</p>
+                <p>I founded SpringboardPro to bridge that gap. My vision is to enable organizations to confidently
+                    transition from strategy to execution, powered by governance, automation, and data-driven insights.
+                </p>
+                <p>For me, SpringboardPro is more than a consulting firm; it is a launchpad for sustainable growth,
+                    collaboration, and success.</p>
                 <div class="signature">
                     <h4>Cecilia D'Silva</h4>
                     <span>Founder & CEO</span>
@@ -354,159 +966,143 @@
         </div>
     </section>
 
-    <!-- NEW: FOUNDER'S JOURNEY & ACCOLADES -->
-    <section class="journey-section">
-        <div class="timeline-container">
-            <div class="journey-header">
-                <h2>Founder's Journey</h2>
-            </div>
-            
-            <div class="timeline-steps">
-                <!-- Step 1 -->
-                <div class="step-card">
-                    <h4>Early Foundation</h4>
-                    <h5>DHL | HSBC</h5>
-                    <p>Built expertise in finance, operations & governance while managing teams and ensuring service delivery.</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="step-card">
-                    <h4>Program Leadership</h4>
-                    <h5>Oracle | Kinara Capital</h5>
-                    <p>Led global programs & projects. Delivered 3,000+ projects.</p>
-                </div>
-                <!-- Step 3 (Active) -->
-                <div class="step-card">
-                    <h4>Entrepreneurship</h4>
-                    <h5>SpringboardPro</h5>
-                    <p>Founded SpringboardPro to bridge strategy and execution with Project Management Consulting, Automation & Business Intelligence.</p>
-                </div>
-            </div>
-
-            <div class="accolades-box">
-                <h3 class="accolades-header">Recognitions & Accolades</h3>
-                <div class="accolades-grid">
-                    <div class="accolade-item">
-                        <i class="fas fa-trophy"></i>
-                        <div>
-                            <h5>India PMO Leader of the Year 2022 - Winner</h5>
-                            <p>National recognition by the PMO Global Alliance for exceptional PMO transformation.</p>
-                        </div>
-                    </div>
-                    <div class="accolade-item">
-                        <i class="fas fa-medal"></i>
-                        <div>
-                            <h5>India PMO of the Year 2021 - Top 3 Finalist</h5>
-                            <p>Led Kinara Capital's PMO to national acclaim as Senior VP and Head of PMO.</p>
-                        </div>
-                    </div>
-                    <div class="accolade-item">
-                        <i class="fas fa-certificate"></i>
-                        <div>
-                            <h5>Certified Independent Director & PMP</h5>
-                            <p>Recognized for board-level governance, leadership and global program management excellence.</p>
-                        </div>
-                    </div>
-                    <div class="accolade-item">
-                        <i class="fas fa-gavel"></i>
-                        <div>
-                            <h5>Jury Member – PMI Kerala Chapter Awards</h5>
-                            <p>Invited to evaluate outstanding innovations in project management.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="values-section">
         <div class="values-container">
             <div class="section-header">
-                <span class="section-label"><i class="fas fa-heart"></i> Our Values</span>
-                <h2>What We Stand For</h2>
-                <p style="font-size: larger;">Our core values guide every decision we make and every engagement we undertake.</p>
+                <h2 style="font-family: nunito;">What We Stand For</h2>
+                <p style="font-size: larger;">Our core values guide every decision we make and every engagement we
+                    undertake.</p>
             </div>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon"><i class="fas fa-award"></i></div>
-                    <h3>Excellence</h3>
-                    <p>We pursue the highest standards in everything we do, delivering quality that exceeds expectations.</p>
+                    <h3 style="font-family: nunito;">Excellence</h3>
+                    <p>We pursue the highest standards in everything we do, delivering quality that exceeds
+                        expectations.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>Innovation</h3>
-                    <p>We embrace new ideas and technologies to create forward-thinking solutions for complex challenges.</p>
+                    <h3 style="font-family: nunito;">Innovation</h3>
+                    <p>We embrace new ideas and technologies to create forward-thinking solutions for complex
+                        challenges.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Integrity</h3>
+                    <h3 style="font-family: nunito;">Integrity</h3>
                     <p>We build trust through transparency, honesty, and ethical practices in all our interactions.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon"><i class="fas fa-users"></i></div>
-                    <h3>Collaboration</h3>
+                    <h3 style="font-family: nunito;">Collaboration</h3>
                     <p>We work as partners with our clients, fostering teamwork to achieve shared success.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- PROFESSIONAL TEAM SECTION (2 COLUMNS) -->
     <section class="team-section">
         <div class="team-container">
             <div class="section-header">
-                <span class="section-label"><i class="fas fa-user-tie"></i> Our Team</span>
-                <h2>Meet the Experts</h2>
-                <p style="font-weight: bold;">Our leadership team brings decades of experience in PMO consulting, technology, and organizational transformation.</p>
+                <h2 style="font-family: nunito;">Meet the Experts</h2>
+                <p style="font-weight: bold;">Our leadership team brings decades of experience in PMO consulting,
+                    technology, and organizational transformation.</p>
             </div>
+            
             <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="./images/Cecilia D'Silva.jpg" alt="Cecilia D'Silva - Founder & CEO">
+                
+                <!-- Card 1 -->
+                <div class="pro-team-card">
+                    <div class="pro-team-header">
+                        <div class="pro-team-img-wrapper">
+                            <img src="./images/Cecilia D'Silva.jpg" alt="Cecilia D'Silva">
+                        </div>
+                        <div class="pro-team-identity">
+                            <span class="role">Founder & CEO</span>
+                            <h3 style="font-family: nunito;">Cecilia D'Silva</h3>
+                            <div class="pro-team-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-info">
-                        <h3>Cecilia D'Silva</h3>
-                        <p class="role">Founder & CEO</p>
-                        <p>Visionary leader driving strategic growth and organizational transformation with extensive PMO expertise.</p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="./images/Amulya Fernandes.jpg" alt="Amulya Fernandes - Managing Partner">
-                    </div>
-                    <div class="team-info">
-                        <h3>Amulya Fernandes</h3>
-                        <p class="role">Managing Partner</p>
-                        <p>Seasoned professional leading client engagements and delivering excellence in project management.</p>
-                    </div>
-                </div>
-                 <div class="team-card">
-                    <div class="team-photo">
-                        <img src="./images/Greg Leman.jpg" alt="Greg Leman Advisor - EmergingTechnologies">
-                    </div>
-                    <div class="team-info">
-                        <h3>Greg Leman</h3>
-                        <p class="role">Advisor - Emerging Technologies</p>
-                        <p>Global technology veteran driving the firm’s tech-forward vision through secure, scalable software and data innovation.</p>
+                    <div class="pro-team-bio">
+                        <p>Cecilia D’Silva, former Senior Vice President of PMO at Kinara Capital, is a visionary leader with over 25 years of expertise in strategic portfolio management and business transformation. She drives business impact through PMO excellence, innovation, and integrity.</p>
+                        <p>Recognized as the “India PMO Leader of the Year 2022” by the PMO Global Alliance, she brings extensive global leadership experience from HSBC, Oracle, and DHL Worldwide Express.</p>
                     </div>
                 </div>
-                 <div class="team-card">
-                    <div class="team-photo">
-                        <img src="./images/Manoj Kumar Agarwal.jpg" alt="Manoj Kumar Agarwal Advisor - Business Strategy and IT Integration">
+
+                <!-- Card 2 -->
+                <div class="pro-team-card">
+                    <div class="pro-team-header">
+                        <div class="pro-team-img-wrapper">
+                            <img src="./images/Amulya Fernandes.jpg" alt="Amulya Fernandes">
+                        </div>
+                        <div class="pro-team-identity">
+                            <span class="role">Managing Partner</span>
+                            <h3 style="font-family: nunito;">Amulya Fernandes</h3>
+                            <div class="pro-team-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="team-info">
-                        <h3>Manoj Kumar Agarwal</h3>
-                        <p class="role">Advisor - Business Strategy and IT Integration</p>
-                        <p>Veteran strategist and investor with 25+ years of expertise in M&A, fundraising, and global business management.</p>
+                    <div class="pro-team-bio">
+                        <p>Amulya Fernandes brings over 15 years of leadership in Finance, Administration, and Marketing. She blends strategic discipline with operational excellence to strengthen governance and client partnerships.</p>
+                        <p>At SpringboardPro, she plays a pivotal role in advancing our mission as a launchpad for success. Her inclusive leadership style fosters a collaborative team environment, driving innovation while maintaining core ethical values.</p>
+                    </div>
                 </div>
+
+                <!-- Card 3 -->
+                <div class="pro-team-card">
+                    <div class="pro-team-header">
+                        <div class="pro-team-img-wrapper">
+                            <img src="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg" alt="Greg Leman">
+                        </div>
+                        <div class="pro-team-identity">
+                            <span class="role">Advisor - Emerging Tech</span>
+                            <h3 style="font-family: nunito;">Greg Leman</h3>
+                            <div class="pro-team-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-team-bio">
+                        <p>Greg is a seasoned technology and security expert with over 30 years of leadership experience spanning software development and data management. Previously a Senior Director at Oracle for nearly 20 years, he led large teams building enterprise applications supporting $2B in business.</p>
+                        <p>An entrepreneur at heart, Greg founded multiple successful startups, including Metagenix. He is known for driving process transformation, agile adoption, and system security.</p>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="pro-team-card">
+                    <div class="pro-team-header">
+                        <div class="pro-team-img-wrapper">
+                            <img src="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg" alt="Manoj Kumar Agarwal">
+                        </div>
+                        <div class="pro-team-identity">
+                            <span class="role">Advisor - Strategy</span>
+                            <h3 style="font-family: nunito;">Manoj Kumar Agarwal</h3>
+                            <div class="pro-team-links">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pro-team-bio">
+                        <p>Manoj Kumar Agarwal, with over 25 years of experience in business setup, M&A, and fundraising, co-founded Sea Fund, an early-stage venture fund currently raising $35 million. He mentors multiple startups and advises data management companies.</p>
+                        <p>A frequent speaker at industry conferences, Manoj shares insights on emerging trends. At SpringboardPro, he guides clients through the intricacies of business growth and innovation.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- CTA SECTION - Exact match for wide card size -->
     <section class="cta-section">
         <div class="cta-card">
             <div class="cta-content">
-                <h2>Ready to Transform with Confidence?</h2>
-                <p>Let’s co-create a launch plan that unlocks momentum in the first 90 days—fuelled by clear priorities, empowered teams, and dashboards that keep every stakeholder aligned.</p>
+                <h2 style="font-family: nunito;">Ready to Transform with Confidence?</h2>
+                <p>Let’s co-create a launch plan that unlocks momentum in the first 90 days—fuelled by clear priorities,
+                    empowered teams, and dashboards that keep every stakeholder aligned.</p>
                 <a href="contact.html" class="btn-cta-card">Start Your Journey <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
@@ -519,7 +1115,8 @@
                     <a href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <p>Your Strategic Growth Partner in PMO Excellence. Enabling organizations to move confidently from strategy to execution.</p>
+                    <p>Your Strategic Growth Partner in PMO Excellence. Enabling organizations to move confidently from
+                        strategy to execution.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -549,7 +1146,8 @@
                     <h4>Get in Touch</h4>
                     <p><i class="fas fa-phone"></i> +91 9148317322</p>
                     <p><i class="fas fa-envelope"></i> reachus@springboardpro.in</p>
-                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, II Stage Indiranagar, Bangalore 560038</p>
+                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, II Stage Indiranagar,
+                        Bangalore 560038</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -559,15 +1157,15 @@
     </footer>
 
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) navbar.classList.add('scrolled');
             else navbar.classList.remove('scrolled');
         });
-        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+        document.querySelector('.mobile-toggle').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
         });
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -576,27 +1174,28 @@
                 }
             });
         }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.value-card, .team-card, .step-card, .accolade-item').forEach((el, i) => {
+
+        // Apply animations
+        document.querySelectorAll('.value-card, .pro-team-card').forEach((el, i) => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(40px)';
             el.style.transition = `all 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${i * 0.1}s`;
             observer.observe(el);
         });
-        
-        // 3D tilt effect on cards
-        document.querySelectorAll('.value-card, .team-card').forEach(card => {
-            card.addEventListener('mousemove', function(e) {
+
+        // 3D tilt effect on value cards
+        document.querySelectorAll('.value-card').forEach(card => {
+            card.addEventListener('mousemove', function (e) {
                 const rect = this.getBoundingClientRect();
                 const x = (e.clientX - rect.left) / rect.width - 0.5;
                 const y = (e.clientY - rect.top) / rect.height - 0.5;
                 this.style.transform = `translateY(-8px) rotateX(${y * -5}deg) rotateY(${x * 5}deg) scale(1.02)`;
             });
-            card.addEventListener('mouseleave', function() {
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = '';
             });
         });
-        
+
         // Animate about image on scroll
         const aboutImage = document.querySelector('.about-image');
         if (aboutImage) {
@@ -610,4 +1209,5 @@
         }
     </script>
 </body>
+
 </html>
