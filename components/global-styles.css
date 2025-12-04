@@ -34,7 +34,7 @@ html {
 }
 
 body {
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: var(--spb-text-dark);
     line-height: 1.7;
     overflow-x: hidden;
@@ -43,7 +43,7 @@ body {
 
 /* ===== TYPOGRAPHY ===== */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-family: 'Nunito', sans-serif;
     line-height: 1.3;
 }
 
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spb-section-header h2 {
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 2.5rem;
     color: var(--spb-black);
     margin-bottom: 1rem;
@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spb-page-hero h1 {
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 3.5rem;
     color: var(--spb-white);
     margin-bottom: 1rem;
@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .spb-cta-content h2 {
-    font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 2.5rem;
     color: var(--spb-white);
     margin-bottom: 1rem;
