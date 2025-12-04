@@ -74,11 +74,16 @@
         }
 
         .logo {
-            font-family: 'Nunito', sans-serif;
-            font-size: 1.75rem;
-            color: var(--white);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
             text-decoration: none;
-            font-weight: 600;
+        }
+
+        .logo img {
+            height: 90px;
+            width: auto;
+            display: block;
         }
 
         .logo span {
@@ -654,8 +659,7 @@
 
 <body>
     <nav class="navbar">
-        <a href="index.html" class="logo"><img src="springboardlogo-removebg-preview.png" alt="logo"
-                style="height: 48px; width: auto; display: block;"></span></a>
+        <a href="index.html" class="logo"><img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo"></a>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="who-we-are.html">Who We Are</a></li>
