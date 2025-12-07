@@ -1335,6 +1335,14 @@
             flex-shrink: 0;
             font-size: 1.25rem;
             color: var(--white);
+            overflow: hidden;
+        }
+
+        .pillar-icon img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
         }
 
         .pillar-content h4 {
@@ -1373,7 +1381,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.3;
         }
 
         .pillars-image::before {
@@ -1383,7 +1391,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(69, 0, 29, 0.6) 0%, rgba(69, 0, 29, 0.75) 100%);
+            background: linear-gradient(135deg, rgba(144, 35, 80, 0.333) 0%, rgba(144, 35, 80, 0.333)0%);
             z-index: 1;
         }
 
@@ -1927,7 +1935,7 @@
                 <p class="lead">We don’t just consult — we co-create success. At SpringboardPro, we help organizations
                     move from strategy to execution through structured PMO Consulting.</p>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-chart-line"></i></div>
+                    <div class="pillar-icon"><img src="vision-u.jpg" alt="Vision icon"></div>
                     <div class="pillar-content">
                         <h4>Vision</h4>
                         <p>Be the trusted strategic transformation partner enabling future-ready organizations with
@@ -1935,7 +1943,7 @@
                     </div>
                 </div>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-diagram-project"></i></div>
+                    <div class="pillar-icon"><img src="mission.jpg" alt="Mission icon"></div>
                     <div class="pillar-content">
                         <h4>Mission</h4>
                         <p>Empower businesses to thrive through innovation, operational excellence, and smart cost
@@ -1943,7 +1951,7 @@
                     </div>
                 </div>
                 <div class="pillar-item">
-                    <div class="pillar-icon"><i class="fas fa-scale-balanced"></i></div>
+                    <div class="pillar-icon"><img src="values.jpg" alt="Values icon"></div>
                     <div class="pillar-content">
                         <h4>Values</h4>
                         <p>Lead with excellence, integrity, collaboration, and growth so change feels transparent and
@@ -1988,7 +1996,7 @@
                     </div>
                 </div>
                 <div class="showcase-item">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80"
+                    <img src="proven-results.jpg"
                         alt="Success celebration">
                     <div class="showcase-overlay">
                         <span>Proven Results</span>
@@ -2117,10 +2125,9 @@
                 <div class="service-card">
                     <div class="service-card-image">
                         <img src="pmo-consult.jpg" alt="PMO Consulting">
-                        <i class="fas fa-project-diagram"></i>
                     </div>
                     <div class="service-card-content">
-                        <h3>PMO Consulting</h3>
+                        <h2>PMO Consulting</h2>
                         <p><b>Establish and scale your Project Management Office with proven frameworks.</b></p>
                         <a href="project-management.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
@@ -2129,10 +2136,9 @@
                 <div class="service-card">
                     <div class="service-card-image">
                         <img src="enterprise-automation.jpg" alt="Enterprise Automation">
-                        <i class="fas fa-cogs"></i>
                     </div>
                     <div class="service-card-content">
-                        <h3>Enterprise Automation</h3>
+                        <h2>Enterprise Automation</h2>
                         <p><b>Eliminate bottlenecks and elevate performance with intelligent automation.</b></p>
                         <a href="enterprise-automation.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
@@ -2141,10 +2147,9 @@
                 <div class="service-card">
                     <div class="service-card-image">
                         <img src="delivery and recovery.jpg" alt="Delivery & Recovery">
-                        <i class="fas fa-rocket"></i>
                     </div>
                     <div class="service-card-content">
-                        <h3>Delivery & Recovery</h3>
+                        <h2>Delivery & Recovery</h2>
                         <p><b>Deliver at speed and scale with proven delivery methodologies.</b></p>
                         <a href="delivery-recovery.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
@@ -2153,10 +2158,9 @@
                 <div class="service-card">
                     <div class="service-card-image">
                         <img src="process-consult.jpg" alt="Process Consulting">
-                        <i class="fas fa-sitemap"></i>
                     </div>
                     <div class="service-card-content">
-                        <h3>Process Consulting</h3>
+                        <h2>Process Consulting</h2>
                         <p><b>Optimize workflows and enhance productivity with expert process design.</b></p>
                         <a href="process-consulting.html" class="service-link">Learn More <i
                                 class="fas fa-arrow-right"></i></a>
@@ -2228,7 +2232,7 @@
                     <h4>Get in Touch</h4>
                     <p><i class="fas fa-phone"></i> +91 9148317322</p>
                     <p><i class="fas fa-envelope"></i> reachus@springboardpro.in</p>
-                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, II Stage Indiranagar,
+                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, <br> II Stage Indiranagar,
                         Bangalore 560038</p>
                 </div>
             </div>
