@@ -16,18 +16,23 @@
         }
 
         :root {
-            --burgundy: #45001d;
-            --burgundy-light: #5c0028;
-            --burgundy-dark: #2d0013;
+            --burgundy: #911120;
+            --burgundy-light: #dcafac;
+            --burgundy-dark: #690316;
             --white: #ffffff;
             --black: #0a0a0a;
-            --gray-50: #fafafa;
-            --gray-100: #f4f4f5;
-            --gray-200: #e4e4e7;
-            --gray-400: #a1a1aa;
-            --gray-500: #71717a;
-            --gray-600: #52525b;
-            --gray-800: #27272a;
+            --gray-50: #dcd3d6;
+            --gray-100: #cbbdc2;
+            --gray-200: #bba9af;
+            --gray-400: #8b828a;
+            --gray-500: #7c7c7c;
+            --gray-600: #6b6b6b;
+            --gray-800: #232323;
+            --palette-cream: #dcd3d6;
+            --palette-blush: #dcafac;
+            --palette-primary: #911120;
+            --palette-deep: #690316;
+            --palette-gradient: linear-gradient(135deg, #ffffff 0%, #dcd3d6 25%, #dcafac 50%, #911120 75%, #690316 100%);
         }
 
         html {
@@ -323,10 +328,10 @@
 
         .navbar.scrolled {
             padding: 0.85rem 5%;
-            background: rgba(69, 0, 29, 0.95);
+            background: rgba(105, 3, 22, 0.92);
             backdrop-filter: blur(18px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 35px rgba(69, 0, 29, 0.45);
+            box-shadow: 0 8px 35px rgba(105, 3, 22, 0.4);
         }
 
         .logo {
@@ -441,7 +446,7 @@
         /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
-            background: var(--burgundy);
+            background: linear-gradient(135deg, var(--palette-primary) 0%, var(--palette-deep) 100%);
             position: relative;
             display: flex;
             align-items: center;
@@ -457,7 +462,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.5;
+            opacity: 0.6;
             z-index: 0;
         }
 
@@ -467,7 +472,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(69, 0, 29, 0.65) 0%, rgba(69, 0, 29, 0.5) 100%);
+            background: linear-gradient(135deg, rgba(145, 17, 32, 0.65) 0%, rgba(105, 3, 22, 0.55) 100%);
             z-index: 1;
         }
 
@@ -825,7 +830,7 @@
         }
 
         .section-header p {
-            color: var(--gray-500);
+            color: var(--black);
             font-size: 1.15rem;
             line-height: 1.85;
         }
@@ -925,7 +930,7 @@
         /* ===== FOCUS SECTION ===== */
         .focus-section {
             padding: 8rem 5%;
-            background: var(--white);
+            background: var(--palette-blush);
         }
 
         .focus-grid {
@@ -1001,7 +1006,7 @@
         /* ===== CLIENT PAIN POINTS ===== */
         .pain-section {
             padding: 6rem 5%;
-            background: var(--white);
+            background: var(--palette-cream);
         }
 
         .pain-container {
@@ -1021,6 +1026,99 @@
             height: 420px;
             object-fit: cover;
             display: block;
+        }
+
+        /* ===== HOW WE HELP ===== */
+        .how-help-section {
+            padding: 7rem 5%;
+            background: linear-gradient(135deg, rgba(220, 175, 172, 0.35), rgba(220, 211, 214, 0.4));
+        }
+
+        .how-help-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .how-help-text .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            background: rgba(145, 17, 32, 0.12);
+            color: var(--burgundy);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .how-help-text h2 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 2.8rem;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .how-help-text p.lead {
+            font-size: 1.15rem;
+            color: var(--black);
+            line-height: 1.85;
+            margin-bottom: 1.75rem;
+        }
+
+        .how-help-list {
+            list-style: none;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .how-help-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            font-size: 1.05rem;
+            color: var(--gray-800);
+            line-height: 1.6;
+        }
+
+        .how-help-list li i {
+            color: var(--burgundy);
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+
+        .how-help-visual {
+            position: relative;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+            background: var(--white);
+        }
+
+        .how-help-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .how-help-section {
+                padding: 6rem 1.5rem;
+            }
+
+            .how-help-text h2 {
+                font-size: 2.25rem;
+            }
         }
 
         .pain-grid {
@@ -1051,7 +1149,7 @@
         /* ===== SERVICES PREVIEW ===== */
         .services-section {
             padding: 8rem 5%;
-            background: var(--gray-50);
+            background: linear-gradient(180deg, var(--palette-blush) 0%, var(--palette-cream) 100%);
         }
 
         .services-container {
@@ -1109,7 +1207,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(180deg, transparent 30%, rgba(69, 0, 29, 0.5) 100%);
+            background: linear-gradient(180deg, transparent 30%, rgba(105, 3, 22, 0.55) 100%);
         }
 
         .service-card-image i {
@@ -1158,7 +1256,7 @@
         /* ===== CTA SECTION ===== */
         .cta-section {
             padding: 7rem 5%;
-            background: var(--gray-50);
+            background: linear-gradient(135deg, var(--palette-cream) 0%, var(--palette-blush) 70%);
         }
 
         .cta-container {
@@ -1166,7 +1264,7 @@
             margin: 0 auto;
             border-radius: 36px;
             padding: 3.5rem;
-            background: linear-gradient(135deg, rgba(69, 0, 29, 0.05), rgba(69, 0, 29, 0.15));
+            background: linear-gradient(135deg, rgba(145, 17, 32, 0.06), rgba(105, 3, 22, 0.16));
             box-shadow: 0 25px 90px rgba(0, 0, 0, 0.12);
             display: grid;
             grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -1194,7 +1292,7 @@
             gap: 0.5rem;
             padding: 0.5rem 1rem;
             border-radius: 999px;
-            background: rgba(69, 0, 29, 0.1);
+            background: rgba(145, 17, 32, 0.12);
             color: var(--burgundy);
             font-size: 0.9rem;
             font-weight: 600;
@@ -1214,7 +1312,7 @@
         }
 
         .cta-text p {
-            color: var(--gray-600);
+            color: var(--black);
             font-size: 1.15rem;
             margin-bottom: 2rem;
             line-height: 1.95;
@@ -1301,7 +1399,7 @@
 
         .pillars-text .lead {
             font-size: 1.3rem;
-            color: var(--gray-500);
+            color: var(--black);
             margin-bottom: 2.75rem;
             line-height: 1.9;
         }
@@ -1421,7 +1519,8 @@
         /* ===== FOOTER ===== */
         .footer {
             background: #101322;
-            padding: 5rem 5% 2rem;
+            padding: 5rem 5% 0;
+            color: var(--white);
         }
 
         .footer-container {
@@ -1431,139 +1530,152 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            grid-template-columns: 1.1fr 1.1fr 1fr 1.1fr;
             gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            align-items: start;
+            padding-bottom: 3.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        .footer-brand .logo {
-            margin-bottom: 1.5rem;
-            display: inline-block;
+        .footer-brand .logo img {
+            height: 86px;
+            width: auto;
+            display: block;
         }
 
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+        .footer-contact-list {
+            list-style: none;
+            margin-top: 1.75rem;
+            display: grid;
+            gap: 1rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
+        .footer-contact-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
             align-items: center;
-            justify-content: center;
-            color: var(--black);
+            gap: 0.75rem;
+            color: var(--white);
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-weight: 700;
+            letter-spacing: 0.04em;
         }
 
-        .social-links a.linkedin {
-            color: #0a66c2;
+        .footer-contact-icon {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 0.9rem;
+            color: var(--white);
         }
 
-        .social-links a.twitter {
-            color: #1da1f2;
+        .footer-contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            font-size: 0.95rem;
+            color: var(--white);
         }
 
-        .social-links a.facebook {
-            color: #1877f2;
+        .footer-contact-text span {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-weight: 600;
         }
 
-        .social-links a.instagram {
-            color: #e4405f;
+        .footer-contact-text a {
+            color: var(--white);
+            text-decoration: none;
         }
 
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 0.98rem;
         }
 
         .footer-column h4 {
             color: var(--white);
             font-size: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
         }
 
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column ul a {
-            color: rgba(255, 255, 255, 0.65);
-            text-decoration: none;
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
             font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 0.55rem;
+            align-items: center;
+        }
+
+        .footer-social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .footer-cta-btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-        }
-
-        .footer-column ul a:hover {
+            justify-content: center;
+            padding: 0.9rem 1.6rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
             color: var(--white);
-            transform: translateX(4px);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
         }
 
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .footer-contact i {
-            color: var(--white);
-            margin-top: 4px;
-            width: 16px;
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
         }
 
         .footer-bottom {
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            margin-top: 3rem;
+            padding: 1.25rem 0;
+            background: #101322;
+            text-align: center;
         }
 
         .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
         }
 
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: var(--white);
+        .footer-bottom p span {
+            color: var(--palette-primary);
         }
 
         /* ===== RESPONSIVE ===== */
@@ -2116,6 +2228,27 @@
         </div>
     </section>
 
+    <!-- HOW WE HELP -->
+    <section class="how-help-section">
+        <div class="how-help-container">
+            <div class="how-help-text">
+                <h2 style="font-family: Nunito;">How We Help</h2>
+                <h3 class="lead">Your Strategic Growth Partner in Execution Excellence.<br>We bring clarity, structure, and execution discipline across your programmes by:</h3>
+                <ul class="how-help-list">
+                    <li><i class="fas fa-check"></i> Embedding strong governance and decision rhythms</li>
+                    <li><i class="fas fa-check"></i> Creating visibility through dashboards and reporting</li>
+                    <li><i class="fas fa-check"></i> Strengthening delivery teams through coaching and tooling</li>
+                    <li><i class="fas fa-check"></i> Eliminating slowdowns with process optimisation and automation</li>
+                    <li><i class="fas fa-check"></i> Establishing cadence, communication, and accountability</li>
+                    <li><i class="fas fa-check"></i> Aligning initiatives to strategy and measurable outcomes</li>
+                </ul>
+            </div>
+            <div class="how-help-visual">
+                <img src="howehelp.jpg" alt="Execution excellence" loading="lazy">
+            </div>
+        </div>
+    </section>
+
     <!-- SERVICES PREVIEW -->
     <section class="services-section">
         <div class="services-container">
@@ -2196,7 +2329,9 @@
             <div class="cta-text">
                 <h2> Ready to Transform</h2>
                 <h3>Bring in a strategic growth partner who turns bold intent into confident execution.</h2><br>
-                    <p>We design launch plans, mobilise governance, streamline processes, and accelerate project delivery so your programmes sustain momentum. Plug in when you need clarity, cadence, and a partner who sweats the details with you — from strategy to impact.</p>
+                    <p>We design launch plans, mobilise governance, streamline processes, and accelerate project
+                        delivery so your programmes sustain momentum. Plug in when you need clarity, cadence, and a
+                        partner who sweats the details with you — from strategy to impact.</p>
                     <div class="cta-actions">
                         <a href="contact.html" class="btn-outline">Get in Touch </a>
                     </div>
@@ -2215,48 +2350,46 @@
                     <a href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <p>Your Strategic Growth Partner in PMO Excellence. We serve as your launchpad for success —
-                        enabling organizations to move confidently from strategy to execution.</p>
-                    <div class="social-links">
-                        <a href="#" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="twitter" aria-label="X / Twitter"><i class="fab fa-x-twitter"></i></a>
-                        <a href="#" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item">
+                            <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
+                            <div class="footer-contact-text">
+                                <span>CALL US</span>
+                                <a href="tel:+919148317322">+91 914 831 7322</a>
+                            </div>
+                        </li>
+                        <li class="footer-contact-item">
+                            <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
+                            <div class="footer-contact-text">
+                                <span>EMAIL</span>
+                                <a href="mailto:reachus@springboardpro.in">reachus@springboardpro.in</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-about">
+                    <p>SpringboardPro provides Project Management Office orchestration solutions for businesses looking
+                        to streamline internal project delivery and processing.</p>
+                </div>
+                <div class="footer-column footer-address">
+                    <h4>ADDRESS</h4>
+                    <p>No.17, 2nd Floor, 7th Main Road,<br>II Stage Indiranagar, Bangalore 560038</p>
+                    <p>India</p>
+                </div>
+                <div class="footer-column footer-social">
+                    <h4>FOLLOW / CONNECT</h4>
+                    <div class="footer-social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
-                </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="who-we-are.html">Who We Are</a></li>
-                        <li><a href="what-we-offer.html">What We Offer</a></li>
-                        <li><a href="why-us.html">Why Us</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Services</h4>
-                    <ul>
-                        <li><a href="project-management.html">PM Consulting</a></li>
-                        <li><a href="enterprise-automation.html">Enterprise Automation</a></li>
-                        <li><a href="delivery-recovery.html">Delivery & Recovery</a></li>
-                        <li><a href="process-consulting.html">Process Consulting</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column footer-contact">
-                    <h4>Get in Touch</h4>
-                    <p><i class="fas fa-phone"></i> +91 9148317322</p>
-                    <p><i class="fas fa-envelope"></i> reachus@springboardpro.in</p>
-                    <p><i class="fas fa-map-marker-alt"></i> No.17, 2nd Floor, 7th Main Road, <br> II Stage Indiranagar,
-                        Bangalore 560038</p>
+                    <a class="footer-cta-btn" href="contact.html">CONTACT US</a>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2024 SpringboardPro. All rights reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                </div>
+                <p>Copyright © 2024 SpringboardPro. All rights reserved. <span>Designed with ♥ Aspiron Khuze Technologies Pvt Ltd</span></p>
             </div>
         </div>
     </footer>
