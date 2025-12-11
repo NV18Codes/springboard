@@ -16,15 +16,24 @@
         }
 
         :root {
-            --burgundy: #45001d;
-            --burgundy-light: #5c0028;
+            --burgundy: #911120;
+            --burgundy-light: #dcafac;
+            --burgundy-dark: #690316;
             --white: #ffffff;
             --off-white: #f8f9fa;
             --black: #0a0a0a;
-            --gray-100: #f4f4f5;
-            --gray-200: #e4e4e7;
-            --gray-600: #52525b;
-            --gray-800: #27272a;
+            --gray-50: #dcd3d6;
+            --gray-100: #cbbdc2;
+            --gray-200: #bba9af;
+            --gray-400: #8b828a;
+            --gray-500: #7c7c7c;
+            --gray-600: #6b6b6b;
+            --gray-800: #232323;
+            --palette-cream: #dcd3d6;
+            --palette-blush: #dcafac;
+            --palette-primary: #911120;
+            --palette-deep: #690316;
+            --palette-gradient: linear-gradient(135deg, #ffffff 0%, #dcd3d6 25%, #dcafac 50%, #911120 75%, #690316 100%);
             --gold: #d4af37;
         }
 
@@ -68,10 +77,10 @@
 
         .navbar.scrolled {
             padding: 0.85rem 5%;
-            background: rgba(69, 0, 29, 0.95);
+            background: #45001d;
             backdrop-filter: blur(18px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 35px rgba(69, 0, 29, 0.45);
+            box-shadow: 0 8px 35px rgba(145, 17, 32, 0.45);
         }
 
         .logo {
@@ -172,7 +181,7 @@
         /* PAGE HERO */
         .page-hero {
             padding: 12rem 5% 6rem;
-            background: var(--burgundy);
+            background: #45001d;
             position: relative;
             overflow: hidden;
             min-height: 100vh;
@@ -227,10 +236,55 @@
             line-height: 1.9;
         }
 
+        /* WHO INTRO SECTION */
+        .who-intro-section {
+            padding: 5.5rem 5% 5rem;
+            background: linear-gradient(180deg, var(--palette-cream) 0%, rgba(220, 175, 172, 0.35) 50%, var(--white) 100%);
+        }
+
+        .who-intro-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .who-intro-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1.1rem;
+            border-radius: 999px;
+            background: rgba(145, 17, 32, 0.1);
+            color: #45001d;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .who-intro-section h2 {
+            font-size: 2.6rem;
+            color: var(--black);
+            font-weight: 600;
+            line-height: 1.25;
+            letter-spacing: -0.5px;
+        }
+
+        .who-intro-section p {
+            color: var(--gray-600);
+            font-size: 1.08rem;
+            line-height: 1.9;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         /* ABOUT SECTION */
         .about-section {
-            padding: 5rem 5%;
-            background: var(--white);
+            padding: 5.5rem 5%;
+            background: linear-gradient(180deg, var(--palette-cream) 0%, rgba(220, 175, 172, 0.28) 45%, var(--white) 100%);
         }
 
         .about-container {
@@ -263,7 +317,7 @@
             min-height: 520px;
             border-radius: 24px;
             overflow: hidden;
-            background: var(--burgundy);
+            background: #45001d;
         }
 
         .about-image img {
@@ -279,7 +333,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(69, 0, 29, 0.15) 0%, rgba(69, 0, 29, 0.4) 100%);
+            background: linear-gradient(135deg, rgba(145, 17, 32, 0.15) 0%, rgba(145, 17, 32, 0.4) 100%);
             z-index: 1;
         }
 
@@ -319,7 +373,7 @@
         }
 
         .about-points li i {
-            color: var(--burgundy);
+            color: #45001d;
             margin-top: 5px;
             font-size: 0.9rem;
         }
@@ -327,7 +381,7 @@
         /* WHAT DEFINES US */
         .what-defines-section {
             padding: 6rem 5%;
-            background: var(--gray-100);
+            background: linear-gradient(180deg, #f4f4f5 0%, #e4e4e7 50%, #dcd3d6 100%);
         }
 
         .what-defines-container {
@@ -445,8 +499,8 @@
         /* FOUNDER'S MESSAGE */
         .founder-message-section {
             padding: 6rem 5%;
-            background: linear-gradient(240deg, transparent 30%, rgba(69, 0, 29, 0.5) 100%);
-            color: var(--burgundy);
+            background: linear-gradient(135deg, rgba(145, 17, 32, 0.08), rgba(105, 3, 22, 0.18));
+            color: var(--black);
         }
 
         .founder-container {
@@ -479,10 +533,10 @@
 
         .founder-quote {
             font-size: 1.2rem;
-            color: black;
+            color: var(--black);
             line-height: 1.7;
             padding-left: 1.25rem;
-            border-left: 4px solid rgba(255, 255, 255, 0.5);
+            border-left: 4px solid rgba(145, 17, 32, 0.35);
             margin-bottom: 1.75rem;
         }
 
@@ -491,6 +545,12 @@
             font-size: 1.15rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
+        }
+
+        .founder-meta {
+            font-weight: 700;
+            color: #45001d;
+            margin-bottom: 0.75rem;
         }
 
         .founder-content .signature {
@@ -510,7 +570,7 @@
         /* VALUES SECTION */
         .values-section {
             padding: 6rem 5%;
-            background: var(--white);
+            background: linear-gradient(135deg, rgba(145, 17, 32, 0.06), rgba(220, 175, 172, 0.28));
             border-top: 1px solid var(--gray-100);
         }
 
@@ -549,7 +609,7 @@
             padding: 2.25rem;
             border-radius: 24px;
             text-align: center;
-            border: 1px solid rgba(69, 0, 29, 0.08);
+            border: 1px solid rgba(145, 17, 32, 0.08);
             transition: all 0.4s ease;
             box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
         }
@@ -569,10 +629,10 @@
             align-items: center;
             justify-content: center;
             font-size: 1.6rem;
-            color: var(--burgundy);
-            border: 1px solid rgba(69, 0, 29, 0.25);
-            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(69, 0, 29, 0.08));
-            box-shadow: inset 0 0 12px rgba(69, 0, 29, 0.08);
+            color: #45001d;
+            border: 1px solid rgba(145, 17, 32, 0.25);
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(145, 17, 32, 0.08));
+            box-shadow: inset 0 0 12px rgba(145, 17, 32, 0.08);
         }
 
         .value-card h3 {
@@ -593,7 +653,7 @@
            ========================================= */
         .team-section {
             padding: 6rem 5%;
-            background: linear-gradient(180deg, #faf6f8 0%, #ffffff 70%);
+            background: linear-gradient(180deg, rgba(220, 175, 172, 0.32), rgba(220, 211, 214, 0.45));
         }
 
         .team-container {
@@ -608,7 +668,7 @@
         }
 
         .team-card {
-            border: 1px solid rgba(69, 0, 29, 0.12);
+            border: 1px solid rgba(145, 17, 32, 0.12);
             border-radius: 28px;
             padding: 2rem 1.5rem;
             text-align: center;
@@ -620,7 +680,7 @@
 
         .team-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 28px 70px rgba(69, 0, 29, 0.15);
+            box-shadow: 0 28px 70px rgba(145, 17, 32, 0.15);
         }
 
         .team-card img {
@@ -642,8 +702,8 @@
             display: inline-block;
             padding: 0.4rem 1rem;
             border-radius: 999px;
-            background: rgba(69, 0, 29, 0.08);
-            color: var(--burgundy);
+            background: rgba(145, 17, 32, 0.08);
+            color: #45001d;
             font-size: 0.85rem;
             letter-spacing: 0.05em;
             font-weight: 600;
@@ -670,7 +730,7 @@
         }
 
         .team-modal-content {
-            background: linear-gradient(180deg, transparent 30%, rgba(69, 0, 29, 0.5) 100%), #ffffff;
+            background: linear-gradient(180deg, transparent 30%, rgba(145, 17, 32, 0.5) 100%), #ffffff;
             border-radius: 36px;
             max-width: 1000px;
             width: 100%;
@@ -694,7 +754,7 @@
         }
 
         .team-modal-close:hover {
-            color: var(--burgundy);
+            color: #45001d;
         }
 
         .team-modal-photo {
@@ -725,7 +785,7 @@
         }
 
         #teamModalBio::-webkit-scrollbar-thumb {
-            background: rgba(69, 0, 29, 0.4);
+            background: rgba(145, 17, 32, 0.4);
             border-radius: 999px;
         }
 
@@ -745,7 +805,7 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: var(--burgundy);
+            background: #45001d;
             color: var(--white);
             display: inline-flex;
             align-items: center;
@@ -762,7 +822,7 @@
         /* CTA SECTION */
         .cta-section {
             padding: 7rem 5%;
-            background: var(--gray-50);
+            background: linear-gradient(135deg, var(--palette-cream) 0%, var(--palette-blush) 70%);
         }
 
         .cta-container {
@@ -770,7 +830,7 @@
             margin: 0 auto;
             border-radius: 36px;
             padding: 3.5rem;
-            background: linear-gradient(135deg, rgba(69, 0, 29, 0.05), rgba(69, 0, 29, 0.15));
+            background: linear-gradient(135deg, rgba(145, 17, 32, 0.05), rgba(145, 17, 32, 0.15));
             box-shadow: 0 25px 90px rgba(0, 0, 0, 0.12);
             display: grid;
             grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
@@ -798,8 +858,8 @@
             gap: 0.5rem;
             padding: 0.5rem 1rem;
             border-radius: 999px;
-            background: rgba(69, 0, 29, 0.1);
-            color: var(--burgundy);
+            background: rgba(145, 17, 32, 0.1);
+            color: #45001d;
             font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 0.08em;
@@ -832,9 +892,9 @@
 
         .btn-outline {
             background: transparent;
-            color: var(--burgundy);
+            color: #45001d;
             padding: 1rem 2rem;
-            border: 1.5px solid rgba(69, 0, 29, 0.4);
+            border: 1.5px solid rgba(145, 17, 32, 0.4);
             border-radius: 100px;
             font-size: 0.95rem;
             font-weight: 600;
@@ -847,8 +907,8 @@
         }
 
         .btn-outline:hover {
-            background: rgba(69, 0, 29, 0.06);
-            border-color: rgba(69, 0, 29, 0.7);
+            background: rgba(145, 17, 32, 0.06);
+            border-color: rgba(145, 17, 32, 0.7);
         }
 
         .cta-visual {
@@ -1036,6 +1096,52 @@
             color: var(--palette-primary);
         }
 
+        /* Footer color normalization */
+        .footer,
+        .footer p,
+        .footer h4,
+        .footer a,
+        .footer-contact-item {
+            color: #e9edf5 !important;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff !important;
+        }
+
+        .footer-contact-icon {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #e9edf5;
+        }
+
+        .footer-contact-text a {
+            color: #e9edf5 !important;
+        }
+
+        .footer-social-icons a {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .footer-cta-btn {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1024px) {
             .values-grid {
@@ -1101,12 +1207,12 @@
                 width: 80%;
                 max-width: 350px;
                 height: 100vh;
-                background: rgba(69, 0, 29, 0.97);
+                background: rgba(145, 17, 32, 0.97);
                 flex-direction: column;
                 padding: 6rem 2rem 2rem;
                 gap: 0;
                 transition: right 0.4s ease;
-                box-shadow: -10px 0 30px rgba(69, 0, 29, 0.35);
+                box-shadow: -10px 0 30px rgba(145, 17, 32, 0.35);
             }
 
             .nav-links.active {
@@ -1231,6 +1337,48 @@
         </div>
     </section>
 
+    <section class="who-intro-section">
+        <div class="who-intro-container">
+            <h2>At SpringboardPro, we turn strategy into disciplined execution.</h2>
+            <p>As your strategic growth partner, we bring clarity, structure, and momentum to every initiative — helping
+                leaders deliver with confidence and achieve measurable outcomes that truly matter.</p>
+            <p>We exist to make execution excellence a repeatable, scalable advantage for every organisation we serve.</p>
+        </div>
+    </section>
+
+    <section class="founder-message-section">
+        <div class="founder-container">
+            <div class="founder-img-box">
+                <img src="founder-ceo.jpg" alt="Cecilia D'Silva">
+            </div>
+            <div class="founder-content">
+                <h3 style="font-family: nunito; color: black;">Founder's Story</h3>
+                <p class="founder-meta">India PMO Leader of the Year 2022 • Certified Independent Director • PMP</p>
+                <p class="founder-quote">“Execution is where strategy becomes reality.”</p>
+                <p>With over 25 years in leadership roles across HSBC, Oracle, DHL, and Kinara Capital, Cecilia D’Silva has
+                    built enterprise PMOs, driven business transformation, steered large-scale operations, and delivered
+                    3,000+ projects across industries. Through these experiences, she observed a recurring challenge:
+                    strategies, though strong, often stumbled in execution.</p>
+                <p>Cecilia founded SpringboardPro to bridge that gap. An award-winning professional, Certified Independent
+                    Director, Project Management Professional (PMP), and former Senior Vice President – PMO at Kinara
+                    Capital, she blends strategic foresight, governance discipline, and people-centric leadership to
+                    deliver measurable impact.</p>
+                <p>Her approach is defined by an ability to simplify complexity, inspire teams, build trust, and transform
+                    how organisations execute at scale — enabling leaders to move with clarity, confidence, and disciplined
+                    execution powered by governance, automation, and data-driven insights.</p>
+                <p>SpringboardPro embodies her belief that execution excellence is a powerful competitive advantage — and
+                    that every organisation deserves a trusted partner to turn intent into outcomes with clarity and
+                    confidence. For Cecilia, SpringboardPro is more than a consulting firm; it is a launchpad for
+                    sustainable growth, collaboration, and success.</p>
+                <div class="signature">
+                    <h4>Cecilia D'Silva</h4>
+                    <span>Founder & CEO</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
     <section class="team-section">
         <div class="team-container">
             <div class="section-header">
@@ -1310,8 +1458,8 @@
         <div class="about-container">
             <div class="about-media">
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
-                        alt="Professional team meeting">
+                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=80&auto=format&fit=crop"
+                        alt="Leaders planning execution together">
                 </div>
                 <!-- <p class="about-image-note">Backed by two decades of leadership and 3,000+ projects delivered, we bring
                     together project management expertise, enterprise automation, delivery acceleration, and process
@@ -1432,32 +1580,6 @@
         </div>
     </section>
 
-    <section class="founder-message-section">
-        <div class="founder-container">
-            <div class="founder-img-box">
-                <img src="founder-ceo.jpg" alt="Cecilia D'Silva">
-            </div>
-            <div class="founder-content">
-                <h3 style="font-family: nunito; color: black;">Founder's Story</h3>
-                <p class="founder-quote">“Strategies, though strong, often stumbled in execution — so we built a partner
-                    that shepherds both ambition and delivery.”</p>
-                <p>After two decades in leadership roles at Oracle, HSBC, DHL, and Kinara Capital—where I drove business
-                    transformation, managed large-scale operations, and led 3,000+ projects — I identified a common
-                    challenge.</p>
-                <p>I founded SpringboardPro to bridge that gap. My vision is to enable organizations to confidently
-                    transition from strategy to execution, powered by governance, automation, and data-driven insights.
-                </p>
-                <p>For me, SpringboardPro is more than a consulting firm; it is a launchpad for sustainable growth,
-                    collaboration, and success.</p>
-                <div class="signature">
-                    <h4>Cecilia D'Silva</h4>
-                    <span>Founder & CEO</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 
     <!-- CTA SECTION -->
     <section class="cta-section">
@@ -1465,7 +1587,7 @@
             <div class="cta-text">
                 <h2> Ready to Transform</h2>
                 <h3>Bring in a strategic growth partner who turns bold intent into confident execution.
-                        Let’s build clarity, rhythm, and impact — together.</h2><br>
+                    Let’s build clarity, rhythm, and impact — together.</h2><br>
                     <p></p>
                     <div class="cta-actions">
                         <a href="contact.html" class="btn-outline">Get in Touch </a>
@@ -1504,8 +1626,8 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p>SpringboardPro provides Project Management Office orchestration solutions for businesses looking
-                        to streamline internal project delivery and processing.</p>
+                    <p>Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other —
+                        with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
@@ -1525,7 +1647,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright © 2024 SpringboardPro. All rights reserved. <span>Designed with ♥ Aspiron Khuze Technologies Pvt Ltd</span></p>
+                <p>Copyright © 2024 SpringboardPro. All rights reserved. </p>
             </div>
         </div>
     </footer>
