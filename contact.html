@@ -18,7 +18,8 @@
 
         :root {
             --burgundy: #45001d;
-            --burgundy-light: #5c0028;
+            --burgundy-light: #dcafac;
+            --burgundy-dark: #5c0028;
             --white: #ffffff;
             --black: #0a0a0a;
             --gray-50: #fafafa;
@@ -57,14 +58,14 @@
 
         .navbar.scrolled {
             padding: 0.85rem 5%;
-            background: rgba(69, 0, 29, 0.95);
+            background: #45001d;
             backdrop-filter: blur(18px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 8px 35px rgba(69, 0, 29, 0.45);
         }
 
         .navbar.scrolled .logo {
-            color: var(--burgundy);
+            color: #45001d;
         }
 
         .navbar.scrolled .nav-links a {
@@ -173,7 +174,7 @@
         /* PAGE HERO */
         .page-hero {
             padding: 10rem 5% 6rem;
-            background: var(--burgundy);
+            background: #45001d;
             position: relative;
             overflow: hidden;
         }
@@ -289,7 +290,7 @@
         .contact-icon {
             width: 52px;
             height: 52px;
-            background: var(--burgundy);
+            background: #45001d;
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -315,7 +316,7 @@
         }
 
         .contact-item-content a:hover {
-            color: var(--burgundy);
+            color: #45001d;
         }
 
         .contact-form-wrapper {
@@ -368,7 +369,7 @@
         .form-group textarea:focus,
         .form-group select:focus {
             outline: none;
-            border-color: var(--burgundy);
+            border-color: #45001d;
             box-shadow: 0 0 0 4px rgba(69, 0, 29, 0.1);
         }
 
@@ -379,7 +380,7 @@
 
         .btn-submit {
             width: 100%;
-            background: var(--burgundy);
+            background: #45001d;
             color: var(--white);
             padding: 1.15rem 2rem;
             border: none;
@@ -623,6 +624,52 @@
             color: var(--palette-primary, #911120);
         }
 
+        /* Footer color normalization */
+        .footer,
+        .footer p,
+        .footer h4,
+        .footer a,
+        .footer-contact-item {
+            color: #e9edf5 !important;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff !important;
+        }
+
+        .footer-contact-icon {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #e9edf5;
+        }
+
+        .footer-contact-text a {
+            color: #e9edf5 !important;
+        }
+
+        .footer-social-icons a {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .footer-cta-btn {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
         /* RESPONSIVE */
         @media (max-width: 992px) {
             .contact-container {
@@ -864,8 +911,8 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p>SpringboardPro provides Project Management Office orchestration solutions for businesses looking
-                        to streamline internal project delivery and processing.</p>
+                    <p>Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other —
+                        with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
@@ -885,7 +932,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright © 2024 SpringboardPro. All rights reserved. <span>Designed with ♥ Aspiron Khuze Technologies Pvt Ltd</span></p>
+                <p>Copyright © 2024 SpringboardPro. All rights reserved.</p>
             </div>
         </div>
     </footer>

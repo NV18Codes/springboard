@@ -20,7 +20,7 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    --spb-burgundy: #45001d;
+    --spb-burgundy: #911120;
     --spb-burgundy-light: #6b0030;
     --spb-burgundy-dark: #2d0013;
     --spb-white: #ffffff;
@@ -94,7 +94,7 @@ a:hover {
 }
 
 .spb-header.scrolled {
-    background: rgba(69, 0, 29, 0.98) !important;
+    background: rgba(145, 17, 32, 0.98) !important;
     backdrop-filter: blur(20px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     padding: 10px 0 !important;
@@ -471,7 +471,7 @@ body.spb-has-fixed-header {
     right: -20%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(69, 0, 29, 0.3) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(145, 17, 32, 0.3) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
 }
@@ -609,7 +609,7 @@ body.spb-has-fixed-header {
 .spb-form textarea:focus,
 .spb-form select:focus {
     border-color: var(--spb-burgundy) !important;
-    box-shadow: 0 0 0 4px rgba(69, 0, 29, 0.1) !important;
+    box-shadow: 0 0 0 4px rgba(145, 17, 32, 0.1) !important;
     outline: none !important;
 }
 
@@ -630,7 +630,7 @@ body.spb-has-fixed-header {
 .spb-form input[type="submit"]:hover {
     background: var(--spb-burgundy-light) !important;
     transform: translateY(-3px) !important;
-    box-shadow: 0 8px 30px rgba(69, 0, 29, 0.3) !important;
+    box-shadow: 0 8px 30px rgba(145, 17, 32, 0.3) !important;
 }
 
 /* ============================================

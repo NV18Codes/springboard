@@ -12,7 +12,7 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-    --spb-burgundy: #45001d;
+    --spb-burgundy: #911120;
     --spb-burgundy-light: #6b0030;
     --spb-burgundy-dark: #2d0013;
     --spb-white: #ffffff;
@@ -83,12 +83,12 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     gap: 0.5rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(69, 0, 29, 0.3);
+    box-shadow: 0 4px 20px rgba(145, 17, 32, 0.3);
 }
 
 .spb-btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(69, 0, 29, 0.4);
+    box-shadow: 0 8px 30px rgba(145, 17, 32, 0.4);
     background: var(--spb-burgundy-light);
 }
 
