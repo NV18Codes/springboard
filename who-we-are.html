@@ -317,7 +317,7 @@
             min-height: 520px;
             border-radius: 24px;
             overflow: hidden;
-            background: #45001d;
+            background: #ffffff;
         }
 
         .about-image img {
@@ -333,7 +333,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(145, 17, 32, 0.15) 0%, rgba(145, 17, 32, 0.4) 100%);
+            /* background: linear-gradient(135deg, rgba(145, 17, 32, 0.15) 0%, rgba(145, 17, 32, 0.4) 100%); */
             z-index: 1;
         }
 
@@ -380,7 +380,7 @@
 
         /* WHAT DEFINES US */
         .what-defines-section {
-            padding: 4.75rem 5%;
+            padding: 4rem 5% 3.5rem;
             background: linear-gradient(180deg, #f4f4f5 0%, #e4e4e7 50%, #dcd3d6 100%);
         }
 
@@ -409,7 +409,7 @@
 
         .what-defines-header p {
             color: var(--gray-600);
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             line-height: 1.8;
             max-width: 760px;
             margin: 0 auto;
@@ -436,10 +436,13 @@
         .define-card img {
             width: 100%;
             height: 100%;
-            min-height: 150px;
-            object-fit: cover;
+            min-height: 240px;
+            max-height: 320px;
+            object-fit: contain;
+            object-position: center;
             display: block;
             opacity: 1;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .define-card-body {
@@ -447,32 +450,35 @@
             bottom: 0;
             left: 0;
             right: 0;
-            padding: 0.95rem;
+            padding: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
+            gap: 0.35rem;
             z-index: 2;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.7) 60%, transparent 100%);
         }
 
         .define-card-body h4 {
             font-family: 'Nunito', sans-serif;
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--white);
             margin: 0;
             letter-spacing: 0.01em;
+            font-weight: 600;
         }
 
         .define-card-body p {
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 0.94rem;
+            line-height: 1.5;
             margin: 0;
         }
 
         /* staggered heights for mosaic feel */
         .define-card:nth-child(2) img,
         .define-card:nth-child(4) img {
-            min-height: 170px;
+            min-height: 260px;
+            max-height: 340px;
         }
 
         @media (max-width: 900px) {
@@ -593,13 +599,13 @@
 
         .section-header p {
             color: var(--gray-500);
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             line-height: 1.8;
         }
 
         .flow-track {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 0.7rem;
             align-items: stretch;
             position: relative;
@@ -623,11 +629,27 @@
             background: var(--white);
             border: 1px solid rgba(69, 0, 29, 0.14);
             border-radius: 12px;
-            padding: 0.95rem 0.9rem;
+            overflow: hidden;
             box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
-            display: grid;
-            gap: 0.45rem;
+            display: flex;
+            flex-direction: column;
             z-index: 1;
+            min-height: 350px;
+        }
+
+        .flow-step-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .flow-step-content {
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex-grow: 1;
         }
 
         .flow-step::after {
@@ -648,20 +670,21 @@
         }
 
         .flow-icon {
-            width: 38px;
-            height: 38px;
+            width: 40px;
+            height: 40px;
             border-radius: 11px;
             background: linear-gradient(135deg, rgba(120, 0, 40, 0.18), rgba(69, 0, 29, 0.32));
             color: #45001d;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
             border: 1px solid rgba(69, 0, 29, 0.3);
+            margin-bottom: 0.5rem;
         }
 
         .flow-step h3 {
-            font-size: 0.95rem;
+            font-size: 1.1rem;
             color: var(--black);
             margin: 0;
             font-weight: 700;
@@ -669,24 +692,30 @@
 
         .flow-step p {
             color: var(--gray-600);
-            font-size: 0.86rem;
-            line-height: 1.45;
+            font-size: 0.92rem;
+            line-height: 1.55;
             margin: 0;
         }
 
         @keyframes arrowPulse {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(-50%) rotate(-45deg) translateX(0);
             }
+
             50% {
                 transform: translateY(-50%) rotate(-45deg) translateX(4px);
             }
         }
 
         @keyframes flowLine {
-            0%, 100% {
+
+            0%,
+            100% {
                 opacity: 0.55;
             }
+
             50% {
                 opacity: 1;
             }
@@ -1375,18 +1404,127 @@
             <source src="videos/v-2.mp4" type="video/mp4">
         </video>
         <div class="page-hero-content">
-            <h1 style="font-family: nunito; line-height: 1.1;">Your partner in driving execution excellence at scale.</h1>
-            <p style="font-weight: bold;">Your strategic growth partner, dedicated to transforming organizations through
-                PMO excellence and innovative solutions.</p>
+            <h1 style="font-family: nunito; line-height: 1.1;">Your partner in driving execution excellence at scale.
+            </h1>
+            <p style="font-weight: normal; font-size: 1.3rem; line-height: 1.8;">SpringboardPro helps organisations move
+                from strategy to disciplined delivery, bringing clarity, structure, and momentum to every initiative. We
+                enable leaders to execute with confidence and achieve outcomes that are aligned, predictable, and
+                meaningful.</p>
+            <p style="font-weight: bold; font-size: 1.4rem; margin-top: 1.5rem;">Our mission is simple: make execution a
+                strategic strength.</p>
         </div>
     </section>
 
-    <section class="who-intro-section">
-        <div class="who-intro-container">
-            <h2>At SpringboardPro, we turn strategy into disciplined execution.</h2>
-            <p>As your strategic growth partner, we bring clarity, structure, and momentum to every initiative — helping
-                leaders deliver with confidence and achieve measurable outcomes that truly matter.</p>
-            <p>We exist to make execution excellence a repeatable, scalable advantage for every organisation we serve.</p>
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-media">
+                <div class="about-image">
+                    <img src="Strategty-to-execution.jpg" alt="Leaders planning execution together">
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h2 style="font-size: 40px; font-family: Nunito;">From Strategy to Execution</h2>
+                <p>With over two decades of leadership and 3,000+ projects behind us, we deliver disciplined execution
+                    and measurable outcomes — for every client, at every step, in every project.</p>
+
+                <p>Execution is where strategy comes alive — and where most organisations struggle. We help leaders
+                    navigate complexity with clarity, cadence, and control, combining governance, delivery assurance,
+                    automation, and process excellence to create consistent and predictable performance.</p>
+
+                <p>We act as your launchpad for success, building the rhythm, structure, and decision discipline
+                    required to move confidently from intention to impact.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="what-defines-section">
+        <div class="what-defines-container">
+            <div class="what-defines-header">
+                <h2>What Defines Us</h2>
+                <p>A commitment to clarity, discipline, and impact — in everything we do.</p>
+            </div>
+            <div class="define-card">
+                <img src="Structure &amp; Discipline.png" alt="Clarity in Complexity">
+                <div class="define-card-body">
+                    <h4>Clarity in Complexity</h4>
+                    <p>We simplify what others complicate. We cut through noise, bring structure to ambiguity, and
+                        provide leaders with the confidence to move forward decisively.</p>
+                </div>
+            </div>
+            <div class="define-card">
+                <img src="Performance &amp; Accountability.jpg" alt="Discipline in Execution">
+                <div class="define-card-body">
+                    <h4>Discipline in Execution</h4>
+                    <p>We believe that predictable outcomes come from rhythm, governance, and accountability. Discipline
+                        is not restrictive — it is empowering.</p>
+                </div>
+            </div>
+            <div class="define-card">
+                <img src="Governance &amp; Integrity.jpg" alt="Partnership Over Consultancy">
+                <div class="define-card-body">
+                    <h4>Partnership Over Consultancy</h4>
+                    <p>We don't stand on the sidelines. We work shoulder-to-shoulder with leaders, teams, and
+                        stakeholders to ensure strategy becomes action and action becomes results.</p>
+                </div>
+            </div>
+            <div class="define-card">
+                <img src="Collaboration &amp; Innovation.jpg" alt="Momentum That Lasts">
+                <div class="define-card-body">
+                    <h4>Momentum That Lasts</h4>
+                    <p>We don't deliver quick wins—we create systems, habits, rituals, and frameworks that sustain
+                        long-term performance and scalable execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="values-section">
+        <div class="values-container">
+            <div class="section-header">
+                <h2 style="font-family: nunito;">How We Create Impact</h2>
+                <p style="font-size: 1.5rem; font-weight: 600; text-align: center; margin: 0 auto; max-width: 100%;">
+                    Our 3D Execution Framework enables clarity, alignment, and momentum from day one.
+                </p>
+            </div>
+            <div class="flow-track">
+                <div class="flow-step">
+                    <img src="https://t3.ftcdn.net/jpg/17/02/68/48/240_F_1702684866_I9NTuIuO0rZZUExcjGkRzjXJOHdQTWHL.jpg"
+                        alt="Discover" class="flow-step-image">
+                    <div class="flow-step-content">
+                        <div class="flow-icon"><i class="fas fa-compass"></i></div>
+                        <h3>Discover</h3>
+                        <p>We diagnose execution challenges by understanding your context, constraints, stakeholders,
+                            and risk landscape — before prescribing solutions.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <img src="https://integent.com/wp-content/uploads/2021/09/Top-10-Benefits-of-a-Project-Management-Office-PMO-banner-1920.jpg"
+                        alt="Design" class="flow-step-image">
+                    <div class="flow-step-content">
+                        <div class="flow-icon"><i class="fas fa-pencil-ruler"></i></div>
+                        <h3>Design</h3>
+                        <p>We design PMO structures, governance frameworks, operating models, and automation solutions
+                            aligned to your culture and strategic priorities.</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <img src="https://t3.ftcdn.net/jpg/04/51/39/92/360_F_451399234_4ue5KX3bU2XKlgqFCJPd3Tsgv6cuLDLM.jpg"
+                        alt="Deliver" class="flow-step-image">
+                    <div class="flow-step-content">
+                        <div class="flow-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Deliver</h3>
+                        <p>We embed with teams to stabilise delivery, accelerate execution, manage risk, and ensure
+                            momentum is sustained through disciplined execution.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="flow-summary"
+                style="text-align: center; margin-top: 1.5rem; color: var(--gray-600); font-size: 1.5rem;">
+                Our approach blends consulting expertise with hands-on programme leadership to ensure that plans don't
+                just look good on paper — they succeed in real-world execution.
+            </p>
         </div>
     </section>
 
@@ -1397,23 +1535,30 @@
             </div>
             <div class="founder-content">
                 <h3 style="font-family: nunito; color: black;">Founder's Story</h3>
-                <p class="founder-meta">India PMO Leader of the Year 2022 • Certified Independent Director • PMP</p>
-                <p class="founder-quote">“Execution is where strategy becomes reality.”</p>
-                <p>With over 25 years in leadership roles across HSBC, Oracle, DHL, and Kinara Capital, Cecilia D’Silva has
-                    built enterprise PMOs, driven business transformation, steered large-scale operations, and delivered
-                    3,000+ projects across industries. Through these experiences, she observed a recurring challenge:
-                    strategies, though strong, often stumbled in execution.</p>
-                <p>Cecilia founded SpringboardPro to bridge that gap. An award-winning professional, Certified Independent
-                    Director, Project Management Professional (PMP), and former Senior Vice President – PMO at Kinara
-                    Capital, she blends strategic foresight, governance discipline, and people-centric leadership to
-                    deliver measurable impact.</p>
-                <p>Her approach is defined by an ability to simplify complexity, inspire teams, build trust, and transform
-                    how organisations execute at scale — enabling leaders to move with clarity, confidence, and disciplined
-                    execution powered by governance, automation, and data-driven insights.</p>
-                <p>SpringboardPro embodies her belief that execution excellence is a powerful competitive advantage — and
-                    that every organisation deserves a trusted partner to turn intent into outcomes with clarity and
-                    confidence. For Cecilia, SpringboardPro is more than a consulting firm; it is a launchpad for
-                    sustainable growth, collaboration, and success.</p>
+                <p>After two decades in leadership roles across HSBC, Oracle, DHL, and Kinara Capital — where she
+                    established enterprise PMOs, led business transformations, scaled operations, and steered more than
+                    3,000 projects — Cecilia D'Silva recognised a universal challenge: strategies, though strong, often
+                    stumbled in execution.</p>
+
+                <p>This insight sparked the founding of SpringboardPro, a firm built to bridge the gap between ambition
+                    and tangible outcomes.</p>
+
+                <p>An award-winning professional, Certified Independent Director, PMP, and former Senior Vice President
+                    – PMO, Cecilia brings a unique blend of governance discipline, strategic clarity, and people-centric
+                    leadership. Her accolade as India PMO Leader of the Year 2022 underscores her commitment to
+                    championing high standards, cultivating strategic partnerships, and developing future-ready
+                    capabilities across industries.</p>
+
+                <p class="founder-quote" style="font-style: italic; font-weight: 600; color: #45001d;">"Execution is
+                    where strategy becomes reality."</p>
+
+                <p>SpringboardPro embodies this philosophy — that execution excellence is a powerful competitive
+                    advantage, and that every organisation deserves a trusted partner who can turn intent into outcomes
+                    with clarity and confidence.</p>
+
+                <p>For Cecilia, SpringboardPro is more than a consulting firm; it is a launchpad for sustainable growth,
+                    collaboration, and success.</p>
+
                 <div class="signature">
                     <h4>Cecilia D'Silva</h4>
                     <span>Founder & CEO</span>
@@ -1434,8 +1579,7 @@
             <div class="team-grid">
                 <button class="team-card" type="button" data-name="Cecilia D'Silva" data-role="Founder & CEO"
                     data-image="./images/Cecilia D'Silva.jpg"
-                    data-bio="Cecilia D’Silva, former Senior Vice President, PMO at Kinara Capital, is a visionary leader with over 25 years of expertise in strategic portfolio management, business transformation, and service excellence serving as the driving force behind SpringboardPro. An award-winning professional, she brings extensive global leadership experience from HSBC, Oracle, and DHL Worldwide Express and drives business impact through PMO excellence, innovation, and integrity. 
-                    As a certified Independent Director and Project Management Professional (PMP), Cecilia is deeply committed to integrity, innovation, and delivering measurable impact. Her recognition as the “India PMO Leader of the Year 2022” by the PMO Global Alliance underscores her commitment to championing high standards, cultivating strategic partnerships, and developing future-ready capabilities across various industries."
+                    data-bio="Cecilia D'Silva, former Senior Vice President, PMO, is a transformational Strategic PMO Leader with 25+ years of global experience in strategic portfolio management, business transformation, and service excellence serving as the driving force behind SpringboardPro. She has led 3,000+ projects, built enterprise PMOs, and driven large-scale transformation programmes that blend structure, governance, innovation, and people-centric leadership.|An award-winning professional, certified Independent Director and PMP, Cecilia brings global leadership experience from HSBC, Oracle, and DHL focusing on PMO excellence and innovation. Her recognition as 'India PMO Leader of the Year 2022' by the PMO Global Alliance reflects her commitment to excellence, strategic partnerships, and future-ready capability building.|At SpringboardPro, she leads the mission to help organisations move with clarity, confidence, and disciplined execution — turning strategy into meaningful, measurable results."
                     data-linkedin="#" data-email="reachus@springboardpro.in">
                     <img src="./images/Cecilia D'Silva.jpg" alt="Cecilia D'Silva">
                     <h3 style="font-family: nunito;">Cecilia D'Silva</h3>
@@ -1453,9 +1597,10 @@
                     <span style="background-color: #e4e4e7; padding: 5px; border-radius: 10px;">know more</span>
                 </button>
 
-                <button class="team-card" type="button" data-name="Greg Leman" data-role="Advisor · Emerging Tech"
+                <button class="team-card" type="button" data-name="Greg Leman"
+                    data-role="Advisor - Emerging Technologies"
                     data-image="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg"
-                    data-bio="Greg is a seasoned technology and security expert with over 30 years of leadership experience spanning software development, data management, and personal security. As Co-Owner of Montana Personal Security LLC, he empowers individuals and organizations through a holistic security approach focused on situational awareness and protection across cyber, financial, and operational domains. Previously a Senior Director at Oracle for nearly 20 years, Greg led large teams in building enterprise applications and infrastructure supporting $2B in business and 25,000 users. He is known for driving process transformation, agile adoption, and system security. An entrepreneur at heart, Greg founded multiple successful startups, including Metagenix, an early leader in data integration. His background also includes innovation in GIS and public safety applications."
+                    data-bio="Greg is a seasoned technology and security expert with over 30 years of leadership experience spanning software development, data management, and personal security. As Co-Owner of Montana Personal Security LLC, he empowers individuals and organizations through a holistic security approach focused on situational awareness and protection across cyber, financial, and operational domains.|Previously a Senior Director at Oracle for nearly 20 years, Greg led large teams in building enterprise applications and infrastructure supporting $2B in business and 25,000 users. He is known for driving process transformation, agile adoption, and system security.|An entrepreneur at heart, Greg founded multiple successful startups, including Metagenix, an early leader in data integration. His background also includes innovation in GIS and public safety applications."
                     data-linkedin="#">
                     <img src="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg" alt="Greg Leman">
                     <h3 style="font-family: nunito;">Greg Leman</h3>
@@ -1464,14 +1609,15 @@
                     <span style="background-color: #e4e4e7; padding: 5px; border-radius: 10px;">know more</span>
                 </button>
 
-                <button class="team-card" type="button" data-name="Manoj Kumar Agarwal" data-role="Advisor · Strategy"
+                <button class="team-card" type="button" data-name="Manoj Kumar Agarwal"
+                    data-role="Advisor - Business Strategy & Integration"
                     data-image="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg"
-                    data-bio="Manoj Kumar Agarwal, with over 25 years of experience in business setup, management, mergers and acquisitions, fundraising, and strategy, brings a wealth of knowledge to the table. He co-founded Sea Fund, an early-stage venture fund currently raising INR 2500 million (USD 35 million) for its second fund. Manoj mentors multiple startups and advises Latize, a Singapore-based data management company using Linked Data technology, whose product, Ulysses, is accredited by Singapore’s IDA. As the CEO of Karuturi Global Limited, he managed corporate affairs and Indian operations in agriculture, floriculture, food processing, and internet services. A frequent speaker at industry conferences, Manoj shares insights on emerging trends and the future of business. Dedication to excellence and passion for fostering innovation make him a revered figure in the entrepreneurial ecosystem. At SpringboardPro, Manoj will guide through the intricacies of business growth and innovation, offering strategic advice and mentorship to thrive in competitive markets."
+                    data-bio="Manoj Kumar Agarwal, with over 25 years of experience in business setup, management, mergers and acquisitions, fundraising, and strategy, brings a wealth of knowledge to the table. He co-founded Sea Fund, an early-stage venture fund currently raising INR 2500 million (USD 35 million) for its second fund.|Manoj mentors multiple startups and advises Latize, a Singapore-based data management company using Linked Data technology, whose product, Ulysses, is accredited by Singapore's IDA. As the CEO of Karuturi Global Limited, he managed corporate affairs and Indian operations in agriculture, floriculture, food processing, and internet services.|A frequent speaker at industry conferences, Manoj shares insights on emerging trends and the future of business. Dedication to excellence and passion for fostering innovation make him a revered figure in the entrepreneurial ecosystem. At SpringboardPro, Manoj will guide through the intricacies of business growth and innovation, offering strategic advice and mentorship to thrive in competitive markets."
                     data-linkedin="#">
                     <img src="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg" alt="Manoj Kumar Agarwal">
                     <h3 style="font-family: nunito;">Manoj Kumar Agarwal</h3>
                     <span class="role" style="background-color: transparent; color: black;">Advisor - Business Strategy
-                        & IT Integration</span>
+                        & Integration</span>
                     <span style="background-color: #e4e4e7; padding: 5px; border-radius: 10px;">know more</span>
                 </button>
             </div>
@@ -1496,173 +1642,62 @@
         </div>
     </section>
 
-
-
-    <section class="about-section">
-        <div class="about-container">
-            <div class="about-media">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&q=80&auto=format&fit=crop"
-                        alt="Leaders planning execution together">
-                </div>
-                <!-- <p class="about-image-note">Backed by two decades of leadership and 3,000+ projects delivered, we bring
-                    together project management expertise, enterprise automation, delivery acceleration, and process
-                    excellence to create measurable impact — for every client, at every step, in every project.</p> -->
-            </div>
-
-            <div class="about-text">
-                <h2 style="font-size: 40px; font-family: Nunito;">From Strategy to Execution</h2>
-                <p>With over two decades of leadership and 3,000+ projects behind us, we deliver disciplined execution
-                    and measurable outcomes — for every client, at every step, in every project.
-
-                    Execution is where strategy comes alive — and where most organisations struggle. We help leaders
-                    navigate complexity with clarity, cadence, and control, combining governance, delivery assurance,
-                    automation, and process excellence to create consistent and predictable performance.
-                    We act as your launchpad for success, building the rhythm, structure, and decision discipline
-                    required to move confidently from intention to impact.
-
-                </p>
-                <!-- 
-                <p><strong>What defines us is not just what we do, but how we do it:</strong></p>
-                <ul class="about-points">
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Structure & Discipline</strong> — bringing order, clarity, and consistency so
-                            every initiative stays on track.</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Performance & Accountability</strong> — enabling visibility, ownership, and smart
-                            decision making.</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Governance & Integrity</strong> — embedding controls and transparency.</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-check-circle"></i>
-                        <span><strong>Collaboration & Innovation</strong> — partnering with clients to deliver
-                            sustainable, scalable outcomes.</span>
-                    </li>
-                </ul> -->
-            </div>
-
-        </div>
-    </section>
-
-    <section class="what-defines-section">
-        <div class="what-defines-container">
-            <div class="what-defines-header">
-                <h2>What Defines Us</h2>
-                <p>These principles shape how we work and how we deliver lasting transformation.</p>
-            </div>
-            <div class="define-card">
-                <img src="Structure &amp; Discipline.png" alt="Structure and Discipline">
-                <div class="define-card-body">
-                    <h4>Structure &amp; Discipline</h4>
-                    <p>Clarity and consistency in every initiative.</p>
-                </div>
-            </div>
-            <div class="define-card">
-                <img src="Performance &amp; Accountability.jpg" alt="Performance and Accountability">
-                <div class="define-card-body">
-                    <h4>Performance &amp; Accountability</h4>
-                    <p>Visibility and ownership where it matters.</p>
-                </div>
-            </div>
-            <div class="define-card">
-                <img src="Governance &amp; Integrity.jpg" alt="Governance and Integrity">
-                <div class="define-card-body">
-                    <h4>Governance &amp; Integrity</h4>
-                    <p>Controls, transparency, and risk awareness built in.</p>
-                </div>
-            </div>
-            <div class="define-card">
-                <img src="Collaboration &amp; Innovation.jpg" alt="Collaboration and Innovation">
-                <div class="define-card-body">
-                    <h4>Collaboration &amp; Innovation</h4>
-                    <p>Scalable and sustainable outcomes, co-created.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="values-section">
-        <div class="values-container">
-            <div class="section-header">
-                <h2 style="font-family: nunito;">How We Work</h2>
-                <p style="font-size: larger;">
-                    From discovery to deepened value, we guide execution as a clear, connected journey.
-                </p>
-            </div>
-            <div class="flow-track">
-                <div class="flow-step">
-                    <div class="flow-icon"><i class="fas fa-compass"></i></div>
-                    <h3>Discover</h3>
-                    <p>Understand the landscape before shaping the solution. We assess goals, challenges, processes, risks,
-                        and stakeholder expectations to build a clear, shared understanding of where you are and where you
-                        need to go.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-icon"><i class="fas fa-pencil-ruler"></i></div>
-                    <h3>Design</h3>
-                    <p>Create structures, systems, and pathways for disciplined execution. We design governance models,
-                        delivery frameworks, automation workflows, processes, and operating rhythms that bring clarity and
-                        structure to execution.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-icon"><i class="fas fa-rocket"></i></div>
-                    <h3>Deliver</h3>
-                    <p>Execute with clarity, cadence, and confidence. We lead programmes with hands-on delivery management,
-                        risk control, communication rhythms, automation deployment, and continuous performance visibility.</p>
-                </div>
-                <div class="flow-step">
-                    <div class="flow-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Deepen</h3>
-                    <p>Embed mechanisms that sustain long-term performance and maturity. We strengthen capability,
-                        institutionalise processes, embed governance rhythms, and reinforce behaviours that ensure outcomes
-                        continue long after delivery.</p>
-                </div>
-            </div>
-            <p class="flow-summary" style="text-align: center; margin-top: 1.5rem; color: var(--gray-600); font-size: 1rem;">
-                Our approach blends consulting expertise with hands-on programme leadership, ensuring that plans don’t just
-                look good — they succeed in real-world execution.
+    <!-- WHY WE EXIST SECTION -->
+    <section style="padding: 5rem 5%; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h2 style="font-size: 3rem; color: var(--black); margin-bottom: 1.5rem; font-weight: 600;">Why We Exist</h2>
+            <p style="font-size: 1.3rem; line-height: 1.8; color: var(--gray-800); font-weight: 500;">
+                Because execution excellence is a strategic advantage — and every organisation deserves a trusted partner who can provide the clarity, structure, and momentum needed to turn ambition into outcomes.
             </p>
         </div>
     </section>
-
 
     <!-- CTA SECTION -->
     <section class="cta-section">
         <div class="cta-container">
             <div class="cta-text">
-                <h2> Ready to Transform</h2>
-                <h3>Bring in a strategic growth partner who turns bold intent into confident execution.
-                    Let’s build clarity, rhythm, and impact — together.</h2><br>
-                    <p></p>
-                    <div class="cta-actions">
-                        <a href="contact.html" class="btn-outline">Get in Touch </a>
-                    </div>
+                <h2>Let's Build Your Next Success Story</h2>
+                <ul style="list-style: none; padding: 0; margin: 1.5rem 0;">
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="color: #45001d;"></i>
+                        <span>Enable your teams to execute with clarity.</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="color: #45001d;"></i>
+                        <span>Deliver outcomes with confidence.</span>
+                    </li>
+                    <li style="padding: 0.5rem 0; display: flex; align-items: center; gap: 0.75rem;">
+                        <i class="fas fa-check-circle" style="color: #45001d;"></i>
+                        <span>Transform your strategy into measurable impact.</span>
+                    </li>
+                </ul>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(69,0,29,0.08); border-radius: 16px; border-left: 4px solid #45001d;">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; font-family: Nunito; font-weight: 600; color: #45001d;">Ready to Transform?</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.6; color: var(--gray-800); margin: 0;">Bring in a strategic growth partner who turns bold intent into confident execution. Let's build clarity, rhythm, and impact — together.</p>
+                </div>
+                <div class="cta-actions" style="margin-top: 2rem;">
+                    <a href="contact.html" class="btn-outline">Connect With Us →</a>
+                </div>
             </div>
             <div class="cta-visual">
-                <img src="transorm.jpg" alt="Leaders collaborating during transformation workshop">
+                <img src="transorm.jpg" alt="Ready to Transform">
             </div>
         </div>
     </section>
 
 
     <!-- FOOTER -->
-        <footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list" >
-                        <li class="footer-contact-item" style="margin-top: -50px;" >
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item" style="margin-top: -50px;">
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text" >
+                            <div class="footer-contact-text">
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
@@ -1677,7 +1712,8 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets
+                        you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>

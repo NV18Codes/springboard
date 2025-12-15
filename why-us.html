@@ -293,9 +293,9 @@
 
         .why-grid {
             display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-            gap: 3rem;
-            align-items: stretch;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: start;
         }
 
         .why-text {
@@ -304,6 +304,8 @@
             padding: 3rem;
             border: 1px solid var(--gray-100);
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
         }
 
         .why-text h3 {
@@ -329,8 +331,9 @@
 
         .why-image img {
             width: 100%;
-            height: 320px;
+            height: 500px;
             object-fit: cover;
+            object-position: center;
             display: block;
         }
 
@@ -360,6 +363,7 @@
             display: flex;
             flex-direction: column;
             gap: 1.25rem;
+            height: 100%;
         }
 
         .why-card {
@@ -523,42 +527,117 @@
 
         /* CTA */
         .cta-section {
-            padding: 6rem 5%;
+            padding: 7rem 5%;
             background: linear-gradient(135deg, var(--palette-cream) 0%, var(--palette-blush) 70%);
-            position: relative;
-            overflow: hidden;
         }
 
-        .cta-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(145, 17, 32, 0.25) 0%, transparent 55%);
-        }
-
-        .cta-content {
-            max-width: 700px;
+        .cta-container {
+            max-width: 1200px;
             margin: 0 auto;
-            text-align: center;
+            border-radius: 36px;
+            padding: 3.5rem;
+            background: linear-gradient(135deg, rgba(145, 17, 32, 0.05), rgba(145, 17, 32, 0.15));
+            box-shadow: 0 25px 90px rgba(0, 0, 0, 0.12);
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 3rem;
+            overflow: hidden;
             position: relative;
-            z-index: 10;
         }
 
-        .cta-content h2 {
-            font-family: 'Nunito', sans-serif;
-            font-size: 3rem;
-            color: var(--white);
-            margin-bottom: 1.25rem;
+        .cta-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.35), transparent 45%);
+            pointer-events: none;
+        }
+
+        .cta-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            background: rgba(145, 17, 32, 0.1);
+            color: #45001d;
+            font-size: 0.9rem;
             font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
         }
 
-        .cta-content p {
-            color: rgba(255, 255, 255, 0.6);
+        .cta-text h2 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 3.2rem;
+            color: var(--black);
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-text p {
+            color: var(--gray-800);
             font-size: 1.15rem;
             margin-bottom: 2rem;
-            line-height: 1.8;
+            line-height: 1.95;
+        }
+
+        .cta-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #45001d;
+            padding: 1rem 2rem;
+            border: 1.5px solid rgba(145, 17, 32, 0.4);
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(145, 17, 32, 0.06);
+            border-color: rgba(145, 17, 32, 0.7);
+        }
+
+        .cta-visual {
+            position: relative;
+            z-index: 1;
+            border-radius: 28px;
+            overflow: hidden;
+            min-height: 360px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
+        }
+
+        .cta-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cta-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
         }
 
         .btn-primary {
@@ -917,108 +996,291 @@
         </video>
         <div class="page-hero-content">
             <h1>Why SpringboardPro</h1>
-            <p><b>Because execution is where strategy succeeds — or fails.</b></p>
-            <p style="font-size: 20px; margin-top: 20px;">Most organisations don’t struggle with ambition or ideas.
- They struggle with turning intent into disciplined, predictable outcomes.
-At SpringboardPro, we exist to close that gap.
-We are an execution-led consulting partner that brings structure, governance, and momentum to complex initiatives — helping leaders move from strategy to results with confidence.
-</p>
+            <p style="font-size: 1.5rem; font-weight: 700; color: var(--white);"><b>Because execution is where strategy
+                    succeeds — or fails.</b></p>
+            <p style="font-size: 1.3rem; margin-top: 20px; line-height: 1.8; color: rgba(255,255,255,0.95);">Most
+                organisations don't struggle with ambition or ideas.</p>
+            <p style="font-size: 1.3rem; line-height: 1.8; color: rgba(255,255,255,0.95);">They struggle with turning
+                intent into disciplined, predictable outcomes.</p>
+            <p style="font-size: 1.3rem; line-height: 1.8; color: rgba(255,255,255,0.95);">At SpringboardPro, we exist
+                to close that gap.</p>
+            <p style="font-size: 1.3rem; line-height: 1.8; margin-bottom: 0; color: rgba(255,255,255,0.95);">We are an
+                execution-led consulting partner that brings structure, governance, and momentum to complex initiatives
+                — helping leaders move from strategy to results with confidence.</p>
         </div>
     </section>
 
-    <section class="why-section">
-        <div class="why-container">
-            <div class="section-intro">
-                <h2>What sets SpringboardPro apart</h2>
-                <p>We partner with you across strategy, operations, and technology so PMO ambition turns into measurable
-                    impact.</p>
+    <section class="why-section"
+        style="padding: 5rem 5%; background: linear-gradient(135deg, rgba(220, 211, 214, 0.3), rgba(220, 175, 172, 0.25));">
+        <div class="why-container" style="max-width: 1400px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem; color: var(--black); margin-bottom: 1rem; text-align: center;">Your
+                    Launchpad for Execution Excellence</h2>
+                <p
+                    style="font-size: 1.3rem; color: var(--gray-800); font-weight: 500; max-width: 900px; margin: 0 auto; text-align: center;">
+                    SpringboardPro acts as a launchpad for success — accelerating organisations from direction to
+                    disciplined delivery.</p>
             </div>
-            <div class="why-grid">
-                <div class="why-text">
-                    <h3>Your Launchpad for Execution Excellence</h3>
-                    <p>SpringboardPro acts as a launchpad for success — accelerating organisations from direction to disciplined delivery.</p>
-                    <h6 style="font-size: 20px; ">We partner closely with leadership teams to:</h6>
-                    <ul class="why-points" style="margin-top: 20px;">
-                        <li><i class="fas fa-circle"></i><span> Bring clarity where complexity slows decisions</span></li>
-                        <li><i class="fas fa-circle"></i><span> Establish governance that enables speed, not bureaucracy</span></li>
-                        <li><i class="fas fa-circle"></i><span> Restore confidence in delivery across portfolios and programmes</span></li>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: stretch;">
+                <div style="display: flex; flex-direction: column; justify-content: center; padding: 2rem;">
+                    <h6 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--black);">We
+                        partner closely with leadership teams to:</h6>
+                    <ul class="why-points" style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
+                                style="color: var(--gray-800);">Bring clarity where complexity slows decisions</span>
+                        </li>
+                        <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
+                                style="color: var(--gray-800);">Establish governance that enables speed, not
+                                bureaucracy</span></li>
+                        <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
+                                style="color: var(--gray-800);">Restore confidence in delivery across portfolios and
+                                programmes</span></li>
                     </ul>
-                    <div class="why-image">
-                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=1400&q=80"
-                            alt="SpringboardPro team discussion">
+                    <div
+                        style="padding: 1.5rem; background: rgba(255,255,255,0.7); border-radius: 16px; border-left: 4px solid #45001d;">
+                        <p
+                            style="font-style: italic; color: var(--gray-800); font-size: 1.15rem; font-weight: 500; margin: 0; line-height: 1.7;">
+                            Our engagements are run with the same urgency, ownership, and discipline as your internal
+                            leadership teams — because execution cannot be outsourced, only strengthened.</p>
                     </div>
                 </div>
-                <div class="why-card-stack">
-                    <article class="why-card">
-                        <small><i class="fas fa-user-tie"></i> Leadership</small>
-                        <h4>Deep leadership experience</h4>
-                        <p>Program directors and PMO heads who have scaled portfolios across regions and industries.</p>
-                    </article>
-                    <article class="why-card">
-                        <small><i class="fas fa-layer-group"></i> Solutions</small>
-                        <h4>Integrated &amp; scalable models</h4>
-                        <p>Modular playbooks for PMO setup, governance, and automation that flex with growth.</p>
-                    </article>
-                    <article class="why-card">
-                        <small><i class="fas fa-bullseye"></i> Outcomes</small>
-                        <h4>Outcome-oriented, value-focused</h4>
-                        <p>Every initiative is tied to ROI, risk reduction, and decisive executive reporting.</p>
-                    </article>
-                    <article class="why-card">
-                        <small><i class="fas fa-shield-alt"></i> Governance</small>
-                        <h4>Risk-ready execution</h4>
-                        <p>Embedded assurance, playbooks for escalations, and continuous health checks keep delivery
-                            predictable.</p>
-                    </article>
+                <div
+                    style="border-radius: 24px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.15); height: 100%; min-height: 500px;">
+                    <img src="Launchpad-2.jpg" alt="Your Launchpad for Execution Excellence"
+                        style="width: 100%; height: 100%; object-fit: cover; display: block;">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="impact-section">
-        <div class="impact-container">
-            <div class="impact-grid">
-                <div class="impact-card highlight">
-                    <span class="label">Projects Delivered</span>
-                    <h3><span class="counter" data-count="3000" data-suffix="+" data-format="compact">0</span></h3>
-                    <p>Programmes completed across industries</p>
+    <section class="why-section" style="padding: 5rem 5%; background: var(--white);">
+        <div class="why-container" style="max-width: 1400px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem; color: var(--black); margin-bottom: 1rem; text-align: center;">What Sets
+                    SpringboardPro Apart</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: stretch;">
+                <div
+                    style="border-radius: 24px; overflow: hidden; box-shadow: 0 25px 70px rgba(0,0,0,0.15); background: #f8f9fa; display: flex; align-items: center; justify-content: center; min-height: 600px;">
+                    <img src="launchpad-3.jpg" style="width: 100%; height: auto; object-fit: contain; display: block;">
                 </div>
-                <div class="impact-card highlight">
-                    <span class="label">Happy Clients</span>
-                    <h3><span class="counter" data-count="2000" data-suffix="+" data-format="compact">0</span></h3>
-                    <p>Leaders who trust our PMO partnership</p>
+                <div style="display: flex; flex-direction: column; justify-content: center; padding: 2rem;">
+                    <div style="display: grid; gap: 1.5rem;">
+                        <article
+                            style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 1.75rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border-left: 4px solid #45001d;">
+                            <h4
+                                style="font-size: 1.25rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 600;">
+                                Execution, Not Advice</h4>
+                            <p style="color: var(--gray-700); margin: 0; line-height: 1.7;">We don't stop at
+                                recommendations. We work shoulder-to-shoulder with teams to design, stabilise, and drive
+                                execution — until outcomes are achieved.</p>
+                        </article>
+                        <article
+                            style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 1.75rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border-left: 4px solid #45001d;">
+                            <h4
+                                style="font-size: 1.25rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 600;">
+                                Governance That Enables Speed</h4>
+                            <p style="color: var(--gray-700); margin: 0; line-height: 1.7;">Our governance models are
+                                practical, fit-for-purpose, and decision-oriented — providing visibility, control, and
+                                escalation without slowing delivery.</p>
+                        </article>
+                        <article
+                            style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 1.75rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border-left: 4px solid #45001d;">
+                            <h4
+                                style="font-size: 1.25rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 600;">
+                                Leadership-Led Engagements</h4>
+                            <p style="color: var(--gray-700); margin: 0; line-height: 1.7;">Our work is led by senior
+                                practitioners who have built and run enterprise PMOs, managed large portfolios, and
+                                recovered critical programmes — not career consultants.</p>
+                        </article>
+                        <article
+                            style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 1.75rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border-left: 4px solid #45001d;">
+                            <h4
+                                style="font-size: 1.25rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 600;">
+                                Integrated, Scalable Models</h4>
+                            <p style="color: var(--gray-700); margin: 0; line-height: 1.7;">From PMO design and delivery
+                                recovery to automation and process excellence, our frameworks scale across functions,
+                                geographies, and operating models.</p>
+                        </article>
+                        <article
+                            style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 1.75rem; border-radius: 16px; box-shadow: 0 8px 25px rgba(0,0,0,0.06); border-left: 4px solid #45001d;">
+                            <h4
+                                style="font-size: 1.25rem; color: var(--black); margin-bottom: 0.75rem; font-weight: 600;">
+                                Outcome-Driven Focus</h4>
+                            <p style="color: var(--gray-700); margin: 0; line-height: 1.7;">Every initiative is anchored
+                                to measurable outcomes — delivery predictability, risk reduction, value realisation, and
+                                sustained performance.</p>
+                        </article>
+                    </div>
                 </div>
-                <div class="impact-card">
-                    <span class="label">Success Rate</span>
-                    <h3><span class="counter" data-count="98" data-suffix="%">0</span></h3>
-                    <p>Initiatives delivered with measurable value</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact-section"
+        style="background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%); padding: 5rem 5%;">
+        <div class="impact-container" style="max-width: 1400px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem; color: var(--black); margin-bottom: 1rem; font-weight: 600;">Proven Where It
+                    Matters</h2>
+                <p style="font-size: 1.2rem; color: var(--gray-700); max-width: 800px; margin: 0 auto;">
+                    Two decades of execution excellence, delivering measurable outcomes across industries and
+                    geographies.
+                </p>
+            </div>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+                <div class="impact-card"
+                    style="background: linear-gradient(135deg, #45001d 0%, #690316 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+                    <div
+                        style="font-size: 3.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; line-height: 1;">
+                        20+</div>
+                    <div
+                        style="font-size: 1rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; font-weight: 600;">
+                        Years</div>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.05rem; margin: 0; line-height: 1.6;">Execution
+                        Leadership driving PMO governance, delivery, and change at scale</p>
                 </div>
-                <div class="impact-card">
-                    <span class="label">Years in Practice</span>
-                    <h3><span class="counter" data-count="10" data-suffix="+">0</span></h3>
-                    <p>Driving PMO governance &amp; change</p>
+
+                <div class="impact-card"
+                    style="background: linear-gradient(135deg, #45001d 0%, #690316 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+                    <div
+                        style="font-size: 3.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; line-height: 1;">
+                        <span class="counter" data-count="3000" data-suffix="+" data-format="compact">0</span>
+                    </div>
+                    <div
+                        style="font-size: 1rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; font-weight: 600;">
+                        Programs</div>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.05rem; margin: 0; line-height: 1.6;">Programs
+                        and projects delivered across industries</p>
                 </div>
+
+                <div class="impact-card"
+                    style="background: linear-gradient(135deg, #45001d 0%, #690316 100%); border-radius: 20px; padding: 2.5rem 2rem; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: transform 0.3s ease;">
+                    <div
+                        style="font-size: 3.5rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; line-height: 1;">
+                        <span class="counter" data-count="98" data-suffix="%">0</span>
+                    </div>
+                    <div
+                        style="font-size: 1rem; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem; font-weight: 600;">
+                        Success Rate</div>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.05rem; margin: 0; line-height: 1.6;">Success
+                        rate in achieving measurable outcomes</p>
+                </div>
+            </div>
+
+            <div
+                style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 10px 40px rgba(0,0,0,0.08); max-width: 1000px; margin: 0 auto;">
+                <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: 1.5rem;">
+                    <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <i class="fas fa-check-circle"
+                            style="color: #45001d; font-size: 1.5rem; margin-top: 0.25rem;"></i>
+                        <span style="font-size: 1.2rem; color: var(--gray-800); line-height: 1.6;">Leaders trust us
+                            during <strong>transformation, recovery, and scale</strong></span>
+                    </li>
+                    <li style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <i class="fas fa-check-circle"
+                            style="color: #45001d; font-size: 1.5rem; margin-top: 0.25rem;"></i>
+                        <span style="font-size: 1.2rem; color: var(--gray-800); line-height: 1.6;">Execution excellence
+                            <strong>built to last</strong>, not just for milestones</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div
+                style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(69,0,29,0.05), rgba(105,3,22,0.08)); border-radius: 16px;">
+                <p style="font-size: 1.4rem; font-weight: 600; color: #45001d; margin: 0; line-height: 1.6;">
+                    Our credibility is built on delivery performance, not slide decks.
+                </p>
             </div>
         </div>
     </section>
 
     <section class="value-section">
         <div class="value-container">
+            <h2 style="text-align: center; margin-bottom: 1rem; font-size: 2.8rem; color: var(--black);">How We Create
+                Impact</h2>
             <div class="value-grid">
                 <div class="value-card">
                     <div class="value-icon"><i class="fas fa-compass"></i></div>
                     <h4>Discover</h4>
-                    <p>Immersive diagnostics to understand context, ambition, and constraints before we prescribe.</p>
+                    <p>We diagnose execution challenges by understanding your context, constraints, stakeholders, and
+                        risk landscape — before prescribing solutions.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon"><i class="fas fa-pencil-ruler"></i></div>
                     <h4>Design</h4>
-                    <p>Tailored PMO, automation, and governance frameworks aligned to culture and operating models.</p>
+                    <p>We design PMO structures, governance frameworks, operating models, and automation solutions
+                        aligned to your culture and strategic priorities.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon"><i class="fas fa-rocket"></i></div>
-                    <h4>Deliver &amp; Sustain</h4>
-                    <p>Hands-on execution, transparent reporting, and capability transfer that keeps value compounding.
+                    <h4>Deliver</h4>
+                    <p>We embed with teams to stabilise delivery, accelerate execution, manage risk, and ensure momentum
+                        is sustained through disciplined execution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="position: relative; padding: 0; overflow: hidden; min-height: 600px;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1600&q=80" alt="Team collaboration"
+                style="width: 100%; height: 100%; object-fit: cover;">
+            <div
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(69,0,29,0.92) 0%, rgba(105,3,22,0.88) 100%);">
+            </div>
+        </div>
+        <div style="position: relative; z-index: 2; padding: 5rem 5%; max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem; color: var(--white); margin-bottom: 1rem; font-weight: 600;">Who We Partner
+                    With</h2>
+                <p
+                    style="font-size: 1.3rem; color: rgba(255,255,255,0.95); font-weight: 500; max-width: 800px; margin: 0 auto;">
+                    We work with organisations that:</p>
+            </div>
+            <div
+                style="background: rgba(255,255,255,0.98); border-radius: 20px; padding: 3rem; box-shadow: 0 25px 80px rgba(0,0,0,0.3);">
+                <ul class="why-points" style="font-size: 1.2rem; max-width: 900px; margin: 0 auto;">
+                    <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
+                            style="color: var(--gray-800);">Are managing complex, high-stakes initiatives</span></li>
+                    <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
+                            style="color: var(--gray-800);">Need stronger governance and execution control</span></li>
+                    <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
+                            style="color: var(--gray-800);">Want predictable outcomes, not heroic firefighting</span>
+                    </li>
+                    <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
+                            style="color: var(--gray-800);">Value partnership, accountability, and long-term capability
+                            building</span></li>
+                </ul>
+                <div style="text-align: center; margin-top: 2.5rem; padding-top: 2rem; border-top: 2px solid #e9ecef;">
+                    <p style="font-size: 1.4rem; font-weight: 600; color: #45001d; margin: 0;">
+                        If execution matters, we belong at the table.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%); padding: 5rem 5%;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 3rem; color: var(--black); margin-bottom: 1rem; font-weight: 600;">More Than
+                    Consultants. True Partners.</h2>
+            </div>
+            <div
+                style="background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); max-width: 900px; margin: 0 auto;">
+                <p
+                    style="font-size: 1.25rem; line-height: 1.8; color: var(--gray-800); font-weight: 500; margin: 0 0 2rem 0; text-align: center;">
+                    We don't operate from the sidelines. We work shoulder-to-shoulder with leaders, teams, and
+                    stakeholders — building trust, strengthening capability, and embedding execution discipline that
+                    endures beyond the engagement.
+                </p>
+                <div
+                    style="background: linear-gradient(135deg, #45001d 0%, #690316 100%); padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(69,0,29,0.3); text-align: center;">
+                    <p style="font-size: 1.4rem; font-weight: 600; color: white; margin: 0; line-height: 1.6;">
+                        Clients choose SpringboardPro because they need certainty — not just advice.
                     </p>
                 </div>
             </div>
@@ -1026,11 +1288,35 @@ We are an execution-led consulting partner that brings structure, governance, an
     </section>
 
     <section class="cta-section">
-        <div class="cta-bg"></div>
-        <div class="cta-content">
-            <h2>Ready to Experience the Difference?</h2>
-            <p>Let's discuss how SpringboardPro can help you achieve your organizational goals.</p>
-            <a href="contact.html" class="btn-primary">Get in Touch <i class="fas fa-arrow-right"></i></a>
+        <div class="cta-container"
+            style="display: grid; grid-template-columns: 1fr 1fr; gap: 0; align-items: stretch; padding: 0; overflow: hidden;">
+            <div class="cta-text"
+                style="padding: 3.5rem; display: flex; flex-direction: column; justify-content: center;">
+                <h1
+                    style="font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; color: #45001d; margin-bottom: 1rem;">
+                    READY TO TRANSFORM</h1>
+                <h2 style="margin-bottom: 1.5rem;">Ready to Experience the Difference?</h2>
+                <p style="margin-bottom: 1rem;">If execution is critical to your strategy, you need a partner who
+                    understands both ambition and delivery.</p>
+                <p style="font-weight: 600; color: var(--black); margin-bottom: 2rem;">Chosen for certainty, not just
+                    advice — SpringboardPro your launchpad for disciplined execution and lasting impact.</p>
+                <div class="cta-actions">
+                    <a href="contact.html" class="btn-outline">Get in Touch →</a>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column; background: #45001d;">
+                <div style="flex: 1; position: relative; overflow: hidden;">
+                    <img src="transorm.jpg" alt="Ready to Transform"
+                        style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div style="padding: 2rem; background: linear-gradient(135deg, #45001d 0%, #690316 100%);">
+                    <h3
+                        style="font-size: 1.6rem; margin-bottom: 0.75rem; font-family: Nunito; font-weight: 600; color: white; margin: 0 0 0.75rem 0;">
+                        Partner for Success</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.95); margin: 0;">Bring in a
+                        strategic growth partner who turns bold intent into confident execution.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1041,10 +1327,10 @@ We are an execution-led consulting partner that brings structure, governance, an
                     <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list" >
-                        <li class="footer-contact-item" style="margin-top: -50px;" >
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item" style="margin-top: -50px;">
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text" >
+                            <div class="footer-contact-text">
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
@@ -1059,7 +1345,8 @@ We are an execution-led consulting partner that brings structure, governance, an
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets
+                        you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
@@ -1158,5 +1445,7 @@ We are an execution-led consulting partner that brings structure, governance, an
         });
     </script>
 </body>
+
+</html>
 
 </html>
