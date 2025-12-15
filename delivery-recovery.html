@@ -237,6 +237,12 @@
             color: rgba(255, 255, 255, 0.7);
             font-style: italic;
         }
+         .hero-text p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
 
         /* Checklist */
         .hero-checklist {
@@ -517,64 +523,165 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
         }
 
-        .footer-column h4 {
+         .footer {
+            background: #101322;
+            padding: 5rem 5% 0;
             color: var(--white);
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
         }
 
-        .footer-column ul {
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1.1fr 1fr 1.1fr;
+            gap: 3rem;
+            align-items: start;
+            padding-bottom: 3.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-brand .logo img {
+            height: 86px;
+            width: auto;
+            display: block;
+        }
+
+        .footer-contact-list {
             list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column ul a {
-            color: rgba(255, 255, 255, 0.65);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-        }
-
-        .footer-column ul a:hover {
-            color: var(--white);
-            transform: translateX(4px);
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .footer-contact i {
-            color: var(--white);
-            margin-top: 4px;
-            width: 16px;
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            margin-top: 1.75rem;
+            display: grid;
             gap: 1rem;
         }
 
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
+        .footer-contact-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-contact-icon {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
             font-size: 0.9rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            font-size: 0.95rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text span {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-weight: 600;
+        }
+
+        .footer-contact-text a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 0.55rem;
+            align-items: center;
+        }
+
+        .footer-social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .footer-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.6rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding: 1.25rem 0;
+            background: #101322;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+
+        .footer-bottom p span {
+            color: var(--palette-primary);
         }
 
         /* Footer color normalization */
@@ -604,16 +711,8 @@
         }
 
         .footer-social-icons a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.05rem;
             color: #e9edf5;
-            border: 1.5px solid rgba(255, 255, 255, 0.35);
-            background: transparent;
+            border-color: rgba(255, 255, 255, 0.35);
         }
 
         .footer-social-icons a:hover {
@@ -622,41 +721,13 @@
         }
 
         .footer-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 180px;
-            padding: 0.9rem 1.6rem;
-            border-radius: 999px;
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            background: transparent;
             color: #e9edf5;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
+            border-color: rgba(255, 255, 255, 0.8);
         }
 
         .footer-cta-btn:hover {
             background: rgba(255, 255, 255, 0.12);
             color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: var(--white);
         }
 
         @media (max-width: 1024px) {
@@ -747,8 +818,8 @@
                 <a href="what-we-offer.html">What We Offer</a>
                 <div class="dropdown-content">
                     <a href="project-management.html">Project Management Consulting</a>
+                     <a href="delivery-recovery.html">Delivery & Recovery</a>
                     <a href="enterprise-automation.html">Enterprise Automation</a>
-                    <a href="delivery-recovery.html">Delivery & Recovery</a>
                     <a href="process-consulting.html">Process Consulting</a>
                 </div>
             </li>
@@ -766,6 +837,7 @@
             <div class="hero-text">
                 <h1>Delivery & Recovery</h1>
                 <p class="tagline">Deliver at speed. Perform at scale.</p>
+                <p >We help organisations accelerate delivery, restore stability, and bring critical initiatives back on track. Whether your programme is delayed, at risk, or mission-critical, we bring hands-on delivery leadership, disciplined governance, and real-time visibility to remove blockers, regain momentum, and deliver outcomes with confidence.<p>
             </div>
             <ul class="hero-checklist">
                 <li><span class="check-icon"><i class="fas fa-check"></i></span> Project Delivery Acceleration &
@@ -788,7 +860,7 @@
         <div class="details-container">
             <div class="section-header">
                 <h2>Delivery Excellence</h2>
-                <p>Get troubled projects back on track and accelerate delivery with our proven methodologies.</p>
+                <p style="width: max-content; font-size: 25px; margin-left: -170px; ">Get troubled projects back on track and accelerate delivery with our proven methodologies.</p>
             </div>
             <div class="detail-cards">
                 <div class="detail-card">
@@ -831,23 +903,23 @@
     <section class="cta-section">
         <div class="cta-bg"></div>
         <div class="cta-content">
-            <h2>Need Project Recovery?</h2>
-            <p>Let's get your projects back on track and delivering results.</p>
+            <h2>Delivery or Recovery <br> We Help You Win at Both.</h2>
+            <p style="font-size: 25px;">Connect with us to accelerate outcomes with confidence.</p>
             <a href="contact.html" class="btn-primary">Get Help Now <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
-
-    <footer class="footer">
+    
+     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" aria-label="SpringboardPro home">
+                    <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list">
-                        <li class="footer-contact-item">
+                    <ul class="footer-contact-list" >
+                        <li class="footer-contact-item" style="margin-top: -50px;" >
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text">
+                            <div class="footer-contact-text" >
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
@@ -862,8 +934,7 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p>Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other —
-                        with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
@@ -887,7 +958,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         window.addEventListener('scroll', function () {
             const navbar = document.querySelector('.navbar');

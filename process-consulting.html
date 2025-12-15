@@ -232,6 +232,12 @@
             color: rgba(255, 255, 255, 0.7);
             font-style: italic;
         }
+        .hero-top p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
 
         /* Parallelograms */
         .hero-parallelograms-section {
@@ -434,9 +440,10 @@
         }
 
         /* ===== FOOTER ===== */
-        .footer {
+          .footer {
             background: #101322;
-            padding: 5rem 5% 2rem;
+            padding: 5rem 5% 0;
+            color: var(--white);
         }
 
         .footer-container {
@@ -446,29 +453,200 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            grid-template-columns: 1.1fr 1.1fr 1fr 1.1fr;
             gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 1.5rem;
-            display: inline-block;
+            align-items: start;
+            padding-bottom: 3.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .footer-brand .logo img {
-            height: 120px;
+            height: 86px;
             width: auto;
             display: block;
         }
 
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+        .footer-contact-list {
+            list-style: none;
+            margin-top: 1.75rem;
+            display: grid;
+            gap: 1rem;
         }
+
+        .footer-contact-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-contact-icon {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            font-size: 0.95rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text span {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-weight: 600;
+        }
+
+        .footer-contact-text a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 0.55rem;
+            align-items: center;
+        }
+
+        .footer-social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .footer-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.6rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding: 1.25rem 0;
+            background: #101322;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+
+        .footer-bottom p span {
+            color: var(--palette-primary);
+        }
+
+        /* Footer color normalization */
+        .footer,
+        .footer p,
+        .footer h4,
+        .footer a,
+        .footer-contact-item {
+            color: #e9edf5 !important;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff !important;
+        }
+
+        .footer-contact-icon {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #e9edf5;
+        }
+
+        .footer-contact-text a {
+            color: #e9edf5 !important;
+        }
+
+        .footer-social-icons a {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .footer-cta-btn {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
 
         .social-links {
             display: flex;
@@ -511,147 +689,6 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
         }
 
-        .footer-column h4 {
-            color: var(--white);
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column ul a {
-            color: rgba(255, 255, 255, 0.65);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-        }
-
-        .footer-column ul a:hover {
-            color: var(--white);
-            transform: translateX(4px);
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .footer-contact i {
-            color: var(--white);
-            margin-top: 4px;
-            width: 16px;
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        /* Footer color normalization */
-        .footer,
-        .footer p,
-        .footer h4,
-        .footer a,
-        .footer-contact-item {
-            color: #e9edf5 !important;
-        }
-
-        .footer a {
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: #ffffff !important;
-        }
-
-        .footer-contact-icon {
-            border-color: rgba(255, 255, 255, 0.35);
-            color: #e9edf5;
-        }
-
-        .footer-contact-text a {
-            color: #e9edf5 !important;
-        }
-
-        .footer-social-icons a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.05rem;
-            color: #e9edf5;
-            border: 1.5px solid rgba(255, 255, 255, 0.35);
-            background: transparent;
-        }
-
-        .footer-social-icons a:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-        }
-
-        .footer-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 180px;
-            padding: 0.9rem 1.6rem;
-            border-radius: 999px;
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            background: transparent;
-            color: #e9edf5;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-        }
-
-        .footer-cta-btn:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: var(--white);
-        }
 
         @media (max-width: 1024px) {
             .detail-cards {
@@ -741,6 +778,48 @@
                 background: transparent;
             }
         }
+         .why-points {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .why-points li {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            color: var(--gray-700);
+            font-size: 0.98rem;
+            line-height: 1.6;
+        }
+
+        .why-points li i {
+            color: #45001d;
+            margin-top: 0.2rem;
+        }
+         .why-text {
+            background: var(--gray-50);
+            border-radius: 28px;
+            padding: 3rem;
+            border: 1px solid var(--gray-100);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .why-text h3 {
+            font-size: 2.25rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .why-text p {
+            color: var(--gray-500);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
     </style>
 </head>
 
@@ -754,8 +833,8 @@
                 <a href="what-we-offer.html">What We Offer</a>
                 <div class="dropdown-content">
                     <a href="project-management.html">Project Management Consulting</a>
+                     <a href="delivery-recovery.html">Delivery & Recovery</a>
                     <a href="enterprise-automation.html">Enterprise Automation</a>
-                    <a href="delivery-recovery.html">Delivery & Recovery</a>
                     <a href="process-consulting.html">Process Consulting</a>
                 </div>
             </li>
@@ -771,7 +850,10 @@
         </div>
         <div class="hero-top">
             <h1>Process Consulting</h1>
-            <p class="tagline">Bring Order. Build Confidence.</p>
+            <p class="tagline" style="font-size: 30px !important;">Bring Order. Build Confidence.</p>
+            <p style="font-size: 20px;">Execution excellence depends on how work flows across the organisation. When processes are unclear, fragmented, or inconsistent, even the strongest strategies struggle to take hold. 
+Process Consulting at SpringboardPro brings structure, rhythm, and clarity to how work actually flows — so execution becomes predictable, scalable, and sustainable - enabling teams to operate with confidence, consistency, and control.
+</p>
         </div>
         <div class="hero-parallelograms-section">
             <div class="parallelograms-grid">
@@ -784,12 +866,46 @@
             </div>
         </div>
     </section>
+    
+
+    <section class="details-section">
+        <div class="details-container">
+            <!-- <div class="section-header">
+                <h1>Why Process Consulting Matters</h1>
+                <p>Most execution challenges do not stem from lack of capability or intent.
+                They arise because processes are unclear, disconnected, or overly dependent on individuals.
+                </p>
+                <h3>Without well-defined processes:</h3>
+                <ul class="ul-points">
+                    <li>Decisions slow down or escalate unnecessarily</li>
+                    <li>Accountability becomes ambiguous</li>
+                    <li>Handoffs break between teams</li>
+                    <li>Outcomes vary based on people, not systems</li>
+                </ul>
+
+            </div> -->
+            <div class="why-text">
+                    <h3>Why Process Consulting Matters</h3>
+                     <p>Most execution challenges do not stem from lack of capability or intent.
+                They arise because processes are unclear, disconnected, or overly dependent on individuals.
+                </p>
+                    <h6 style="font-size: 20px; ">Without well-defined processes:</h6>
+                    <ul class="why-points" style="margin-top: 20px;">
+                        <li><i class="fas fa-circle"></i><span> Decisions slow down or escalate unnecessarily</span></li>
+                        <li><i class="fas fa-circle"></i><span> Accountability becomes ambiguous</span></li>
+                        <li><i class="fas fa-circle"></i><span> Handoffs break between teams</span></li>
+                        <li><i class="fas fa-circle"></i><span> Outcomes vary based on people, not systems</span></li>
+                    </ul>
+                </div>
+        </div>
+
+    </section>
 
     <section class="details-section">
         <div class="details-container">
             <div class="section-header">
                 <h2>Process Excellence</h2>
-                <p>Bring structure and consistency to your operations with our process consulting services.</p>
+                <p>Bringing structure, standardisation, and consistency to your operations.</p>
             </div>
             <div class="detail-cards">
                 <div class="detail-card">
@@ -845,13 +961,13 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" aria-label="SpringboardPro home">
+                    <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list">
-                        <li class="footer-contact-item">
+                    <ul class="footer-contact-list" >
+                        <li class="footer-contact-item" style="margin-top: -50px;" >
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text">
+                            <div class="footer-contact-text" >
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
@@ -866,8 +982,7 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p>Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other —
-                        with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
