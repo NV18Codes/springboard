@@ -236,6 +236,13 @@
             font-style: italic;
         }
 
+        .hero-top p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-top: 15px;
+        }
+
         /* Grid Table */
         .hero-grid-section {
             flex: 1;
@@ -432,9 +439,10 @@
         }
 
         /* ===== FOOTER ===== */
-        .footer {
+          .footer {
             background: #101322;
-            padding: 5rem 5% 2rem;
+            padding: 5rem 5% 0;
+            color: var(--white);
         }
 
         .footer-container {
@@ -444,31 +452,201 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            grid-template-columns: 1.1fr 1.1fr 1fr 1.1fr;
             gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 1.5rem;
-            display: inline-block;
+            align-items: start;
+            padding-bottom: 3.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .footer-brand .logo img {
-            height: 120px;
+            height: 86px;
             width: auto;
             display: block;
         }
 
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+        .footer-contact-list {
+            list-style: none;
+            margin-top: 1.75rem;
+            display: grid;
+            gap: 1rem;
         }
 
-        .social-links {
+        .footer-contact-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-contact-icon {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            font-size: 0.95rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text span {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-weight: 600;
+        }
+
+        .footer-contact-text a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 0.55rem;
+            align-items: center;
+        }
+
+        .footer-social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .footer-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.6rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding: 1.25rem 0;
+            background: #101322;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+
+        .footer-bottom p span {
+            color: var(--palette-primary);
+        }
+
+        /* Footer color normalization */
+        .footer,
+        .footer p,
+        .footer h4,
+        .footer a,
+        .footer-contact-item {
+            color: #e9edf5 !important;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff !important;
+        }
+
+        .footer-contact-icon {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #e9edf5;
+        }
+
+        .footer-contact-text a {
+            color: #e9edf5 !important;
+        }
+
+        .footer-social-icons a {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .footer-cta-btn {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+         .social-links {
             display: flex;
             gap: 0.75rem;
         }
@@ -507,148 +685,6 @@
         .social-links a:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .footer-column h4 {
-            color: var(--white);
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column ul a {
-            color: rgba(255, 255, 255, 0.65);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-        }
-
-        .footer-column ul a:hover {
-            color: var(--white);
-            transform: translateX(4px);
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .footer-contact i {
-            color: var(--white);
-            margin-top: 4px;
-            width: 16px;
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        /* Footer color normalization */
-        .footer,
-        .footer p,
-        .footer h4,
-        .footer a,
-        .footer-contact-item {
-            color: #e9edf5 !important;
-        }
-
-        .footer a {
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: #ffffff !important;
-        }
-
-        .footer-contact-icon {
-            border-color: rgba(255, 255, 255, 0.35);
-            color: #e9edf5;
-        }
-
-        .footer-contact-text a {
-            color: #e9edf5 !important;
-        }
-
-        .footer-social-icons a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.05rem;
-            color: #e9edf5;
-            border: 1.5px solid rgba(255, 255, 255, 0.35);
-            background: transparent;
-        }
-
-        .footer-social-icons a:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-        }
-
-        .footer-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 180px;
-            padding: 0.9rem 1.6rem;
-            border-radius: 999px;
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            background: transparent;
-            color: #e9edf5;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-        }
-
-        .footer-cta-btn:hover {
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: var(--white);
         }
 
         @media (max-width: 1024px) {
@@ -745,8 +781,8 @@
                 <a href="what-we-offer.html">What We Offer</a>
                 <div class="dropdown-content">
                     <a href="project-management.html">Project Management Consulting</a>
-                    <a href="enterprise-automation.html">Enterprise Automation</a>
                     <a href="delivery-recovery.html">Delivery & Recovery</a>
+                    <a href="enterprise-automation.html">Enterprise Automation</a>
                     <a href="process-consulting.html">Process Consulting</a>
                 </div>
             </li>
@@ -763,13 +799,18 @@
         <div class="hero-top">
             <h1>Enterprise Automation</h1>
             <p class="tagline">Eliminate bottlenecks. Elevate performance.</p>
+            <p style="font-size: 20px;">We help organisations automate critical workflows, surface real-time insights, and remove manual
+                inefficiencies — so your teams can focus on what truly moves the business forward.
+                Our approach blends process excellence with intelligent automation to deliver speed, accuracy, and
+                predictable execution at scale.
+            </p>
         </div>
         <div class="hero-grid-section">
             <div class="service-grid-table">
+                  <div class="service-grid-cell">Intelligent Process Automation (IPA)</div>
                 <div class="service-grid-cell">System Integration<br>(ERP, CRM, HRMS<br>& legacy systems)</div>
                 <div class="service-grid-cell">No-code /<br>Low-code<br>Solutions</div>
                 <div class="service-grid-cell">Business Process<br>Re-engineering</div>
-                <div class="service-grid-cell">Robotic Process<br>Automation (RPA)</div>
                 <div class="service-grid-cell">Change<br>Control<br>Management</div>
                 <div class="service-grid-cell">Governance<br>Delivery<br>Enablement</div>
             </div>
@@ -780,44 +821,47 @@
         <div class="details-container">
             <div class="section-header">
                 <h2>Automation Solutions</h2>
-                <p>Transform your operations with intelligent automation that drives efficiency and innovation.</p>
+                <p style="width: max-content; font-size: 25px; margin-left: -140px !important;">Transform your operations with intelligent automation that drives efficiency and innovation.</p>
             </div>
             <div class="detail-cards">
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Intelligent Process Automation (IPA)</h3>
+                    <p>Automate high-volume, manual work with intelligent workflows that combine Robotic Process
+                        Automation and AI. We help organisations eliminate bottlenecks, reduce errors, and accelerate
+                        throughput by transforming repetitive tasks into seamless, automated processes.</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-icon"><i class="fas fa-plug"></i></div>
                     <h3>System Integration</h3>
-                    <p>Seamlessly connect your ERP, CRM, HRMS, and legacy systems to create unified workflows and
-                        eliminate data silos.</p>
+                    <p>Unify your systems to enable a smooth, connected flow of information across ERP, CRM, HRMS, and
+                        legacy platforms. Our integration approach ensures data moves accurately and efficiently, giving
+                        teams real-time visibility and reducing dependency on manual interventions.</p>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-cubes"></i></div>
                     <h3>No-code / Low-code Solutions</h3>
-                    <p>Rapidly build and deploy applications with minimal coding, empowering business users to create
-                        solutions.</p>
+                    <p>Move faster with modern automation platforms that empower teams to design and deploy workflows
+                        without complex coding. We help you create agile, scalable solutions that streamline operations,
+                        enhance productivity, and support continuous improvement.</p>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-project-diagram"></i></div>
-                    <h3>Business Process Re-engineering</h3>
-                    <p>Redesign and optimize your business processes for maximum efficiency and competitive advantage.
+                    <h3>Business Process Re-engineering (BRP)</h3>
+                    <p>Before automating, we help you simplify. Our BPR approach redefines processes for clarity, speed,
+                        and efficiency, ensuring that automation is built on strong foundations. The result is
+                        streamlined operations that reduce waste and amplify value.
                     </p>
-                </div>
-                <div class="detail-card">
-                    <div class="detail-card-icon"><i class="fas fa-robot"></i></div>
-                    <h3>Robotic Process Automation</h3>
-                    <p>Automate repetitive tasks with RPA bots that work 24/7, reducing errors and freeing your team for
-                        higher-value work.</p>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-tasks"></i></div>
                     <h3>Change Control Management</h3>
-                    <p>Implement robust change management processes that ensure smooth transitions and minimize
-                        disruption.</p>
+                    <p>Successful automation depends on people. We guide teams through the transition with structured change control, communication, and training—ensuring employees adopt, use, and champion new ways of working with confidence.</p>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-shield-alt"></i></div>
                     <h3>Governance Delivery Enablement</h3>
-                    <p>Establish governance frameworks that enable consistent delivery while maintaining flexibility and
-                        agility.</p>
+                    <p>Sustainable automation requires discipline. We establish governance models, intake frameworks, and delivery rhythms that help your organisation scale automation responsibly while maintaining quality, visibility, and control.</p>
                 </div>
             </div>
         </div>
@@ -827,22 +871,22 @@
         <div class="cta-bg"></div>
         <div class="cta-content">
             <h2>Ready to Automate?</h2>
-            <p>Let's discuss how automation can transform your business operations.</p>
+            <p style="font-size: 25px; width: max-content;;">Let's discuss how automation can transform your business operations.</p>
             <a href="contact.html" class="btn-primary">Get Started <i class="fas fa-arrow-right"></i></a>
         </div>
     </section>
 
-    <footer class="footer">
+     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" aria-label="SpringboardPro home">
+                    <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list">
-                        <li class="footer-contact-item">
+                    <ul class="footer-contact-list" >
+                        <li class="footer-contact-item" style="margin-top: -50px;" >
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text">
+                            <div class="footer-contact-text" >
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
@@ -857,8 +901,7 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p>Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other —
-                        with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
@@ -878,7 +921,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>Copyright © 2024 SpringboardPro. All rights reserved. </p>
+                <p>Copyright © 2024 SpringboardPro. All rights reserved.</p>
             </div>
         </div>
     </footer>

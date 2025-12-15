@@ -474,9 +474,10 @@
         }
 
         /* ===== FOOTER ===== */
-        .footer {
+          .footer {
             background: #101322;
-            padding: 5rem 5% 2rem;
+            padding: 5rem 5% 0;
+            color: var(--white);
         }
 
         .footer-container {
@@ -486,29 +487,200 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+            grid-template-columns: 1.1fr 1.1fr 1fr 1.1fr;
             gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 1.5rem;
-            display: inline-block;
+            align-items: start;
+            padding-bottom: 3.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .footer-brand .logo img {
-            height: 120px;
+            height: 86px;
             width: auto;
             display: block;
         }
 
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
+        .footer-contact-list {
+            list-style: none;
+            margin-top: 1.75rem;
+            display: grid;
+            gap: 1rem;
         }
+
+        .footer-contact-item {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+
+        .footer-contact-icon {
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 0.9rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            font-size: 0.95rem;
+            color: var(--white);
+        }
+
+        .footer-contact-text span {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            font-weight: 600;
+        }
+
+        .footer-contact-text a {
+            color: var(--white);
+            text-decoration: none;
+        }
+
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 0.98rem;
+        }
+
+        .footer-column h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        .footer-social {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            align-items: flex-start;
+        }
+
+        .footer-social-icons {
+            display: flex;
+            gap: 0.55rem;
+            align-items: center;
+        }
+
+        .footer-social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: var(--white);
+            display: grid;
+            place-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .footer-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.9rem 1.6rem;
+            border-radius: 999px;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            margin-top: 3rem;
+            padding: 1.25rem 0;
+            background: #101322;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+
+        .footer-bottom p span {
+            color: var(--palette-primary);
+        }
+
+        /* Footer color normalization */
+        .footer,
+        .footer p,
+        .footer h4,
+        .footer a,
+        .footer-contact-item {
+            color: #e9edf5 !important;
+        }
+
+        .footer a {
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffffff !important;
+        }
+
+        .footer-contact-icon {
+            border-color: rgba(255, 255, 255, 0.35);
+            color: #e9edf5;
+        }
+
+        .footer-contact-text a {
+            color: #e9edf5 !important;
+        }
+
+        .footer-social-icons a {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.35);
+        }
+
+        .footer-social-icons a:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        .footer-cta-btn {
+            color: #e9edf5;
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
 
         .social-links {
             display: flex;
@@ -790,8 +962,8 @@
                 <a href="what-we-offer.html">What We Offer</a>
                 <div class="dropdown-content">
                     <a href="project-management.html">Project Management Consulting</a>
-                    <a href="enterprise-automation.html">Enterprise Automation</a>
                     <a href="delivery-recovery.html">Delivery & Recovery</a>
+                    <a href="enterprise-automation.html">Enterprise Automation</a>
                     <a href="process-consulting.html">Process Consulting</a>
                 </div>
             </li>
@@ -858,51 +1030,71 @@
         <div class="details-container">
             <div class="section-header">
                 <h2>How We Help</h2>
-                <p>Comprehensive PMO services tailored to your organization's maturity and strategic objectives.</p>
+                <p style="width: max-content; font-size: 24px; margin-left: -140px;">Comprehensive PMO services tailored to your organization's maturity and strategic objectives.</p>
             </div>
             <div class="detail-cards">
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-sitemap"></i></div>
                     <h3>PMO Design, Setup, Roadmap & Implementation</h3>
-                    <p>Establish a PMO that fits your organization's culture and drives real value.</p>
+                    <h4>Build the engine that powers disciplined execution.</h4>
+                    <p>We establish a PMO that aligns with your organisation’s culture, strengthens execution
+                        discipline, and delivers measurable value. Whether you’re setting up your first PMO or rebooting
+                        an existing one, we help you build the right structure and mechanisms to support scale and
+                        strategic alignment.</p>
+
+                    <h4>What We Deliver:</h4>
                     <ul>
                         <li><i class="fas fa-check"></i> PMO maturity assessment & gap analysis</li>
                         <li><i class="fas fa-check"></i> Operating model & structure design</li>
-                        <li><i class="fas fa-check"></i> Roadmap development & phased implementation</li>
-                        <li><i class="fas fa-check"></i> Tool selection & configuration</li>
+                        <li><i class="fas fa-check"></i> Execution roadmap & phased implementation</li>
+                        <li><i class="fas fa-check"></i> Tool evaluation, selection & configuration</li>
                     </ul>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-balance-scale"></i></div>
                     <h3>Governance Framework & Operating Cadence Design</h3>
-                    <p>Implement robust governance that provides visibility and control.</p>
+                    <h4>Governance that accelerates — delivery.</h4>
+                    <p>We design governance models that bring clarity, accountability, and decision discipline to every
+                        initiative. Our operating cadences enable teams to move with rhythm and transparency, ensuring
+                        issues surface early and decisions happen at the right time.</p>
+                    <h4>What we deliver:</h4>
                     <ul>
                         <li><i class="fas fa-check"></i> Governance structure & decision rights</li>
-                        <li><i class="fas fa-check"></i> Stage-gate & approval processes</li>
-                        <li><i class="fas fa-check"></i> Reporting cadence & dashboards</li>
-                        <li><i class="fas fa-check"></i> Escalation & issue management</li>
+                        <li><i class="fas fa-check"></i> Stage-gate & approval workflows</li>
+                        <li><i class="fas fa-check"></i> Reporting cadence, dashboards & insights</li>
+                        <li><i class="fas fa-check"></i> Issue, escalation & dependency management</li>
                     </ul>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-sync-alt"></i></div>
                     <h3>Transformation & Operating Model Enhancement</h3>
-                    <p>Evolve your PMO to meet changing business needs and industry best practices.</p>
+                    <h4>Elevate your operating model for clarity, speed, and impact.</h4>
+                    <p>We redefine operating models to strengthen alignment, streamline workflows, and enable execution
+                        at scale. Our approach equips organisations with the structures, practices, and capabilities
+                        needed to navigate growth, digital change, or strategic shifts with confidence.</p>
+                    <h4>What We Deliver:</h4>
                     <ul>
                         <li><i class="fas fa-check"></i> Current state assessment & benchmarking</li>
-                        <li><i class="fas fa-check"></i> Target operating model design</li>
-                        <li><i class="fas fa-check"></i> Agile & hybrid methodology adoption</li>
-                        <li><i class="fas fa-check"></i> Change management & capability building</li>
+                        <li><i class="fas fa-check"></i> Target operating model design & optimisation</li>
+                        <li><i class="fas fa-check"></i> Process redesign & workflow enhancement</li>
+                        <li><i class="fas fa-check"></i> Agile, hybrid & modern delivery integration</li>
+                        <li><i class="fas fa-check"></i> Governance, metrics & decision-enablement models</li>
+                        <li><i class="fas fa-check"></i> Change management & capability uplift</li>
                     </ul>
                 </div>
                 <div class="detail-card">
                     <div class="detail-card-icon"><i class="fas fa-handshake"></i></div>
                     <h3>PM as a Service (PMaaS)</h3>
-                    <p>On-demand project management expertise when you need it most.</p>
+                    <h4>On-demand delivery leadership, when and where it matters most.</h4>
+                    <p>We provide experienced project and programme managers who embed into your teams and deliver with
+                        structure, clarity, and confidence. Our flexible models ensure you have the right expertise, at
+                        the right time, driving the outcomes that matter.</p>
+                    <h4>What we deliver:</h4>
                     <ul>
-                        <li><i class="fas fa-check"></i> Dedicated project managers</li>
-                        <li><i class="fas fa-check"></i> Program & portfolio oversight</li>
-                        <li><i class="fas fa-check"></i> Flexible engagement models</li>
-                        <li><i class="fas fa-check"></i> Knowledge transfer & mentoring</li>
+                        <li><i class="fas fa-check"></i> Dedicated project & programme managers</li>
+                        <li><i class="fas fa-check"></i> Portfolio & delivery oversight</li>
+                        <li><i class="fas fa-check"></i> Flexible engagement and resourcing models</li>
+                        <li><i class="fas fa-check"></i> Knowledge transfer, coaching & capability uplift</li>
                     </ul>
                 </div>
             </div>
@@ -918,17 +1110,17 @@
         </div>
     </section>
 
-    <footer class="footer">
+        <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <a href="index.html" class="logo" aria-label="SpringboardPro home">
+                    <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list">
-                        <li class="footer-contact-item">
+                    <ul class="footer-contact-list" >
+                        <li class="footer-contact-item" style="margin-top: -50px;" >
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text">
+                            <div class="footer-contact-text" >
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
@@ -943,8 +1135,7 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p>Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other —
-                        with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
