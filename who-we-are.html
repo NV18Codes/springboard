@@ -284,7 +284,7 @@
         /* ABOUT SECTION */
         .about-section {
             padding: 5.5rem 5%;
-            background: linear-gradient(180deg, var(--palette-cream) 0%, rgba(220, 175, 172, 0.28) 45%, var(--white) 100%);
+            background: linear-gradient(180deg, var(--white) 0%, rgba(220, 175, 172, 0.15) 50%, var(--white) 100%);
         }
 
         .about-container {
@@ -292,15 +292,14 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: stretch;
+            gap: 5rem;
+            align-items: center;
         }
 
         .about-media,
         .about-text {
             display: flex;
             flex-direction: column;
-            height: 100%;
         }
 
         .about-media {
@@ -308,22 +307,26 @@
         }
 
         .about-text {
-            justify-content: center;
+            padding: 2rem 0;
         }
 
         .about-image {
             position: relative;
+            width: 100%;
             height: 100%;
-            min-height: 520px;
+            min-height: 500px;
             border-radius: 24px;
             overflow: hidden;
             background: #ffffff;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .about-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         .about-image::before {
@@ -343,17 +346,17 @@
         }
 
         .about-text h2 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             color: var(--black);
             margin-bottom: 1.5rem;
-            font-weight: 400;
+            font-weight: 600;
             letter-spacing: -0.5px;
         }
 
         .about-text p {
-            color: var(--gray-600);
-            font-size: 1.05rem;
-            line-height: 1.8;
+            color: var(--gray-700);
+            font-size: 1.15rem;
+            line-height: 1.9;
             margin-bottom: 1.5rem;
         }
 
@@ -481,6 +484,15 @@
         }
 
         @media (max-width: 900px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-text h2 {
+                font-size: 2.5rem;
+            }
+
             .what-defines-container {
                 grid-template-columns: 1fr;
             }
@@ -498,75 +510,97 @@
             font-size: 1.15rem;
         }
 
-        /* FOUNDER'S MESSAGE */
+        /* FOUNDER'S MESSAGE - MINIMALIST DESIGN */
         .founder-message-section {
-            padding: 6rem 5%;
-            background: linear-gradient(135deg, rgba(145, 17, 32, 0.08), rgba(105, 3, 22, 0.18));
-            color: var(--black);
+            padding: 7rem 5%;
+            background: #ffffff;
+            position: relative;
         }
 
         .founder-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 4rem;
+            grid-template-columns: 380px 1fr;
+            gap: 6rem;
             align-items: center;
         }
 
         .founder-img-box {
             position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            /* border: 2px solid rgba(255, 255, 255, 0.1); */
         }
 
         .founder-img-box img {
             width: 100%;
             height: auto;
             display: block;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .founder-content {
+            padding: 0;
         }
 
         .founder-content h3 {
-            font-size: 2.6rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
+            font-family: 'Nunito', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
         .founder-quote {
-            font-size: 1.2rem;
-            color: var(--black);
+            font-size: 1.4rem;
+            font-weight: 500;
+            font-style: italic;
+            color: #45001d;
             line-height: 1.7;
-            padding-left: 1.25rem;
-            border-left: 4px solid rgba(145, 17, 32, 0.35);
-            margin-bottom: 1.75rem;
+            padding-left: 2rem;
+            border-left: 3px solid #911120;
+            margin: 2.5rem 0;
         }
 
         .founder-content p {
-            color: var(--black);
-            font-size: 1.15rem;
+            color: #4a4a4a;
+            font-size: 1.1rem;
             line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
         .founder-meta {
-            font-weight: 700;
-            color: #45001d;
-            margin-bottom: 0.75rem;
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: #911120;
+            color: white;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
         }
 
         .founder-content .signature {
-            margin-top: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e5e5e5;
         }
 
         .founder-content .signature h4 {
-            font-size: 1.5rem;
-            margin-bottom: 0.2rem;
-            color: black;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1.6rem;
+            margin: 0 0 0.3rem 0;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
         .founder-content .signature span {
-            color: black;
+            color: #666;
+            font-size: 1rem;
+            font-weight: 400;
         }
 
         /* HOW WE WORK FLOW */
@@ -759,7 +793,9 @@
             width: 100%;
             height: 220px;
             border-radius: 22px;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center center;
+            background: #f5f5f5;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
             margin-bottom: 1.25rem;
         }
@@ -814,6 +850,7 @@
         .team-card:hover .know-more-btn i {
             transform: translateX(3px);
         }
+
         /* ------------------------------------------- */
 
         .team-modal {
@@ -932,17 +969,18 @@
         }
 
         .cta-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             border-radius: 36px;
-            padding: 3.5rem;
+            padding: 4rem 5rem;
             background: linear-gradient(135deg, rgba(145, 17, 32, 0.05), rgba(145, 17, 32, 0.15));
             box-shadow: 0 25px 90px rgba(0, 0, 0, 0.12);
             display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
             overflow: hidden;
             position: relative;
+            align-items: center;
         }
 
         .cta-container::after {
@@ -1041,7 +1079,7 @@
         }
 
         /* ===== FOOTER ===== */
-       .footer {
+        .footer {
             background: #101322;
             padding: 5rem 5% 0;
             color: var(--white);
@@ -1273,12 +1311,25 @@
 
             .founder-container {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 3rem;
             }
 
             .founder-img-box {
-                width: 200px;
+                max-width: 350px;
                 margin: 0 auto;
+            }
+
+            .founder-content h3 {
+                font-size: 2.2rem;
+            }
+
+            .founder-quote {
+                font-size: 1.2rem;
+                padding-left: 1.5rem;
+            }
+
+            .founder-content p {
+                font-size: 1rem;
             }
 
             .footer-grid {
@@ -1457,15 +1508,18 @@
             </div>
 
             <div class="about-text">
-                <h2 style="font-size: 40px; font-family: Nunito;">From Strategy to Execution</h2>
-                <p>With over two decades of leadership and 3,000+ projects behind us, we deliver disciplined execution
+                <h2 style="font-size: 3.4rem; font-family: Nunito;">From Strategy to Execution</h2>
+                <p style="font-size: 1.35rem;"> With over two decades of leadership and 3,000+ projects behind us, we
+                    deliver disciplined execution
                     and measurable outcomes — for every client, at every step, in every project.</p>
 
-                <p>Execution is where strategy comes alive — and where most organisations struggle. We help leaders
+                <p style="font-size: 1.35rem;">Execution is where strategy comes alive — and where most organisations
+                    struggle. We help leaders
                     navigate complexity with clarity, cadence, and control, combining governance, delivery assurance,
                     automation, and process excellence to create consistent and predictable performance.</p>
 
-                <p>We act as your launchpad for success, building the rhythm, structure, and decision discipline
+                <p style="font-size: 1.35rem;">We act as your launchpad for success, building the rhythm, structure, and
+                    decision discipline
                     required to move confidently from intention to impact.</p>
             </div>
 
@@ -1564,37 +1618,39 @@
     <section class="founder-message-section">
         <div class="founder-container">
             <div class="founder-img-box">
-                <img src="founder-ceo.jpg" alt="Cecilia D'Silva">
+                <img src="founder-ceo.jpg" alt="Cecilia D'Silva - Founder & CEO">
             </div>
             <div class="founder-content">
-                <h3 style="font-family: nunito; color: black;">Founder's Story</h3>
-                <p>After two decades in leadership roles across HSBC, Oracle, DHL, and Kinara Capital — where she
+                <h3>Founder's Story</h3>
+                <span class="founder-meta">INDIA PMO LEADER OF THE YEAR 2022</span>
+                
+                <p>After two decades in leadership roles across <strong>HSBC, Oracle, DHL, and Kinara Capital</strong> — where she
                     established enterprise PMOs, led business transformations, scaled operations, and steered more than
-                    3,000 projects — Cecilia D'Silva recognised a universal challenge: strategies, though strong, often
+                    <strong>3,000 projects</strong> — Cecilia D'Silva recognised a universal challenge: strategies, though strong, often
                     stumbled in execution.</p>
 
-                <p>This insight sparked the founding of SpringboardPro, a firm built to bridge the gap between ambition
+                <p>This insight sparked the founding of <strong>SpringboardPro</strong>, a firm built to bridge the gap between ambition
                     and tangible outcomes.</p>
 
-                <p>An award-winning professional, Certified Independent Director, PMP, and former Senior Vice President
-                    – PMO, Cecilia brings a unique blend of governance discipline, strategic clarity, and people-centric
-                    leadership. Her accolade as India PMO Leader of the Year 2022 underscores her commitment to
-                    championing high standards, cultivating strategic partnerships, and developing future-ready
-                    capabilities across industries.</p>
+                <p>An award-winning professional, <strong>Certified Independent Director, PMP</strong>, and former <strong>Senior Vice President
+                    – PMO</strong>, Cecilia brings a unique blend of governance discipline, strategic clarity, and people-centric
+                    leadership. Her commitment to championing high standards, cultivating strategic partnerships, and developing future-ready
+                    capabilities across industries has made her a recognized leader in the field.</p>
 
-                <p class="founder-quote" style="font-style: italic; font-weight: 600; color: #45001d;">"Execution is
-                    where strategy becomes reality."</p>
+                <p class="founder-quote">"Execution is where strategy becomes reality."</p>
 
                 <p>SpringboardPro embodies this philosophy — that execution excellence is a powerful competitive
                     advantage, and that every organisation deserves a trusted partner who can turn intent into outcomes
                     with clarity and confidence.</p>
 
-                <p>For Cecilia, SpringboardPro is more than a consulting firm; it is a launchpad for sustainable growth,
-                    collaboration, and success.</p>
+                <p>For Cecilia, SpringboardPro is more than a consulting firm; it is a <strong>launchpad for sustainable growth,
+                    collaboration, and success</strong>.</p>
 
                 <div class="signature">
-                    <h4>Cecilia D'Silva</h4>
-                    <span>Founder & CEO</span>
+                    <div>
+                        <h4>Cecilia D'Silva</h4>
+                        <span>Founder & CEO</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1680,12 +1736,18 @@
     </section>
 
     <!-- WHY WE EXIST SECTION -->
-    <section style="padding: 5rem 5%; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
-        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-            <h2 style="font-size: 3rem; color: var(--black); margin-bottom: 1.5rem; font-weight: 600;">Why We Exist</h2>
-            <p style="font-size: 1.3rem; line-height: 1.8; color: var(--gray-800); font-weight: 500;">
-                Because execution excellence is a strategic advantage — and every organisation deserves a trusted partner who can provide the clarity, structure, and momentum needed to turn ambition into outcomes.
-            </p>
+    <section style="padding: 6rem 5%; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
+        <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+            <div>
+                <h2 style="font-size: 3.5rem; color: var(--black); margin-bottom: 1.5rem; font-weight: 600; font-family: Nunito;">Why We Exist</h2>
+                <p style="font-size: 1.4rem; font-weight: 500; line-height: 1.8; color: var(--gray-700);">
+                    Because execution excellence is a strategic advantage — and every organisation deserves a trusted
+                    partner who can provide the clarity, structure, and momentum needed to turn ambition into outcomes.
+                </p>
+            </div>
+            <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);">
+                <img src="why-we-exist.jpeg" alt="Our mission and purpose" style="width: 100%; height: auto; max-height: 280px; object-fit: cover; object-position: center top; display: block;">
+            </div>
         </div>
     </section>
 
@@ -1708,9 +1770,14 @@
                         <span>Transform your strategy into measurable impact.</span>
                     </li>
                 </ul>
-                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(69,0,29,0.08); border-radius: 16px; border-left: 4px solid #45001d;">
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem; font-family: Nunito; font-weight: 600; color: #45001d;">Ready to Transform?</h3>
-                    <p style="font-size: 1.05rem; line-height: 1.6; color: var(--gray-800); margin: 0;">Bring in a strategic growth partner who turns bold intent into confident execution. Let's build clarity, rhythm, and impact — together.</p>
+                <div
+                    style="margin-top: 2rem; padding: 1.5rem; background: rgba(69,0,29,0.08); border-radius: 16px; border-left: 4px solid #45001d;">
+                    <h3
+                        style="font-size: 1.5rem; margin-bottom: 0.75rem; font-family: Nunito; font-weight: 600; color: #45001d;">
+                        Ready to Transform?</h3>
+                    <p style="font-size: 1.05rem; line-height: 1.6; color: var(--gray-800); margin: 0;">Bring in a
+                        strategic growth partner who turns bold intent into confident execution. Let's build clarity,
+                        rhythm, and impact — together.</p>
                 </div>
                 <div class="cta-actions" style="margin-top: 2rem;">
                     <a href="contact.html" class="btn-outline">Connect With Us →</a>
@@ -1724,24 +1791,24 @@
 
 
     <!-- FOOTER -->
-   <footer class="footer">
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list" >
-                        <li class="footer-contact-item" style="margin-top: -50px;" >
+                    <ul class="footer-contact-list">
+                        <li class="footer-contact-item" style="margin-top: -50px;">
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text"  style="margin-top: 20px !important;">
+                            <div class="footer-contact-text" style="margin-top: 20px !important;">
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
                         </li>
                         <li class="footer-contact-item">
                             <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
-                            <div class="footer-contact-text" >
+                            <div class="footer-contact-text">
                                 <span>EMAIL</span>
                                 <a href="mailto:reachus@springboardpro.in">reachus@springboardpro.in</a>
                             </div>
@@ -1749,7 +1816,8 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets
+                        you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>

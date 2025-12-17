@@ -181,11 +181,13 @@
 
         /* HERO */
         .page-hero {
-            min-height: 80vh;
+            min-height: 100vh;
             background: #45001d;
             position: relative;
             display: flex;
-            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 5% 6rem;
         }
 
         .page-hero::before {
@@ -195,7 +197,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
             z-index: 1;
         }
 
@@ -215,41 +218,43 @@
         }
 
         .hero-top {
-            padding: 10rem 5% 4rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            text-align: center;
             position: relative;
             z-index: 10;
+            width: 100%;
         }
 
         .hero-top h1 {
             font-family: 'Nunito', sans-serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             color: var(--white);
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            max-width: 600px;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
 
         .hero-top .tagline {
-            font-size: 1.35rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-style: italic;
+            font-size: 1.8rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            display: block;
         }
 
         .hero-top p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 1.15rem;
             line-height: 1.8;
-            margin-top: 15px;
+            max-width: 900px;
+            margin: 0 auto 4rem;
         }
 
         /* Grid Table */
         .hero-grid-section {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 5% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
             position: relative;
             z-index: 10;
         }
@@ -257,31 +262,34 @@
         .service-grid-table {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            max-width: 1000px;
+            gap: 1.5rem;
             width: 100%;
         }
 
         .service-grid-cell {
-            padding: 2.5rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
             color: var(--white);
-            font-size: 1.1rem;
+            font-size: 1.15rem;
+            font-weight: 600;
             line-height: 1.5;
-            border-right: 1px solid rgba(255, 255, 255, 0.15);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .service-grid-cell:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .service-grid-cell:nth-child(3n) {
-            border-right: none;
-        }
-
-        .service-grid-cell:nth-child(n+4) {
-            border-bottom: none;
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.3);
         }
 
         /* DETAILS */
@@ -799,20 +807,20 @@
         <div class="hero-top">
             <h1>Enterprise Automation</h1>
             <p class="tagline">Eliminate bottlenecks. Elevate performance.</p>
-            <p style="font-size: 20px;">We help organisations automate critical workflows, surface real-time insights, and remove manual
+            <p>We help organisations automate critical workflows, surface real-time insights, and remove manual
                 inefficiencies — so your teams can focus on what truly moves the business forward.
                 Our approach blends process excellence with intelligent automation to deliver speed, accuracy, and
                 predictable execution at scale.
             </p>
-        </div>
-        <div class="hero-grid-section">
-            <div class="service-grid-table">
-                  <div class="service-grid-cell">Intelligent Process Automation (IPA)</div>
-                <div class="service-grid-cell">System Integration<br>(ERP, CRM, HRMS<br>& legacy systems)</div>
-                <div class="service-grid-cell">No-code /<br>Low-code<br>Solutions</div>
-                <div class="service-grid-cell">Business Process<br>Re-engineering</div>
-                <div class="service-grid-cell">Change<br>Control<br>Management</div>
-                <div class="service-grid-cell">Governance<br>Delivery<br>Enablement</div>
+            <div class="hero-grid-section">
+                <div class="service-grid-table">
+                    <div class="service-grid-cell">Intelligent Process Automation (IPA)</div>
+                    <div class="service-grid-cell">System Integration (ERP, CRM, HRMS & legacy systems)</div>
+                    <div class="service-grid-cell">No-code / Low-code Solutions</div>
+                    <div class="service-grid-cell">Business Process Re-engineering</div>
+                    <div class="service-grid-cell">Change Control Management</div>
+                    <div class="service-grid-cell">Governance Delivery Enablement</div>
+                </div>
             </div>
         </div>
     </section>
