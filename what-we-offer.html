@@ -534,8 +534,8 @@
             background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
         }
 
-        /* FOOTER (synced with index) */
-        .footer {
+        /* ===== FOOTER ===== */
+       .footer {
             background: #101322;
             padding: 5rem 5% 0;
             color: var(--white);
@@ -664,12 +664,10 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-width: 180px;
             padding: 0.9rem 1.6rem;
             border-radius: 999px;
             border: 1.5px solid rgba(255, 255, 255, 0.8);
-            background: transparent;
-            color: #e9edf5;
+            color: var(--white);
             text-decoration: none;
             font-weight: 700;
             letter-spacing: 0.05em;
@@ -678,7 +676,6 @@
 
         .footer-cta-btn:hover {
             background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
             transform: translateY(-2px);
         }
 
@@ -696,7 +693,7 @@
         }
 
         .footer-bottom p span {
-            color: var(--palette-primary, #911120);
+            color: var(--palette-primary);
         }
 
         /* Footer color normalization */
@@ -726,16 +723,8 @@
         }
 
         .footer-social-icons a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.05rem;
             color: #e9edf5;
-            border: 1.5px solid rgba(255, 255, 255, 0.35);
-            background: transparent;
+            border-color: rgba(255, 255, 255, 0.35);
         }
 
         .footer-social-icons a:hover {
@@ -744,179 +733,13 @@
         }
 
         .footer-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 180px;
-            padding: 0.9rem 1.6rem;
-            border-radius: 999px;
-            border: 1.5px solid rgba(255, 255, 255, 0.8);
-            background: transparent;
             color: #e9edf5;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
+            border-color: rgba(255, 255, 255, 0.8);
         }
 
         .footer-cta-btn:hover {
             background: rgba(255, 255, 255, 0.12);
             color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        /* FOOTER */
-        .footer {
-            background: #101322;
-            padding: 5rem 5% 2rem;
-        }
-
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
-            gap: 3rem;
-            padding-bottom: 3rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-brand .logo {
-            margin-bottom: 1.5rem;
-            display: inline-block;
-        }
-
-        .footer-brand .logo img {
-            height: 120px;
-            width: auto;
-            display: block;
-        }
-
-        .footer-brand p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 0.75rem;
-        }
-
-        .social-links a {
-            width: 42px;
-            height: 42px;
-            background: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--black);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .social-links a.linkedin {
-            color: #0a66c2;
-        }
-
-        .social-links a.twitter {
-            color: #1da1f2;
-        }
-
-        .social-links a.facebook {
-            color: #1877f2;
-        }
-
-        .social-links a.instagram {
-            color: #e4405f;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
-        }
-
-        .footer-column h4 {
-            color: var(--white);
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-column ul a {
-            color: rgba(255, 255, 255, 0.65);
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            white-space: nowrap;
-        }
-
-        .footer-column ul a:hover {
-            color: var(--white);
-            transform: translateX(4px);
-        }
-
-        .footer-contact p {
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-        }
-
-        .footer-contact i {
-            color: var(--white);
-            margin-top: 4px;
-            width: 16px;
-        }
-
-        .footer-bottom {
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .footer-bottom p {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.5);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-bottom-links a:hover {
-            color: var(--white);
         }
 
         /* RESPONSIVE */
@@ -1054,8 +877,8 @@
                 <a href="what-we-offer.html">What We Offer</a>
                 <div class="dropdown-content">
                     <a href="project-management.html">Project Management Consulting</a>
+                      <a href="delivery-recovery.html">Delivery & Recovery</a>
                     <a href="enterprise-automation.html">Enterprise Automation</a>
-                    <a href="delivery-recovery.html">Delivery & Recovery</a>
                     <a href="process-consulting.html">Process Consulting</a>
                 </div>
             </li>
@@ -1206,7 +1029,7 @@
                     <ul class="footer-contact-list" >
                         <li class="footer-contact-item" style="margin-top: -50px;" >
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text" >
+                            <div class="footer-contact-text"  style="margin-top: 20px !important;">
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
