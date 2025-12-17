@@ -333,7 +333,6 @@
             left: 0;
             right: 0;
             bottom: 0;
-            /* background: linear-gradient(135deg, rgba(145, 17, 32, 0.15) 0%, rgba(145, 17, 32, 0.4) 100%); */
             z-index: 1;
         }
 
@@ -783,6 +782,40 @@
             text-transform: uppercase;
         }
 
+        /* ------ NEW KNOW MORE BUTTON STYLING ------ */
+        .know-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.25rem;
+            padding: 0.6rem 1.25rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 50px;
+            background: transparent;
+            color: var(--gray-600);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .know-more-btn {
+            background: #45001d;
+            border-color: #45001d;
+            color: var(--white);
+        }
+
+        .know-more-btn i {
+            font-size: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover .know-more-btn i {
+            transform: translateX(3px);
+        }
+        /* ------------------------------------------- */
+
         .team-modal {
             position: fixed;
             inset: 0;
@@ -1008,7 +1041,7 @@
         }
 
         /* ===== FOOTER ===== */
-        .footer {
+       .footer {
             background: #101322;
             padding: 5rem 5% 0;
             color: var(--white);
@@ -1387,8 +1420,8 @@
                 <a href="what-we-offer.html">What We Offer</a>
                 <div class="dropdown-content">
                     <a href="project-management.html">Project Management Consulting</a>
-                    <a href="enterprise-automation.html">Enterprise Automation</a>
                     <a href="delivery-recovery.html">Delivery & Recovery</a>
+                    <a href="enterprise-automation.html">Enterprise Automation</a>
                     <a href="process-consulting.html">Process Consulting</a>
                 </div>
             </li>
@@ -1584,7 +1617,8 @@
                     <img src="./images/Cecilia D'Silva.jpg" alt="Cecilia D'Silva">
                     <h3 style="font-family: nunito;">Cecilia D'Silva</h3>
                     <span class="role" style="background-color: transparent; color: black;">Founder & CEO</span> <br>
-                    <span style="background-color: #e4e4e7; padding: 5px; border-radius: 10px;">know more</span>
+                    <!-- UPDATED KNOW MORE BUTTON -->
+                    <span class="know-more-btn">Know More <i class="fas fa-arrow-right"></i></span>
                 </button>
 
                 <button class="team-card" type="button" data-name="Amulya Fernandes" data-role="Managing Partner"
@@ -1593,8 +1627,9 @@
                     data-linkedin="#" data-email="reachus@springboardpro.in">
                     <img src="./images/Amulya Fernandes.jpg" alt="Amulya Fernandes">
                     <h3 style="font-family: nunito;">Amulya Fernandes</h3>
-                    <span class="role" style="background-color: transparent; color: black;">Managing Partner</span>
-                    <span style="background-color: #e4e4e7; padding: 5px; border-radius: 10px;">know more</span>
+                    <span class="role" style="background-color: transparent; color: black;">Managing Partner</span><br>
+                    <!-- UPDATED KNOW MORE BUTTON -->
+                    <span class="know-more-btn">Know More <i class="fas fa-arrow-right"></i></span>
                 </button>
 
                 <button class="team-card" type="button" data-name="Greg Leman"
@@ -1605,8 +1640,9 @@
                     <img src="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg" alt="Greg Leman">
                     <h3 style="font-family: nunito;">Greg Leman</h3>
                     <span class="role" style="background-color: transparent; color: black;">Advisor - Emerging
-                        Technologies</span>
-                    <span style="background-color: #e4e4e7; padding: 5px; border-radius: 10px;">know more</span>
+                        Technologies</span><br>
+                    <!-- UPDATED KNOW MORE BUTTON -->
+                    <span class="know-more-btn">Know More <i class="fas fa-arrow-right"></i></span>
                 </button>
 
                 <button class="team-card" type="button" data-name="Manoj Kumar Agarwal"
@@ -1617,8 +1653,9 @@
                     <img src="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg" alt="Manoj Kumar Agarwal">
                     <h3 style="font-family: nunito;">Manoj Kumar Agarwal</h3>
                     <span class="role" style="background-color: transparent; color: black;">Advisor - Business Strategy
-                        & Integration</span>
-                    <span style="background-color: #e4e4e7; padding: 5px; border-radius: 10px;">know more</span>
+                        & Integration</span><br>
+                    <!-- UPDATED KNOW MORE BUTTON -->
+                    <span class="know-more-btn">Know More <i class="fas fa-arrow-right"></i></span>
                 </button>
             </div>
         </div>
@@ -1687,24 +1724,24 @@
 
 
     <!-- FOOTER -->
-    <footer class="footer">
+   <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a style="margin-top: -30px;" href="index.html" class="logo" aria-label="SpringboardPro home">
                         <img src="springboardlogo-removebg-preview.png" alt="SpringboardPro logo">
                     </a>
-                    <ul class="footer-contact-list">
-                        <li class="footer-contact-item" style="margin-top: -50px;">
+                    <ul class="footer-contact-list" >
+                        <li class="footer-contact-item" style="margin-top: -50px;" >
                             <span class="footer-contact-icon"><i class="fas fa-phone"></i></span>
-                            <div class="footer-contact-text">
+                            <div class="footer-contact-text"  style="margin-top: 20px !important;">
                                 <span>CALL US</span>
                                 <a href="tel:+919148317322">+91 914 831 7322</a>
                             </div>
                         </li>
                         <li class="footer-contact-item">
                             <span class="footer-contact-icon"><i class="fas fa-envelope"></i></span>
-                            <div class="footer-contact-text">
+                            <div class="footer-contact-text" >
                                 <span>EMAIL</span>
                                 <a href="mailto:reachus@springboardpro.in">reachus@springboardpro.in</a>
                             </div>
@@ -1712,8 +1749,7 @@
                     </ul>
                 </div>
                 <div class="footer-column footer-about">
-                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets
-                        you from one to the other — with clarity, cadence, and confidence.</p>
+                    <p style="margin-top: 50px;">Strategy talks. Execution wins. SpringboardPro is the force that gets you from one to the other — with clarity, cadence, and confidence.</p>
                 </div>
                 <div class="footer-column footer-address">
                     <h4>ADDRESS</h4>
