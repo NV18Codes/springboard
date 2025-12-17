@@ -1031,16 +1031,16 @@
 
         /* ===== HOW WE HELP ===== */
         .how-help-section {
-            padding: 7rem 5%;
-            background: linear-gradient(135deg, rgba(220, 175, 172, 0.35), rgba(220, 211, 214, 0.4));
+            padding: 6rem 5%;
+            background: linear-gradient(180deg, var(--palette-cream) 0%, rgba(220, 175, 172, 0.20) 50%, var(--white) 100%);
         }
 
         .how-help-container {
             max-width: 1400px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 3rem;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 5rem;
             align-items: center;
         }
 
@@ -1061,64 +1061,93 @@
 
         .how-help-text h2 {
             font-family: 'Nunito', sans-serif;
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             color: var(--black);
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+            margin-bottom: 1rem;
+            font-weight: 600;
             letter-spacing: -0.5px;
             line-height: 1.2;
         }
 
+        .how-help-subtitle {
+            font-size: 1.8rem;
+            color: var(--gray-700);
+            font-weight: 600;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+
         .how-help-text p.lead {
             font-size: 1.15rem;
-            color: var(--black);
-            line-height: 1.85;
-            margin-bottom: 1.75rem;
+            color: var(--gray-600);
+            line-height: 1.8;
+            margin-bottom: 2rem;
         }
 
         .how-help-list {
             list-style: none;
             display: grid;
-            gap: 0.75rem;
+            gap: 1.5rem;
+            margin: 0;
+            padding: 0;
         }
 
         .how-help-list li {
             display: flex;
             align-items: flex-start;
-            gap: 0.65rem;
-            font-size: 1.05rem;
-            color: var(--gray-800);
-            line-height: 1.6;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: var(--gray-700);
+            line-height: 1.7;
         }
 
         .how-help-list li i {
-            color: #45001d;
-            font-size: 0.95rem;
-            margin-top: 0.25rem;
+            color: var(--burgundy);
+            font-size: 0.5rem;
+            margin-top: 0.6rem;
         }
 
         .how-help-visual {
             position: relative;
-            border-radius: 28px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
-            background: var(--white);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
         }
 
         .how-help-visual img {
             width: 100%;
             height: 100%;
+            min-height: 450px;
             object-fit: cover;
             display: block;
         }
 
-        @media (max-width: 768px) {
-            .how-help-section {
-                padding: 6rem 1.5rem;
+        @media (max-width: 900px) {
+            .how-help-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
             }
 
             .how-help-text h2 {
-                font-size: 2.25rem;
+                font-size: 2.5rem;
+            }
+
+            .how-help-subtitle {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .how-help-section {
+                padding: 5rem 1.5rem;
+            }
+
+            .how-help-text h2 {
+                font-size: 2rem;
+            }
+
+            .how-help-subtitle {
+                font-size: 1.2rem;
             }
         }
 
@@ -1261,17 +1290,18 @@
         }
 
         .cta-container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             border-radius: 36px;
-            padding: 3.5rem;
+            padding: 4rem 5rem;
             background: linear-gradient(135deg, rgba(69, 0, 29, 0.06), rgba(92, 0, 40, 0.16));
             box-shadow: 0 25px 90px rgba(0, 0, 0, 0.12);
             display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-            gap: 3rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
             overflow: hidden;
             position: relative;
+            align-items: center;
         }
 
         .cta-container::after {
@@ -2274,19 +2304,20 @@
     <section class="how-help-section">
         <div class="how-help-container">
             <div class="how-help-text">
-                <h2 style="font-family: Nunito; margin-bottom: 20%; margin-left: 80%; width: max-content !important;" >How We Help</h2>
-                <h3 class="lead" style="margin-top: -80px !important;">Your Strategic Growth Partner in Execution Excellence.<br>We bring clarity, structure, and execution discipline <br>across your programmes by:</h3>
-                <br><ul class="how-help-list">
-                    <li><i class="fas fa-check"></i> Embedding strong governance and decision rhythms</li>
-                    <li><i class="fas fa-check"></i> Creating visibility through dashboards and reporting</li>
-                    <li><i class="fas fa-check"></i> Strengthening delivery teams through coaching and tooling</li>
-                    <li><i class="fas fa-check"></i> Eliminating slowdowns with process optimisation and automation</li>
-                    <li><i class="fas fa-check"></i> Establishing cadence, communication, and accountability</li>
-                    <li><i class="fas fa-check"></i> Aligning initiatives to strategy and measurable outcomes</li>
+                <h2>How We Help</h2>
+                <p class="how-help-subtitle">Your Strategic Growth Partner in Execution Excellence.</p>
+                <p class="lead">We bring clarity, structure, and execution discipline across your programmes by:</p>
+                <ul class="how-help-list">
+                    <li><i class="fas fa-circle"></i><span>Embedding strong governance and decision rhythms</span></li>
+                    <li><i class="fas fa-circle"></i><span>Creating visibility through dashboards and reporting</span></li>
+                    <li><i class="fas fa-circle"></i><span>Strengthening delivery teams through coaching and tooling</span></li>
+                    <li><i class="fas fa-circle"></i><span>Eliminating slowdowns with process optimisation and automation</span></li>
+                    <li><i class="fas fa-circle"></i><span>Establishing cadence, communication, and accountability</span></li>
+                    <li><i class="fas fa-circle"></i><span>Aligning initiatives to strategy and measurable outcomes</span></li>
                 </ul>
             </div>
             <div class="how-help-visual">
-                <img src="howehelp.jpg" alt="Execution excellence" loading="lazy"s>
+                <img src="howehelp.jpg" alt="Team collaboration and execution" loading="lazy">
             </div>
         </div>
     </section>
