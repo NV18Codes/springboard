@@ -513,116 +513,139 @@
         /* FOUNDER'S MESSAGE - MODERN MAGAZINE LAYOUT */
         .founder-message-section {
             padding: 8rem 5%;
-            background: linear-gradient(135deg, rgba(220, 211, 214, 0.5) 0%, rgba(220, 175, 172, 0.35) 50%, rgba(255, 255, 255, 0.95) 100%);
+            background: #f5f5f5;
             position: relative;
         }
 
         .founder-container {
-            max-width: 1450px;
+            max-width: 1400px;
             margin: 0 auto;
             position: relative;
-            display: grid;
-            grid-template-columns: 480px 1fr;
-            gap: 0;
             background: white;
-            border-radius: 24px;
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ddd;
+        }
+
+        .founder-header {
+            background: #2a2a2a;
+            color: white;
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Georgia', serif;
+            font-size: 0.75rem;
+            border-bottom: 3px solid #911120;
+        }
+
+        .founder-header-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .founder-body {
+            padding: 2.5rem;
+        }
+
+        .founder-article-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #2a2a2a;
+        }
+
+        .founder-article-title h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .founder-meta {
+            display: block;
+            padding: 0;
+            background: transparent;
+            color: #666;
+            font-weight: 500;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            border-radius: 0;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            width: 100%;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+
+        .founder-content {
+            position: relative;
         }
 
         .founder-img-box {
-            position: relative;
-            background: linear-gradient(180deg, rgba(145, 17, 32, 0.03) 0%, rgba(145, 17, 32, 0.08) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem 2rem;
-        }
-
-        .founder-img-wrapper {
-            position: relative;
-            width: 100%;
+            float: left;
+            width: 400px;
+            margin: 0 2rem 1.5rem 0;
         }
 
         .founder-img-box img {
             width: 100%;
             height: auto;
             display: block;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-
-        .founder-content {
-            padding: 4rem 4.5rem;
-            background: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .founder-meta {
-            display: inline-block;
-            padding: 0.5rem 1.2rem;
-            background: rgba(145, 17, 32, 0.08);
-            color: #911120;
-            font-weight: 700;
-            font-size: 0.7rem;
-            letter-spacing: 1px;
-            border-radius: 6px;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            width: fit-content;
-        }
-
-        .founder-content h3 {
-            font-family: 'Nunito', sans-serif;
-            font-size: 3rem;
-            margin-bottom: 2rem;
-            font-weight: 800;
-            color: #1a1a1a;
-            letter-spacing: -1px;
-            line-height: 1.1;
+            border-radius: 0;
+            box-shadow: none;
+            border: 1px solid #999;
+            filter: grayscale(20%);
         }
 
         .founder-content p {
-            color: #4a4a4a;
-            font-size: 1.05rem;
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            text-align: justify;
+            font-family: 'Georgia', serif;
         }
 
         .founder-content p:last-of-type {
-            margin-bottom: 2rem;
+            margin-bottom: 0;
         }
 
         .founder-content .signature {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(145, 17, 32, 0.1);
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #999;
             display: flex;
-            align-items: center;
-            gap: 1.5rem;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-family: 'Georgia', serif;
+            clear: both;
         }
 
         .founder-content .signature::before {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #911120 0%, #690316 100%);
-            border-radius: 2px;
+            content: '—';
+            font-size: 1.2rem;
+            color: #666;
         }
 
         .founder-content .signature h4 {
-            font-family: 'Nunito', sans-serif;
-            font-size: 1.5rem;
-            margin: 0 0 0.3rem 0;
+            font-family: 'Georgia', serif;
+            font-size: 0.85rem;
+            margin: 0;
             color: #1a1a1a;
             font-weight: 700;
+            font-style: italic;
         }
 
         .founder-content .signature span {
-            color: #911120;
-            font-size: 0.95rem;
+            color: #666;
+            font-size: 0.75rem;
+            font-style: italic;
             font-weight: 600;
         }
 
@@ -814,7 +837,8 @@
 
         .team-card img {
             width: 100%;
-            height: 220px;
+            aspect-ratio: 16 / 10;
+            height: auto;
             border-radius: 22px;
             object-fit: contain;
             object-position: center center;
@@ -1507,20 +1531,34 @@
             }
 
             /* Founder Section Responsive */
-            .founder-container {
-                grid-template-columns: 1fr;
+            .founder-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.25rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .founder-body {
+                padding: 1.5rem;
+            }
+
+            .founder-article-title h2 {
+                font-size: 1.5rem;
+                letter-spacing: 1px;
+            }
+
+            .founder-meta {
+                font-size: 0.75rem;
             }
 
             .founder-img-box {
-                padding: 2rem;
+                float: none;
+                width: 100%;
+                margin: 0 0 1.5rem 0;
             }
 
-            .founder-content {
-                padding: 2.5rem;
-            }
-
-            .founder-content h3 {
-                font-size: 2.2rem;
+            .founder-content p {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -1684,29 +1722,46 @@
 
     <section class="founder-message-section">
         <div class="founder-container">
-            <div class="founder-img-box">
-                <div class="founder-img-wrapper">
-                    <img src="founder-ceo.jpg" alt="Cecilia D'Silva - Founder & CEO">
+            <!-- <div class="founder-header">
+                <span class="founder-header-title">SpringboardPro</span>
+                <span>Leadership Edition | 2025</span>
+            </div> -->
+            <div class="founder-body">
+                <div class="founder-article-title">
+                    <h2>A Legacy of Execution Excellence</h2>
+                    <span class="founder-meta">The Story Behind SpringboardPro and the Vision That Drives It</span>
                 </div>
-            </div>
-            <div class="founder-content">
-                <span class="founder-meta">Founder's Story</span>
-                <h3>Cecilia D'Silva</h3>
-                
-                <p>After over two decades of leadership roles across large global enterprises and high-growth organisations, where she established enterprise PMOs, led business transformations, scaled operations, and steered <strong>3,000+ projects</strong> — Cecilia D'Silva recognised a universal challenge: strategies, though strong, often stumbled in execution.</p>
 
-                <p>That insight sparked the founding of <strong>SpringboardPro</strong>, a firm built to bridge the gap between ambition and tangible outcomes.</p>
+                <div class="founder-content">
+                    <div class="founder-img-box">
+                        <img src="founder-ceo.jpg" alt="Cecilia D'Silva - Founder & CEO">
+                    </div>
 
-                <p>An award-winning professional, <strong>Certified Independent Director, PMP</strong>, and former <strong>Senior Vice President – PMO</strong>, Cecilia brings a distinctive blend of governance discipline, strategic clarity, and people-centric leadership. Her recognition as <strong>India PMO Leader of the Year 2022</strong> underscores her commitment to execution excellence and future-ready capabilities across industries.</p>
+                    <p>After over two decades of leadership roles across large global enterprises and high-growth
+                        organisations, where she established enterprise PMOs, led business transformations, scaled
+                        operations, and steered <strong>3,000+ projects</strong> — Cecilia D'Silva recognised a universal
+                        challenge: strategies, though strong, often stumbled in execution.</p>
 
-                <p>Cecilia's journey is rooted in one belief: execution is where strategy becomes reality. SpringboardPro embodies that belief!</p>
+                    <p>That insight sparked the founding of <strong>SpringboardPro</strong>, a firm built to bridge the gap
+                        between ambition and tangible outcomes.</p>
 
-                <p>For Cecilia, SpringboardPro is more than a consulting firm; it is a <strong>launchpad for sustainable growth, collaboration, and success</strong>.</p>
+                    <p>An award-winning professional, <strong>Certified Independent Director, PMP</strong>, and former
+                        <strong>Senior Vice President – PMO</strong>, Cecilia brings a distinctive blend of governance
+                        discipline, strategic clarity, and people-centric leadership. Her recognition as <strong>India PMO
+                            Leader of the Year 2022</strong> underscores her commitment to execution excellence and
+                        future-ready capabilities across industries.</p>
 
-                <div class="signature">
-                    <div>
-                        <h4>Cecilia D'Silva</h4>
-                        <span>Founder & CEO, SpringboardPro</span>
+                    <p>Cecilia's journey is rooted in one belief: execution is where strategy becomes reality.
+                        SpringboardPro embodies that belief!</p>
+
+                    <p>For Cecilia, SpringboardPro is more than a consulting firm; it is a <br><strong>launchpad for sustainable
+                            growth, collaboration, and success</strong>.</p>
+
+                    <div class="signature">
+                        <div>
+                            <h4>Cecilia D'Silva,</h4>
+                            <span>Founder & CEO, SpringboardPro</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1724,10 +1779,10 @@
 
             <div class="team-grid">
                 <button class="team-card" type="button" data-name="Cecilia D'Silva" data-role="Founder & CEO"
-                    data-image="./images/Cecilia D'Silva.jpg"
+                    data-image="./partner-images/cecelia.jpeg"
                     data-bio="Cecilia D'Silva, former Senior Vice President, PMO, is a transformational Strategic PMO Leader with 25+ years of global experience in strategic portfolio management, business transformation, and service excellence serving as the driving force behind SpringboardPro. She has led 3,000+ projects, built enterprise PMOs, and driven large-scale transformation programmes that blend structure, governance, innovation, and people-centric leadership.|An award-winning professional, certified Independent Director and PMP, Cecilia brings global leadership experience from HSBC, Oracle, and DHL focusing on PMO excellence and innovation. Her recognition as 'India PMO Leader of the Year 2022' by the PMO Global Alliance reflects her commitment to excellence, strategic partnerships, and future-ready capability building.|At SpringboardPro, she leads the mission to help organisations move with clarity, confidence, and disciplined execution — turning strategy into meaningful, measurable results."
                     data-linkedin="#" data-email="reachus@springboardpro.in">
-                    <img src="./images/Cecilia D'Silva.jpg" alt="Cecilia D'Silva">
+                    <img src="./partner-images/cecelia.jpeg" alt="Cecilia D'Silva">
                     <h3 style="font-family: nunito;">Cecilia D'Silva</h3>
                     <span class="role" style="background-color: transparent; color: black;">Founder & CEO</span> <br>
                     <!-- UPDATED KNOW MORE BUTTON -->
@@ -1735,10 +1790,10 @@
                 </button>
 
                 <button class="team-card" type="button" data-name="Amulya Fernandes" data-role="Managing Partner"
-                    data-image="./images/Amulya Fernandes.jpg"
-                    data-bio="Amulya Fernandes, brings over 15 years of leadership in Finance, Administration, and Marketing. She blends strategic discipline with operational excellence to strengthen governance and client partnerships. At SpringboardPro, she plays a pivotal role in advancing our mission as a launchpad for success—propelling organizations with clarity, confidence, and execution excellence. Amulya’s inclusive leadership style fosters a collaborative team environment, driving innovation and ensuring that every project aligns with the organization’s core values. Her commitment to sustainability and ethical practices reinforces SpringboardPro’s reputation as a trusted partner in the industry, dedicated to building a future where businesses thrive with integrity and purpose."
+                    data-image="./partner-images/amulya.jpeg"
+                    data-bio="Amulya Fernandes, brings over 15 years of leadership in Finance, Administration, and Marketing. She blends strategic discipline with operational excellence to strengthen governance and client partnerships. At SpringboardPro, she plays a pivotal role in advancing our mission as a launchpad for success—propelling organizations with clarity, confidence, and execution excellence. Amulya's inclusive leadership style fosters a collaborative team environment, driving innovation and ensuring that every project aligns with the organization's core values. Her commitment to sustainability and ethical practices reinforces SpringboardPro's reputation as a trusted partner in the industry, dedicated to building a future where businesses thrive with integrity and purpose."
                     data-linkedin="#" data-email="reachus@springboardpro.in">
-                    <img src="./images/Amulya Fernandes.jpg" alt="Amulya Fernandes">
+                    <img src="./partner-images/amulya.jpeg" alt="Amulya Fernandes">
                     <h3 style="font-family: nunito;">Amulya Fernandes</h3>
                     <span class="role" style="background-color: transparent; color: black;">Managing Partner</span><br>
                     <!-- UPDATED KNOW MORE BUTTON -->
@@ -1747,10 +1802,10 @@
 
                 <button class="team-card" type="button" data-name="Greg Leman"
                     data-role="Advisor - Emerging Technologies"
-                    data-image="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg"
-                    data-bio="Greg is a seasoned technology and security expert with over 30 years of leadership experience spanning software development, data management, and personal security. As Co-Owner of Montana Personal Security LLC, he empowers individuals and organizations through a holistic security approach focused on situational awareness and protection across cyber, financial, and operational domains.|Previously a Senior Director at Oracle for nearly 20 years, Greg led large teams in building enterprise applications and infrastructure supporting $2B in business and 25,000 users. He is known for driving process transformation, agile adoption, and system security.|An entrepreneur at heart, Greg founded multiple successful startups, including Metagenix, an early leader in data integration. His background also includes innovation in GIS and public safety applications."
+                    data-image="./partner-images/greg-leman.jpeg"
+                    data-bio="Greg is a seasoned technology and security expert with over 30 years of leadership experience spanning software development, data management, and personal security. As Co-Owner of Montana Personal Security LLC, he empowers individuals and organizations through a holistic security approach focused on situational awareness and protection across cyber, financial, and operational domains. Previously a Senior Director at Oracle for nearly 20 years, Greg led large teams in building enterprise applications and infrastructure supporting $2B in business and 25,000 users. He is known for driving process transformation, agile adoption, and system security. An entrepreneur at heart, Greg founded multiple successful startups, including Metagenix, an early leader in data integration. His background also includes innovation in GIS and public safety applications. His strategic acumen in scaling enterprise solutions for tens of thousands of users and his entrepreneurial mindset fuel SpringboardPro's tech-forward vision. He is passionate about fostering resilient, scalable, and secure digital ecosystems that drive transformation."
                     data-linkedin="#">
-                    <img src="./images/WhatsApp Image 2025-12-03 at 17.34.00_3132f6f8.jpg" alt="Greg Leman">
+                    <img src="./partner-images/greg-leman.jpeg" alt="Greg Leman">
                     <h3 style="font-family: nunito;">Greg Leman</h3>
                     <span class="role" style="background-color: transparent; color: black;">Advisor - Emerging
                         Technologies</span><br>
@@ -1760,12 +1815,13 @@
 
                 <button class="team-card" type="button" data-name="Manoj Kumar Agarwal"
                     data-role="Advisor - Business Strategy & Integration"
-                    data-image="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg"
+                    data-image="./partner-images/manoj.jpeg"
                     data-bio="Manoj Kumar Agarwal, with over 25 years of experience in business setup, management, mergers and acquisitions, fundraising, and strategy, brings a wealth of knowledge to the table. He co-founded Sea Fund, an early-stage venture fund currently raising INR 2500 million (USD 35 million) for its second fund.|Manoj mentors multiple startups and advises Latize, a Singapore-based data management company using Linked Data technology, whose product, Ulysses, is accredited by Singapore's IDA. As the CEO of Karuturi Global Limited, he managed corporate affairs and Indian operations in agriculture, floriculture, food processing, and internet services.|A frequent speaker at industry conferences, Manoj shares insights on emerging trends and the future of business. Dedication to excellence and passion for fostering innovation make him a revered figure in the entrepreneurial ecosystem. At SpringboardPro, Manoj will guide through the intricacies of business growth and innovation, offering strategic advice and mentorship to thrive in competitive markets."
                     data-linkedin="#">
-                    <img src="./images/WhatsApp Image 2025-12-03 at 17.34.20_4b7f3738.jpg" alt="Manoj Kumar Agarwal">
+                    <img src="./partner-images/manoj.jpeg" alt="Manoj Kumar Agarwal">
                     <h3 style="font-family: nunito;">Manoj Kumar Agarwal</h3>
-                    <span class="role" style="background-color: transparent; color: black;">Advisor - <br> Business Strategy
+                    <span class="role" style="background-color: transparent; color: black;">Advisor - <br> Business
+                        Strategy
                         <br>& Integration</span><br>
                     <!-- UPDATED KNOW MORE BUTTON -->
                     <span class="know-more-btn">Know More <i class="fas fa-arrow-right"></i></span>
@@ -1794,16 +1850,21 @@
 
     <!-- WHY WE EXIST SECTION -->
     <section style="padding: 6rem 5%; background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);">
-        <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+        <div
+            style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
             <div>
-                <h2 style="font-size: 3.5rem; color: var(--black); margin-bottom: 1.5rem; font-weight: 600; font-family: Nunito;">Why We Exist</h2>
+                <h2
+                    style="font-size: 3.5rem; color: var(--black); margin-bottom: 1.5rem; font-weight: 600; font-family: Nunito;">
+                    Why We Exist</h2>
                 <p style="font-size: 1.4rem; font-weight: 500; line-height: 1.8; color: var(--gray-700);">
-                    Because execution excellence is a strategic advantage — and every organisation deserves a trusted
+                    Because <b>execution excellence is a strategic advantage </b>— and every organisation deserves a trusted
                     partner who can provide the clarity, structure, and momentum needed to turn ambition into outcomes.
                 </p>
             </div>
-            <div style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);">
-                <img src="why-we-exist.jpeg" alt="Our mission and purpose" style="width: 100%; height: auto; max-height: 280px; object-fit: cover; object-position: center top; display: block;">
+            <div
+                style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);">
+                <img src="why-we-exist.jpeg" alt="Our mission and purpose"
+                    style="width: 100%; height: auto; max-height: 280px; object-fit: cover; object-position: center top; display: block;">
             </div>
         </div>
     </section>
