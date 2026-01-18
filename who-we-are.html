@@ -9,10 +9,25 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* Cross-Browser Compatibility Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         :root {
@@ -39,13 +54,29 @@
 
         html {
             scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
         }
 
         body {
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             color: var(--gray-800);
             line-height: 1.6;
             background: var(--white);
+            -webkit-overflow-scrolling: touch;
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            -ms-interpolation-mode: bicubic;
+            border-style: none;
+        }
+
+        video {
+            max-width: 100%;
+            height: auto;
         }
 
         h1,
@@ -510,143 +541,108 @@
             font-size: 1.15rem;
         }
 
-        /* FOUNDER'S MESSAGE - MODERN MAGAZINE LAYOUT */
+        /* FOUNDER'S STORY - COMPACT TWO-COLUMN LAYOUT */
         .founder-message-section {
-            padding: 8rem 5%;
-            background: #f5f5f5;
+            padding: 2.5rem 5% 2.5rem;
+            background: #e8dfd8;
             position: relative;
+            min-height: auto;
         }
 
         .founder-container {
-            max-width: 1400px;
+            max-width: 1350px;
             margin: 0 auto;
-            position: relative;
-            background: white;
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            border: 1px solid #ddd;
-        }
-
-        .founder-header {
-            background: #2a2a2a;
-            color: white;
-            padding: 0.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Georgia', serif;
-            font-size: 0.75rem;
-            border-bottom: 3px solid #911120;
-        }
-
-        .founder-header-title {
-            font-weight: bold;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-
-        .founder-body {
-            padding: 2.5rem;
-        }
-
-        .founder-article-title {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #2a2a2a;
-        }
-
-        .founder-article-title h2 {
-            font-family: 'Georgia', serif;
-            font-size: 2rem;
-            font-weight: 900;
-            color: #1a1a1a;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-
-        .founder-meta {
-            display: block;
-            padding: 0;
-            background: transparent;
-            color: #666;
-            font-weight: 500;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            border-radius: 0;
-            margin-bottom: 0;
-            text-transform: uppercase;
-            width: 100%;
-            font-family: 'Georgia', serif;
-            font-style: italic;
-        }
-
-        .founder-content {
-            position: relative;
+            background: #e8dfd8;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2.5rem;
+            align-items: stretch;
         }
 
         .founder-img-box {
-            float: left;
-            width: 400px;
-            margin: 0 2rem 1.5rem 0;
+            position: relative;
+            display: flex;
+            align-items: stretch;
+            height: 100%;
         }
 
         .founder-img-box img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
             border-radius: 0;
-            box-shadow: none;
-            border: 1px solid #999;
-            filter: grayscale(20%);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        .founder-content {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100%;
+        }
+
+        .founder-content h2 {
+            font-family: 'Georgia', serif;
+            font-size: 1.85rem;
+            font-weight: 700;
+            color: #911120;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .founder-content h2 i {
+            font-size: 1.4rem;
+        }
+
+        .founder-content h3 {
+            font-family: 'Georgia', serif;
+            font-size: 0.95rem;
+            font-style: italic;
+            color: #333;
+            margin-bottom: 1.15rem;
+            font-weight: 400;
+            line-height: 1.4;
         }
 
         .founder-content p {
-            color: #1a1a1a;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
+            color: #333;
+            font-size: 0.88rem;
+            line-height: 1.6;
+            margin-bottom: 0.85rem;
             text-align: justify;
             font-family: 'Georgia', serif;
         }
 
         .founder-content p:last-of-type {
-            margin-bottom: 0;
+            margin-bottom: 0.9rem;
         }
 
-        .founder-content .signature {
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid #999;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
+        .founder-signature {
+            margin-top: 1.25rem;
+            padding-top: 0.9rem;
+            border-top: 2px solid #911120;
+        }
+
+        .founder-signature h4 {
             font-family: 'Georgia', serif;
-            clear: both;
-        }
-
-        .founder-content .signature::before {
-            content: '—';
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-        .founder-content .signature h4 {
-            font-family: 'Georgia', serif;
-            font-size: 0.85rem;
-            margin: 0;
-            color: #1a1a1a;
+            font-size: 1.05rem;
+            margin: 0 0 0.2rem 0;
+            color: #911120;
             font-weight: 700;
-            font-style: italic;
         }
 
-        .founder-content .signature span {
+        .founder-signature span {
             color: #666;
-            font-size: 0.75rem;
+            font-size: 0.82rem;
             font-style: italic;
             font-weight: 600;
+            font-family: 'Georgia', serif;
         }
 
         /* HOW WE WORK FLOW */
@@ -1375,35 +1371,30 @@
                 max-width: 200px;
             }
 
+            .founder-message-section {
+                padding: 2.5rem 3%;
+            }
+
             .founder-container {
                 grid-template-columns: 1fr;
-                gap: 0;
-                border-radius: 24px;
+                gap: 2rem;
             }
 
             .founder-img-box {
-                padding: 3rem 2rem;
+                max-width: 320px;
+                margin: 0 auto;
             }
 
-            .founder-img-box img {
-                max-width: 280px;
-            }
-
-            .founder-content {
-                padding: 3rem 2rem;
+            .founder-content h2 {
+                font-size: 1.75rem;
             }
 
             .founder-content h3 {
-                font-size: 2.2rem;
-            }
-
-            .founder-quote {
-                font-size: 1.2rem;
-                padding-left: 1.5rem;
+                font-size: 0.95rem;
             }
 
             .founder-content p {
-                font-size: 1rem;
+                font-size: 0.88rem;
             }
 
             .footer-grid {
@@ -1531,34 +1522,41 @@
             }
 
             /* Founder Section Responsive */
-            .founder-header {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.25rem;
-                padding: 0.75rem 1rem;
+            .founder-message-section {
+                padding: 2rem 5%;
             }
 
-            .founder-body {
-                padding: 1.5rem;
-            }
-
-            .founder-article-title h2 {
-                font-size: 1.5rem;
-                letter-spacing: 1px;
-            }
-
-            .founder-meta {
-                font-size: 0.75rem;
+            .founder-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
 
             .founder-img-box {
-                float: none;
-                width: 100%;
-                margin: 0 0 1.5rem 0;
+                position: relative;
+                max-width: 280px;
+                margin: 0 auto;
+            }
+
+            .founder-content h2 {
+                font-size: 1.5rem;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .founder-content h3 {
+                font-size: 0.9rem;
+                text-align: center;
             }
 
             .founder-content p {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .founder-signature {
+                text-align: center;
+                margin-top: 1rem;
+                padding-top: 0.75rem;
             }
         }
     </style>
@@ -1722,47 +1720,27 @@
 
     <section class="founder-message-section">
         <div class="founder-container">
-            <!-- <div class="founder-header">
-                <span class="founder-header-title">SpringboardPro</span>
-                <span>Leadership Edition | 2025</span>
-            </div> -->
-            <div class="founder-body">
-                <div class="founder-article-title">
-                    <h2>A Legacy of Execution Excellence</h2>
-                    <span class="founder-meta">The Story Behind SpringboardPro and the Vision That Drives It</span>
-                </div>
+            <div class="founder-img-box">
+                <img src="./partner-images/cecelia.jpeg" alt="Cecilia D'Silva - Founder & CEO">
+            </div>
 
-                <div class="founder-content">
-                    <div class="founder-img-box">
-                        <img src="founder-ceo.jpg" alt="Cecilia D'Silva - Founder & CEO">
-                    </div>
+            <div class="founder-content">
+                <h2>SpringboardPro: A Founder's Story <i class="fas fa-pen-fancy"></i></h2>
+                <h3>Where global experience meets entrepreneurial purpose</h3>
 
-                    <p>After over two decades of leadership roles across large global enterprises and high-growth
-                        organisations, where she established enterprise PMOs, led business transformations, scaled
-                        operations, and steered <strong>3,000+ projects</strong> — Cecilia D'Silva recognised a universal
-                        challenge: strategies, though strong, often stumbled in execution.</p>
+                <p>After over two decades of leadership roles across large global enterprises and high-growth organisations, where she established enterprise PMOs, led business transformations, scaled operations, and steered <strong>3,000+ projects</strong> — Cecilia D'Silva recognised a universal challenge: strategies, though strong, often stumbled in execution.</p>
 
-                    <p>That insight sparked the founding of <strong>SpringboardPro</strong>, a firm built to bridge the gap
-                        between ambition and tangible outcomes.</p>
+                <p>That insight sparked the founding of <strong>SpringboardPro</strong>, a firm built to bridge the gap between ambition and tangible outcomes.</p>
 
-                    <p>An award-winning professional, <strong>Certified Independent Director, PMP</strong>, and former
-                        <strong>Senior Vice President – PMO</strong>, Cecilia brings a distinctive blend of governance
-                        discipline, strategic clarity, and people-centric leadership. Her recognition as <strong>India PMO
-                            Leader of the Year 2022</strong> underscores her commitment to execution excellence and
-                        future-ready capabilities across industries.</p>
+                <p>An award-winning professional, <strong>Certified Independent Director, PMP</strong>, and former <strong>Senior Vice President – PMO</strong>, Cecilia brings a distinctive blend of governance discipline, strategic clarity, and people-centric leadership. Her recognition as <strong>India PMO Leader of the Year 2022</strong> underscores her commitment to execution excellence and future-ready capabilities across industries.</p>
 
-                    <p>Cecilia's journey is rooted in one belief: execution is where strategy becomes reality.
-                        SpringboardPro embodies that belief!</p>
+                <p>Cecilia's journey is rooted in one belief: execution is where strategy becomes reality. SpringboardPro embodies that belief!</p>
 
-                    <p>For Cecilia, SpringboardPro is more than a consulting firm; it is a <br><strong>launchpad for sustainable
-                            growth, collaboration, and success</strong>.</p>
+                <p>For Cecilia, SpringboardPro is more than a consulting firm; it is a <strong>launchpad for sustainable growth, collaboration, and success</strong>.</p>
 
-                    <div class="signature">
-                        <div>
-                            <h4>Cecilia D'Silva,</h4>
-                            <span>Founder & CEO, SpringboardPro</span>
-                        </div>
-                    </div>
+                <div class="founder-signature">
+                    <h4>Cecilia D'Silva</h4>
+                    <span>Founder & CEO</span>
                 </div>
             </div>
         </div>
