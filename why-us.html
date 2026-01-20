@@ -31,9 +31,9 @@
         }
 
         :root {
-            --burgundy: #911120;
+            --burgundy: #45001d;
             --burgundy-light: #dcafac;
-            --burgundy-dark: #690316;
+            --burgundy-dark: #5c0028;
             --white: #ffffff;
             --black: #0a0a0a;
             --gray-50: #dcd3d6;
@@ -46,8 +46,8 @@
             --gray-800: #232323;
             --palette-cream: #dcd3d6;
             --palette-blush: #dcafac;
-            --palette-primary: #911120;
-            --palette-deep: #690316;
+            --palette-primary: #45001d;
+            --palette-deep: #5c0028;
             --palette-gradient: linear-gradient(135deg, #ffffff 0%, #dcd3d6 25%, #dcafac 50%, #911120 75%, #690316 100%);
         }
 
@@ -935,26 +935,44 @@
             .value-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            /* What Sets SpringboardPro Apart - Tablet */
+            .why-section div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
         }
 
         @media (max-width: 768px) {
+            /* Navbar */
+            .navbar {
+                padding: 1rem 4%;
+            }
+
+            .navbar.scrolled {
+                padding: 0.75rem 4%;
+            }
+
             .logo img {
-                height: 40px;
+                height: 50px;
             }
 
             .nav-links {
                 position: fixed;
                 top: 0;
                 right: -100%;
-                width: 80%;
+                width: 85%;
                 max-width: 350px;
                 height: 100vh;
-                background: rgba(145, 17, 32, 0.97);
+                background: rgba(69, 0, 29, 0.98);
+                backdrop-filter: blur(10px);
                 flex-direction: column;
                 padding: 6rem 2rem 2rem;
                 gap: 0;
-                transition: right 0.4s ease;
-                box-shadow: -10px 0 30px rgba(145, 17, 32, 0.35);
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 40px rgba(0, 0, 0, 0.3);
+                overflow-y: auto;
+                z-index: 1002;
             }
 
             .nav-links.active {
@@ -963,56 +981,366 @@
 
             .nav-links li {
                 width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             }
 
             .nav-links a {
                 color: var(--white) !important;
-                padding: 1.25rem 0;
+                padding: 1.25rem 0.5rem;
                 display: block;
+                font-size: 1rem;
             }
 
             .nav-links .nav-cta {
-                margin-top: 1rem;
-                text-align: center;
+                margin-top: 1.5rem;
                 background: var(--white) !important;
                 color: var(--burgundy) !important;
+                text-align: center;
+                border-radius: 100px;
+                padding: 0.9rem 1.5rem !important;
             }
 
             .mobile-toggle {
                 display: flex;
+                z-index: 1003;
+            }
+
+            .dropdown-content {
+                position: static;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                box-shadow: none;
+                border: none;
+                padding: 0.5rem 0 0 1.25rem;
+                background: transparent;
+                min-width: auto;
+            }
+
+            .dropdown-content a {
+                padding: 0.85rem 0.5rem !important;
+                border-left: 2px solid rgba(255, 255, 255, 0.3) !important;
+                color: rgba(255, 255, 255, 0.85) !important;
+                font-size: 0.9rem !important;
+            }
+
+            .dropdown-content a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: var(--white) !important;
+            }
+
+            /* Hero Section */
+            .page-hero {
+                padding: 7rem 4% 3.5rem !important;
+                min-height: 60vh !important;
             }
 
             .page-hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+                margin-bottom: 1rem !important;
             }
 
-            .section-intro h2 {
-                font-size: 2.25rem;
+            .page-hero p {
+                font-size: 1.05rem !important;
+                line-height: 1.6 !important;
             }
 
-            .impact-grid,
-            .value-grid {
+            /* General Sections */
+            section {
+                padding: 3.5rem 4% !important;
+            }
+
+            .why-container,
+            .impact-container,
+            .value-container {
+                padding: 0 !important;
+            }
+
+            /* Section Headers */
+            .section-intro h2,
+            h2 {
+                font-size: 1.85rem !important;
+            }
+
+            .section-intro p,
+            h3 {
+                font-size: 1.05rem !important;
+            }
+
+            /* Why Section - What Sets SpringboardPro Apart */
+            .why-grid {
+                grid-template-columns: 1fr !important;
+                gap: 2.5rem !important;
+            }
+
+            .why-section div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+                padding: 2rem !important;
+            }
+
+            .why-section div[style*="min-height: 600px"] {
+                min-height: auto !important;
+                max-height: none !important;
+            }
+
+            .why-section img {
+                max-height: 350px;
+                object-fit: cover;
+            }
+
+            .differentiator-list {
+                gap: 0.85rem !important;
+            }
+
+            .differentiator-item {
+                padding: 1.15rem !important;
+            }
+
+            .differentiator-item h4 {
+                font-size: 1.05rem !important;
+            }
+
+            .differentiator-content {
+                max-height: 300px !important;
+            }
+
+            .differentiator-content p {
+                font-size: 0.95rem !important;
+            }
+
+            /* Impact Grid */
+            .impact-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .impact-card {
+                padding: 2rem !important;
             }
 
             .impact-card.highlight {
                 grid-column: span 1;
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
+            .impact-card div[style*="font-size: 3.5rem"] {
+                font-size: 2.75rem !important;
             }
 
-            .dropdown-content {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                padding: 0 0 0 1rem;
-                background: transparent;
+            .impact-card h3 {
+                font-size: 1.25rem !important;
+            }
+
+            .impact-card p {
+                font-size: 0.95rem !important;
+            }
+
+            /* Value Grid */
+            .value-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .value-card {
+                padding: 1.75rem;
+            }
+
+            .value-card h3 {
+                font-size: 1.25rem !important;
+            }
+
+            .value-card p {
+                font-size: 0.95rem !important;
+            }
+
+            /* Who We Partner With */
+            .partner-section {
+                padding: 3.5rem 4% !important;
+            }
+
+            .why-points li {
+                align-items: flex-start !important;
+            }
+
+            .why-points li i {
+                font-size: 1rem !important;
+                margin-top: 0.25rem;
+            }
+
+            .why-points li span {
+                font-size: 1.05rem !important;
+            }
+
+            /* Two-column grids to single column */
+            section div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+            }
+
+            /* CTA Section */
+            .cta-section {
+                padding: 3.5rem 4% !important;
+            }
+
+            .cta-container {
+                grid-template-columns: 1fr !important;
+                padding: 0 !important;
+                gap: 0 !important;
+                border-radius: 20px;
+                overflow: hidden;
+            }
+
+            .cta-text {
+                padding: 2.5rem !important;
+            }
+
+            .cta-text h2 {
+                font-size: 1.85rem !important;
+            }
+
+            .cta-text p {
+                font-size: 1rem !important;
+            }
+
+            .cta-actions {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn-primary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 3.5rem 4% 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            .footer-brand .logo img {
+                height: 70px;
+            }
+
+            .footer-column h4 {
+                font-size: 0.95rem;
+            }
+
+            .footer-column p {
+                font-size: 0.9rem;
+            }
+
+            .footer-bottom {
+                margin-top: 2.5rem;
+                padding: 1rem 0;
+            }
+
+            .footer-bottom p {
+                font-size: 0.88rem;
+            }
+        }
+
+        /* Additional mobile breakpoint for very small screens */
+        @media (max-width: 480px) {
+            /* Navbar */
+            .navbar {
+                padding: 0.9rem 3%;
+            }
+
+            .navbar.scrolled {
+                padding: 0.65rem 3%;
+            }
+
+            .logo img {
+                height: 45px;
+            }
+
+            /* Hero */
+            .page-hero {
+                padding: 6.5rem 3% 3rem !important;
+            }
+
+            .page-hero h1 {
+                font-size: 1.75rem !important;
+            }
+
+            .page-hero p {
+                font-size: 0.95rem !important;
+            }
+
+            /* Sections */
+            section {
+                padding: 3rem 3% !important;
+            }
+
+            h2 {
+                font-size: 1.65rem !important;
+            }
+
+            h3 {
+                font-size: 1rem !important;
+            }
+
+            /* Why Section */
+            .why-section div[style*="padding: 2rem"] {
+                padding: 1.5rem !important;
+            }
+
+            .differentiator-item {
+                padding: 1rem !important;
+            }
+
+            .differentiator-item h4 {
+                font-size: 0.95rem !important;
+            }
+
+            .differentiator-content p {
+                font-size: 0.88rem !important;
+            }
+
+            /* Impact/Value Cards */
+            .impact-card {
+                padding: 1.5rem !important;
+            }
+
+            .impact-card div[style*="font-size: 3.5rem"] {
+                font-size: 2.25rem !important;
+            }
+
+            .value-card {
+                padding: 1.5rem;
+            }
+
+            /* CTA */
+            .cta-text {
+                padding: 2rem !important;
+            }
+
+            .cta-text h2 {
+                font-size: 1.65rem !important;
+            }
+
+            .cta-text p {
+                font-size: 0.95rem !important;
+            }
+
+            /* Partner Section */
+            .why-points li span {
+                font-size: 0.95rem !important;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 3rem 3% 0;
+            }
+
+            .impact-card {
+                padding: 1.25rem !important;
             }
         }
     </style>
@@ -1075,23 +1403,23 @@
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: stretch;">
                 <div style="display: flex; flex-direction: column; justify-content: center; padding: 2rem;">
-                    <h6 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--black);">We
+                    <h6 style="font-size: 1.8rem; font-weight: 600; margin-bottom: 1.5rem; color: var(--black);">We
                         partner closely with leadership teams to:</h6>
-                    <ul class="why-points" style="font-size: 1.3rem; margin-bottom: 2rem;">
-                        <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
-                                style="color: var(--gray-800);">Bring clarity where complexity slows decisions</span>
+                    <ul class="why-points" style="margin-bottom: 2.2rem;">
+                        <li style="align-items: center;"><i class="fas fa-check-circle" style="color: #45001d; font-size: 1.2rem;"></i><span
+                                style="color: var(--gray-800); font-size: 1.2rem;">Bring clarity where complexity slows decisions</span>
                         </li>
-                        <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
-                                style="color: var(--gray-800);">Establish governance that enables speed, not
+                        <li style="align-items: center;"><i class="fas fa-check-circle" style="color: #45001d; font-size: 1.2rem;"></i><span
+                                style="color: var(--gray-800); font-size: 1.2rem;">Establish governance that enables speed, not
                                 bureaucracy</span></li>
-                        <li><i class="fas fa-check-circle" style="color: #45001d;"></i><span
-                                style="color: var(--gray-800);">Restore confidence in delivery across portfolios and
+                        <li style="align-items: center;"><i class="fas fa-check-circle" style="color: #45001d; font-size: 1.2rem;"></i><span
+                                style="color: var(--gray-800); font-size: 1.2rem;">Restore confidence in delivery across portfolios and
                                 programmes</span></li>
                     </ul>
                     <div
                         style="padding: 1.5rem; background: rgba(255,255,255,0.7); border-radius: 16px; border-left: 4px solid #45001d;">
                         <p
-                            style="font-style: italic; color: var(--gray-800); font-size: 1.15rem; font-weight: 500; margin: 0; line-height: 1.7;">
+                            style="font-style: italic; color: var(--gray-800); font-size: 1.4rem; font-weight: 500; margin: 0; line-height: 1.7;">
                             Our engagements are run with the same urgency, ownership, and discipline as your internal
                             leadership teams — because execution cannot be outsourced, only strengthened.</p>
                     </div>
