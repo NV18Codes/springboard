@@ -3,8 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>SpringboardPro | Turning Strategy Into Action</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SpringboardPro - Your Strategic Growth Partner. We help organizations move from strategy to execution with clarity, cadence, and confidence through PMO consulting, automation, and delivery excellence.">
+    <meta name="keywords" content="PMO consulting, project management, enterprise automation, delivery recovery, process consulting, SpringboardPro, Bangalore">
+    <meta name="author" content="SpringboardPro">
+    
+    <!-- Open Graph Meta Tags (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:title" content="SpringboardPro | Turning Strategy Into Action">
+    <meta property="og:description" content="Your Strategic Growth Partner in PMO Excellence. We help organizations move confidently from strategy to execution.">
+    <meta property="og:image" content="https://springboardpro.in/springboardlogo-removebg-preview.png">
+    <meta property="og:url" content="https://springboardpro.in">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="SpringboardPro">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SpringboardPro | Turning Strategy Into Action">
+    <meta name="twitter:description" content="Your Strategic Growth Partner in PMO Excellence. We help organizations move confidently from strategy to execution.">
+    <meta name="twitter:image" content="https://springboardpro.in/springboardlogo-removebg-preview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="springboardlogo-removebg-preview.png">
+    <link rel="apple-touch-icon" href="springboardlogo-removebg-preview.png">
+    
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -55,6 +79,9 @@
             scroll-behavior: smooth;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
 
         body {
@@ -65,6 +92,20 @@
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
             min-height: 100vh;
+            width: 100%;
+            max-width: 100%;
+            position: relative;
+        }
+
+        /* Prevent horizontal overflow on all elements */
+        * {
+            max-width: 100%;
+        }
+
+        section, div, header, footer, main {
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         /* Image rendering fix for all browsers */
@@ -2602,7 +2643,7 @@
     <section class="focus-section">
         <div class="section-header">
             <span class="section-label"><i class="fas fa-crosshairs"></i> Our Focus</span>
-            <h2 style="font-size: 50px !important; width: max-content !important;">Our Core Pillars of Excellence</h2>
+            <h2 style="font-size: 50px !important;">Our Core Pillars of Excellence</h2>
             <p style="font-size: x-large;">Each pillar blends strategy, structure, and stewardship so your programmes
                 gain momentum — and keep it.
             </p>
@@ -2656,7 +2697,7 @@
         <div class="pain-container">
             <div class="section-header">
                 <span class="section-label"><i class="fas fa-crosshairs"></i> Our Focus</span>
-                <h2 style="margin-left: -65px !important;" ;>Struggling With These Challenges?</h2>
+                <h2>Struggling With These Challenges?</h2>
                 <p style="font-size: x-large; ">Many organisations face repeated execution roadblocks.<br> If any of
                     these sound familiar, you’re not
                     alone</p>
@@ -2735,7 +2776,7 @@
             <div class="section-header">
                 <span class="section-label"><i class="fas fa-cube"></i> What We Offer</span>
                 <h2>Our Solutions</h2>
-                <p style="font-size: x-large; width: max-content;">Comprehensive solutions tailored to your
+                <p style="font-size: x-large;">Comprehensive solutions tailored to your
                     organization's unique needs.</p>
             </div>
             <div class="services-grid">
