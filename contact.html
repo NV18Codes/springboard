@@ -3,8 +3,29 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Contact Us | SpringboardPro</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Get in touch with SpringboardPro - Your Strategic Growth Partner. Contact us for PMO consulting, automation, and delivery excellence services.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact Us | SpringboardPro">
+    <meta property="og:description" content="Get in touch with SpringboardPro - Your Strategic Growth Partner in PMO Excellence.">
+    <meta property="og:image" content="https://springboardpro.in/springboardlogo-removebg-preview.png">
+    <meta property="og:url" content="https://springboardpro.in/contact">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Us | SpringboardPro">
+    <meta name="twitter:description" content="Get in touch with SpringboardPro - Your Strategic Growth Partner in PMO Excellence.">
+    <meta name="twitter:image" content="https://springboardpro.in/springboardlogo-removebg-preview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="springboardlogo-removebg-preview.png">
+    <link rel="apple-touch-icon" href="springboardlogo-removebg-preview.png">
+    
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
         rel="stylesheet">
@@ -50,6 +71,7 @@
             -ms-text-size-adjust: 100%;
             overflow-x: hidden;
             width: 100%;
+            max-width: 100%;
         }
 
         body {
@@ -62,6 +84,14 @@
             overflow-x: hidden;
             width: 100%;
             max-width: 100%;
+            position: relative;
+        }
+
+        /* Prevent horizontal overflow */
+        section, div, header, footer, main {
+            max-width: 100%;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         img {
