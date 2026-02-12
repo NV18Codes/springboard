@@ -56,6 +56,9 @@
             scroll-behavior: smooth;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
 
         body {
@@ -65,6 +68,9 @@
             background: var(--white);
             -webkit-overflow-scrolling: touch;
             min-height: 100vh;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
         }
 
         img {
@@ -98,10 +104,14 @@
             right: 0;
             z-index: 1000;
             padding: 1.15rem 5%;
+            padding-left: max(5%, 1rem);
+            padding-right: max(5%, 1rem);
+            padding-top: max(1.15rem, env(safe-area-inset-top));
             display: flex;
             justify-content: space-between;
             align-items: center;
             background: #45001d;
+            box-sizing: border-box;
             backdrop-filter: blur(18px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow: 0 4px 20px rgba(69, 0, 29, 0.3);
@@ -121,12 +131,17 @@
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
+            flex-shrink: 1;
+            min-width: 0;
+            max-width: 55%;
         }
 
         .logo img {
             height: 90px;
             width: auto;
+            max-width: 100%;
             display: block;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -193,10 +208,16 @@
         .mobile-toggle {
             display: none;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             gap: 5px;
             cursor: pointer;
-            padding: 5px;
+            padding: 12px;
+            min-width: 44px;
+            min-height: 44px;
+            flex-shrink: 0;
             z-index: 1001;
+            margin-right: env(safe-area-inset-right);
         }
 
         .mobile-toggle span {
@@ -205,6 +226,7 @@
             background: var(--white);
             transition: all 0.3s ease;
             border-radius: 2px;
+            flex-shrink: 0;
         }
 
         .navbar.scrolled .mobile-toggle span {
@@ -322,7 +344,10 @@
 
         .about-container {
             max-width: 1400px;
+            width: 100%;
+            box-sizing: border-box;
             margin: 0 auto;
+            padding: 0 5%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 5rem;
@@ -357,7 +382,7 @@
         .about-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             object-position: center;
             display: block;
         }
@@ -1111,7 +1136,8 @@
         .cta-visual img {
             width: 100%;
             height: auto;
-            object-fit: cover;
+            object-fit: contain;
+            object-position: center;
             display: block;
         }
 
@@ -1420,17 +1446,26 @@
         }
 
         @media (max-width: 768px) {
-            /* Navbar */
+            /* Navbar - prevent logo and hamburger cropping */
             .navbar {
-                padding: 1rem 4%;
+                padding: 1rem 16px;
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
             }
 
             .navbar.scrolled {
-                padding: 0.75rem 4%;
+                padding: 0.75rem 16px;
+                padding-left: max(16px, env(safe-area-inset-left));
+                padding-right: max(16px, env(safe-area-inset-right));
+            }
+
+            .logo {
+                max-width: 60%;
             }
 
             .logo img {
                 height: 50px;
+                max-height: 50px;
             }
 
             .nav-links {
@@ -1479,6 +1514,8 @@
             .mobile-toggle {
                 display: flex;
                 z-index: 1003;
+                padding: 10px;
+                min-width: 44px;
             }
 
             .dropdown-content {
@@ -1791,7 +1828,7 @@
             .why-exist-image img {
                 max-height: 280px !important;
                 width: 100% !important;
-                object-fit: cover !important;
+                object-fit: contain !important;
             }
 
             /* CTA Section */
@@ -1858,15 +1895,29 @@
         @media (max-width: 480px) {
             /* Navbar */
             .navbar {
-                padding: 0.9rem 3%;
+                padding: 0.85rem 14px;
+                padding-left: max(14px, env(safe-area-inset-left));
+                padding-right: max(14px, env(safe-area-inset-right));
             }
 
             .navbar.scrolled {
-                padding: 0.65rem 3%;
+                padding: 0.6rem 14px;
+                padding-left: max(14px, env(safe-area-inset-left));
+                padding-right: max(14px, env(safe-area-inset-right));
+            }
+
+            .logo {
+                max-width: 55%;
             }
 
             .logo img {
-                height: 45px;
+                height: 42px;
+                max-height: 42px;
+            }
+
+            .mobile-toggle {
+                min-width: 40px;
+                padding: 8px;
             }
 
             /* Hero */
@@ -1932,7 +1983,7 @@
 
             .why-exist-image img {
                 max-height: 240px !important;
-                object-fit: cover !important;
+                object-fit: contain !important;
             }
 
             .about-image {
@@ -2071,7 +2122,7 @@
             </div>
 
             <div class="about-text">
-                <h2 style="font-size: 2.2rem; font-family: Nunito;"><br>From Strategy to Execution</h2>
+                <h2 style="font-size: clamp(1.5rem, 5vw + 0.5rem, 2.2rem); font-family: Nunito;">From Strategy to Execution</h2>
                 <p style="font-size: 1.22rem;"> With over two decades of leadership and 3,000+ projects behind us, we
                     deliver disciplined execution
                     and measurable outcomes — for every client, at every step, in every project.</p>
@@ -2289,10 +2340,10 @@
     <!-- WHY WE EXIST SECTION -->
     <section class="why-exist-section" style="padding: 6rem 5%; background: linear-gradient(180deg, rgba(220, 211, 214, 0.3) 0%, rgba(220, 175, 172, 0.15) 100%);">
         <div class="why-exist-container"
-            style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+            style="max-width: 1400px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 5%; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
             <div class="why-exist-text">
                 <h2
-                    style="font-size: 3.5rem; color: var(--black); margin-bottom: 1.5rem; font-weight: 600; font-family: Nunito;">
+                    style="font-size: clamp(1.65rem, 5vw + 1rem, 3.5rem); color: var(--black); margin-bottom: 1.5rem; font-weight: 600; font-family: Nunito;">
                     Why We Exist</h2>
                 <p style="font-size: 1.4rem; font-weight: 500; line-height: 1.8; color: var(--gray-700);">
                     Because <b>execution excellence is a strategic advantage </b>— and every organisation deserves a trusted
@@ -2302,7 +2353,7 @@
             <div class="why-exist-image"
                 style="position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);">
                 <img src="why-we-exist.jpeg" alt="Our mission and purpose"
-                    style="width: 100%; height: auto; max-height: 280px; object-fit: cover; object-position: center top; display: block;">
+                    style="width: 100%; height: auto; max-height: 280px; object-fit: contain; object-position: center; display: block;">
             </div>
         </div>
     </section>
